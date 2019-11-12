@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+  <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
+VAR
+	// Axes for each system
+	// M1L0
+	M1 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
+	fbMotionStage_m1 : FB_MotionStage;
+
+	M2 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
+	fbMotionStage_m2 : FB_MotionStage;
+
+	M3 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
+	fbMotionStage_m3 : FB_MotionStage;
+
+	M4 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
+	fbMotionStage_m4 : FB_MotionStage;
+
+	M5 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
+	fbMotionStage_m5 : FB_MotionStage;
+
+	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
+	fbMotionStage_m6 : FB_MotionStage;
+	
+	fbRunHOMS_M1L0 : FB_RunHOMS;
+
+	bExecuteCoupleYM1L0 : BOOL;
+	bExecuteDecoupleYM1L0 : BOOL;
+	bExecuteCoupleXM1L0 : BOOL;
+	bExecuteDecoupleXM1L0 : BOOL;
+
+	bGantryAlreadyCoupledYM1L0 : BOOL;
+	bGantryAlreadyCoupledXM1L0 : BOOL;
+	
+	nCurrGantryYM1L0 : LINT; // encoder counts = nm
+	nCurrGantryXM1L0 : LINT; // encoder counts = nm
+	
+	// M2L0
+	M7 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
+	fbMotionStage_m7 : FB_MotionStage;
+
+	M8 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
+	fbMotionStage_m8 : FB_MotionStage;
+
+	M9 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
+	fbMotionStage_m9 : FB_MotionStage;
+
+	M10 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
+	fbMotionStage_m10 : FB_MotionStage;
+
+	M11 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
+	fbMotionStage_m11 : FB_MotionStage;
+
+	M12 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
+	fbMotionStage_m12 : FB_MotionStage;
+
+	fbRunHOMS_M2L0 : FB_RunHOMS;
+
+	bExecuteCoupleYM2L0 : BOOL;
+	bExecuteDecoupleYM2L0 : BOOL;
+	bExecuteCoupleXM2L0 : BOOL;
+	bExecuteDecoupleXM2L0 : BOOL;
+
+	bGantryAlreadyCoupledYM2L0 : BOOL;
+	bGantryAlreadyCoupledXM2L0 : BOOL;
+	
+	nCurrGantryYM2L0 : LINT; // encoder counts = nm
+	nCurrGantryXM2L0 : LINT; // encoder counts = nm
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// M1L0
+fbRunHOMS_M1L0(stYup:=M1,
+               stYdwn:=M2,
+               stXup:=M3,
+               stXdwn:=M4,
+               stPitch:=M5,
+               stBender:=M6,
+	           nYupEncRef:=GVL_M1L0.nYUP_ENC_REF,
+               nYdwnEncRef:=GVL_M1L0.nYDWN_ENC_REF,
+               nXupEncRef:=GVL_M1L0.nXUP_ENC_REF,
+               nXdwnEncRef:=GVL_M1L0.nXDWN_ENC_REF,
+			   bExecuteCoupleY:=bExecuteCoupleYM1L0,
+               bExecuteCoupleX:=bExecuteCoupleXM1L0,
+			   bExecuteDecoupleY:=bExecuteDecoupleYM1L0,
+               bExecuteDecoupleX:=bExecuteDecoupleXM1L0,
+               bGantryAlreadyCoupledY=>bGantryAlreadyCoupledYM1L0,
+               bGantryAlreadyCoupledX=>bGantryAlreadyCoupledXM1L0,
+               nCurrGantryY=>nCurrGantryYM1L0,
+               nCurrGantryX=>nCurrGantryXM1L0);
+
+fbMotionStage_m1(stMotionStage:=M1);
+fbMotionStage_m2(stMotionStage:=M2);
+fbMotionStage_m3(stMotionStage:=M3);
+fbMotionStage_m4(stMotionStage:=M4);
+fbMotionStage_m5(stMotionStage:=M5);
+fbMotionStage_m6(stMotionStage:=M6);
+
+// M2L0
+fbRunHOMS_M2L0(stYup:=M7,
+               stYdwn:=M8,
+               stXup:=M9,
+               stXdwn:=M10,
+               stPitch:=M11,
+               stBender:=M12,
+	           nYupEncRef:=GVL_M2L0.nYUP_ENC_REF,
+               nYdwnEncRef:=GVL_M2L0.nYDWN_ENC_REF,
+               nXupEncRef:=GVL_M2L0.nXUP_ENC_REF,
+               nXdwnEncRef:=GVL_M2L0.nXDWN_ENC_REF,
+			   bExecuteCoupleY:=bExecuteCoupleYM2L0,
+               bExecuteCoupleX:=bExecuteCoupleXM2L0,
+			   bExecuteDecoupleY:=bExecuteDecoupleYM2L0,
+               bExecuteDecoupleX:=bExecuteDecoupleXM2L0,
+               bGantryAlreadyCoupledY=>bGantryAlreadyCoupledYM2L0,
+               bGantryAlreadyCoupledX=>bGantryAlreadyCoupledXM2L0,
+               nCurrGantryY=>nCurrGantryYM2L0,
+               nCurrGantryX=>nCurrGantryXM2L0);
+
+fbMotionStage_m7(stMotionStage:=M7);
+fbMotionStage_m8(stMotionStage:=M8);
+fbMotionStage_m9(stMotionStage:=M9);
+fbMotionStage_m10(stMotionStage:=M10);
+fbMotionStage_m11(stMotionStage:=M11);
+fbMotionStage_m12(stMotionStage:=M12);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
