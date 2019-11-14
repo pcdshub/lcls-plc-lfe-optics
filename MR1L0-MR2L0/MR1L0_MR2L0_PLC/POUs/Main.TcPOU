@@ -6,42 +6,78 @@ VAR
 	// Axes for each system
 	// M1L0
 	M1 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
+	{attribute 'pytmc' := '
+		pv: M1L0_YUP
+	'}
 	fbMotionStage_m1 : FB_MotionStage;
 
 	M2 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
+	{attribute 'pytmc' := '
+		pv: M1L0_YDWN
+	'}
 	fbMotionStage_m2 : FB_MotionStage;
 
 	M3 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
+	{attribute 'pytmc' := '
+		pv: M1L0_XUP
+	'}
 	fbMotionStage_m3 : FB_MotionStage;
 
 	M4 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
+	{attribute 'pytmc' := '
+		pv: M1L0_XDWN
+	'}
 	fbMotionStage_m4 : FB_MotionStage;
 
 	M5 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
+	{attribute 'pytmc' := '
+		pv: M1L0_PITCH
+	'}
 	fbMotionStage_m5 : FB_MotionStage;
 
 	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
+	{attribute 'pytmc' := '
+		pv: M1L0_BENDER
+	'}
 	fbMotionStage_m6 : FB_MotionStage;
 	
 	M1L0 : DUT_HOMS;
 	
 	// M2L0
 	M7 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
+	{attribute 'pytmc' := '
+		pv: M2L0_YUP
+	'}
 	fbMotionStage_m7 : FB_MotionStage;
 
 	M8 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
+	{attribute 'pytmc' := '
+		pv: M2L0_YDWN
+	'}
 	fbMotionStage_m8 : FB_MotionStage;
 
 	M9 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
+	{attribute 'pytmc' := '
+		pv: M2L0_XUP
+	'}
 	fbMotionStage_m9 : FB_MotionStage;
 
 	M10 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
+	{attribute 'pytmc' := '
+		pv: M2L0_XDWN
+	'}
 	fbMotionStage_m10 : FB_MotionStage;
 
 	M11 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
+	{attribute 'pytmc' := '
+		pv: M2L0_PITCH
+	'}
 	fbMotionStage_m11 : FB_MotionStage;
 
 	M12 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
+	{attribute 'pytmc' := '
+		pv: M2L0_BENDER
+	'}
 	fbMotionStage_m12 : FB_MotionStage;
 
 	M2L0 : DUT_HOMS;
