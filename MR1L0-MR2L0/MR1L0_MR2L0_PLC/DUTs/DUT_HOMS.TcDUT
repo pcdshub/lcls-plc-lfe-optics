@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+  <DUT Name="DUT_HOMS" Id="{0a6ad08f-c6e6-47f2-ab1c-db91063eb2d4}">
+    <Declaration><![CDATA[TYPE DUT_HOMS :
+STRUCT
+	// System initializiation
+	fbRunHOMS : FB_RunHOMS;
+
+	// Couple/Decouple motors
+	bExecuteCoupleY : BOOL;
+	bExecuteDecoupleY : BOOL;
+	bExecuteCoupleX : BOOL;
+	bExecuteDecoupleX : BOOL;
+
+	// Coupling status
+	bGantryAlreadyCoupledY : BOOL;
+	bGantryAlreadyCoupledX : BOOL;
+
+	// Current gantry differences
+	nCurrGantryY : LINT; // encoder counts = nm
+	nCurrGantryX : LINT; // encoder counts = nm
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

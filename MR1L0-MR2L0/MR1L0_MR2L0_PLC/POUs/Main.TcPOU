@@ -23,18 +23,7 @@ VAR
 	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	fbMotionStage_m6 : FB_MotionStage;
 	
-	fbRunHOMS_M1L0 : FB_RunHOMS;
-
-	bExecuteCoupleYM1L0 : BOOL;
-	bExecuteDecoupleYM1L0 : BOOL;
-	bExecuteCoupleXM1L0 : BOOL;
-	bExecuteDecoupleXM1L0 : BOOL;
-
-	bGantryAlreadyCoupledYM1L0 : BOOL;
-	bGantryAlreadyCoupledXM1L0 : BOOL;
-	
-	nCurrGantryYM1L0 : LINT; // encoder counts = nm
-	nCurrGantryXM1L0 : LINT; // encoder counts = nm
+	M1L0 : DUT_HOMS;
 	
 	// M2L0
 	M7 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
@@ -55,22 +44,11 @@ VAR
 	M12 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	fbMotionStage_m12 : FB_MotionStage;
 
-	fbRunHOMS_M2L0 : FB_RunHOMS;
-
-	bExecuteCoupleYM2L0 : BOOL;
-	bExecuteDecoupleYM2L0 : BOOL;
-	bExecuteCoupleXM2L0 : BOOL;
-	bExecuteDecoupleXM2L0 : BOOL;
-
-	bGantryAlreadyCoupledYM2L0 : BOOL;
-	bGantryAlreadyCoupledXM2L0 : BOOL;
-	
-	nCurrGantryYM2L0 : LINT; // encoder counts = nm
-	nCurrGantryXM2L0 : LINT; // encoder counts = nm
+	M2L0 : DUT_HOMS;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
-fbRunHOMS_M1L0(stYup:=M1,
+M1L0.fbRunHOMS(stYup:=M1,
                stYdwn:=M2,
                stXup:=M3,
                stXdwn:=M4,
@@ -80,14 +58,14 @@ fbRunHOMS_M1L0(stYup:=M1,
                nYdwnEncRef:=GVL_M1L0.nYDWN_ENC_REF,
                nXupEncRef:=GVL_M1L0.nXUP_ENC_REF,
                nXdwnEncRef:=GVL_M1L0.nXDWN_ENC_REF,
-			   bExecuteCoupleY:=bExecuteCoupleYM1L0,
-               bExecuteCoupleX:=bExecuteCoupleXM1L0,
-			   bExecuteDecoupleY:=bExecuteDecoupleYM1L0,
-               bExecuteDecoupleX:=bExecuteDecoupleXM1L0,
-               bGantryAlreadyCoupledY=>bGantryAlreadyCoupledYM1L0,
-               bGantryAlreadyCoupledX=>bGantryAlreadyCoupledXM1L0,
-               nCurrGantryY=>nCurrGantryYM1L0,
-               nCurrGantryX=>nCurrGantryXM1L0);
+			   bExecuteCoupleY:=M1L0.bExecuteCoupleY,
+               bExecuteCoupleX:=M1L0.bExecuteCoupleX,
+			   bExecuteDecoupleY:=M1L0.bExecuteDecoupleY,
+               bExecuteDecoupleX:=M1L0.bExecuteDecoupleX,
+               bGantryAlreadyCoupledY=>M1L0.bGantryAlreadyCoupledY,
+               bGantryAlreadyCoupledX=>M1L0.bGantryAlreadyCoupledX,
+               nCurrGantryY=>M1L0.nCurrGantryY,
+               nCurrGantryX=>M1L0.nCurrGantryX);
 
 fbMotionStage_m1(stMotionStage:=M1);
 fbMotionStage_m2(stMotionStage:=M2);
@@ -97,7 +75,7 @@ fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
 // M2L0
-fbRunHOMS_M2L0(stYup:=M7,
+M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
                stXup:=M9,
                stXdwn:=M10,
@@ -107,14 +85,14 @@ fbRunHOMS_M2L0(stYup:=M7,
                nYdwnEncRef:=GVL_M2L0.nYDWN_ENC_REF,
                nXupEncRef:=GVL_M2L0.nXUP_ENC_REF,
                nXdwnEncRef:=GVL_M2L0.nXDWN_ENC_REF,
-			   bExecuteCoupleY:=bExecuteCoupleYM2L0,
-               bExecuteCoupleX:=bExecuteCoupleXM2L0,
-			   bExecuteDecoupleY:=bExecuteDecoupleYM2L0,
-               bExecuteDecoupleX:=bExecuteDecoupleXM2L0,
-               bGantryAlreadyCoupledY=>bGantryAlreadyCoupledYM2L0,
-               bGantryAlreadyCoupledX=>bGantryAlreadyCoupledXM2L0,
-               nCurrGantryY=>nCurrGantryYM2L0,
-               nCurrGantryX=>nCurrGantryXM2L0);
+			   bExecuteCoupleY:=M2L0.bExecuteCoupleY,
+               bExecuteCoupleX:=M2L0.bExecuteCoupleX,
+			   bExecuteDecoupleY:=M2L0.bExecuteDecoupleY,
+               bExecuteDecoupleX:=M2L0.bExecuteDecoupleX,
+               bGantryAlreadyCoupledY=>M2L0.bGantryAlreadyCoupledY,
+               bGantryAlreadyCoupledX=>M2L0.bGantryAlreadyCoupledX,
+               nCurrGantryY=>M2L0.nCurrGantryY,
+               nCurrGantryX=>M2L0.nCurrGantryX);
 
 fbMotionStage_m7(stMotionStage:=M7);
 fbMotionStage_m8(stMotionStage:=M8);
