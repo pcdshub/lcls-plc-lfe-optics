@@ -7,17 +7,49 @@ STRUCT
 	fbRunHOMS : FB_RunHOMS;
 
 	// Couple/Decouple motors
+	{attribute 'pytmc' := '
+		pv: COUPLE_Y
+		io: o
+	'}
 	bExecuteCoupleY : BOOL;
+	{attribute 'pytmc' := '
+		pv: DECOUPLE_Y
+		io: o
+	'}
 	bExecuteDecoupleY : BOOL;
+	{attribute 'pytmc' := '
+		pv: COUPLE_X
+		io: o
+	'}
 	bExecuteCoupleX : BOOL;
+	{attribute 'pytmc' := '
+		pv: DECOUPLE_X
+		io: o
+	'}
 	bExecuteDecoupleX : BOOL;
 
 	// Coupling status
+	{attribute 'pytmc' := '
+		pv: ALREADY_COUPLED_Y
+		io: i
+	'}
 	bGantryAlreadyCoupledY : BOOL;
+	{attribute 'pytmc' := '
+		pv: ALREADY_COUPLED_X
+		io: i
+	'}
 	bGantryAlreadyCoupledX : BOOL;
 
 	// Current gantry differences
+	{attribute 'pytmc' := '
+		pv: GANTRY_Y
+		io: i
+	'}
 	nCurrGantryY : LINT; // encoder counts = nm
+	{attribute 'pytmc' := '
+		pv: GANTRY_X
+		io: i
+	'}
 	nCurrGantryX : LINT; // encoder counts = nm
 END_STRUCT
 END_TYPE]]></Declaration>

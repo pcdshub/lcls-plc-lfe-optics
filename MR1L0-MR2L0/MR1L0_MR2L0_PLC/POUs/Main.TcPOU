@@ -7,79 +7,85 @@ VAR
 	// M1L0
 	M1 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
 	{attribute 'pytmc' := '
-		pv: M1L0_YUP
+		pv: TEST:MAIN:M1L0_YUP_AXIS
 	'}
 	fbMotionStage_m1 : FB_MotionStage;
 
 	M2 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
 	{attribute 'pytmc' := '
-		pv: M1L0_YDWN
+		pv: TEST:MAIN:M1L0_YDWN_AXIS
 	'}
 	fbMotionStage_m2 : FB_MotionStage;
 
 	M3 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
 	{attribute 'pytmc' := '
-		pv: M1L0_XUP
+		pv: TEST:MAIN:M1L0_XUP_AXIS
 	'}
 	fbMotionStage_m3 : FB_MotionStage;
 
 	M4 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
 	{attribute 'pytmc' := '
-		pv: M1L0_XDWN
+		pv: TEST:MAIN:M1L0_XDWN_AXIS
 	'}
 	fbMotionStage_m4 : FB_MotionStage;
 
 	M5 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
 	{attribute 'pytmc' := '
-		pv: M1L0_PITCH
+		pv: TEST:MAIN:M1L0_PITCH_AXIS
 	'}
 	fbMotionStage_m5 : FB_MotionStage;
 
 	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	{attribute 'pytmc' := '
-		pv: M1L0_BENDER
+		pv: TEST:MAIN:M1L0_BENDER_AXIS
 	'}
 	fbMotionStage_m6 : FB_MotionStage;
-	
+
+	{attribute 'pytmc' := '
+		pv: TEST:MAIN:M1L0
+	'}
 	M1L0 : DUT_HOMS;
-	
+
 	// M2L0
 	M7 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
 	{attribute 'pytmc' := '
-		pv: M2L0_YUP
+		pv: TEST:MAIN:M2L0_YUP_AXIS
 	'}
 	fbMotionStage_m7 : FB_MotionStage;
 
 	M8 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
 	{attribute 'pytmc' := '
-		pv: M2L0_YDWN
+		pv: TEST:MAIN:M2L0_YDWN_AXIS
 	'}
 	fbMotionStage_m8 : FB_MotionStage;
 
 	M9 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
 	{attribute 'pytmc' := '
-		pv: M2L0_XUP
+		pv: TEST:MAIN:M2L0_XUP_AXIS
 	'}
 	fbMotionStage_m9 : FB_MotionStage;
 
 	M10 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
 	{attribute 'pytmc' := '
-		pv: M2L0_XDWN
+		pv: TEST:MAIN:M2L0_XDWN_AXIS
 	'}
 	fbMotionStage_m10 : FB_MotionStage;
 
 	M11 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
 	{attribute 'pytmc' := '
-		pv: M2L0_PITCH
+		pv: TEST:MAIN:M2L0_PITCH_AXIS
 	'}
 	fbMotionStage_m11 : FB_MotionStage;
 
 	M12 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	{attribute 'pytmc' := '
-		pv: M2L0_BENDER
+		pv: TEST:MAIN:M2L0_BENDER_AXIS
 	'}
 	fbMotionStage_m12 : FB_MotionStage;
 
+	{attribute 'pytmc' := '
+		pv: TEST:MAIN:M2L0
+	'}
 	M2L0 : DUT_HOMS;
 END_VAR]]></Declaration>
     <Implementation>
