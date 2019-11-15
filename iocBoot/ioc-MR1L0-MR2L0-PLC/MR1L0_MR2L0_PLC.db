@@ -1,0 +1,175 @@
+record(bi, "TEST:MAIN:M1L0:COUPLE_Y_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleY?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M1L0:COUPLE_Y"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleY=")
+}
+
+record(bi, "TEST:MAIN:M1L0:DECOUPLE_Y_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleY?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M1L0:DECOUPLE_Y"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleY=")
+}
+
+record(bi, "TEST:MAIN:M1L0:COUPLE_X_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleX?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M1L0:COUPLE_X"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleX=")
+}
+
+record(bi, "TEST:MAIN:M1L0:DECOUPLE_X_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleX?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M1L0:DECOUPLE_X"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleX=")
+}
+
+record(bi, "TEST:MAIN:M1L0:ALREADY_COUPLED_Y_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bGantryAlreadyCoupledY?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bi, "TEST:MAIN:M1L0:ALREADY_COUPLED_X_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bGantryAlreadyCoupledX?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bi, "TEST:MAIN:M2L0:COUPLE_Y_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleY?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M2L0:COUPLE_Y"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleY=")
+}
+
+record(bi, "TEST:MAIN:M2L0:DECOUPLE_Y_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleY?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M2L0:DECOUPLE_Y"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleY=")
+}
+
+record(bi, "TEST:MAIN:M2L0:COUPLE_X_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleX?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M2L0:COUPLE_X"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleX=")
+}
+
+record(bi, "TEST:MAIN:M2L0:DECOUPLE_X_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleX?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bo, "TEST:MAIN:M2L0:DECOUPLE_X"){
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleX=")
+}
+
+record(bi, "TEST:MAIN:M2L0:ALREADY_COUPLED_Y_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bGantryAlreadyCoupledY?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
+
+record(bi, "TEST:MAIN:M2L0:ALREADY_COUPLED_X_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bGantryAlreadyCoupledX?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+}
