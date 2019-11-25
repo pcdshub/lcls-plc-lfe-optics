@@ -36,18 +36,9 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="lcls-twincat-motion">
-      <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_motion</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="lcls-twincat-optics">
-      <DefaultResolution>lcls-twincat-optics, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_optics</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -62,17 +53,17 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, * (SLAC)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="lcls-twincat-optics">
-      <Resolution>lcls-twincat-optics, * (SLAC)</Resolution>
-    </PlaceholderResolution>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="MR1L0_MR2L0_PLC.tmc">
       <SubType>Content</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryReference Include="lcls-twincat-motion,0.0.0,SLAC">
+      <Namespace>lcls_twincat_motion</Namespace>
+    </LibraryReference>
+    <LibraryReference Include="lcls-twincat-optics,0.0.0,SLAC">
+      <Namespace>lcls_twincat_optics</Namespace>
+    </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

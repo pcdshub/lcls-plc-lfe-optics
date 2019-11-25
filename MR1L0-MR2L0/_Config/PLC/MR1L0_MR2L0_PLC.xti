@@ -701,15 +701,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{D18B949B-CAFE-4567-8210-57F15A93E0F4}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{70BB3203-FD58-4F5F-8632-4DBA96020AD5}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{487819F6-8FB8-4225-86CD-704CD1E79CBD}"/>
+				<Hide GUID="{D18B949B-CAFE-4567-8210-57F15A93E0F4}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042 ]]>
 			</Comment>
@@ -731,7 +731,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{D18B949B-CAFE-4567-8210-57F15A93E0F4}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{70BB3203-FD58-4F5F-8632-4DBA96020AD5}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -748,7 +748,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{93E98A9D-0369-4CC7-95CE-46E9E74A3136}"/>
+				<Hide GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -1650,7 +1650,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1672,7 +1672,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1694,7 +1694,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1716,7 +1716,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2478,7 +2478,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2500,7 +2500,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2522,7 +2522,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2544,7 +2544,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{62E26C33-2397-4C1C-8818-820130C3A4D2}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{70703402-6E03-4D97-B637-337D013C6211}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2747,6 +2747,60 @@ External Setpoint Generation:
 	</Project>
 	<Mappings>
 		<OwnerA Name="MR1L0_MR2L0_PLC Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 19 (EK1100) - M2L0^Term 20 (EL7041-1000) - Xup">
+				<Link VarA="PlcTask Inputs^Main.M9.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M9.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 19 (EK1100) - M2L0^Term 21 (EL7041-1000) - Xdwn">
+				<Link VarA="PlcTask Inputs^Main.M10.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M10.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 19 (EK1100) - M2L0^Term 22 (EL7041-1000) - Yup">
+				<Link VarA="PlcTask Inputs^Main.M7.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M7.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 19 (EK1100) - M2L0^Term 23 (EL7041-1000) - Ydwn">
+				<Link VarA="PlcTask Inputs^Main.M8.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 19 (EK1100) - M2L0^Term 24 (EL7041-1000) - PitchCoarse">
+				<Link VarA="PlcTask Inputs^Main.M11.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M11.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 19 (EK1100) - M2L0^Term 25 (EL7041-1000) - Bender">
+				<Link VarA="PlcTask Inputs^Main.M12.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M12.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 19 (EK1100) - M2L0^Term 30 (EL1004) - STO">
+				<Link VarA="PlcTask Inputs^Main.M2L0.fbRunHOMS.bSTOEnable" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 6 (EK1100) - M1L0^Term 10 (EL7041-1000) - Ydwn">
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 6 (EK1100) - M1L0^Term 11 (EL7041-1000) - PitchCoarse">
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 6 (EK1100) - M1L0^Term 12 (EL7041-1000) - Bender">
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 6 (EK1100) - M1L0^Term 17 (EL1004) - STO">
+				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.bSTOEnable" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 6 (EK1100) - M1L0^Term 7 (EL7041-1000) - Xup">
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 6 (EK1100) - M1L0^Term 8 (EL7041-1000) - Xdwn">
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (CX1100-0004)^Term 5 (EK1122)^Term 6 (EK1100) - M1L0^Term 9 (EL7041-1000) - Yup">
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 				<Link VarA="PlcTask Inputs^Main.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^Main.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
