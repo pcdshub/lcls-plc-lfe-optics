@@ -7,7 +7,6 @@ VAR
 	// M1L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
-	{attribute 'TcNcAxis' := '.Axis:=Axis 1'}
 	{attribute 'pytmc' := '
 		pv: TEST:MAIN:M1L0_YUP_AXIS
 	'}
