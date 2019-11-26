@@ -7,6 +7,7 @@ VAR
 	// M1L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
+	{attribute 'TcNcAxis' := '.Axis:=Axis 1'}
 	{attribute 'pytmc' := '
 		pv: TEST:MAIN:M1L0_YUP_AXIS
 	'}
@@ -53,7 +54,11 @@ VAR
 	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	fbMotionStage_m6 : FB_MotionStage;
 
-	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable:=TIIB[Term 17 (EL1004) - STO]^Channel 1^Input'}
+	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable:=TIIB[Term 17 (EL1004) - STO]^Channel 1^Input;
+	                          .fbRunHOMS.stYupEnc.Count:=TIIB[Term 15 (EL5042) - Yupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stYdwnEnc.Count:=TIIB[Term 15 (EL5042) - Yupdwn]^FB Inputs Channel 2^Position;
+	                          .fbRunHOMS.stXupEnc.Count:=TIIB[Term 14 (EL5042) - Xupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stXdwnEnc.Count:=TIIB[Term 14 (EL5042) - Xupdwn]^FB Inputs Channel 2^Position'}
 	{attribute 'pytmc' := '
 		pv: TEST:MAIN:M1L0
 	'}
@@ -108,7 +113,11 @@ VAR
 	M12 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	fbMotionStage_m12 : FB_MotionStage;
 
-	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable:=TIIB[Term 30 (EL1004) - STO]^Channel 1^Input'}
+	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable:=TIIB[Term 30 (EL1004) - STO]^Channel 1^Input;
+	                          .fbRunHOMS.stYupEnc.Count:=TIIB[Term 28 (EL5042) - Yupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stYdwnEnc.Count:=TIIB[Term 28 (EL5042) - Yupdwn]^FB Inputs Channel 2^Position;
+	                          .fbRunHOMS.stXupEnc.Count:=TIIB[Term 27 (EL5042) - Xupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stXdwnEnc.Count:=TIIB[Term 27 (EL5042) - Xupdwn]^FB Inputs Channel 2^Position'}
 	{attribute 'pytmc' := '
 		pv: TEST:MAIN:M2L0
 	'}
