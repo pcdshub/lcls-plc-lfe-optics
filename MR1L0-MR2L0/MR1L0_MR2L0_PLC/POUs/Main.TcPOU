@@ -53,7 +53,8 @@ VAR
 	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	fbMotionStage_m6 : FB_MotionStage;
 
-	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable:=TIIB[Term 17 (EL1004) - STO]^Channel 1^Input;
+	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[Term 17 (EL1004) - STO]^Channel 1^Input;
+                              .fbRunHOMS.bSTOEnable2:=TIIB[Term 17 (EL1004) - STO]^Channel 2^Input;
 	                          .fbRunHOMS.stYupEnc.Count:=TIIB[Term 15 (EL5042) - Yupdwn]^FB Inputs Channel 1^Position;
 	                          .fbRunHOMS.stYdwnEnc.Count:=TIIB[Term 15 (EL5042) - Yupdwn]^FB Inputs Channel 2^Position;
 	                          .fbRunHOMS.stXupEnc.Count:=TIIB[Term 14 (EL5042) - Xupdwn]^FB Inputs Channel 1^Position;
@@ -112,7 +113,8 @@ VAR
 	M12 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
 	fbMotionStage_m12 : FB_MotionStage;
 
-	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable:=TIIB[Term 30 (EL1004) - STO]^Channel 1^Input;
+	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[Term 30 (EL1004) - STO]^Channel 1^Input;
+	                          .fbRunHOMS.bSTOEnable2:=TIIB[Term 30 (EL1004) - STO]^Channel 2^Input;
 	                          .fbRunHOMS.stYupEnc.Count:=TIIB[Term 28 (EL5042) - Yupdwn]^FB Inputs Channel 1^Position;
 	                          .fbRunHOMS.stYdwnEnc.Count:=TIIB[Term 28 (EL5042) - Yupdwn]^FB Inputs Channel 2^Position;
 	                          .fbRunHOMS.stXupEnc.Count:=TIIB[Term 27 (EL5042) - Xupdwn]^FB Inputs Channel 1^Position;
