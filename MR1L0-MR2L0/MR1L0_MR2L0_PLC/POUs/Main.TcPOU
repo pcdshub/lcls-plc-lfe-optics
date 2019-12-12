@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -68,7 +68,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR2L0:FEE:MMS:YUP
+		pv: MR2L0:LFE:MMS:YUP
 	'}
 	M7 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
 	fbMotionStage_m7 : FB_MotionStage;
