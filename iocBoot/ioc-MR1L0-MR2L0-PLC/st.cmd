@@ -1,4 +1,4 @@
-#!/reg/g/pcds/epics/R7.0.2-2.0/ioc/ads-ioc/v0.1.5/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/v0.1.5/bin/rhel7-x86_64/adsIoc
 
 < envPaths
 

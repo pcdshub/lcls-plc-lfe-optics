@@ -1,5 +1,5 @@
 epicsEnvSet("IOC","ioc-MR1L0-MR2L0-PLC")
-epicsEnvSet("TOP","/reg/g/pcds/epics/R7.0.2-2.0/ioc/ads-ioc/v0.1.5")
+epicsEnvSet("TOP","/reg/g/pcds/epics/ioc/common/ads-ioc/v0.1.5")
 epicsEnvSet("EPICS_SITE_TOP","/reg/g/pcds/epics/")
 epicsEnvSet("EPICS_MODULES","/reg/g/pcds/epics//R7.0.2-2.0/modules")
 epicsEnvSet("AUTOSAVE","/reg/g/pcds/epics//R7.0.2-2.0/modules/autosave/R5.8-2.1.0")
