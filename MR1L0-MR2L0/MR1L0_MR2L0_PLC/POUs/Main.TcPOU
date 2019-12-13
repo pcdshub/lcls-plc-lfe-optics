@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -146,6 +146,10 @@ M1L0.fbRunHOMS(stYup:=M1,
                nCurrGantryY=>M1L0.nCurrGantryY,
                nCurrGantryX=>M1L0.nCurrGantryX);
 
+// Convert nCurrGantry to um (smaller number) to read out in epics
+M1L0.nCurrGantryY_um := LINT_TO_INT(M1L0.nCurrGantryY / 1000);
+M1L0.nCurrGantryX_um := LINT_TO_INT(M1L0.nCurrGantryX / 1000);
+
 fbMotionStage_m1(stMotionStage:=M1);
 fbMotionStage_m2(stMotionStage:=M2);
 fbMotionStage_m3(stMotionStage:=M3);
@@ -172,6 +176,10 @@ M2L0.fbRunHOMS(stYup:=M7,
                bGantryAlreadyCoupledX=>M2L0.bGantryAlreadyCoupledX,
                nCurrGantryY=>M2L0.nCurrGantryY,
                nCurrGantryX=>M2L0.nCurrGantryX);
+
+// Convert nCurrGantry to um (smaller number) to read out in epics
+M2L0.nCurrGantryY_um := LINT_TO_INT(M1L0.nCurrGantryY / 1000);
+M2L0.nCurrGantryX_um := LINT_TO_INT(M1L0.nCurrGantryX / 1000);
 
 fbMotionStage_m7(stMotionStage:=M7);
 fbMotionStage_m8(stMotionStage:=M8);
