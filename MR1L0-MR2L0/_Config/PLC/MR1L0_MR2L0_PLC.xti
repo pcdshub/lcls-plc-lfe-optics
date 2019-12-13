@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.22" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
@@ -701,15 +701,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{38C3D31A-C37F-4211-B517-66A555F959EF}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{299504AA-C8F2-48DD-B1D6-D6E1F86521AB}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{C5D9E7CD-9068-4879-9284-9EC78F00DD04}"/>
+				<Hide GUID="{38C3D31A-C37F-4211-B517-66A555F959EF}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042 ]]>
 			</Comment>
@@ -722,10 +722,16 @@ External Setpoint Generation:
 				</Comment>
 				<BitSize>64</BitSize>
 				<BitOffs>0</BitOffs>
+				<Properties>
+					<Property>
+						<Name>TcAddressType</Name>
+						<Value>Input</Value>
+					</Property>
+				</Properties>
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{38C3D31A-C37F-4211-B517-66A555F959EF}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{299504AA-C8F2-48DD-B1D6-D6E1F86521AB}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -742,7 +748,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{70EF325E-64B8-4466-86DF-C9F077847C94}"/>
+				<Hide GUID="{9EEFFFEB-173B-4B32-837E-0BC93E4303C7}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -981,29 +987,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M1.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1107,29 +1104,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M2.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1233,29 +1221,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M3.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M3.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1359,29 +1338,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M4.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M4.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1485,29 +1455,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M5.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M5.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1611,29 +1572,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M6.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1702,7 +1654,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1724,7 +1676,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1746,7 +1698,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1768,7 +1720,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1867,29 +1819,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M7.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M7.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1993,29 +1936,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M8.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M8.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2119,29 +2053,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M9.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M9.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2245,29 +2170,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M10.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M10.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2371,29 +2287,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M11.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M11.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2497,29 +2404,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M12.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Main.M12.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2588,7 +2486,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2610,7 +2508,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2632,7 +2530,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2654,7 +2552,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{DB35DFF0-422A-4E20-9FB6-DE83065AAD8A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{894BBF9C-C75A-4B3E-BC4D-C3F5BBEFAE1F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2711,9 +2609,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2726,9 +2621,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2741,9 +2633,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M3.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2756,9 +2645,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M4.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2771,9 +2657,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M5.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2786,9 +2669,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M6.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2801,9 +2681,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M7.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2816,9 +2693,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M8.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2831,9 +2705,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M9.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2846,9 +2717,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M10.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2861,9 +2729,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M11.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2876,9 +2741,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M12.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
