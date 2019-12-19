@@ -58,6 +58,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <LibraryReference Include="LCLS General,2.1.0,SLAC">
+      <Namespace>LCLS_General</Namespace>
+    </LibraryReference>
     <LibraryReference Include="lcls-twincat-motion,0.0.0,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>

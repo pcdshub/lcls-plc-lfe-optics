@@ -69,6 +69,26 @@ VAR
 	nEnablePitchM1L0 : INT := 2;
 	nEnableBenderM1L0 : INT := 2;
 
+	// Basic Stats for RMS watch:
+	fbDataM1L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
+	fbDataM1L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
+	bExecuteDataStorageM1L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
+	fbStatsM1L0 : FB_BasicStats; // Calculate mean/standard deviation of ActPos
+	
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:PITCH:ACTPOSARRAY
+		io: i
+    '}
+	arrEncOutputM1L0PitchActPos : ARRAY [1..1000] OF LREAL;
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:PITCH:SETPOSARRAY
+		io: i
+	'}
+	arrEncOutputM1L0PitchSetPos : ARRAY [1..1000] OF LREAL;
+	
+	fEncMeanM1L0 : LREAL;
+	fEncStDevM1L0 : LREAL;
+
 	// M2L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
@@ -137,13 +157,7 @@ END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// NOTE: Under I/O > Device
 // M1L0
-M1L0.fbRunHOMS(nEnableModeYup:=nEnableYM1L0,
-			   nEnableModeYdwn:=nEnableYM1L0,
-			   nEnableModeXup:=nEnableXM1L0,
-			   nEnableModeXdwn:=nEnableXM1L0,
-			   nEnableModePitch:=nEnablePitchM1L0,
-			   nEnableModeBender:=nEnableBenderM1L0,
-			   stYup:=M1,
+M1L0.fbRunHOMS(stYup:=M1,
                stYdwn:=M2,
                stXup:=M3,
                stXdwn:=M4,
@@ -173,14 +187,20 @@ fbMotionStage_m4(stMotionStage:=M4);
 fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
+// Add Some Encoder Readback and Storage:
+fbDataM1L0ActPos(bExecute:=bExecuteDataStorageM1L0,
+           		 fInput:=M5.stAxisStatus.fActPosition,
+           		 arrOutput=>arrEncOutputM1L0PitchActPos);
+fbDataM1L0SetPos(bExecute:=bExecuteDataStorageM1L0,
+           		 fInput:=M5.stAxisStatus.fPosition,
+           		 arrOutput=>arrEncOutputM1L0PitchSetPos);
+fbStatsM1L0(aSignal:=arrEncOutputM1L0PitchActPos,
+	        bAlwaysCalc:=TRUE,
+		    fMean=>fEncMeanM1L0,
+		    fStDev=>fEncStDevM1L0);
+
 // M2L0
-M2L0.fbRunHOMS(nEnableModeYup:=nEnableYM2L0,
-			   nEnableModeYdwn:=nEnableYM2L0,
-			   nEnableModeXup:=nEnableXM2L0,
-			   nEnableModeXdwn:=nEnableXM2L0,
-			   nEnableModePitch:=nEnablePitchM2L0,
-			   nEnableModeBender:=nEnableBenderM2L0,
-               stYup:=M7,
+M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
                stXup:=M9,
                stXdwn:=M10,
