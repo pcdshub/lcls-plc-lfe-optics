@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -64,6 +64,11 @@ VAR
 	'}
 	M1L0 : DUT_HOMS;
 
+	nEnableYM1L0 : INT := 2;
+	nEnableXM1L0 : INT := 2;
+	nEnablePitchM1L0 : INT := 2;
+	nEnableBenderM1L0 : INT := 2;
+
 	// M2L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
@@ -123,11 +128,22 @@ VAR
 		pv: MR2L0:LFE
 	'}
 	M2L0 : DUT_HOMS;
+
+	nEnableYM2L0 : INT := 2;
+	nEnableXM2L0 : INT := 2;
+	nEnablePitchM2L0 : INT := 2;
+	nEnableBenderM2L0 : INT := 2;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// NOTE: Under I/O > Device
 // M1L0
-M1L0.fbRunHOMS(stYup:=M1,
+M1L0.fbRunHOMS(nEnableModeYup:=nEnableYM1L0,
+			   nEnableModeYdwn:=nEnableYM1L0,
+			   nEnableModeXup:=nEnableXM1L0,
+			   nEnableModeXdwn:=nEnableXM1L0,
+			   nEnableModePitch:=nEnablePitchM1L0,
+			   nEnableModeBender:=nEnableBenderM1L0,
+			   stYup:=M1,
                stYdwn:=M2,
                stXup:=M3,
                stXdwn:=M4,
@@ -158,7 +174,13 @@ fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
 // M2L0
-M2L0.fbRunHOMS(stYup:=M7,
+M2L0.fbRunHOMS(nEnableModeYup:=nEnableYM2L0,
+			   nEnableModeYdwn:=nEnableYM2L0,
+			   nEnableModeXup:=nEnableXM2L0,
+			   nEnableModeXdwn:=nEnableXM2L0,
+			   nEnableModePitch:=nEnablePitchM2L0,
+			   nEnableModeBender:=nEnableBenderM2L0,
+               stYup:=M7,
                stYdwn:=M8,
                stXup:=M9,
                stXdwn:=M10,

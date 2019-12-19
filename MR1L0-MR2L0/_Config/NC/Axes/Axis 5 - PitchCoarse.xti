@@ -1326,7 +1326,7 @@ External Setpoint Generation:
 		<AxisPara>
 			<General UnitName="urad"/>
 			<Dynamic Acceleration="390" Deceleration="390" DelayTime="0.008"/>
-			<Velo Maximum="760"/>
+			<Velo Maximum="390"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
@@ -1465,7 +1465,7 @@ Drive Status 4 (manually linked):
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
 				<PosDiffControl Range="150"/>
-				<PID PosKp="10" PosExtKp="1" DeadBandPosition="0.2"/>
+				<PID PosExtKp="1" DeadBandPosition="0.25"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
