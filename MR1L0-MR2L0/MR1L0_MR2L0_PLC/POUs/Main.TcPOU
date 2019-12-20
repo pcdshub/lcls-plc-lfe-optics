@@ -64,30 +64,34 @@ VAR
 	'}
 	M1L0 : DUT_HOMS;
 
-	nEnableYM1L0 : INT := 2;
-	nEnableXM1L0 : INT := 2;
-	nEnablePitchM1L0 : INT := 2;
-	nEnableBenderM1L0 : INT := 2;
-
 	// Basic Stats for RMS watch:
 	fbDataM1L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
 	fbDataM1L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
 	bExecuteDataStorageM1L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
+	bNewPitchEncArray : BOOL;
+
 	fbStatsM1L0 : FB_BasicStats; // Calculate mean/standard deviation of ActPos
-	
+	fEncMeanM1L0 : LREAL;
+	fEncStDevM1L0 : LREAL;
+
+	// RMS Error
+	fMaxM1L0PitchRMSError : LREAL := 0;
+	fMinM1L0PitchRMSError : LREAL := 10;
+	fCurrM1L0PitchRMSError : LREAL := 0;
+	nIndex : DINT;
+	fSum : LREAL := 0;
+	fDiff : LREAL := 0;
+
 	{attribute 'pytmc' := '
 		pv: MR1L0:LFE:MMS:PITCH:ACTPOSARRAY
 		io: i
     '}
-	arrEncOutputM1L0PitchActPos : ARRAY [1..1000] OF LREAL;
+	aEncM1L0PitchActPos : ARRAY [1..1000] OF LREAL;
 	{attribute 'pytmc' := '
 		pv: MR1L0:LFE:MMS:PITCH:SETPOSARRAY
 		io: i
 	'}
-	arrEncOutputM1L0PitchSetPos : ARRAY [1..1000] OF LREAL;
-	
-	fEncMeanM1L0 : LREAL;
-	fEncStDevM1L0 : LREAL;
+	aEncM1L0PitchSetPos : ARRAY [1..1000] OF LREAL;
 
 	// M2L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
@@ -148,15 +152,9 @@ VAR
 		pv: MR2L0:LFE
 	'}
 	M2L0 : DUT_HOMS;
-
-	nEnableYM2L0 : INT := 2;
-	nEnableXM2L0 : INT := 2;
-	nEnablePitchM2L0 : INT := 2;
-	nEnableBenderM2L0 : INT := 2;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// NOTE: Under I/O > Device
-// M1L0
+      <ST><![CDATA[// M1L0
 M1L0.fbRunHOMS(stYup:=M1,
                stYdwn:=M2,
                stXup:=M3,
@@ -190,14 +188,37 @@ fbMotionStage_m6(stMotionStage:=M6);
 // Add Some Encoder Readback and Storage:
 fbDataM1L0ActPos(bExecute:=bExecuteDataStorageM1L0,
            		 fInput:=M5.stAxisStatus.fActPosition,
-           		 arrOutput=>arrEncOutputM1L0PitchActPos);
+           		 arrOutput=>aEncM1L0PitchActPos,
+                 bNewArray=>bNewPitchEncArray);
+
 fbDataM1L0SetPos(bExecute:=bExecuteDataStorageM1L0,
-           		 fInput:=M5.stAxisStatus.fPosition,
-           		 arrOutput=>arrEncOutputM1L0PitchSetPos);
-fbStatsM1L0(aSignal:=arrEncOutputM1L0PitchActPos,
+           		 fInput:=M5.Axis.NcToPlc.SetPos,
+           		 arrOutput=>aEncM1L0PitchSetPos);
+
+fbStatsM1L0(aSignal:=aEncM1L0PitchActPos,
 	        bAlwaysCalc:=TRUE,
 		    fMean=>fEncMeanM1L0,
 		    fStDev=>fEncStDevM1L0);
+
+// Calculate RMS Error:
+If bNewPitchEncArray THEN
+	fCurrM1L0PitchRMSError := 0;
+	FOR nIndex := 1 TO 1000 DO
+		fDiff := aEncM1L0PitchActPos[nIndex] - aEncM1L0PitchSetPos[nIndex];
+		fSum := EXPT(fDiff, 2);
+		fCurrM1L0PitchRMSError := fCurrM1L0PitchRMSError + fSum;
+	END_FOR;
+	fCurrM1L0PitchRMSError := fCurrM1L0PitchRMSError / 1000.0;
+	fCurrM1L0PitchRMSError := SQRT(fCurrM1L0PitchRMSError);
+	// Watch for max:
+	IF fCurrM1L0PitchRMSError > fMaxM1L0PitchRMSError THEN
+		fMaxM1L0PitchRMSError := fCurrM1L0PitchRMSError;
+	END_IF
+	// Watch for min:
+	IF fCurrM1L0PitchRMSError < fMinM1L0PitchRMSError THEN
+		fMinM1L0PitchRMSError := fCurrM1L0PitchRMSError;
+	END_IF
+END_IF
 
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
