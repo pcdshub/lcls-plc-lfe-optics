@@ -117,7 +117,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.ACTPOS</SymbolName>
+                <SymbolName>AXES.Axis 1 - Yup.ACTPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>205</FileHandle>
@@ -299,7 +299,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.SETPOS</SymbolName>
+                <SymbolName>AXES.Axis 1 - Yup.SETPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>206</FileHandle>
@@ -510,7 +510,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.ACTVELO</SymbolName>
+                <SymbolName>AXES.Axis 1 - Yup.ACTVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>207</FileHandle>
@@ -692,7 +692,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.SETVELO</SymbolName>
+                <SymbolName>AXES.Axis 1 - Yup.SETVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>208</FileHandle>
@@ -903,7 +903,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.POSDIFF</SymbolName>
+                <SymbolName>AXES.Axis 1 - Yup.POSDIFF</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>209</FileHandle>
@@ -1114,7 +1114,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 8 - Ydwn.ActPos</SymbolName>
+                <SymbolName>AXES.Axis 2 - Ydwn.ActPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>210</FileHandle>
@@ -1296,7 +1296,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 8 - Ydwn.SetPos</SymbolName>
+                <SymbolName>AXES.Axis 2 - Ydwn.SetPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>211</FileHandle>
@@ -1507,7 +1507,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 8 - Ydwn.ActVelo</SymbolName>
+                <SymbolName>AXES.Axis 2 - Ydwn.ActVelo</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>212</FileHandle>
@@ -1689,7 +1689,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 8 - Ydwn.SetVelo</SymbolName>
+                <SymbolName>AXES.Axis 2 - Ydwn.SetVelo</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>213</FileHandle>
@@ -1900,7 +1900,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 8 - Ydwn.PosDiff</SymbolName>
+                <SymbolName>AXES.Axis 2 - Ydwn.PosDiff</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>214</FileHandle>
@@ -2080,7 +2080,7 @@
           <Name>X Gantry</Name>
           <Style>
             <Visible>true</Visible>
-            <Enabled>true</Enabled>
+            <Enabled>false</Enabled>
             <ColorValue>-13676721</ColorValue>
             <UseGrid>true</UseGrid>
             <Ticks>10</Ticks>
@@ -2107,7 +2107,7 @@
               <Acquisition>
                 <DataType>INT64</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>784512</IndexOffset>
+                <IndexOffset>849992</IndexOffset>
                 <Unit />
                 <TargetPort>851</TargetPort>
                 <VariableSize>8</VariableSize>
@@ -2291,7 +2291,7 @@
           <Name>Y Gantry</Name>
           <Style>
             <Visible>true</Visible>
-            <Enabled>false</Enabled>
+            <Enabled>true</Enabled>
             <ColorValue>-13676721</ColorValue>
             <UseGrid>true</UseGrid>
             <Ticks>10</Ticks>
@@ -2318,7 +2318,7 @@
               <Acquisition>
                 <DataType>INT64</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>784504</IndexOffset>
+                <IndexOffset>849984</IndexOffset>
                 <Unit />
                 <TargetPort>851</TargetPort>
                 <VariableSize>8</VariableSize>
@@ -2509,7 +2509,7 @@
         <HexValues>false</HexValues>
       </CursorModule>
       <Operating>
-        <DisplayWidth>540000000</DisplayWidth>
+        <DisplayWidth>5000000</DisplayWidth>
       </Operating>
       <ChartType>XT</ChartType>
       <SortPriority>-1</SortPriority>
