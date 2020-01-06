@@ -49,12 +49,12 @@ STRUCT
 		pv: GANTRY_Y
 		io: i
 	'}
-	nCurrGantryY_um : INT; // Y Gantry difference in um
+	nCurrGantryY_um : REAL; // Y Gantry difference in um
 	{attribute 'pytmc' := '
 		pv: GANTRY_X
 		io: i
 	'}
-	nCurrGantryX_um : INT; // X Gantry difference in um
+	nCurrGantryX_um : REAL; // X Gantry difference in um
 END_STRUCT
 END_TYPE]]></Declaration>
   </DUT>

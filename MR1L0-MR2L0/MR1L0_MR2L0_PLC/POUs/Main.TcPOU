@@ -93,6 +93,21 @@ VAR
 	'}
 	aEncM1L0PitchSetPos : ARRAY [1..1000] OF LREAL;
 
+	// Pitch Control
+	stM1L0PitchControl : FB_PitchControl;
+
+	// Generic Pitch Axis
+	HOMS_Pitch	    :	HOMS_PitchMechanism := (
+		ReqPosLimHi := 310,
+		ReqPosLimLo := -410,
+		diEncPosLimHi := 11269000,
+		diEncPosLimLo := 10859000
+	);
+
+	// Expert mode permits direct access to individual acutators.
+	ExpertMode	:	BOOL := FALSE;
+	PitchManualMode: BOOL := FALSE;
+
 	// M2L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
@@ -175,8 +190,8 @@ M1L0.fbRunHOMS(stYup:=M1,
                nCurrGantryX=>M1L0.nCurrGantryX);
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
-M1L0.nCurrGantryY_um := LINT_TO_INT(M1L0.nCurrGantryY / 1000);
-M1L0.nCurrGantryX_um := LINT_TO_INT(M1L0.nCurrGantryX / 1000);
+M1L0.nCurrGantryY_um := LINT_TO_REAL(M1L0.nCurrGantryY) / 1000.0;
+M1L0.nCurrGantryX_um := LINT_TO_REAL(M1L0.nCurrGantryX) / 1000.0;
 
 fbMotionStage_m1(stMotionStage:=M1);
 fbMotionStage_m2(stMotionStage:=M2);
@@ -220,6 +235,13 @@ If bNewPitchEncArray THEN
 	END_IF
 END_IF
 
+// Pitch Control
+stM1L0PitchControl(Pitch:=HOMS_Pitch,
+                   DirectPiezoMode:=(ExpertMode AND PitchManualMode),
+                   q_xDone=>HOMS_Pitch.Axis.bDone,
+                   q_xBusy => HOMS_Pitch.Axis.bBusy);
+
+
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
@@ -241,8 +263,8 @@ M2L0.fbRunHOMS(stYup:=M7,
                nCurrGantryX=>M2L0.nCurrGantryX);
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
-M2L0.nCurrGantryY_um := LINT_TO_INT(M2L0.nCurrGantryY / 1000);
-M2L0.nCurrGantryX_um := LINT_TO_INT(M2L0.nCurrGantryX / 1000);
+M2L0.nCurrGantryY_um := LINT_TO_REAL(M2L0.nCurrGantryY) / 1000;
+M2L0.nCurrGantryX_um := LINT_TO_INT(M2L0.nCurrGantryX) / 1000;
 
 fbMotionStage_m7(stMotionStage:=M7);
 fbMotionStage_m8(stMotionStage:=M8);
