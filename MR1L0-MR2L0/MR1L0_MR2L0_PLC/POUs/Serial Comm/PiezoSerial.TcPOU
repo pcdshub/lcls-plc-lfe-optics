@@ -15,7 +15,7 @@ END_VAR
 	fbE621SerialDriverM1.i_xExecute := TRUE;
 	fbE621SerialDriverM1.i_xExecute R= fbE621SerialDriverM1.q_xDone;
 	fbE621SerialDriverM1(
-		iq_stPiezoAxis:= HOMS_Pitch.Piezo, 
+		iq_stPiezoAxis:= M1L0_Pitch.Piezo, 
 		iq_stSerialRXBuffer:= Serial_P1_SerialRXBuffer, 
 		iq_stSerialTXBuffer:= Serial_P1_SerialTXBuffer);]]></ST>
     </Implementation>

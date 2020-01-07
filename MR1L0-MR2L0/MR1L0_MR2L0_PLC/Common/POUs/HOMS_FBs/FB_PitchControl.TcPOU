@@ -96,10 +96,10 @@ The piezo mechanism can actuate ~ 180urad or 90um.
 
 *)
 
-lrActPos := Pitch.Stepper.stAxis.NcToPlc.ActPos;
+lrActPos := M5.Axis.NcToPlc.ActPos;
 nCommand  := 3;
 (* If we hit a limit during a move, we need to change the setpoint *)
-ftLimitSwitch(CLK:=Pitch.Stepper.xHiLS AND Pitch.Stepper.xLoLS);
+ftLimitSwitch(CLK:=M5.bAllForwardEnable AND M5.bAllBackwardEnable);
 
 //Manual mode switching logic
 /////////////////////////////////////
@@ -112,7 +112,7 @@ ftLimitSwitch(CLK:=Pitch.Stepper.xHiLS AND Pitch.Stepper.xLoLS);
 /////////////////////////////////////////////
 	rtTweakFwd(CLK:=Pitch.Axis.bTwkFwd);
 	rtTweakBwd(CLK:=Pitch.Axis.bTwkBwd);
-	rtExecute(CLK:=NOT Pitch.Stepper.stAxis.Status.NotMoving);
+	rtExecute(CLK:=NOT M5.bDone);
 	
 //Tweak Forward
 /////////////////////
@@ -222,7 +222,7 @@ CASE PC_State OF
 		IF tonPiezoSettled.Q THEN
 			//Piezo has moved to 50% position, finish with the stepper
 			PC_State := PCM_CoarseMove;
-			Pitch.Stepper.xEnable := TRUE;
+			M5.bEnable := TRUE;
 			tonPiezoSettled.IN := FALSE;
 		END_IF
 		
@@ -243,23 +243,23 @@ CASE PC_State OF
 			
 			xLimitHit	:= TRUE; //set this flag here.
 		END_IF
-		tonStepperHold.IN := WithinRange(ValA:=LREAL_TO_REAL(lrActPos), Center:=rSetpoint, Range:=Pitch.Stepper.rStepperDmovRange, Offset:=0);
+		tonStepperHold.IN := WithinRange(ValA:=LREAL_TO_REAL(lrActPos), Center:=rSetpoint, Range:=2, Offset:=0); // range in urad
 		tonStepperHold(); //call this here to reset Q just below on first cycle
 		//If the coarse move is complete, finish position correction with the piezo
 		IF tonStepperHold.Q  OR ftLimitSwitch.Q THEN
 			PC_State := PCM_CoarseMoveCleanup;
-		ELSIF Pitch.Stepper.stStatus.bError OR Drive.bError OR mcSmoothMover.Error THEN
-			Drive.bExecute := FALSE;
+		ELSIF M5.bError OR mcSmoothMover.Error THEN
+			M5.bExecute := FALSE;
 			mcSmoothMover.Enable := FALSE;
-			Pitch.Stepper.xEnable := FALSE;
+			M5.bEnable := FALSE;
 			PC_State := PCM_StepperError;
 			//Stepper fb has encountered an error, pass a message to the logger
-			IF Pitch.Stepper.stStatus.bError THEN
+			IF M5.bError THEN
 				fbFormatString.sFormat := 'Coarse move error, stepper err id %d';
-				fbFormatString.arg1 := F_UDINT(Pitch.Stepper.stStatus.nErrorId);
-			ELSIF Drive.bError THEN
+				fbFormatString.arg1 := F_UDINT(M5.Axis.Status.ErrorID);
+			ELSIF M5.bError THEN
 				fbFormatString.sFormat := 'Coarse move error, drive err id %d';
-				fbFormatString.arg1 := F_UDINT(Drive.nErrorId);
+				fbFormatString.arg1 := F_UDINT(M5.Axis.Status.ErrorId);
 			ELSIF mcSmoothMover.Error THEN
 				fbFormatString.sFormat := 'Coarse move error, smoothmover error';
 			END_IF
@@ -267,14 +267,14 @@ CASE PC_State OF
 		END_IF
 		
 	PCM_CoarseMoveCleanup:
-		Drive.bExecute := FALSE;
+		M5.bExecute := FALSE;
 		//Calling Drive with execute false will halt the axis
 		//Once halted, the axis will be in standstill
 		// then we can disble it without error.
-		IF Pitch.Stepper.stAxis.Status.StandStill THEN
-			Pitch.Stepper.xEnable := FALSE;
+		IF M5.bDone THEN
+			M5.bEnable := FALSE;
 		END_IF
-		IF Pitch.Stepper.stAxis.Status.Disabled THEN
+		IF M5.Axis.Status.Disabled THEN
 			rPrevStepperPos := mcSmoothMover.ReqAbsPos;
 			bCoarseMoveComplete	:= TRUE;
 			PC_State := PCM_FineMove;
@@ -298,9 +298,9 @@ CASE PC_State OF
 		//We may transition to this state from anywhere, so we need to clean up and move to done
 		//Halt the stepper
 		//If trans. from FineMove, stepper is already disabled
-		Drive.bExecute := FALSE;
-		IF Pitch.Stepper.stAxis.Status.Standstill OR Pitch.Stepper.stAxis.Status.Disabled THEN
-			Pitch.Stepper.xEnable := FALSE;
+		M5.bExecute := FALSE;		
+		IF M5.bDone OR M5.Axis.Status.Disabled THEN
+			M5.bEnable := FALSE;
 			//If the piezo control is done, we haven't started the fine move yet, so we can
 			// record the current position as the prev. achv. stepper position.
 			IF fbPiezoControl.xDone THEN
@@ -321,7 +321,7 @@ CASE PC_State OF
 		//Move back to standby
 		PC_State := PCM_Standby;
 	PCM_StepperError:
-		Drive.bReset := TRUE; // set false again in PCM_Init
+		M5.bReset := TRUE; // set false again in PCM_Init
 		q_xBusy := FALSE;
 		PC_State := PCM_Init; 
 	PCM_PiezoError:
@@ -346,8 +346,8 @@ tonPiezoSettled();
 tonStepperHold();
 
 fbPiezoControl(iq_Piezo:=Pitch.Piezo,
-	Enable_Positive:=Pitch.Stepper.xHiLS,
-	Enable_Negative:=Pitch.Stepper.xLoLS
+	Enable_Positive:=M5.bAllForwardEnable,
+	Enable_Negative:=M5.bAllBackwardEnable
 );
 ]]></ST>
     </Implementation>
@@ -372,18 +372,7 @@ END_IF]]></ST>
       <Implementation>
         <ST><![CDATA[//Give control of the axis to the Drive function block
 ///////////////////////////////////////////////////////
-Drive(bEnable  := Pitch.Stepper.xEnable,
-	  Axis     := Pitch.Stepper.stAxis,
-	  nCommand := nCommand,
-	  fAcceleration := Pitch.Stepper.fAcceleration,
-	  fDeceleration := Pitch.Stepper.fDeceleration,
-	  fVelocity     := Pitch.Stepper.fVelocity,
-	  bLimitFwd     := Pitch.Stepper.xHiLS,
-	  bLimitBwd     := Pitch.Stepper.xLoLS,
-	  bDone	=>  Pitch.Stepper.bDone,
-	  bBusy => Pitch.Stepper.bBusy,
-	  stStepperStatus => Pitch.Stepper.stStatus
-	  );
+Drive(stMotionStage:=M5);
 
 //Reset Execute to wait for next motion command
 ////////////////////////////////////////////////
@@ -394,8 +383,8 @@ Drive(bEnable  := Pitch.Stepper.xEnable,
 (* You can control an axis with MC blocks other than those in PTP or drive.
 We just use the drive/PTP block to initialize the axis and manage the limit
 switch logic *)
-mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
-	Velocity:=Pitch.Stepper.fVelocity);
+mcSmoothMover(Axis:=M5.Axis,
+	Velocity:=M5.fVelocity);
 
 ]]></ST>
       </Implementation>

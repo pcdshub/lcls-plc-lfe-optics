@@ -51,7 +51,7 @@ VAR
 	// Expert mode permits direct access to individual acutators.
 	ExpertMode	:	BOOL := FALSE;
 	PitchManualMode: BOOL := FALSE;
-
+(*
 	// M2L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
@@ -111,6 +111,7 @@ VAR
 		pv: MR2L0:LFE
 	'}
 	M2L0 : DUT_HOMS;
+*)
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
@@ -185,7 +186,7 @@ stM1L0PitchControl(Pitch:=M1L0_Pitch,
                    q_xDone=>M1L0_Pitch.Axis.bDone,
                    q_xBusy=>M1L0_Pitch.Axis.bBusy);
 
-
+(*
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
@@ -215,7 +216,8 @@ fbMotionStage_m8(stMotionStage:=M8);
 fbMotionStage_m9(stMotionStage:=M9);
 fbMotionStage_m10(stMotionStage:=M10);
 fbMotionStage_m11(stMotionStage:=M11);
-fbMotionStage_m12(stMotionStage:=M12);]]></ST>
+fbMotionStage_m12(stMotionStage:=M12);
+*)]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
