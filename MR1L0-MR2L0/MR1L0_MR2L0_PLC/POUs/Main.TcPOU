@@ -46,7 +46,7 @@ VAR
 	aEncM1L0PitchSetPos : ARRAY [1..1000] OF LREAL;
 
 	// Pitch Control
-	stM1L0PitchControl : FB_PitchControl;
+	fbM1L0PitchControl : FB_PitchControl;
 
 	// Expert mode permits direct access to individual acutators.
 	ExpertMode	:	BOOL := FALSE;
@@ -181,7 +181,7 @@ If bNewPitchEncArray THEN
 END_IF
 
 // Pitch Control
-stM1L0PitchControl(Pitch:=M1L0_Pitch,
+fbM1L0PitchControl(Pitch:=M1L0_Pitch,
                    DirectPiezoMode:=(ExpertMode AND PitchManualMode),
                    q_xDone=>M1L0_Pitch.Axis.bDone,
                    q_xBusy=>M1L0_Pitch.Axis.bBusy);
