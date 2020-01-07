@@ -33,6 +33,9 @@
     <Compile Include="Common\DUTs\ST_PiezoAxis.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialDriver.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Common\POUs\Helpers\MC_SmoothMover.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +51,12 @@
     <Compile Include="DUTs\DUT_HOMS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_COM_Buffers.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\GVL_Devices.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL_M1L0.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -56,10 +65,19 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\GVL_SerialIO.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Main.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Serial Comm\PiezoSerial.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Serial Comm\P_Serial_Com.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -72,6 +90,7 @@
     <Folder Include="GVLs" />
     <Folder Include="Common" />
     <Folder Include="POUs" />
+    <Folder Include="POUs\Serial Comm" />
   </ItemGroup>
   <ItemGroup>
     <PlaceholderReference Include="Tc2_ControllerToolbox">
@@ -81,6 +100,10 @@
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_MC2</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_SerialCom">
+      <DefaultResolution>Tc2_SerialCom, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_SerialCom</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
