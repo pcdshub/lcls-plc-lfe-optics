@@ -135,8 +135,8 @@ M1L0.fbRunHOMS(stYup:=M1,
                nCurrGantryX=>M1L0.nCurrGantryX);
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
-M1L0.nCurrGantryY_um := LINT_TO_REAL(M1L0.nCurrGantryY) / 1000.0;
-M1L0.nCurrGantryX_um := LINT_TO_REAL(M1L0.nCurrGantryX) / 1000.0;
+M1L0.fCurrGantryY_um := LINT_TO_REAL(M1L0.nCurrGantryY) / 1000.0;
+M1L0.fCurrGantryX_um := LINT_TO_REAL(M1L0.nCurrGantryX) / 1000.0;
 
 fbMotionStage_m1(stMotionStage:=M1);
 fbMotionStage_m2(stMotionStage:=M2);
@@ -208,8 +208,8 @@ M2L0.fbRunHOMS(stYup:=M7,
                nCurrGantryX=>M2L0.nCurrGantryX);
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
-M2L0.nCurrGantryY_um := LINT_TO_REAL(M2L0.nCurrGantryY) / 1000;
-M2L0.nCurrGantryX_um := LINT_TO_REAL(M2L0.nCurrGantryX) / 1000;
+M2L0.fCurrGantryY_um := LINT_TO_REAL(M2L0.nCurrGantryY) / 1000;
+M2L0.fCurrGantryX_um := LINT_TO_REAL(M2L0.nCurrGantryX) / 1000;
 
 fbMotionStage_m7(stMotionStage:=M7);
 fbMotionStage_m8(stMotionStage:=M8);

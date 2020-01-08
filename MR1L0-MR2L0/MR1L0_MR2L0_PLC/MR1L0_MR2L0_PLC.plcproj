@@ -15,49 +15,13 @@
     <LibraryReferences>{9c3eb579-952b-48e6-8012-6deca8aa13af}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common\DUTs\E_PiezoControl.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\DUTs\E_PitchControl.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\DUTs\HOMS_PitchMechanism.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\DUTs\ST_AbstractAxis.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\DUTs\ST_HOMSStepper.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\DUTs\ST_PiezoAxis.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialDriver.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialTransaction.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\POUs\Helpers\MC_SmoothMover.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\POUs\Helpers\WithinRange.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Common\POUs\HOMS_FBs\FB_PiezoControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\POUs\HOMS_FBs\FB_PitchControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\DUT_HOMS.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GVLs\GVL_COM_Buffers.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GVLs\GVL_Constants.TcGVL">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL_Devices.TcGVL">
@@ -94,10 +58,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common\DUTs" />
     <Folder Include="Common\POUs" />
     <Folder Include="Common\POUs\HOMS_FBs" />
-    <Folder Include="Common\POUs\Helpers" />
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="Common" />
