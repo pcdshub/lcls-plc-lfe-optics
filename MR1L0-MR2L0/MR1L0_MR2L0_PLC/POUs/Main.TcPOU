@@ -5,6 +5,54 @@
 VAR
 	// Axes for each system
 	// M1L0
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:YUP
+	'}
+	M1 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
+	fbMotionStage_m1 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 10 (EL7041-1000) - Ydwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[Term 10 (EL7041-1000) - Ydwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:YDWN
+	'}
+	M2 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
+	fbMotionStage_m2 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 7 (EL7041-1000) - Xup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[Term 7 (EL7041-1000) - Xup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:XUP
+	'}
+	M3 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
+	fbMotionStage_m3 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 8 (EL7041-1000) - Xdwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[Term 8 (EL7041-1000) - Xdwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:XDWN
+	'}
+	M4 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
+	fbMotionStage_m4 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 11 (EL7041-1000) - PitchCoarse]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[Term 11 (EL7041-1000) - PitchCoarse]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:PITCH
+	'}
+	M5 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
+	fbMotionStage_m5 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 12 (EL7041-1000) - Bender]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[Term 12 (EL7041-1000) - Bender]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:BENDER
+	'}
+	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
+	fbMotionStage_m6 : FB_MotionStage;
+
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[Term 17 (EL1004) - STO]^Channel 1^Input;
                               .fbRunHOMS.bSTOEnable2:=TIIB[Term 17 (EL1004) - STO]^Channel 2^Input;
 	                          .fbRunHOMS.stYupEnc.Count:=TIIB[Term 15 (EL5042) - Yupdwn]^FB Inputs Channel 1^Position;
@@ -51,7 +99,7 @@ VAR
 	// Expert mode permits direct access to individual acutators.
 	ExpertMode	:	BOOL := FALSE;
 	PitchManualMode: BOOL := FALSE;
-(*
+
 	// M2L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
@@ -111,7 +159,6 @@ VAR
 		pv: MR2L0:LFE
 	'}
 	M2L0 : DUT_HOMS;
-*)
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
@@ -182,11 +229,11 @@ END_IF
 
 // Pitch Control
 fbM1L0PitchControl(Pitch:=M1L0_Pitch,
+				   Pitch_PLC_VAR:=M5,
                    DirectPiezoMode:=(ExpertMode AND PitchManualMode),
                    q_xDone=>M1L0_Pitch.Axis.bDone,
                    q_xBusy=>M1L0_Pitch.Axis.bBusy);
 
-(*
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
@@ -216,8 +263,7 @@ fbMotionStage_m8(stMotionStage:=M8);
 fbMotionStage_m9(stMotionStage:=M9);
 fbMotionStage_m10(stMotionStage:=M10);
 fbMotionStage_m11(stMotionStage:=M11);
-fbMotionStage_m12(stMotionStage:=M12);
-*)]]></ST>
+fbMotionStage_m12(stMotionStage:=M12);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

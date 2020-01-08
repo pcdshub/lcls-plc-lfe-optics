@@ -15,12 +15,6 @@
     <LibraryReferences>{9c3eb579-952b-48e6-8012-6deca8aa13af}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common\POUs\HOMS_FBs\FB_PiezoControl.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\POUs\HOMS_FBs\FB_PitchControl.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GVLs\GVL_COM_Buffers.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -58,11 +52,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common\POUs" />
-    <Folder Include="Common\POUs\HOMS_FBs" />
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="Common" />
     <Folder Include="POUs" />
     <Folder Include="POUs\Serial Comm" />
   </ItemGroup>

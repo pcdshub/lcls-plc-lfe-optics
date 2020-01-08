@@ -2,56 +2,17 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
   <GVL Name="GVL_Devices" Id="{cb7cf638-cc80-4f58-a532-470704faedf8}">
     <Declaration><![CDATA[VAR_GLOBAL
-	// Axes for MR1L0
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[Term 9 (EL7041-1000) - Yup]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:YUP
-	'}
-	M1 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
-	fbMotionStage_m1 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 10 (EL7041-1000) - Ydwn]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[Term 10 (EL7041-1000) - Ydwn]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:YDWN
-	'}
-	M2 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
-	fbMotionStage_m2 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 7 (EL7041-1000) - Xup]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[Term 7 (EL7041-1000) - Xup]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:XUP
-	'}
-	M3 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
-	fbMotionStage_m3 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 8 (EL7041-1000) - Xdwn]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[Term 8 (EL7041-1000) - Xdwn]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:XDWN
-	'}
-	M4 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
-	fbMotionStage_m4 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 11 (EL7041-1000) - PitchCoarse]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[Term 11 (EL7041-1000) - PitchCoarse]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:PITCH
-	'}
-	M5 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
-	fbMotionStage_m5 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 12 (EL7041-1000) - Bender]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[Term 12 (EL7041-1000) - Bender]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:BENDER
-	'}
-	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
-	fbMotionStage_m6 : FB_MotionStage;
-
+	// NOTE: Following parameters are bogus, make sure to add real ones...
+	// M1L0
 	M1L0_Pitch	    :	HOMS_PitchMechanism := (
+		ReqPosLimHi := 310,
+		ReqPosLimLo := -410,
+		diEncPosLimHi := 11269000,
+		diEncPosLimLo := 10859000
+	);
+
+	// M2L0
+	M2L0_Pitch	    :	HOMS_PitchMechanism := (
 		ReqPosLimHi := 310,
 		ReqPosLimLo := -410,
 		diEncPosLimHi := 11269000,
