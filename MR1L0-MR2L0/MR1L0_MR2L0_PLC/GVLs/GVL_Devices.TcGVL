@@ -5,18 +5,18 @@
 	// NOTE: Following parameters are bogus, make sure to add real ones...
 	// M1L0
 	M1L0_Pitch	    :	HOMS_PitchMechanism := (
-		ReqPosLimHi := 310,
-		ReqPosLimLo := -410,
-		diEncPosLimHi := 11269000,
-		diEncPosLimLo := 10859000
+		ReqPosLimHi := 21850,
+		ReqPosLimLo := 14800,
+		diEncPosLimHi := 11256000,
+		diEncPosLimLo := 7561000
 	);
 
 	// M2L0
 	M2L0_Pitch	    :	HOMS_PitchMechanism := (
-		ReqPosLimHi := 310,
-		ReqPosLimLo := -410,
-		diEncPosLimHi := 11269000,
-		diEncPosLimLo := 10859000
+		ReqPosLimHi := 20000,
+		ReqPosLimLo := 16500,
+		diEncPosLimHi := 10722213,
+		diEncPosLimLo := 8208000
 	);
 END_VAR]]></Declaration>
   </GVL>

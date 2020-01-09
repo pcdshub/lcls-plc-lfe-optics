@@ -68,7 +68,7 @@ VAR
 	fbDataM1L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
 	fbDataM1L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
 	bExecuteDataStorageM1L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
-	bNewPitchEncArray : BOOL;
+	bNewPitchEncArrayM1L0 : BOOL;
 
 	fbStatsM1L0 : FB_BasicStats; // Calculate mean/standard deviation of ActPos
 	fEncMeanM1L0 : LREAL;
@@ -78,9 +78,9 @@ VAR
 	fMaxM1L0PitchRMSError : LREAL := 0;
 	fMinM1L0PitchRMSError : LREAL := 10;
 	fCurrM1L0PitchRMSError : LREAL := 0;
-	nIndex : DINT;
-	fSum : LREAL := 0;
-	fDiff : LREAL := 0;
+	nIndexM1L0 : DINT;
+	fSumM1L0 : LREAL := 0;
+	fDiffM1L0 : LREAL := 0;
 
 	{attribute 'pytmc' := '
 		pv: MR1L0:LFE:MMS:PITCH:ACTPOSARRAY
@@ -97,8 +97,8 @@ VAR
 	fbM1L0PitchControl : FB_PitchControl;
 
 	// Expert mode permits direct access to individual acutators.
-	ExpertMode	:	BOOL := FALSE;
-	PitchManualMode: BOOL := FALSE;
+	ExpertModeM1L0	:	BOOL := FALSE;
+	PitchManualModeM1L0: BOOL := FALSE;
 
 	// M2L0
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[Term 22 (EL7041-1000) - Yup]^STM Status^Status^Digital input 1;
@@ -159,6 +159,42 @@ VAR
 		pv: MR2L0:LFE
 	'}
 	M2L0 : DUT_HOMS;
+
+	// Basic Stats for RMS watch:
+	fbDataM2L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
+	fbDataM2L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
+	bExecuteDataStorageM2L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
+	bNewPitchEncArrayM2L0 : BOOL;
+
+	fbStatsM2L0 : FB_BasicStats; // Calculate mean/standard deviation of ActPos
+	fEncMeanM2L0 : LREAL;
+	fEncStDevM2L0 : LREAL;
+
+	// RMS Error
+	fMaxM2L0PitchRMSError : LREAL := 0;
+	fMinM2L0PitchRMSError : LREAL := 10;
+	fCurrM2L0PitchRMSError : LREAL := 0;
+	nIndexM2L0 : DINT;
+	fSumM2L0 : LREAL := 0;
+	fDiffM2L0 : LREAL := 0;
+
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:PITCH:ACTPOSARRAY
+		io: i
+    '}
+	aEncM2L0PitchActPos : ARRAY [1..1000] OF LREAL;
+	{attribute 'pytmc' := '
+		pv: MR1L0:LFE:MMS:PITCH:SETPOSARRAY
+		io: i
+	'}
+	aEncM2L0PitchSetPos : ARRAY [1..1000] OF LREAL;
+	
+	// Pitch Control
+	fbM2L0PitchControl : FB_PitchControl;
+
+	// Expert mode permits direct access to individual acutators.
+	ExpertModeM2L0	:	BOOL := FALSE;
+	PitchManualModeM2L0 : BOOL := FALSE;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
@@ -196,7 +232,7 @@ fbMotionStage_m6(stMotionStage:=M6);
 fbDataM1L0ActPos(bExecute:=bExecuteDataStorageM1L0,
            		 fInput:=M5.stAxisStatus.fActPosition,
            		 arrOutput=>aEncM1L0PitchActPos,
-                 bNewArray=>bNewPitchEncArray);
+                 bNewArray=>bNewPitchEncArrayM1L0);
 
 fbDataM1L0SetPos(bExecute:=bExecuteDataStorageM1L0,
            		 fInput:=M5.Axis.NcToPlc.SetPos,
@@ -208,12 +244,12 @@ fbStatsM1L0(aSignal:=aEncM1L0PitchActPos,
 		    fStDev=>fEncStDevM1L0);
 
 // Calculate RMS Error:
-If bNewPitchEncArray THEN
+If bNewPitchEncArrayM1L0 THEN
 	fCurrM1L0PitchRMSError := 0;
-	FOR nIndex := 1 TO 1000 DO
-		fDiff := aEncM1L0PitchActPos[nIndex] - aEncM1L0PitchSetPos[nIndex];
-		fSum := EXPT(fDiff, 2);
-		fCurrM1L0PitchRMSError := fCurrM1L0PitchRMSError + fSum;
+	FOR nIndexM1L0 := 1 TO 1000 DO
+		fDiffM1L0 := aEncM1L0PitchActPos[nIndexM1L0] - aEncM1L0PitchSetPos[nIndexM1L0];
+		fSumM1L0 := EXPT(fDiffM1L0, 2);
+		fCurrM1L0PitchRMSError := fCurrM1L0PitchRMSError + fSumM1L0;
 	END_FOR;
 	fCurrM1L0PitchRMSError := fCurrM1L0PitchRMSError / 1000.0;
 	fCurrM1L0PitchRMSError := SQRT(fCurrM1L0PitchRMSError);
@@ -230,7 +266,7 @@ END_IF
 // Pitch Control
 fbM1L0PitchControl(Pitch:=M1L0_Pitch,
 				   Pitch_PLC_VAR:=M5,
-                   DirectPiezoMode:=(ExpertMode AND PitchManualMode),
+                   DirectPiezoMode:=(ExpertModeM1L0 AND PitchManualModeM1L0),
                    q_xDone=>M1L0_Pitch.Axis.bDone,
                    q_xBusy=>M1L0_Pitch.Axis.bBusy);
 
@@ -263,7 +299,49 @@ fbMotionStage_m8(stMotionStage:=M8);
 fbMotionStage_m9(stMotionStage:=M9);
 fbMotionStage_m10(stMotionStage:=M10);
 fbMotionStage_m11(stMotionStage:=M11);
-fbMotionStage_m12(stMotionStage:=M12);]]></ST>
+fbMotionStage_m12(stMotionStage:=M12);
+
+// Add Some Encoder Readback and Storage:
+fbDataM2L0ActPos(bExecute:=bExecuteDataStorageM2L0,
+           		 fInput:=M11.stAxisStatus.fActPosition,
+           		 arrOutput=>aEncM2L0PitchActPos,
+                 bNewArray=>bNewPitchEncArrayM2L0);
+
+fbDataM1L0SetPos(bExecute:=bExecuteDataStorageM2L0,
+           		 fInput:=M11.Axis.NcToPlc.SetPos,
+           		 arrOutput=>aEncM2L0PitchSetPos);
+
+fbStatsM1L0(aSignal:=aEncM2L0PitchActPos,
+	        bAlwaysCalc:=TRUE,
+		    fMean=>fEncMeanM2L0,
+		    fStDev=>fEncStDevM2L0);
+
+// Calculate RMS Error:
+If bNewPitchEncArrayM2L0 THEN
+	fCurrM2L0PitchRMSError := 0;
+	FOR nIndexM2L0 := 1 TO 1000 DO
+		fDiffM2L0 := aEncM2L0PitchActPos[nIndexM2L0] - aEncM1L0PitchSetPos[nIndexM2L0];
+		fSumM2L0 := EXPT(fDiffM2L0, 2);
+		fCurrM2L0PitchRMSError := fCurrM2L0PitchRMSError + fSumM2L0;
+	END_FOR;
+	fCurrM2L0PitchRMSError := fCurrM2L0PitchRMSError / 1000.0;
+	fCurrM2L0PitchRMSError := SQRT(fCurrM2L0PitchRMSError);
+	// Watch for max:
+	IF fCurrM2L0PitchRMSError > fMaxM2L0PitchRMSError THEN
+		fMaxM2L0PitchRMSError := fCurrM2L0PitchRMSError;
+	END_IF
+	// Watch for min:
+	IF fCurrM2L0PitchRMSError < fMinM2L0PitchRMSError THEN
+		fMinM2L0PitchRMSError := fCurrM2L0PitchRMSError;
+	END_IF
+END_IF
+
+// Pitch Control
+fbM2L0PitchControl(Pitch:=M2L0_Pitch,
+				   Pitch_PLC_VAR:=M11,
+                   DirectPiezoMode:=(ExpertModeM2L0 AND PitchManualModeM2L0),
+                   q_xDone=>M2L0_Pitch.Axis.bDone,
+                   q_xBusy=>M2L0_Pitch.Axis.bBusy);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
