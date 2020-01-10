@@ -117,7 +117,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 1 - Yup.ACTPOS</SymbolName>
+                <SymbolName>AXES.Axis 11 - PitchCoarse.ACTPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>205</FileHandle>
@@ -299,7 +299,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 1 - Yup.SETPOS</SymbolName>
+                <SymbolName>AXES.Axis 11 - PitchCoarse.SETPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>206</FileHandle>
@@ -510,7 +510,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 1 - Yup.ACTVELO</SymbolName>
+                <SymbolName>AXES.Axis 11 - PitchCoarse.ACTVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>207</FileHandle>
@@ -692,7 +692,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 1 - Yup.SETVELO</SymbolName>
+                <SymbolName>AXES.Axis 11 - PitchCoarse.SETVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>208</FileHandle>
@@ -903,7 +903,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 1 - Yup.POSDIFF</SymbolName>
+                <SymbolName>AXES.Axis 11 - PitchCoarse.POSDIFF</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>209</FileHandle>
@@ -2291,7 +2291,7 @@
           <Name>Y Gantry</Name>
           <Style>
             <Visible>true</Visible>
-            <Enabled>true</Enabled>
+            <Enabled>false</Enabled>
             <ColorValue>-13676721</ColorValue>
             <UseGrid>true</UseGrid>
             <Ticks>10</Ticks>

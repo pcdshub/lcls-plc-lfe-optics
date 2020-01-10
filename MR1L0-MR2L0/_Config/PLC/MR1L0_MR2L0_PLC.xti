@@ -775,15 +775,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{8ED66DD4-1D09-4F10-B6AB-D270F93955E7}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{4E12B3C8-BB62-4BC2-B8B0-E12DA0232964}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{693F4937-BE5E-467A-986E-78AF10AE527F}"/>
+				<Hide GUID="{8ED66DD4-1D09-4F10-B6AB-D270F93955E7}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042 ]]>
 			</Comment>
@@ -799,7 +799,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{8ED66DD4-1D09-4F10-B6AB-D270F93955E7}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{4E12B3C8-BB62-4BC2-B8B0-E12DA0232964}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -816,7 +816,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{A31D3D4D-9A1E-4762-8CFF-1A7369683A8D}"/>
+				<Hide GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -1812,7 +1812,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1834,7 +1834,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1856,7 +1856,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1878,7 +1878,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M1L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2747,7 +2747,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2769,7 +2769,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2791,7 +2791,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2813,7 +2813,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{A5B69C58-23FD-4E13-9D07-89171B4C0625}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{DD25FCD4-EDDD-4D8E-82FB-0CB79675C4D4}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2915,14 +2915,14 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
-					<Type>DINT</Type>
+					<Type>LINT</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.M2L0_Pitch.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
-					<Type>DINT</Type>
+					<Type>LINT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -3118,8 +3118,8 @@ External Setpoint Generation:
 			</Vars>
 			<TaskPouOids>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
-				<TaskPouOid Prio="20" OTCID="#x08502003"/>
 				<TaskPouOid Prio="3" OTCID="#x08502002"/>
+				<TaskPouOid Prio="20" OTCID="#x08502003"/>
 			</TaskPouOids>
 		</Instance>
 	</Project>
@@ -3149,6 +3149,54 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M12.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M12.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 19 (EK1100)^Term 26 (EL6001) - PitchFine">
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[0]" VarB="COM Inputs^Data In 0"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[10]" VarB="COM Inputs^Data In 10"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[11]" VarB="COM Inputs^Data In 11"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[12]" VarB="COM Inputs^Data In 12"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[13]" VarB="COM Inputs^Data In 13"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[14]" VarB="COM Inputs^Data In 14"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[15]" VarB="COM Inputs^Data In 15"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[16]" VarB="COM Inputs^Data In 16"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[17]" VarB="COM Inputs^Data In 17"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[18]" VarB="COM Inputs^Data In 18"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[19]" VarB="COM Inputs^Data In 19"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[1]" VarB="COM Inputs^Data In 1"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[20]" VarB="COM Inputs^Data In 20"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[21]" VarB="COM Inputs^Data In 21"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[2]" VarB="COM Inputs^Data In 2"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[3]" VarB="COM Inputs^Data In 3"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[4]" VarB="COM Inputs^Data In 4"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[5]" VarB="COM Inputs^Data In 5"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[6]" VarB="COM Inputs^Data In 6"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[7]" VarB="COM Inputs^Data In 7"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[8]" VarB="COM Inputs^Data In 8"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^D[9]" VarB="COM Inputs^Data In 9"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M2L0^Status" VarB="COM Inputs^Status"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^Ctrl" VarB="COM Outputs^Ctrl"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[0]" VarB="COM Outputs^Data Out 0"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[10]" VarB="COM Outputs^Data Out 10"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[11]" VarB="COM Outputs^Data Out 11"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[12]" VarB="COM Outputs^Data Out 12"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[13]" VarB="COM Outputs^Data Out 13"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[14]" VarB="COM Outputs^Data Out 14"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[15]" VarB="COM Outputs^Data Out 15"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[16]" VarB="COM Outputs^Data Out 16"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[17]" VarB="COM Outputs^Data Out 17"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[18]" VarB="COM Outputs^Data Out 18"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[19]" VarB="COM Outputs^Data Out 19"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[1]" VarB="COM Outputs^Data Out 1"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[20]" VarB="COM Outputs^Data Out 20"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[21]" VarB="COM Outputs^Data Out 21"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[2]" VarB="COM Outputs^Data Out 2"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[3]" VarB="COM Outputs^Data Out 3"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[4]" VarB="COM Outputs^Data Out 4"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[5]" VarB="COM Outputs^Data Out 5"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[6]" VarB="COM Outputs^Data Out 6"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[7]" VarB="COM Outputs^Data Out 7"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[8]" VarB="COM Outputs^Data Out 8"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M2L0^D[9]" VarB="COM Outputs^Data Out 9"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 19 (EK1100)^Term 27 (EL5042) - Xupdwn">
 				<Link VarA="PlcTask Inputs^Main.M2L0.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M2L0.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
@@ -3156,6 +3204,9 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 19 (EK1100)^Term 28 (EL5042) - Yupdwn">
 				<Link VarA="PlcTask Inputs^Main.M2L0.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M2L0.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 19 (EK1100)^Term 29 (EL5042) - PitchBender">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M2L0_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 19 (EK1100)^Term 30 (EL1004) - STO">
 				<Link VarA="PlcTask Inputs^Main.M2L0.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true"/>
@@ -3173,6 +3224,54 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 6 (EK1100)^Term 13 (EL6001) - PitchFine">
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[0]" VarB="COM Inputs^Data In 0"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[10]" VarB="COM Inputs^Data In 10"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[11]" VarB="COM Inputs^Data In 11"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[12]" VarB="COM Inputs^Data In 12"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[13]" VarB="COM Inputs^Data In 13"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[14]" VarB="COM Inputs^Data In 14"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[15]" VarB="COM Inputs^Data In 15"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[16]" VarB="COM Inputs^Data In 16"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[17]" VarB="COM Inputs^Data In 17"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[18]" VarB="COM Inputs^Data In 18"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[19]" VarB="COM Inputs^Data In 19"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[1]" VarB="COM Inputs^Data In 1"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[20]" VarB="COM Inputs^Data In 20"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[21]" VarB="COM Inputs^Data In 21"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[2]" VarB="COM Inputs^Data In 2"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[3]" VarB="COM Inputs^Data In 3"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[4]" VarB="COM Inputs^Data In 4"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[5]" VarB="COM Inputs^Data In 5"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[6]" VarB="COM Inputs^Data In 6"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[7]" VarB="COM Inputs^Data In 7"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[8]" VarB="COM Inputs^Data In 8"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[9]" VarB="COM Inputs^Data In 9"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^Status" VarB="COM Inputs^Status"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^Ctrl" VarB="COM Outputs^Ctrl"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[0]" VarB="COM Outputs^Data Out 0"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[10]" VarB="COM Outputs^Data Out 10"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[11]" VarB="COM Outputs^Data Out 11"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[12]" VarB="COM Outputs^Data Out 12"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[13]" VarB="COM Outputs^Data Out 13"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[14]" VarB="COM Outputs^Data Out 14"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[15]" VarB="COM Outputs^Data Out 15"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[16]" VarB="COM Outputs^Data Out 16"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[17]" VarB="COM Outputs^Data Out 17"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[18]" VarB="COM Outputs^Data Out 18"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[19]" VarB="COM Outputs^Data Out 19"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[1]" VarB="COM Outputs^Data Out 1"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[20]" VarB="COM Outputs^Data Out 20"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[21]" VarB="COM Outputs^Data Out 21"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[2]" VarB="COM Outputs^Data Out 2"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[3]" VarB="COM Outputs^Data Out 3"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[4]" VarB="COM Outputs^Data Out 4"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[5]" VarB="COM Outputs^Data Out 5"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[6]" VarB="COM Outputs^Data Out 6"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[7]" VarB="COM Outputs^Data Out 7"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[8]" VarB="COM Outputs^Data Out 8"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1L0^D[9]" VarB="COM Outputs^Data Out 9"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 6 (EK1100)^Term 14 (EL5042) - Xupdwn">
 				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
@@ -3180,6 +3279,9 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 6 (EK1100)^Term 15 (EL5042) - Yupdwn">
 				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 6 (EK1100)^Term 16 (EL5042) - PitchBender">
+				<Link VarA="PlcTask Inputs^GVL_Devices.M1L0_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Term 6 (EK1100)^Term 17 (EL1004) - STO">
 				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true"/>
