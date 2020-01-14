@@ -5,7 +5,7 @@
   <IsWizardTemplate>false</IsWizardTemplate>
   <LayoutString>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132211995964538173" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="eb8d551f-2cc7-4025-b2af-4a164df487ad" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132234274478900647" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="eb8d551f-2cc7-4025-b2af-4a164df487ad" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="eb8d551f-2cc7-4025-b2af-4a164df487ad" Collapsed="0" SelectedControl="b1560a06-9992-4c8c-9f35-e7602e22de09"&gt;
@@ -18,7 +18,7 @@
 &lt;/Layout&gt;</LayoutString>
   <Operating>
     <RecordTime>6000000000</RecordTime>
-    <DataFileName>C:\Users\sheppard\Documents\Visual Studio 2013\Projects\Post Install Scope Files\MR2L0</DataFileName>
+    <DataFileName>C:\Users\sheppard\Documents\Visual Studio 2013\Projects\Post-Install-Scope-Files\M2L0</DataFileName>
     <RunMode>ClientStart</RunMode>
     <StopMode>AutoStop</StopMode>
     <ServerUseFileStore>true</ServerUseFileStore>
@@ -117,10 +117,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.ACTPOS</SymbolName>
+                <SymbolName>AXES.Axis 11 - PItchCoarse.ACTPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>205</FileHandle>
+                <FileHandle>169</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -299,10 +299,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.SETPOS</SymbolName>
+                <SymbolName>AXES.Axis 11 - PItchCoarse.SETPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>206</FileHandle>
+                <FileHandle>170</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -510,10 +510,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.ACTVELO</SymbolName>
+                <SymbolName>AXES.Axis 11 - PItchCoarse.ACTVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>207</FileHandle>
+                <FileHandle>171</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -692,10 +692,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.SETVELO</SymbolName>
+                <SymbolName>AXES.Axis 11 - PItchCoarse.SETVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>208</FileHandle>
+                <FileHandle>172</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -903,10 +903,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PitchCoarse.POSDIFF</SymbolName>
+                <SymbolName>AXES.Axis 11 - PItchCoarse.POSDIFF</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>209</FileHandle>
+                <FileHandle>173</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -1114,10 +1114,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 2 - Ydwn.ActPos</SymbolName>
+                <SymbolName>AXES.Axis 10 - Xdwn.ActPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>210</FileHandle>
+                <FileHandle>174</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -1296,10 +1296,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 2 - Ydwn.SetPos</SymbolName>
+                <SymbolName>AXES.Axis 10 - Xdwn.SetPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>211</FileHandle>
+                <FileHandle>175</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -1507,10 +1507,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 2 - Ydwn.ActVelo</SymbolName>
+                <SymbolName>AXES.Axis 10 - Xdwn.ActVelo</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>212</FileHandle>
+                <FileHandle>176</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -1689,10 +1689,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 2 - Ydwn.SetVelo</SymbolName>
+                <SymbolName>AXES.Axis 10 - Xdwn.SetVelo</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>213</FileHandle>
+                <FileHandle>177</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -1900,10 +1900,10 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 2 - Ydwn.PosDiff</SymbolName>
+                <SymbolName>AXES.Axis 10 - Xdwn.PosDiff</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>214</FileHandle>
+                <FileHandle>178</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -2107,14 +2107,14 @@
               <Acquisition>
                 <DataType>INT64</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>849992</IndexOffset>
+                <IndexOffset>908880</IndexOffset>
                 <Unit />
                 <TargetPort>851</TargetPort>
                 <VariableSize>8</VariableSize>
                 <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryX</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>215</FileHandle>
+                <FileHandle>179</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>100000</SampleTime>
@@ -2124,7 +2124,7 @@
                 <ForceOversampling>false</ForceOversampling>
                 <IsArray>false</IsArray>
                 <ArrayLength>0</ArrayLength>
-                <ContextMask>0</ContextMask>
+                <ContextMask>2</ContextMask>
                 <TimeOffset>0</TimeOffset>
                 <DataAccess>
                   <Source>TwinCAT</Source>
@@ -2318,14 +2318,14 @@
               <Acquisition>
                 <DataType>INT64</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>849984</IndexOffset>
+                <IndexOffset>908872</IndexOffset>
                 <Unit />
                 <TargetPort>851</TargetPort>
                 <VariableSize>8</VariableSize>
                 <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryY</SymbolName>
                 <SymbolComment> Current gantry difference</SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>216</FileHandle>
+                <FileHandle>180</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>172.21.88.30.1.1</AmsNetIdString>
                 <SampleTime>100000</SampleTime>
@@ -2335,7 +2335,7 @@
                 <ForceOversampling>false</ForceOversampling>
                 <IsArray>false</IsArray>
                 <ArrayLength>0</ArrayLength>
-                <ContextMask>0</ContextMask>
+                <ContextMask>2</ContextMask>
                 <TimeOffset>0</TimeOffset>
                 <DataAccess>
                   <Source>TwinCAT</Source>
