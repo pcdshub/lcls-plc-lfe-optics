@@ -265,10 +265,9 @@ END_IF
 
 // Pitch Control
 fbM1L0PitchControl(Pitch:=M1L0_Pitch,
-				   Pitch_PLC_VAR:=M5,
                    DirectPiezoMode:=(ExpertModeM1L0 AND PitchManualModeM1L0),
-                   q_xDone=>M1L0_Pitch.Axis.bDone,
-                   q_xBusy=>M1L0_Pitch.Axis.bBusy);
+                   q_xDone=>M1L0_Pitch.Stepper.bDone,
+                   q_xBusy=>M1L0_Pitch.Stepper.bBusy);
 
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
@@ -338,10 +337,9 @@ END_IF
 
 // Pitch Control
 fbM2L0PitchControl(Pitch:=M2L0_Pitch,
-				   Pitch_PLC_VAR:=M11,
                    DirectPiezoMode:=(ExpertModeM2L0 AND PitchManualModeM2L0),
-                   q_xDone=>M2L0_Pitch.Axis.bDone,
-                   q_xBusy=>M2L0_Pitch.Axis.bBusy);]]></ST>
+                   q_xDone=>M2L0_Pitch.Stepper.bDone,
+                   q_xBusy=>M2L0_Pitch.Stepper.bBusy);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
