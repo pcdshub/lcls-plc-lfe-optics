@@ -11,6 +11,8 @@ VAR
 	fbE621SerialDriver_M2L0 : FB_PI_E621_SerialDriver;
 	rtInitParams_M2L0	:	R_TRIG;
 	tonTimeoutRst_M2L0	: TON := (PT:=T#2S); //For timeout reset
+	
+	kick : bool;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -23,7 +25,7 @@ fbE621SerialDriver_M1L0(iq_stPiezoAxis:= M1L0_Pitch.Piezo,
 		                iq_stSerialTXBuffer:= Serial_TXBuffer_M1L0);
 
 fbE621SerialDriver_M2L0.i_xExecute := TRUE;
-fbE621SerialDriver_M2L0.i_xExecute R= fbE621SerialDriver_M2L0.q_xDone;
+fbE621SerialDriver_M2L0.i_xExecute R= fbE621SerialDriver_M2L0.q_xDone or kick;
 fbE621SerialDriver_M2L0(iq_stPiezoAxis:= M2L0_Pitch.Piezo, 
 		                iq_stSerialRXBuffer:= Serial_RXBuffer_M2L0, 
 		                iq_stSerialTXBuffer:= Serial_TXBuffer_M2L0);]]></ST>

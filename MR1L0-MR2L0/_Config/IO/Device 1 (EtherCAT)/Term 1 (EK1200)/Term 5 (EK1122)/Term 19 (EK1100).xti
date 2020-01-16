@@ -7,40 +7,40 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00120000" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1100 EtherCAT Coupler (2A E-Bus)" Desc="EK1100"/>
-		<Box File="Term 20 (EL7041-1000) - Xup.xti" Id="20">
+		<Box File="EL7041-1000_M2L0_Xup.xti" Id="20">
 			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
-		<Box File="Term 21 (EL7041-1000) - Xdwn.xti" Id="21">
+		<Box File="EL7041-1000_M2L0_Xdwn.xti" Id="21">
 			<EtherCAT PortABoxInfo="#x01000014"/>
 		</Box>
-		<Box File="Term 22 (EL7041-1000) - Yup.xti" Id="22">
+		<Box File="EL7041-1000_M2L0_Yup.xti" Id="22">
 			<EtherCAT PortABoxInfo="#x01000015"/>
 		</Box>
-		<Box File="Term 23 (EL7041-1000) - Ydwn.xti" Id="23">
+		<Box File="EL7041-1000_M2L0_Ydwn.xti" Id="23">
 			<EtherCAT PortABoxInfo="#x01000016"/>
 		</Box>
-		<Box File="Term 24 (EL7041-1000) - PitchCoarse.xti" Id="24">
+		<Box File="EL7041-1000_M2L0_PitchCoarse.xti" Id="24">
 			<EtherCAT PortABoxInfo="#x01000017"/>
 		</Box>
-		<Box File="Term 25 (EL7041-1000) - Bender.xti" Id="25">
+		<Box File="EL7041-1000_M2L0_Bender.xti" Id="25">
 			<EtherCAT PortABoxInfo="#x01000018"/>
 		</Box>
-		<Box File="Term 26 (EL6001) - PitchFine.xti" Id="26">
+		<Box File="EL6001_M2L0_PitchFine.xti" Id="26">
 			<EtherCAT PortABoxInfo="#x01000019"/>
 		</Box>
-		<Box File="Term 27 (EL5042) - Xupdwn.xti" Id="27">
+		<Box File="EL5042_M2L0_Xupdwn.xti" Id="27">
 			<EtherCAT PortABoxInfo="#x0100001a"/>
 		</Box>
-		<Box File="Term 28 (EL5042) - Yupdwn.xti" Id="28">
+		<Box File="EL5042_M2L0_Yupdwn.xti" Id="28">
 			<EtherCAT PortABoxInfo="#x0100001b"/>
 		</Box>
-		<Box File="Term 29 (EL5042) - PitchBender.xti" Id="29">
+		<Box File="EL5042_M2L0_PitchBender.xti" Id="29">
 			<EtherCAT PortABoxInfo="#x0100001c"/>
 		</Box>
-		<Box File="Term 30 (EL1004) - STO.xti" Id="30">
+		<Box File="EL1004_M2L0_STO.xti" Id="30">
 			<EtherCAT PortABoxInfo="#x0100001d"/>
 		</Box>
-		<Box File="Term 31 (EL9505) - BenderLims.xti" Id="31">
+		<Box File="EL9505_M2L0_BenderLims.xti" Id="31">
 			<EtherCAT PortABoxInfo="#x0100001e"/>
 		</Box>
 		<Box File="Term 33 (EL9011).xti" Id="33">

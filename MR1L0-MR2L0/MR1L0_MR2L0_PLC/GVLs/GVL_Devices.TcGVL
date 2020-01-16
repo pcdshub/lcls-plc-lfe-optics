@@ -11,8 +11,16 @@
 		diEncPosLimLo := 7561000
 	);
 
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:PITCH
+	'}
+	M11 : DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.STAGE_ENABLE_MOTION,
+                            nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
 	// M2L0
 	M2L0_Pitch	    :	HOMS_PitchMechanism := (
+		Stepper := M11,
 		ReqPosLimHi := 20000,
 		ReqPosLimLo := 16500,
 		diEncPosLimHi := 10722213,
