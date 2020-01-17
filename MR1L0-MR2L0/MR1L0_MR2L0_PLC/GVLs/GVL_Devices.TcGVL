@@ -16,8 +16,7 @@
 	{attribute 'pytmc' := '
 		pv: MR2L0:LFE:MMS:PITCH
 	'}
-	M11 : DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.STAGE_ENABLE_MOTION,
-                            nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
+	M11 : DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.STAGE_ENABLE_MOTION); // PitchCoarse
 	// M2L0
 	M2L0_Pitch	    :	HOMS_PitchMechanism := (
 		Stepper := M11,

@@ -5,7 +5,7 @@
   <IsWizardTemplate>false</IsWizardTemplate>
   <LayoutString>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132235931625126760" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="eb8d551f-2cc7-4025-b2af-4a164df487ad" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132236936585529668" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="eb8d551f-2cc7-4025-b2af-4a164df487ad" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="eb8d551f-2cc7-4025-b2af-4a164df487ad" Collapsed="0" SelectedControl="b1560a06-9992-4c8c-9f35-e7602e22de09"&gt;
@@ -117,7 +117,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PItchCoarse.ACTPOS</SymbolName>
+                <SymbolName>AXES.M2L0-Pitch.ACTPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>169</FileHandle>
@@ -299,7 +299,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PItchCoarse.SETPOS</SymbolName>
+                <SymbolName>AXES.M2L0-Pitch.SETPOS</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>170</FileHandle>
@@ -510,7 +510,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PItchCoarse.ACTVELO</SymbolName>
+                <SymbolName>AXES.M2L0-Pitch.ACTVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>171</FileHandle>
@@ -692,7 +692,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PItchCoarse.SETVELO</SymbolName>
+                <SymbolName>AXES.M2L0-Pitch.SETVELO</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>172</FileHandle>
@@ -903,7 +903,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 11 - PItchCoarse.POSDIFF</SymbolName>
+                <SymbolName>AXES.M2L0-Pitch.POSDIFF</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>173</FileHandle>
@@ -1114,7 +1114,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 10 - Xdwn.ActPos</SymbolName>
+                <SymbolName>AXES.M2L0-Xdwn.ActPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>174</FileHandle>
@@ -1296,7 +1296,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 10 - Xdwn.SetPos</SymbolName>
+                <SymbolName>AXES.M2L0-Xdwn.SetPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>175</FileHandle>
@@ -1507,7 +1507,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 10 - Xdwn.ActVelo</SymbolName>
+                <SymbolName>AXES.M2L0-Xdwn.ActVelo</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>176</FileHandle>
@@ -1689,7 +1689,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 10 - Xdwn.SetVelo</SymbolName>
+                <SymbolName>AXES.M2L0-Xdwn.SetVelo</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>177</FileHandle>
@@ -1900,7 +1900,7 @@
                 <Unit />
                 <TargetPort>501</TargetPort>
                 <VariableSize>8</VariableSize>
-                <SymbolName>AXES.Axis 10 - Xdwn.PosDiff</SymbolName>
+                <SymbolName>AXES.M2L0-Xdwn.PosDiff</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
                 <FileHandle>178</FileHandle>
@@ -2107,7 +2107,7 @@
               <Acquisition>
                 <DataType>INT64</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>907464</IndexOffset>
+                <IndexOffset>907472</IndexOffset>
                 <Unit />
                 <TargetPort>851</TargetPort>
                 <VariableSize>8</VariableSize>
@@ -2318,7 +2318,7 @@
               <Acquisition>
                 <DataType>INT64</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>907456</IndexOffset>
+                <IndexOffset>907464</IndexOffset>
                 <Unit />
                 <TargetPort>851</TargetPort>
                 <VariableSize>8</VariableSize>
@@ -2500,18 +2500,7 @@
       </YAxes>
       <XYAxes />
       <CursorModule>
-        <Cursors>
-          <ScopeCursorSerializable>
-            <Style>
-              <ColorValue>-16711936</ColorValue>
-              <Width>1</Width>
-              <Orientation>true</Orientation>
-              <Name>C</Name>
-              <Comment />
-            </Style>
-            <SortPriority>-1</SortPriority>
-          </ScopeCursorSerializable>
-        </Cursors>
+        <Cursors />
         <ShowSelectedOnly>false</ShowSelectedOnly>
         <AbsTimeVisible>true</AbsTimeVisible>
         <RecordTimeVisible>true</RecordTimeVisible>
@@ -2520,7 +2509,7 @@
         <HexValues>false</HexValues>
       </CursorModule>
       <Operating>
-        <DisplayWidth>290000000</DisplayWidth>
+        <DisplayWidth>2300000000</DisplayWidth>
       </Operating>
       <ChartType>XT</ChartType>
       <SortPriority>-1</SortPriority>
