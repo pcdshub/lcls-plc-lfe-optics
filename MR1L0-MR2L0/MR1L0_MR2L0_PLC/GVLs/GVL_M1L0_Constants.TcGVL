@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+  <GVL Name="GVL_M1L0_Constants" Id="{e75b3be9-127e-46b4-b219-470b94c00321}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	// Encoder reference values in counts = nm
+	(*
+	nYUP_ENC_REF : ULINT := 14760900;
+	nYDWN_ENC_REF : ULINT := 13941900;
+	*)
+	// Unsure on Y ref vals, using starting motor positions for now
+	nYUP_ENC_REF : ULINT := 3611000;
+	nYDWN_ENC_REF : ULINT := 2475000;
+	nXUP_ENC_REF : ULINT := 24435400;
+	nXDWN_ENC_REF : ULINT := 25239600;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

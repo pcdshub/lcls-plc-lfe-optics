@@ -3,56 +3,7 @@
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
-	// Axes for each system
 	// M1L0
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:YUP
-	'}
-	M1 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
-	fbMotionStage_m1 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:YDWN
-	'}
-	M2 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
-	fbMotionStage_m2 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:XUP
-	'}
-	M3 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
-	fbMotionStage_m3 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:XDWN
-	'}
-	M4 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
-	fbMotionStage_m4 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:PITCH
-	'}
-	M5 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
-	fbMotionStage_m5 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:BENDER
-	'}
-	M6 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
-	fbMotionStage_m6 : FB_MotionStage;
-
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;
                               .fbRunHOMS.bSTOEnable2:=TIIB[EL1004_M1L0_STO]^Channel 2^Input;
 	                          .fbRunHOMS.stYupEnc.Count:=TIIB[EL5042_M1L0_Yupdwn]^FB Inputs Channel 1^Position;
@@ -101,54 +52,6 @@ VAR
 	PitchManualModeM1L0: BOOL := FALSE;
 
 	// M2L0
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR2L0:LFE:MMS:YUP
-	'}
-	M7 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Yup
-	fbMotionStage_m7 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR2L0:LFE:MMS:YDWN
-	'}
-	M8 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Ydwn
-	fbMotionStage_m8 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR2L0:LFE:MMS:XUP
-	'}
-	M9 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xup
-	fbMotionStage_m9 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR2L0:LFE:MMS:XDWN
-	'}
-	M10 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Xdwn
-	fbMotionStage_m10 : FB_MotionStage;
-
-//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
-//                            .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
-//	{attribute 'pytmc' := '
-//		pv: MR2L0:LFE:MMS:PITCH
-//	'}
-//	M11 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // PitchCoarse
-	fbMotionStage_m11 : FB_MotionStage;
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR2L0:LFE:MMS:BENDER
-	'}
-	M12 : DUT_MotionStage:=(nCommand:=ENUM_EpicsMotorCmd.EPICS_MOTOR_MOVE_ABS); // Bender
-	fbMotionStage_m12 : FB_MotionStage;
-
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;
 	                          .fbRunHOMS.bSTOEnable2:=TIIB[EL1004_M2L0_STO]^Channel 2^Input;
 	                          .fbRunHOMS.stYupEnc.Count:=TIIB[EL5042_M2L0_Yupdwn]^FB Inputs Channel 1^Position;
@@ -198,16 +101,16 @@ VAR
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
-M1L0.fbRunHOMS(stYup:=M1,
-               stYdwn:=M2,
-               stXup:=M3,
-               stXdwn:=M4,
-               stPitch:=M5,
-               stBender:=M6,
-	           nYupEncRef:=GVL_M1L0.nYUP_ENC_REF,
-               nYdwnEncRef:=GVL_M1L0.nYDWN_ENC_REF,
-               nXupEncRef:=GVL_M1L0.nXUP_ENC_REF,
-               nXdwnEncRef:=GVL_M1L0.nXDWN_ENC_REF,
+M1L0.fbRunHOMS(stYup:=GVL_M1L0.M1,
+               stYdwn:=GVL_M1L0.M2,
+               stXup:=GVL_M1L0.M3,
+               stXdwn:=GVL_M1L0.M4,
+               stPitch:=GVL_M1L0.M5,
+               stBender:=GVL_M1L0.M6,
+	           nYupEncRef:=GVL_M1L0_Constants.nYUP_ENC_REF,
+               nYdwnEncRef:=GVL_M1L0_Constants.nYDWN_ENC_REF,
+               nXupEncRef:=GVL_M1L0_Constants.nXUP_ENC_REF,
+               nXdwnEncRef:=GVL_M1L0_Constants.nXDWN_ENC_REF,
 			   bExecuteCoupleY:=M1L0.bExecuteCoupleY,
                bExecuteCoupleX:=M1L0.bExecuteCoupleX,
 			   bExecuteDecoupleY:=M1L0.bExecuteDecoupleY,
@@ -221,21 +124,21 @@ M1L0.fbRunHOMS(stYup:=M1,
 M1L0.fCurrGantryY_um := LINT_TO_REAL(M1L0.nCurrGantryY) / 1000.0;
 M1L0.fCurrGantryX_um := LINT_TO_REAL(M1L0.nCurrGantryX) / 1000.0;
 
-fbMotionStage_m1(stMotionStage:=M1);
-fbMotionStage_m2(stMotionStage:=M2);
-fbMotionStage_m3(stMotionStage:=M3);
-fbMotionStage_m4(stMotionStage:=M4);
-fbMotionStage_m5(stMotionStage:=M5);
-fbMotionStage_m6(stMotionStage:=M6);
+// FB_MotionStage's for non-piezo axes
+GVL_M1L0.fbMotionStage_m1(stMotionStage:=GVL_M1L0.M1);
+GVL_M1L0.fbMotionStage_m2(stMotionStage:=GVL_M1L0.M2);
+GVL_M1L0.fbMotionStage_m3(stMotionStage:=GVL_M1L0.M3);
+GVL_M1L0.fbMotionStage_m4(stMotionStage:=GVL_M1L0.M4);
+GVL_M1L0.fbMotionStage_m6(stMotionStage:=GVL_M1L0.M6);
 
 // Add Some Encoder Readback and Storage:
 fbDataM1L0ActPos(bExecute:=bExecuteDataStorageM1L0,
-           		 fInput:=M5.stAxisStatus.fActPosition,
+           		 fInput:=GVL_M1L0.M5.stAxisStatus.fActPosition,
            		 arrOutput=>aEncM1L0PitchActPos,
                  bNewArray=>bNewPitchEncArrayM1L0);
 
 fbDataM1L0SetPos(bExecute:=bExecuteDataStorageM1L0,
-           		 fInput:=M5.Axis.NcToPlc.SetPos,
+           		 fInput:=GVL_M1L0.M5.Axis.NcToPlc.SetPos,
            		 arrOutput=>aEncM1L0PitchSetPos);
 
 fbStatsM1L0(aSignal:=aEncM1L0PitchActPos,
@@ -264,23 +167,23 @@ If bNewPitchEncArrayM1L0 THEN
 END_IF
 
 // Pitch Control
-fbM1L0PitchControl(Pitch:=M1L0_Pitch,
-				   Pitch_Stepper:=M5,
+fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
+				   Pitch_Stepper:=GVL_M1L0.M5,
                    DirectPiezoMode:=(ExpertModeM1L0 AND PitchManualModeM1L0),
-                   q_xDone=>M1L0_Pitch.Stepper.bDone,
-                   q_xBusy=>M1L0_Pitch.Stepper.bBusy);
+                   q_xDone=>GVL_M1L0.M1L0_Pitch.Stepper.bDone,
+                   q_xBusy=>GVL_M1L0.M1L0_Pitch.Stepper.bBusy);
 
 // M2L0
-M2L0.fbRunHOMS(stYup:=M7,
-               stYdwn:=M8,
-               stXup:=M9,
-               stXdwn:=M10,
-               stPitch:=M11,
-               stBender:=M12,
-	           nYupEncRef:=GVL_M2L0.nYUP_ENC_REF,
-               nYdwnEncRef:=GVL_M2L0.nYDWN_ENC_REF,
-               nXupEncRef:=GVL_M2L0.nXUP_ENC_REF,
-               nXdwnEncRef:=GVL_M2L0.nXDWN_ENC_REF,
+M2L0.fbRunHOMS(stYup:=GVL_M2L0.M7,
+               stYdwn:=GVL_M2L0.M8,
+               stXup:=GVL_M2L0.M9,
+               stXdwn:=GVL_M2L0.M10,
+               stPitch:=GVL_M2L0.M11,
+               stBender:=GVL_M2L0.M12,
+	           nYupEncRef:=GVL_M2L0_Constants.nYUP_ENC_REF,
+               nYdwnEncRef:=GVL_M2L0_Constants.nYDWN_ENC_REF,
+               nXupEncRef:=GVL_M2L0_Constants.nXUP_ENC_REF,
+               nXdwnEncRef:=GVL_M2L0_Constants.nXDWN_ENC_REF,
 			   bExecuteCoupleY:=M2L0.bExecuteCoupleY,
                bExecuteCoupleX:=M2L0.bExecuteCoupleX,
 			   bExecuteDecoupleY:=M2L0.bExecuteDecoupleY,
@@ -294,21 +197,21 @@ M2L0.fbRunHOMS(stYup:=M7,
 M2L0.fCurrGantryY_um := LINT_TO_REAL(M2L0.nCurrGantryY) / 1000;
 M2L0.fCurrGantryX_um := LINT_TO_REAL(M2L0.nCurrGantryX) / 1000;
 
-fbMotionStage_m7(stMotionStage:=M7);
-fbMotionStage_m8(stMotionStage:=M8);
-fbMotionStage_m9(stMotionStage:=M9);
-fbMotionStage_m10(stMotionStage:=M10);
-fbMotionStage_m11(stMotionStage:=M11);
-fbMotionStage_m12(stMotionStage:=M12);
+// FB_MotionStage's for non-piezo axes
+GVL_M2L0.fbMotionStage_m7(stMotionStage:=GVL_M2L0.M7);
+GVL_M2L0.fbMotionStage_m8(stMotionStage:=GVL_M2L0.M8);
+GVL_M2L0.fbMotionStage_m9(stMotionStage:=GVL_M2L0.M9);
+GVL_M2L0.fbMotionStage_m10(stMotionStage:=GVL_M2L0.M10);
+GVL_M2L0.fbMotionStage_m12(stMotionStage:=GVL_M2L0.M12);
 
 // Add Some Encoder Readback and Storage:
 fbDataM2L0ActPos(bExecute:=bExecuteDataStorageM2L0,
-           		 fInput:=M11.stAxisStatus.fActPosition,
+           		 fInput:=GVL_M2L0.M11.stAxisStatus.fActPosition,
            		 arrOutput=>aEncM2L0PitchActPos,
                  bNewArray=>bNewPitchEncArrayM2L0);
 
 fbDataM2L0SetPos(bExecute:=bExecuteDataStorageM2L0,
-           		 fInput:=M11.Axis.NcToPlc.SetPos,
+           		 fInput:=GVL_M2L0.M11.Axis.NcToPlc.SetPos,
            		 arrOutput=>aEncM2L0PitchSetPos);
 
 fbStatsM2L0(aSignal:=aEncM2L0PitchActPos,
@@ -337,11 +240,11 @@ If bNewPitchEncArrayM2L0 THEN
 END_IF
 
 // Pitch Control
-fbM2L0PitchControl(Pitch:=M2L0_Pitch,
-				   Pitch_Stepper:=M11,
+fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
+				   Pitch_Stepper:=GVL_M2L0.M11,
                    DirectPiezoMode:=(ExpertModeM2L0 AND PitchManualModeM2L0),
-                   q_xDone=>M2L0_Pitch.Stepper.bDone,
-                   q_xBusy=>M2L0_Pitch.Stepper.bBusy);]]></ST>
+                   q_xDone=>GVL_M2L0.M2L0_Pitch.Stepper.bDone,
+                   q_xBusy=>GVL_M2L0.M2L0_Pitch.Stepper.bBusy);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

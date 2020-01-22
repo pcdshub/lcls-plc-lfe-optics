@@ -7,8 +7,6 @@
     <RootNamespace>MR1L0-MR2L0_Scope</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Scope YT NC Project.tcscope">
-      <SubType>Content</SubType>
-    </Content>
+    <Content Include="C:\Users\sheppard\Documents\Visual Studio 2013\Projects\MR1L0-MR2L0\MR1L0-MR2L0_Scope\Scope YT NC Project1.tcscopex" />
   </ItemGroup>
 </Project>

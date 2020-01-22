@@ -2,17 +2,64 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
   <GVL Name="GVL_M2L0" Id="{b4287d9d-45c2-46f6-b4bf-11d58d75255d}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
-VAR_GLOBAL CONSTANT
-	// Encoder reference values in counts = nm
-	(*
-	nYUP_ENC_REF : ULINT := 14897597;
-	nYDWN_ENC_REF : ULINT := 14551600;
-	*)
-	// Unsure on Y ref vals, using starting motor positions for now
-	nYUP_ENC_REF : ULINT := 12959000;
-	nYDWN_ENC_REF : ULINT := 15964000;
-	nXUP_ENC_REF : ULINT := 23972500;
-	nXDWN_ENC_REF : ULINT := 24766500;	
+VAR_GLOBAL
+	// Motors
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:YUP
+	'}
+	M7 : DUT_MotionStage; // Yup
+	fbMotionStage_m7 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:YDWN
+	'}
+	M8 : DUT_MotionStage; // Ydwn
+	fbMotionStage_m8 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:XUP
+	'}
+	M9 : DUT_MotionStage; // Xup
+	fbMotionStage_m9 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:XDWN
+	'}
+	M10 : DUT_MotionStage; // Xdwn
+	fbMotionStage_m10 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:PITCH
+	'}
+	M11 : DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.STAGE_ENABLE_MOTION); // PitchCoarse
+	fbMotionStage_m11 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:BENDER
+	'}
+	M12 : DUT_MotionStage; // Bender
+	fbMotionStage_m12 : FB_MotionStage;
+
+	// Pitch Mechanism
+	M2L0_Pitch	    :	HOMS_PitchMechanism := (
+		Stepper := M11,
+		ReqPosLimHi := 20000,
+		ReqPosLimLo := 16500,
+		diEncPosLimHi := 10722213,
+		diEncPosLimLo := 8208000
+	);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
