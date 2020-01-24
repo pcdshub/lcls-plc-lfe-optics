@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -165,20 +165,19 @@ If bNewPitchEncArrayM1L0 THEN
 		fMinM1L0PitchRMSError := fCurrM1L0PitchRMSError;
 	END_IF
 END_IF
-
+(*
 // Pitch Control
 fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
 				   Pitch_Stepper:=GVL_M1L0.M5,
                    DirectPiezoMode:=(ExpertModeM1L0 AND PitchManualModeM1L0),
                    q_xDone=>GVL_M1L0.M1L0_Pitch.Stepper.bDone,
                    q_xBusy=>GVL_M1L0.M1L0_Pitch.Stepper.bBusy);
-
+*)
 // M2L0
 M2L0.fbRunHOMS(stYup:=GVL_M2L0.M7,
                stYdwn:=GVL_M2L0.M8,
                stXup:=GVL_M2L0.M9,
                stXdwn:=GVL_M2L0.M10,
-               stPitch:=GVL_M2L0.M11,
                stBender:=GVL_M2L0.M12,
 	           nYupEncRef:=GVL_M2L0_Constants.nYUP_ENC_REF,
                nYdwnEncRef:=GVL_M2L0_Constants.nYDWN_ENC_REF,
@@ -203,7 +202,7 @@ GVL_M2L0.fbMotionStage_m8(stMotionStage:=GVL_M2L0.M8);
 GVL_M2L0.fbMotionStage_m9(stMotionStage:=GVL_M2L0.M9);
 GVL_M2L0.fbMotionStage_m10(stMotionStage:=GVL_M2L0.M10);
 GVL_M2L0.fbMotionStage_m12(stMotionStage:=GVL_M2L0.M12);
-
+(*
 // Add Some Encoder Readback and Storage:
 fbDataM2L0ActPos(bExecute:=bExecuteDataStorageM2L0,
            		 fInput:=GVL_M2L0.M11.stAxisStatus.fActPosition,
@@ -238,10 +237,9 @@ If bNewPitchEncArrayM2L0 THEN
 		fMinM2L0PitchRMSError := fCurrM2L0PitchRMSError;
 	END_IF
 END_IF
-
+*)
 // Pitch Control
 fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
-				   Pitch_Stepper:=GVL_M2L0.M11,
                    DirectPiezoMode:=(ExpertModeM2L0 AND PitchManualModeM2L0),
                    q_xDone=>GVL_M2L0.M2L0_Pitch.Stepper.bDone,
                    q_xBusy=>GVL_M2L0.M2L0_Pitch.Stepper.bBusy);]]></ST>

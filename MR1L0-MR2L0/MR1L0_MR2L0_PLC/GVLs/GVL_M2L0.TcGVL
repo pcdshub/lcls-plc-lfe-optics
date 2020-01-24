@@ -41,8 +41,8 @@ VAR_GLOBAL
 	{attribute 'pytmc' := '
 		pv: MR2L0:LFE:MMS:PITCH
 	'}
-	M11 : DUT_MotionStage:=(nEnableMode:=ENUM_StageEnableMode.STAGE_ENABLE_MOTION); // PitchCoarse
-	fbMotionStage_m11 : FB_MotionStage;
+//	M11 : DUT_MotionStage; // PitchCoarse
+//	fbMotionStage_m11 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
