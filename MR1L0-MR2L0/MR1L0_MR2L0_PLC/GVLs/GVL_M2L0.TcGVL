@@ -36,11 +36,11 @@ VAR_GLOBAL
 	M10 : DUT_MotionStage; // Xdwn
 	fbMotionStage_m10 : FB_MotionStage;
 
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR2L0:LFE:MMS:PITCH
-	'}
+//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
+//                            .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
+//	{attribute 'pytmc' := '
+//		pv: MR2L0:LFE:MMS:PITCH
+//	'}
 //	M11 : DUT_MotionStage; // PitchCoarse
 //	fbMotionStage_m11 : FB_MotionStage;
 
@@ -52,9 +52,14 @@ VAR_GLOBAL
 	M12 : DUT_MotionStage; // Bender
 	fbMotionStage_m12 : FB_MotionStage;
 
+	{attribute 'TcLinkTo' := '.Stepper.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
+                              .Stepper.bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2;
+                              .diEncCnt:=TIIB[EL5042_M2L0_PitchBender]^FB Inputs Channel 1^Position'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:PITCH
+	'}
 	// Pitch Mechanism
 	M2L0_Pitch	    :	HOMS_PitchMechanism := (
-		Stepper := M11,
 		ReqPosLimHi := 20000,
 		ReqPosLimLo := 16500,
 		diEncPosLimHi := 10722213,

@@ -54,7 +54,6 @@ VAR_GLOBAL
 
 	// Pitch Mechanism:
 	M1L0_Pitch	    :	HOMS_PitchMechanism := (
-		Stepper := M5,
 		ReqPosLimHi := 21850,
 		ReqPosLimLo := 14800,
 		diEncPosLimHi := 11256000,
