@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_M2L0" Id="{b4287d9d-45c2-46f6-b4bf-11d58d75255d}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -60,6 +60,14 @@ VAR_GLOBAL
 		diEncPosLimHi := 10722213,
 		diEncPosLimLo := 8208000
 	);
+
+	// DUT_MotionStage_Extras Needed to use Visu
+	M7_Extras : DUT_MotionStage_Extras;
+	M8_Extras : DUT_MotionStage_Extras;
+	M9_Extras : DUT_MotionStage_Extras;
+	M10_Extras : DUT_MotionStage_Extras;
+	M11_Extras : DUT_MotionStage_Extras;
+	M12_Extras : DUT_MotionStage_Extras;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
