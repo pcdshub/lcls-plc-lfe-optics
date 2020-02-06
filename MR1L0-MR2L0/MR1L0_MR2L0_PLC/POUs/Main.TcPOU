@@ -100,7 +100,8 @@ VAR
 	PitchManualModeM2L0 : BOOL := FALSE;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// M1L0
+      <ST><![CDATA[(*
+// M1L0
 M1L0.fbRunHOMS(stYup:=GVL_M1L0.M1,
                stYdwn:=GVL_M1L0.M2,
                stXup:=GVL_M1L0.M3,
@@ -165,7 +166,7 @@ If bNewPitchEncArrayM1L0 THEN
 		fMinM1L0PitchRMSError := fCurrM1L0PitchRMSError;
 	END_IF
 END_IF
-(*
+
 // Pitch Control
 fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
 				   Pitch_Stepper:=GVL_M1L0.M5,
@@ -240,10 +241,10 @@ If bNewPitchEncArrayM2L0 THEN
 END_IF
 *)
 // Pitch Control
+GVL_M2L0.M2L0_Pitch.Stepper.fVelocity := 150.0;
 fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
-                   DirectPiezoMode:=(ExpertModeM2L0 AND PitchManualModeM2L0),
-                   q_xDone=>GVL_M2L0.M2L0_Pitch.Stepper.bDone,
-                   q_xBusy=>GVL_M2L0.M2L0_Pitch.Stepper.bBusy);]]></ST>
+                   q_bDone=>GVL_M2L0.M2L0_Pitch.Stepper.bDone,
+                   q_bBusy=>GVL_M2L0.M2L0_Pitch.Stepper.bBusy);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
