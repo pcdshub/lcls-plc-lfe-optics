@@ -3,6 +3,7 @@
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
+	(*
 	// M1L0
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;
                               .fbRunHOMS.bSTOEnable2:=TIIB[EL1004_M1L0_STO]^Channel 2^Input;
@@ -50,6 +51,7 @@ VAR
 	// Expert mode permits direct access to individual acutators.
 	ExpertModeM1L0	:	BOOL := FALSE;
 	PitchManualModeM1L0: BOOL := FALSE;
+	*)
 
 	// M2L0
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;
@@ -64,6 +66,7 @@ VAR
 	M2L0 : DUT_HOMS;
 
 	// Basic Stats for RMS watch:
+	(*
 	fbDataM2L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
 	fbDataM2L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
 	bExecuteDataStorageM2L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
@@ -91,9 +94,11 @@ VAR
 		io: i
 	'}
 	aEncM2L0PitchSetPos : ARRAY [1..1000] OF LREAL;
-	
+	*)
 	// Pitch Control
 	fbM2L0PitchControl : FB_PitchControl;
+	bM2L0PitchDone : BOOL;
+	bM2L0PitchBusy : BOOL;
 
 	// Expert mode permits direct access to individual acutators.
 	ExpertModeM2L0	:	BOOL := FALSE;
@@ -243,8 +248,8 @@ END_IF
 // Pitch Control
 GVL_M2L0.M2L0_Pitch.Stepper.fVelocity := 150.0;
 fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
-                   q_bDone=>GVL_M2L0.M2L0_Pitch.Stepper.bDone,
-                   q_bBusy=>GVL_M2L0.M2L0_Pitch.Stepper.bBusy);]]></ST>
+                   q_bDone=>bM2L0PitchDone,
+                   q_bBusy=>bM2L0PitchBusy);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

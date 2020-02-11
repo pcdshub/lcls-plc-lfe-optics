@@ -60,9 +60,9 @@ VAR_GLOBAL
 	'}
 	// Pitch Mechanism
 	M2L0_Pitch : HOMS_PitchMechanism := (ReqPosLimHi := 20000,
-		                                 ReqPosLimLo := 16500,
-		                                 diEncPosLimHi := 10768330,
-		                                 diEncPosLimLo := 8141680);
+		                                 ReqPosLimLo := 17000,
+		                                 diEncPosLimHi := 10260000,
+		                                 diEncPosLimLo := 8721000);
 
 	// DUT_MotionStage_Extras Needed to use Visu
 	M7_Extras : DUT_MotionStage_Extras;
