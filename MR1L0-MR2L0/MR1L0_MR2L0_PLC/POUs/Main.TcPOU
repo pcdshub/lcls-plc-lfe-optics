@@ -3,7 +3,6 @@
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
-	(*
 	// M1L0
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;
                               .fbRunHOMS.bSTOEnable2:=TIIB[EL1004_M1L0_STO]^Channel 2^Input;
@@ -25,7 +24,6 @@ VAR
 	fbM1L0PitchControl : FB_PitchControl;
 	bM1L0PitchDone : BOOL;
 	bM1L0PitchBusy : BOOL;
-	*)
 
 	// M2L0
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;

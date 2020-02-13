@@ -775,15 +775,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{13A4036B-017A-48AA-848F-B217DE619C55}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{6B2F8E23-8AAE-4E84-A205-1F1E55120E0E}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{F830A33F-07AD-48F4-A8F3-0763C17ACF93}"/>
+				<Hide GUID="{13A4036B-017A-48AA-848F-B217DE619C55}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{B970E5D8-BAB7-4669-A9BC-386FEB8850AB}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042 ]]>
 			</Comment>
@@ -805,7 +805,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{13A4036B-017A-48AA-848F-B217DE619C55}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{6B2F8E23-8AAE-4E84-A205-1F1E55120E0E}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -822,7 +822,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{C39551A7-99C8-43F2-9C34-5AB13D04B57C}"/>
+				<Hide GUID="{B970E5D8-BAB7-4669-A9BC-386FEB8850AB}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -1097,29 +1097,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.Stepper.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.Stepper.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.Stepper.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.Stepper.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1129,6 +1120,185 @@ External Setpoint Generation:
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>LINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.bSTOEnable1</Name>
+					<Comment>
+						<![CDATA[ STO Button]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.bSTOEnable2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stYupEnc</Name>
+					<Comment>
+						<![CDATA[ Encoders]]>
+					</Comment>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stYdwnEnc</Name>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stXupEnc</Name>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stXdwnEnc</Name>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.bSTOEnable1</Name>
@@ -1146,7 +1316,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{B970E5D8-BAB7-4669-A9BC-386FEB8850AB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1168,7 +1338,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{B970E5D8-BAB7-4669-A9BC-386FEB8850AB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1190,7 +1360,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{B970E5D8-BAB7-4669-A9BC-386FEB8850AB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1212,7 +1382,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.M2L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{B970E5D8-BAB7-4669-A9BC-386FEB8850AB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{030FAA87-368B-489C-8FCF-FE725A5A464A}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -1310,720 +1480,6 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>GVL_M2L0.M7.Axis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M7.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M7.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M7.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M7.bHardwareEnable</Name>
-					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m7.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M8.Axis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M8.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M8.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M8.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M8.bHardwareEnable</Name>
-					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m8.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M9.Axis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M9.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M9.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M9.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M9.bHardwareEnable</Name>
-					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m9.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M10.Axis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M10.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M10.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M10.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M10.bHardwareEnable</Name>
-					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m10.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M12.Axis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M12.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M12.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M12.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M12.bHardwareEnable</Name>
-					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m12.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.Stepper.Axis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bHardwareEnable</Name>
-					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>LINT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_M1L0.M1.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -2074,29 +1530,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2200,29 +1647,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M2.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M2.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M2.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M2.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2326,29 +1764,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M3.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M3.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M3.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M3.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2452,29 +1881,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M4.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M4.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M4.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M4.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2578,29 +1998,20 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M6.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M6.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M6.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M6.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2704,34 +2115,685 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1L0_Pitch.Stepper.bLimitForwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1L0_Pitch.Stepper.bLimitBackwardEnable</Name>
-					<Comment>
-						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1L0_Pitch.Stepper.bHome</Name>
-					<Comment>
-						<![CDATA[ NO Home Switch: TRUE if at home]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1L0_Pitch.Stepper.bHardwareEnable</Name>
 					<Comment>
-						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+						<![CDATA[ True when Emergency stop button is not activated]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1L0_Pitch.diEncCnt</Name>
+					<Comment>
+						<![CDATA[Raw encoder count]]>
+					</Comment>
+					<Type>LINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M7.Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M7.bLimitForwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M7.bLimitBackwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M7.bHome</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M7.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ True when Emergency stop button is not activated]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m7.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M8.Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M8.bLimitForwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M8.bLimitBackwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M8.bHome</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M8.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ True when Emergency stop button is not activated]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m8.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M9.Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M9.bLimitForwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M9.bLimitBackwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M9.bHome</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M9.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ True when Emergency stop button is not activated]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m9.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M10.Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M10.bLimitForwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M10.bLimitBackwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M10.bHome</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M10.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ True when Emergency stop button is not activated]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m10.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M12.Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M12.bLimitForwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M12.bLimitBackwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M12.bHome</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M12.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ True when Emergency stop button is not activated]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m12.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.Stepper.Axis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bLimitForwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bLimitBackwardEnable</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bHome</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ True when Emergency stop button is not activated]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
@@ -2746,100 +2808,15 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.Stepper.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
 					<Name>Main.fbM2L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M7.Axis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M7.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m7.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M8.Axis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M8.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m8.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M9.Axis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M9.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m9.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M10.Axis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M10.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m10.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M12.Axis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M12.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fbMotionStage_m12.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.Stepper.Axis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1.Axis.PlcToNc</Name>
@@ -2847,9 +2824,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2862,9 +2836,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M2.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2877,9 +2848,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M3.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2892,9 +2860,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M4.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2907,9 +2872,6 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M6.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2922,23 +2884,100 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_M1L0.M1L0_Pitch.Stepper.bBrakeRelease</Name>
-					<Comment>
-						<![CDATA[ NC Brake Output: TRUE to release brake]]>
-					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M7.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M7.bBrakeRelease</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m7.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M8.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M8.bBrakeRelease</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m8.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M9.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M9.bBrakeRelease</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m9.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M10.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M10.bBrakeRelease</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m10.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M12.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M12.bBrakeRelease</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.fbMotionStage_m12.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.Stepper.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M2L0.M2L0_Pitch.Stepper.bBrakeRelease</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<TaskPouOids>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
-				<TaskPouOid Prio="3" OTCID="#x08502002"/>
 				<TaskPouOid Prio="20" OTCID="#x08502003"/>
+				<TaskPouOid Prio="3" OTCID="#x08502002"/>
 			</TaskPouOids>
 		</Instance>
 	</Project>
 	<Mappings>
 		<OwnerA Name="MR1L0_MR2L0_PLC Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL1004_M1L0_STO">
+				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_PitchBender">
 				<Link VarA="PlcTask Inputs^GVL_M1L0.M1L0_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_Xupdwn">
+				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_Yupdwn">
+				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL6001_M1L0_PitchFine">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[0]" VarB="COM Inputs^Data In 0"/>
