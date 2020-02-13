@@ -36,14 +36,6 @@ VAR_GLOBAL
 	M10 : DUT_MotionStage; // Xdwn
 	fbMotionStage_m10 : FB_MotionStage;
 
-//	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
-//                            .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
-//	{attribute 'pytmc' := '
-//		pv: MR2L0:LFE:MMS:PITCH
-//	'}
-//	M11 : DUT_MotionStage; // PitchCoarse
-//	fbMotionStage_m11 : FB_MotionStage;
-
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
@@ -59,18 +51,13 @@ VAR_GLOBAL
 		pv: MR2L0:LFE:MMS:PITCH
 	'}
 	// Pitch Mechanism
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:PITCH
+	'}
 	M2L0_Pitch : HOMS_PitchMechanism := (ReqPosLimHi := 20000,
 		                                 ReqPosLimLo := 17000,
 		                                 diEncPosLimHi := 10260000,
 		                                 diEncPosLimLo := 8721000);
-
-	// DUT_MotionStage_Extras Needed to use Visu
-	M7_Extras : DUT_MotionStage_Extras;
-	M8_Extras : DUT_MotionStage_Extras;
-	M9_Extras : DUT_MotionStage_Extras;
-	M10_Extras : DUT_MotionStage_Extras;
-	M11_Extras : DUT_MotionStage_Extras;
-	M12_Extras : DUT_MotionStage_Extras;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

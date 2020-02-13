@@ -3,6 +3,7 @@
   <GVL Name="GVL_M1L0" Id="{c3e91af1-5ac0-497f-aea6-a43e8c284355}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
+	(*
 	// Motors
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 2'}
@@ -59,6 +60,7 @@ VAR_GLOBAL
 		diEncPosLimHi := 11256000,
 		diEncPosLimLo := 7561000
 	);
+	*)
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
