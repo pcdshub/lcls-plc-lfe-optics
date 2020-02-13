@@ -1,9 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScopeProject AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+  <Layout>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Layout&gt;
+  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132261055991554612" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;DocumentContainer Dock="5"&gt;
+    &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
+      &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" Collapsed="0" SelectedControl="b1560a06-9992-4c8c-9f35-e7602e22de09"&gt;
+        &lt;Controls&gt;
+          &lt;Control Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" /&gt;
+        &lt;/Controls&gt;
+      &lt;/ControlLayoutSystem&gt;
+    &lt;/SplitLayoutSystem&gt;
+  &lt;/DocumentContainer&gt;
+&lt;/Layout&gt;</Layout>
   <StopMode>AutoStop</StopMode>
   <AutoRestartRecord>false</AutoRestartRecord>
   <MainServer>127.0.0.1.1.1</MainServer>
   <HeadlessServerConnectionId>00000000-0000-0000-0000-000000000000</HeadlessServerConnectionId>
+  <TargetConnectionIds />
+  <HeadlessServer />
   <ViewDetailLevel>Default</ViewDetailLevel>
   <UseAutoSave>false</UseAutoSave>
   <AutoSavePath>$ScopeProject$\AutoSave</AutoSavePath>
@@ -2385,7 +2400,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>1</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -2465,7 +2480,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>2</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -2545,7 +2560,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>3</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -2625,7 +2640,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>4</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -2705,7 +2720,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>5</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -2785,7 +2800,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>6</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -2865,7 +2880,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>7</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -2945,7 +2960,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>8</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3025,7 +3040,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>9</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3105,7 +3120,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>10</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3179,13 +3194,13 @@
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>592712</IndexOffset>
+          <IndexOffset>592768</IndexOffset>
           <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryX</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>11</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3259,13 +3274,13 @@
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>592704</IndexOffset>
+          <IndexOffset>592760</IndexOffset>
           <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryY</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>12</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3345,7 +3360,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>13</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3425,7 +3440,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>14</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3499,13 +3514,13 @@
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>602480</IndexOffset>
+          <IndexOffset>650840</IndexOffset>
           <SymbolName>Main.fbM2L0PitchControl.lrCurrentSetpoint</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>0</FileHandle>
+          <FileHandle>15</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.30.1.1</AmsNetId>
@@ -3602,24 +3617,9 @@
   <Guid>fedd285f-3eb8-402e-84d0-70b96e397af6</Guid>
   <Title>Scope YT NC Project</Title>
   <Name>Scope Project</Name>
+  <Comment />
   <DisplayColor>Black</DisplayColor>
   <SortPriority>100</SortPriority>
   <IsFileBased>true</IsFileBased>
   <Suffix>.tcscopex</Suffix>
-  <Layout>&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;Layout&gt;
-  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132260190350763835" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
-  &lt;DocumentContainer Dock="5"&gt;
-    &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
-      &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" Collapsed="0" SelectedControl="b1560a06-9992-4c8c-9f35-e7602e22de09"&gt;
-        &lt;Controls&gt;
-          &lt;Control Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" /&gt;
-        &lt;/Controls&gt;
-      &lt;/ControlLayoutSystem&gt;
-    &lt;/SplitLayoutSystem&gt;
-  &lt;/DocumentContainer&gt;
-&lt;/Layout&gt;</Layout>
-  <TargetConnectionIds />
-  <HeadlessServer />
-  <Comment />
 </ScopeProject>

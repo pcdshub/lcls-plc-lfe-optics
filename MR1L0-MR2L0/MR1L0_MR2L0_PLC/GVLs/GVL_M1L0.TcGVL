@@ -45,9 +45,9 @@ VAR_GLOBAL
 	fbMotionStage_m6 : FB_MotionStage;
 
 	// Pitch Mechanism:
-	{attribute 'TcLinkTo' := '.Stepper.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
-                              .Stepper.bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2;
-                              .diEncCnt:=TIIB[EL5042_M2L0_PitchBender]^FB Inputs Channel 1^Position'}
+	{attribute 'TcLinkTo' := '.Stepper.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;
+                              .Stepper.bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 2;
+                              .diEncCnt:=TIIB[EL5042_M1L0_PitchBender]^FB Inputs Channel 1^Position'}
 	{attribute 'pytmc' := '
 		pv: MR1L0:LFE:MMS:PITCH
 	'}

@@ -16,34 +16,10 @@ VAR
 	'}
 	M1L0 : DUT_HOMS;
 
-	// Basic Stats for RMS watch:
-	fbDataM1L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
-	fbDataM1L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
-	bExecuteDataStorageM1L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
-	bNewPitchEncArrayM1L0 : BOOL;
-
-	fbStatsM1L0 : FB_BasicStats; // Calculate mean/standard deviation of ActPos
-	fEncMeanM1L0 : LREAL;
-	fEncStDevM1L0 : LREAL;
-
-	// RMS Error
-	fMaxM1L0PitchRMSError : LREAL := 0;
-	fMinM1L0PitchRMSError : LREAL := 10;
-	fCurrM1L0PitchRMSError : LREAL := 0;
-	nIndexM1L0 : DINT;
-	fSumM1L0 : LREAL := 0;
-	fDiffM1L0 : LREAL := 0;
-
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:PITCH:ACTPOSARRAY
-		io: i
-    '}
-	aEncM1L0PitchActPos : ARRAY [1..1000] OF LREAL;
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:PITCH:SETPOSARRAY
-		io: i
-	'}
-	aEncM1L0PitchSetPos : ARRAY [1..1000] OF LREAL;
+	// RMS Error:
+	fbPitchRMSErrorM1L0 : FB_RMSWatch;
+	fMaxPitchRMSErrorM1L0 : LREAL;
+	fMinPitchRMSErrorM1L0 : LREAL;
 
 	// Pitch Control
 	fbM1L0PitchControl : FB_PitchControl;
@@ -63,34 +39,10 @@ VAR
 	'}
 	M2L0 : DUT_HOMS;
 
-	// Basic Stats for RMS watch:
-	fbDataM2L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
-	fbDataM2L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
-	bExecuteDataStorageM2L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
-	bNewPitchEncArrayM2L0 : BOOL;
-
-	fbStatsM2L0 : FB_BasicStats; // Calculate mean/standard deviation of ActPos
-	fEncMeanM2L0 : LREAL;
-	fEncStDevM2L0 : LREAL;
-
-	// RMS Error
-	fMaxM2L0PitchRMSError : LREAL := 0;
-	fMinM2L0PitchRMSError : LREAL := 10;
-	fCurrM2L0PitchRMSError : LREAL := 0;
-	nIndexM2L0 : DINT;
-	fSumM2L0 : LREAL := 0;
-	fDiffM2L0 : LREAL := 0;
-
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:PITCH:ACTPOSARRAY
-		io: i
-    '}
-	aEncM2L0PitchActPos : ARRAY [1..1000] OF LREAL;
-	{attribute 'pytmc' := '
-		pv: MR1L0:LFE:MMS:PITCH:SETPOSARRAY
-		io: i
-	'}
-	aEncM2L0PitchSetPos : ARRAY [1..1000] OF LREAL;
+	// RMS Error:
+	fbPitchRMSErrorM2L0 : FB_RMSWatch;
+	fMaxPitchRMSErrorM2L0 : LREAL;
+	fMinPitchRMSErrorM2L0 : LREAL;
 
 	// Pitch Control
 	fbM2L0PitchControl : FB_PitchControl;
@@ -130,47 +82,16 @@ GVL_M1L0.fbMotionStage_m3(stMotionStage:=GVL_M1L0.M3);
 GVL_M1L0.fbMotionStage_m4(stMotionStage:=GVL_M1L0.M4);
 GVL_M1L0.fbMotionStage_m6(stMotionStage:=GVL_M1L0.M6);
 
-// Add Some Encoder Readback and Storage:
-fbDataM1L0ActPos(bExecute:=bExecuteDataStorageM1L0,
-           		 fInput:=GVL_M1L0.M5.stAxisStatus.fActPosition,
-           		 arrOutput=>aEncM1L0PitchActPos,
-                 bNewArray=>bNewPitchEncArrayM1L0);
-
-fbDataM1L0SetPos(bExecute:=bExecuteDataStorageM1L0,
-           		 fInput:=GVL_M1L0.M5.Axis.NcToPlc.SetPos,
-           		 arrOutput=>aEncM1L0PitchSetPos);
-
-fbStatsM1L0(aSignal:=aEncM1L0PitchActPos,
-	        bAlwaysCalc:=TRUE,
-		    fMean=>fEncMeanM1L0,
-		    fStDev=>fEncStDevM1L0);
-
-// Calculate RMS Error:
-If bNewPitchEncArrayM1L0 THEN
-	fCurrM1L0PitchRMSError := 0;
-	FOR nIndexM1L0 := 1 TO 1000 DO
-		fDiffM1L0 := aEncM1L0PitchActPos[nIndexM1L0] - aEncM1L0PitchSetPos[nIndexM1L0];
-		fSumM1L0 := EXPT(fDiffM1L0, 2);
-		fCurrM1L0PitchRMSError := fCurrM1L0PitchRMSError + fSumM1L0;
-	END_FOR;
-	fCurrM1L0PitchRMSError := fCurrM1L0PitchRMSError / 1000.0;
-	fCurrM1L0PitchRMSError := SQRT(fCurrM1L0PitchRMSError);
-	// Watch for max:
-	IF fCurrM1L0PitchRMSError > fMaxM1L0PitchRMSError THEN
-		fMaxM1L0PitchRMSError := fCurrM1L0PitchRMSError;
-	END_IF
-	// Watch for min:
-	IF fCurrM1L0PitchRMSError < fMinM1L0PitchRMSError THEN
-		fMinM1L0PitchRMSError := fCurrM1L0PitchRMSError;
-	END_IF
-END_IF
+// Calculate Pitch RMS Error:
+fbPitchRMSErrorM1L0(stMotionStage:=GVL_M1L0.M1L0_Pitch.Stepper,
+	                fMaxRMSError=>fMaxPitchRMSErrorM1L0,
+					fMinRMSError=>fMinPitchRMSErrorM1L0);
 
 // Pitch Control
+GVL_M1L0.M1L0_Pitch.Stepper.fVelocity := 150.0;
 fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
-				   Pitch_Stepper:=GVL_M1L0.M5,
-                   DirectPiezoMode:=(ExpertModeM1L0 AND PitchManualModeM1L0),
-                   q_xDone=>GVL_M1L0.M1L0_Pitch.Stepper.bDone,
-                   q_xBusy=>GVL_M1L0.M1L0_Pitch.Stepper.bBusy);
+                   q_bDone=>bM1L0PitchDone,
+                   q_bBusy=>bM1L0PitchBusy);
 *)
 // M2L0
 M2L0.fbRunHOMS(stYup:=GVL_M2L0.M7,
@@ -202,42 +123,12 @@ GVL_M2L0.fbMotionStage_m8(stMotionStage:=GVL_M2L0.M8);
 GVL_M2L0.fbMotionStage_m9(stMotionStage:=GVL_M2L0.M9);
 GVL_M2L0.fbMotionStage_m10(stMotionStage:=GVL_M2L0.M10);
 GVL_M2L0.fbMotionStage_m12(stMotionStage:=GVL_M2L0.M12);
-(*
-// Add Some Encoder Readback and Storage:
-fbDataM2L0ActPos(bExecute:=bExecuteDataStorageM2L0,
-           		 fInput:=GVL_M2L0.M11.stAxisStatus.fActPosition,
-           		 arrOutput=>aEncM2L0PitchActPos,
-                 bNewArray=>bNewPitchEncArrayM2L0);
 
-fbDataM2L0SetPos(bExecute:=bExecuteDataStorageM2L0,
-           		 fInput:=GVL_M2L0.M11.Axis.NcToPlc.SetPos,
-           		 arrOutput=>aEncM2L0PitchSetPos);
+// Calculate Pitch RMS Error:
+fbPitchRMSErrorM2L0(stMotionStage:=GVL_M2L0.M2L0_Pitch.Stepper,
+	                fMaxRMSError=>fMaxPitchRMSErrorM2L0,
+					fMinRMSError=>fMinPitchRMSErrorM2L0);
 
-fbStatsM2L0(aSignal:=aEncM2L0PitchActPos,
-	        bAlwaysCalc:=TRUE,
-		    fMean=>fEncMeanM2L0,
-		    fStDev=>fEncStDevM2L0);
-
-// Calculate RMS Error:
-If bNewPitchEncArrayM2L0 THEN
-	fCurrM2L0PitchRMSError := 0;
-	FOR nIndexM2L0 := 1 TO 1000 DO
-		fDiffM2L0 := aEncM2L0PitchActPos[nIndexM2L0] - aEncM2L0PitchSetPos[nIndexM2L0];
-		fSumM2L0 := EXPT(fDiffM2L0, 2);
-		fCurrM2L0PitchRMSError := fCurrM2L0PitchRMSError + fSumM2L0;
-	END_FOR;
-	fCurrM2L0PitchRMSError := fCurrM2L0PitchRMSError / 1000.0;
-	fCurrM2L0PitchRMSError := SQRT(fCurrM2L0PitchRMSError);
-	// Watch for max:
-	IF fCurrM2L0PitchRMSError > fMaxM2L0PitchRMSError THEN
-		fMaxM2L0PitchRMSError := fCurrM2L0PitchRMSError;
-	END_IF
-	// Watch for min:
-	IF fCurrM2L0PitchRMSError < fMinM2L0PitchRMSError THEN
-		fMinM2L0PitchRMSError := fCurrM2L0PitchRMSError;
-	END_IF
-END_IF
-*)
 // Pitch Control
 GVL_M2L0.M2L0_Pitch.Stepper.fVelocity := 150.0;
 fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
