@@ -47,10 +47,8 @@ VAR
 
 	// Pitch Control
 	fbM1L0PitchControl : FB_PitchControl;
-
-	// Expert mode permits direct access to individual acutators.
-	ExpertModeM1L0	:	BOOL := FALSE;
-	PitchManualModeM1L0: BOOL := FALSE;
+	bM1L0PitchDone : BOOL;
+	bM1L0PitchBusy : BOOL;
 	*)
 
 	// M2L0
@@ -66,7 +64,6 @@ VAR
 	M2L0 : DUT_HOMS;
 
 	// Basic Stats for RMS watch:
-	(*
 	fbDataM2L0ActPos : FB_LREALBuffer; // ActPos Data Acquisition FB
 	fbDataM2L0SetPos : FB_LREALBuffer; // SetPos Data Acquisition FB
 	bExecuteDataStorageM2L0 : BOOL := TRUE; // Take data of both ActPos and SetPos
@@ -94,15 +91,11 @@ VAR
 		io: i
 	'}
 	aEncM2L0PitchSetPos : ARRAY [1..1000] OF LREAL;
-	*)
+
 	// Pitch Control
 	fbM2L0PitchControl : FB_PitchControl;
 	bM2L0PitchDone : BOOL;
 	bM2L0PitchBusy : BOOL;
-
-	// Expert mode permits direct access to individual acutators.
-	ExpertModeM2L0	:	BOOL := FALSE;
-	PitchManualModeM2L0 : BOOL := FALSE;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*
