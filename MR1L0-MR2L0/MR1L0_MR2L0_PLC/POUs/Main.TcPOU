@@ -26,7 +26,56 @@ VAR
 	bM1L0PitchDone : BOOL;
 	bM1L0PitchBusy : BOOL;
 	*)
+
 	// M2L0
+	// Motors
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:YUP
+	'}
+	M7 : DUT_MotionStage; // Yup
+	fbMotionStage_m7 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:YDWN
+	'}
+	M8 : DUT_MotionStage; // Ydwn
+	fbMotionStage_m8 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:XUP
+	'}
+	M9 : DUT_MotionStage; // Xup
+	fbMotionStage_m9 : FB_MotionStage;
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:XDWN
+	'}
+	M10 : DUT_MotionStage; // Xdwn
+	fbMotionStage_m10 : FB_MotionStage;
+	
+	{attribute 'TcLinkTo' := '.Stepper.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
+                              .Stepper.bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:PITCH
+	'}
+	M11 : DUT_MotionStage; // Pitch Stepper
+
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:MMS:BENDER
+	'}
+	M12 : DUT_MotionStage; // Bender
+	fbMotionStage_m12 : FB_MotionStage;
+
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;
 	                          .fbRunHOMS.bSTOEnable2:=TIIB[EL1004_M2L0_STO]^Channel 2^Input;
 	                          .fbRunHOMS.stYupEnc.Count:=TIIB[EL5042_M2L0_Yupdwn]^FB Inputs Channel 1^Position;
@@ -96,12 +145,12 @@ fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
                    q_bBusy=>bM1L0PitchBusy);
 *)
 // M2L0
-M2L0.fbRunHOMS(stYup:=GVL_M2L0.M7,
-               stYdwn:=GVL_M2L0.M8,
-               stXup:=GVL_M2L0.M9,
-               stXdwn:=GVL_M2L0.M10,
-			   stPitch:=GVL_M2L0.M2L0_Pitch,
-               stBender:=GVL_M2L0.M12,
+M2L0.fbRunHOMS(stYup:=M7,
+               stYdwn:=M8,
+               stXup:=M9,
+               stXdwn:=M10,
+			   stPitch:=M11,
+               stBender:=M12,
 	           nYupEncRef:=GVL_M2L0_Constants.nYUP_ENC_REF,
                nYdwnEncRef:=GVL_M2L0_Constants.nYDWN_ENC_REF,
                nXupEncRef:=GVL_M2L0_Constants.nXUP_ENC_REF,
@@ -120,20 +169,20 @@ M2L0.fCurrGantryY_um := LINT_TO_REAL(M2L0.nCurrGantryY) / 1000;
 M2L0.fCurrGantryX_um := LINT_TO_REAL(M2L0.nCurrGantryX) / 1000;
 
 // FB_MotionStage's for non-piezo axes
-GVL_M2L0.fbMotionStage_m7(stMotionStage:=GVL_M2L0.M7);
-GVL_M2L0.fbMotionStage_m8(stMotionStage:=GVL_M2L0.M8);
-GVL_M2L0.fbMotionStage_m9(stMotionStage:=GVL_M2L0.M9);
-GVL_M2L0.fbMotionStage_m10(stMotionStage:=GVL_M2L0.M10);
-GVL_M2L0.fbMotionStage_m12(stMotionStage:=GVL_M2L0.M12);
+fbMotionStage_m7(stMotionStage:=M7);
+fbMotionStage_m8(stMotionStage:=M8);
+fbMotionStage_m9(stMotionStage:=M9);
+fbMotionStage_m10(stMotionStage:=M10);
+fbMotionStage_m12(stMotionStage:=M12);
 
 // Calculate Pitch RMS Error:
-fbPitchRMSErrorM2L0(stMotionStage:=GVL_M2L0.M2L0_Pitch.Stepper,
+fbPitchRMSErrorM2L0(stMotionStage:=M11,
 	                fMaxRMSError=>fMaxPitchRMSErrorM2L0,
 					fMinRMSError=>fMinPitchRMSErrorM2L0);
 
 // Pitch Control
-GVL_M2L0.M2L0_Pitch.Stepper.fVelocity := 150.0;
-fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
+M11.fVelocity := 150.0;
+fbM2L0PitchControl(Pitch:=M2L0_Pitch,
                    q_bDone=>bM2L0PitchDone,
                    q_bBusy=>bM2L0PitchBusy);]]></ST>
     </Implementation>

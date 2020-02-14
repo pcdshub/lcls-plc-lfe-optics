@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PiezoSerial" Id="{04ed9258-9624-4f29-9f34-d3e5ff9995d6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PiezoSerial
 VAR
@@ -24,7 +24,7 @@ fbE621SerialDriver_M1L0(iq_stPiezoAxis:= GVL_M1L0.M1L0_Pitch.Piezo,
 
 fbE621SerialDriver_M2L0.i_xExecute := TRUE;
 fbE621SerialDriver_M2L0.i_xExecute R= fbE621SerialDriver_M2L0.q_xDone;
-fbE621SerialDriver_M2L0(iq_stPiezoAxis:= GVL_M2L0.M2L0_Pitch.Piezo,
+fbE621SerialDriver_M2L0(iq_stPiezoAxis:= M2L0_Pitch.Piezo,
 		                iq_stSerialRXBuffer:= Serial_RXBuffer_M2L0,
 		                iq_stSerialTXBuffer:= Serial_TXBuffer_M2L0);]]></ST>
     </Implementation>
