@@ -15,9 +15,6 @@
     <LibraryReferences>{9c3eb579-952b-48e6-8012-6deca8aa13af}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\DUT_MotionStage_Extras.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
     </Compile>

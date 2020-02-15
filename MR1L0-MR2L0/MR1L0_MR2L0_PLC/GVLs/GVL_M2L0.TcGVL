@@ -3,8 +3,8 @@
   <GVL Name="GVL_M2L0" Id="{b4287d9d-45c2-46f6-b4bf-11d58d75255d}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	{attribute 'TcLinkTo' := '.diEncCnt:=TIIB[EL5042_M2L0_PitchBender]^FB Inputs Channel 1^Position'}
 	// Pitch Mechanism
+	{attribute 'TcLinkTo' := '.diEncCnt:=TIIB[EL5042_M2L0_PitchBender]^FB Inputs Channel 1^Position'}
 	M2L0_Pitch : HOMS_PitchMechanism := (ReqPosLimHi := 20000,
 		                                 ReqPosLimLo := 17000,
 		                                 diEncPosLimHi := 10260000,
