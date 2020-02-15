@@ -3,6 +3,7 @@
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
+	(*
 	// M1L0
 	// Motors
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 1;
@@ -75,7 +76,7 @@ VAR
 	fbM1L0PitchControl : FB_PitchControl;
 	bM1L0PitchDone : BOOL;
 	bM1L0PitchBusy : BOOL;
-
+	*)
 	// M2L0
 	// Motors
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;
@@ -150,7 +151,8 @@ VAR
 	bM2L0PitchBusy : BOOL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// M1L0
+      <ST><![CDATA[(*
+// M1L0
 M1L0.fbRunHOMS(stYup:=M1,
                stYdwn:=M2,
                stXup:=M3,
@@ -193,7 +195,7 @@ fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
 				   lrCurrentSetpoint:=M5.fPosition,
                    q_bDone=>bM1L0PitchDone,
                    q_bBusy=>bM1L0PitchBusy);
-
+*)
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
