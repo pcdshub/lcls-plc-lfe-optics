@@ -2766,6 +2766,7 @@ record(ai, "MR2L0:LFE:GANTRY_Y_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryY_um?")
   field(PREC, "3")
+  field(EGU, "um")
   info(autosave_pass0, "PREC")
 }
 
@@ -2777,6 +2778,7 @@ record(ai, "MR2L0:LFE:GANTRY_X_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryX_um?")
   field(PREC, "3")
+  field(EGU, "um")
   info(autosave_pass0, "PREC")
 }
 
