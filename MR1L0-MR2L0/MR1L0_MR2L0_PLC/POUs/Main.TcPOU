@@ -137,13 +137,34 @@ VAR
 	'}
 	M2L0 : DUT_HOMS;
 
-	// RMS Error:
+	// Encoder Arrays/RMS Watch:
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:Y_ENC
+	'}
+	fbYRMSErrorM2L0 : FB_RMSWatch;
+	fMaxYRMSErrorM2L0 : LREAL;
+	fMinYRMSErrorM2L0 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:X_ENC
+	'}
+	fbXRMSErrorM2L0 : FB_RMSWatch;
+	fMaxXRMSErrorM2L0 : LREAL;
+	fMinXRMSErrorM2L0 : LREAL;
+
 	{attribute 'pytmc' := '
 		pv: MR2L0:LFE:PITCH_ENC
 	'}
 	fbPitchRMSErrorM2L0 : FB_RMSWatch;
 	fMaxPitchRMSErrorM2L0 : LREAL;
 	fMinPitchRMSErrorM2L0 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: MR2L0:LFE:BENDER_ENC
+	'}
+	fbBenderRMSErrorM2L0 : FB_RMSWatch;
+	fMaxBenderRMSErrorM2L0 : LREAL;
+	fMinBenderRMSErrorM2L0 : LREAL;
 
 	// Pitch Control
 	fbM2L0PitchControl : FB_PitchControl;
@@ -227,10 +248,22 @@ fbMotionStage_m9(stMotionStage:=M9);
 fbMotionStage_m10(stMotionStage:=M10);
 fbMotionStage_m12(stMotionStage:=M12);
 
-// Calculate Pitch RMS Error:
+// Calculate RMS Error:
+fbYRMSErrorM2L0(stMotionStage:=M7,
+	            fMaxRMSError=>fMaxYRMSErrorM2L0,
+				fMinRMSError=>fMinYRMSErrorM2L0);
+
+fbXRMSErrorM2L0(stMotionStage:=M9,
+	            fMaxRMSError=>fMaxXRMSErrorM2L0,
+				fMinRMSError=>fMinXRMSErrorM2L0);
+
 fbPitchRMSErrorM2L0(stMotionStage:=M11,
 	                fMaxRMSError=>fMaxPitchRMSErrorM2L0,
 					fMinRMSError=>fMinPitchRMSErrorM2L0);
+
+fbBenderRMSErrorM2L0(stMotionStage:=M12,
+	                 fMaxRMSError=>fMaxBenderRMSErrorM2L0,
+				     fMinRMSError=>fMinBenderRMSErrorM2L0);
 
 // Pitch Control
 M11.fVelocity := 150.0;
