@@ -41,30 +41,15 @@ class Mirror(Device):
         super().__init__(prefix, **kwargs)
 
 
-#class OMMotor(FltMvInterface, PVPositioner):
-#    """
-#    Base class for each motor in the FEE LCLS offset mirrors
-#    """
-#    __doc__ += basic_positioner_init
-#
-#    # position
-#    readback = Cpt(EpicsSignalRO, '.RBV', auto_monitor=True, kind='hinted')
-#    setpoint = Cpt(EpicsSignal, '.VAL', auto_monitor=True, limits=True,
-#                   kind='normal')
-#    done = Cpt(EpicsSignalRO, '.DMOV', auto_monitor=True, kind='omitted')
-#    motor_egu = Cpt(EpicsSignal, '.EGU', kind='omitted')
-#
-#    # limit switches
-#    low_limit_switch = Cpt(EpicsSignalRO, ".LLS", kind='omitted')
-#    high_limit_switch = Cpt(EpicsSignalRO, ".HLS", kind='omitted')
-
-
 # Testing/Debugging
+mr1l0 = Mirror('MR1L0:LFE', name='mr1l0_lfe')
 mr2l0 = Mirror('MR2L0:LFE', name='mr2l0_lfe')
 
 # From the typhon README:
 app = QApplication.instance() or QApplication(sys.argv)
 typhon.use_stylesheet()
-suite = typhon.TyphonSuite.from_device(mr2l0)
-suite.show()
+suite_mr1l0 = typhon.TyphonSuite.from_device(mr1l0)
+suite_mr2l0 = typhon.TyphonSuite.from_device(mr2l0)
+suite_mr1l0.show()
+suite_mr2l0.show()
 app.exec_()
