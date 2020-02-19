@@ -86,7 +86,7 @@ VAR
 	fMinPitchRMSErrorM1L0 : LREAL;
 
 	{attribute 'pytmc' := '
-		pv: MR2L0:LFE:BENDER_ENC
+		pv: MR1L0:LFE:BENDER_ENC
 	'}
 	fbBenderRMSErrorM1L0 : FB_RMSWatch;
 	fMaxBenderRMSErrorM1L0 : LREAL;
