@@ -1334,7 +1334,6 @@ External Setpoint Generation:
 				<SoftEndMinControl Enable="true" Range="2500"/>
 				<SoftEndMaxControl Enable="true" Range="18800"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
-				<ParameterChanged>11</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>

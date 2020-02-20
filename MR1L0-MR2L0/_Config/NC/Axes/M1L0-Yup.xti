@@ -1326,12 +1326,12 @@ External Setpoint Generation:
 		<AxisPara>
 			<General UnitName="um"/>
 			<Dynamic Acceleration="200" Deceleration="200" DelayTime="0.008"/>
-			<Velo Maximum="250"/>
+			<Velo Maximum="200"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="0.001" MaxCount="#xffffffff" ReferenceSystem="1">
-				<SoftEndMinControl Enable="true" Range="4000"/>
+				<SoftEndMinControl Enable="true" Range="3700"/>
 				<SoftEndMaxControl Enable="true" Range="27000"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
