@@ -4,11 +4,9 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
 	// Encoder reference values in counts = nm
-//	nYUP_ENC_REF : ULINT := 14760900;
-//	nYDWN_ENC_REF : ULINT := 13941900;
-	// Unsure on Y ref vals, using starting motor positions for now
-	nYUP_ENC_REF : ULINT := 3611000;
-	nYDWN_ENC_REF : ULINT := 2475000;
+	// Enc Ref Vals from alignment 2020-2-20
+	nYUP_ENC_REF : ULINT := 15899920;
+	nYDWN_ENC_REF : ULINT := 14863020;
 	nXUP_ENC_REF : ULINT := 24435400;
 	nXDWN_ENC_REF : ULINT := 25239600;
 END_VAR]]></Declaration>
