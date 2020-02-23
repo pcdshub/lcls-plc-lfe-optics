@@ -1326,8 +1326,9 @@ External Setpoint Generation:
 		<AxisPara>
 			<General UnitName="urad"/>
 			<Dynamic Acceleration="390" Deceleration="390" DelayTime="0.008"/>
-			<Velo Maximum="390"/>
+			<Velo Maximum="150"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
+			<ParameterChanged>39</ParameterChanged>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="0.001949317739" MaxCount="#xffffffff" ReferenceSystem="1">
