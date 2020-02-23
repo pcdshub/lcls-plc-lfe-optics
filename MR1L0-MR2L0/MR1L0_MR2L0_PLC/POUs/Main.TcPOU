@@ -225,11 +225,11 @@ fbMotionStage_m4(stMotionStage:=M4);
 fbMotionStage_m6(stMotionStage:=M6);
 
 // Calculate Pitch RMS Error:
-fbYRMSErrorM1L0(stMotionStage:=M7,
+fbYRMSErrorM1L0(stMotionStage:=M1,
 	            fMaxRMSError=>fMaxYRMSErrorM1L0,
 				fMinRMSError=>fMinYRMSErrorM1L0);
 
-fbXRMSErrorM1L0(stMotionStage:=M9,
+fbXRMSErrorM1L0(stMotionStage:=M3,
 	            fMaxRMSError=>fMaxXRMSErrorM1L0,
 				fMinRMSError=>fMinXRMSErrorM1L0);
 
