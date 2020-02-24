@@ -2,7 +2,7 @@
 <ScopeProject AssemblyName="TwinCAT.Measurement.Scope.API.Model">
   <Layout>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132267769696165849" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132270479073880823" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" Collapsed="0" SelectedControl="b1560a06-9992-4c8c-9f35-e7602e22de09"&gt;
@@ -353,11 +353,11 @@
                     <UnitOffsetResult>0</UnitOffsetResult>
                   </ResultingUnit>
                   <Usage>Y</Usage>
-                  <AcquisitionGUID>77bbde6b-709e-432b-9e8c-5c4af4157b0e</AcquisitionGUID>
+                  <AcquisitionGUID>0de3d5ec-dd29-4fdf-bc45-8781864d54c9</AcquisitionGUID>
                   <SubMember />
-                  <Guid>0dddfda7-bcf8-4f14-864e-143740329997</Guid>
-                  <Title>AcquisitionInterpreter_25</Title>
-                  <Name>Y: SETPOS</Name>
+                  <Guid>1c118cbf-2a31-40f3-b8ff-c43f10a5cbf4</Guid>
+                  <Title>AcquisitionInterpreter_151</Title>
+                  <Name>Y: lrCurrentSetpoint</Name>
                   <Comment />
                   <DisplayColor>Black</DisplayColor>
                   <SortPriority>2</SortPriority>
@@ -376,8 +376,8 @@
                       <SeriesType>Line</SeriesType>
                       <LineWidth>1</LineWidth>
                       <Antialias>true</Antialias>
-                      <Guid>a32cc7ec-bc64-4064-ae1c-a945b32f22ac</Guid>
-                      <Title>SeriesStyle_29</Title>
+                      <Guid>408f3480-a7fb-4416-9cf0-e1d1ec81040c</Guid>
+                      <Title>SeriesStyle_155</Title>
                       <Name>Series Style (2)</Name>
                       <Comment />
                       <DisplayColor>Plum</DisplayColor>
@@ -388,8 +388,8 @@
                     <MinMaxStyle AssemblyName="TwinCAT.Measurement.Scope.API.Model">
                       <ShowMin>false</ShowMin>
                       <ShowMax>false</ShowMax>
-                      <Guid>8675414f-3d8e-4ef6-839e-8da57f070fbd</Guid>
-                      <Title>MinMaxStyle_171</Title>
+                      <Guid>01538844-8554-4fef-b110-3678ba12befb</Guid>
+                      <Title>MinMaxStyle_156</Title>
                       <Name>Min/Max Style (2)</Name>
                       <Comment />
                       <DisplayColor>Black</DisplayColor>
@@ -399,9 +399,9 @@
                     </MinMaxStyle>
                     <TimeShiftStyle AssemblyName="TwinCAT.Measurement.Scope.API.Model">
                       <TimeShift>0</TimeShift>
-                      <Guid>31590726-243f-49bd-ae4c-06f382298524</Guid>
-                      <Title>TimeShiftStyle_172</Title>
-                      <Name>TimeShiftStyle_172</Name>
+                      <Guid>5c058d0f-d263-4eec-973b-dd8a6c383563</Guid>
+                      <Title>TimeShiftStyle_157</Title>
+                      <Name>TimeShiftStyle_157</Name>
                       <Comment />
                       <DisplayColor>Black</DisplayColor>
                       <SortPriority>100</SortPriority>
@@ -409,8 +409,8 @@
                       <Suffix>.svtss</Suffix>
                     </TimeShiftStyle>
                   </SubMember>
-                  <Guid>930d9182-beeb-42a0-baa4-e2b9b575b168</Guid>
-                  <Title>ChannelStyle_27</Title>
+                  <Guid>83ad5242-5126-42c4-84a4-0de5c17f8cfe</Guid>
+                  <Title>ChannelStyle_153</Title>
                   <Name>Channel Style (2)</Name>
                   <Comment />
                   <DisplayColor>Black</DisplayColor>
@@ -419,9 +419,9 @@
                   <Suffix>.svstyle</Suffix>
                 </ChannelStyle>
               </SubMember>
-              <Guid>3c4a8735-2cbc-40e4-99dc-f0c12afeda5b</Guid>
-              <Title>Channel_23</Title>
-              <Name>SETPOS</Name>
+              <Guid>3afcdfcf-d931-4ad8-a626-373fe0be990c</Guid>
+              <Title>Channel_149</Title>
+              <Name>lrCurrentSetpoint</Name>
               <Comment />
               <DisplayColor>-16776961</DisplayColor>
               <SortPriority>0</SortPriority>
@@ -925,7 +925,7 @@
           <Suffix>.svagroup</Suffix>
         </AxisGroup>
         <AxisGroup AssemblyName="TwinCAT.Measurement.Scope.API.Model">
-          <Enabled>true</Enabled>
+          <Enabled>false</Enabled>
           <SubMember>
             <RefGuid-TimeAxis>58a6d3a8-8356-4c23-9ebd-2bd0b17e8037</RefGuid-TimeAxis>
             <ValueAxis AssemblyName="TwinCAT.Measurement.Scope.API.Model">
@@ -2080,7 +2080,7 @@
           <Suffix>.svagroup</Suffix>
         </AxisGroup>
         <AxisGroup AssemblyName="TwinCAT.Measurement.Scope.API.Model">
-          <Enabled>false</Enabled>
+          <Enabled>true</Enabled>
           <SubMember>
             <RefGuid-TimeAxis>58a6d3a8-8356-4c23-9ebd-2bd0b17e8037</RefGuid-TimeAxis>
             <ValueAxis AssemblyName="TwinCAT.Measurement.Scope.API.Model">
@@ -2395,24 +2395,14 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>65538</IndexOffset>
-          <SymbolName>AXES.M2L0-Yup.ACTPOS</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.ACTPOS</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>106</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2426,6 +2416,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>d8c18242-d1d3-4bff-9703-df48f88efd72</Guid>
+          <Name>ACTPOS</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>16</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -2462,37 +2465,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>d8c18242-d1d3-4bff-9703-df48f88efd72</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>ACTPOS</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>10</IndexOffset>
-          <SymbolName>AXES.M2L0-Xup.SETPOS</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.SETPOS</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>107</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2506,6 +2496,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>77bbde6b-709e-432b-9e8c-5c4af4157b0e</Guid>
+          <Name>SETPOS</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>17</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -2542,37 +2545,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>77bbde6b-709e-432b-9e8c-5c4af4157b0e</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>SETPOS</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>65541</IndexOffset>
-          <SymbolName>AXES.M2L0-Yup.ACTVELO</SymbolName>
+          <SymbolName>AXES.M1K4-Xup.ACTVELO</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>108</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2586,6 +2576,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>8cd0c3b9-032d-4e69-b388-77a891ee4d3f</Guid>
+          <Name>ACTVELO</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>18</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -2622,37 +2625,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>8cd0c3b9-032d-4e69-b388-77a891ee4d3f</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>ACTVELO</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>14</IndexOffset>
-          <SymbolName>AXES.M2L0-Yup.SETVELO</SymbolName>
+          <SymbolName>AXES.M1K4-Xup.SETVELO</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>109</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2666,6 +2656,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>8817fac5-e043-416f-af92-5a2eca20f8bb</Guid>
+          <Name>SETVELO</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>19</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -2702,37 +2705,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>8817fac5-e043-416f-af92-5a2eca20f8bb</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>SETVELO</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>131087</IndexOffset>
-          <SymbolName>AXES.M2L0-Yup.POSDIFF</SymbolName>
+          <SymbolName>AXES.M1K4-Xup.POSDIFF</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>110</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2746,6 +2736,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>30f68dde-ebdf-42a6-b397-3ef395f227f3</Guid>
+          <Name>POSDIFF</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>20</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -2782,37 +2785,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>30f68dde-ebdf-42a6-b397-3ef395f227f3</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>POSDIFF</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>65538</IndexOffset>
-          <SymbolName>AXES.M2L0-Ydwn.ActPos</SymbolName>
+          <SymbolName>AXES.M1K4-Xdwn.ActPos</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>111</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2826,6 +2816,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>bb26e3b2-fb4b-4dcd-b193-3be47803e170</Guid>
+          <Name>ActPos</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>21</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -2862,37 +2865,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>bb26e3b2-fb4b-4dcd-b193-3be47803e170</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>ActPos</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>10</IndexOffset>
-          <SymbolName>AXES.M2L0-Ydwn.SetPos</SymbolName>
+          <SymbolName>AXES.M1K4-Xdwn.SetPos</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>112</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2906,6 +2896,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>d9bb7e43-b7d9-4d87-b760-93ac34e5550a</Guid>
+          <Name>SetPos</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>22</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -2942,37 +2945,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>d9bb7e43-b7d9-4d87-b760-93ac34e5550a</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>SetPos</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>65541</IndexOffset>
-          <SymbolName>AXES.M2L0-Ydwn.ActVelo</SymbolName>
+          <SymbolName>AXES.M1K4-Xdwn.ActVelo</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>113</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -2986,6 +2976,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>9562fb7b-bab7-46e7-b6aa-1f77008fda97</Guid>
+          <Name>ActVelo</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>23</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -3022,37 +3025,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>9562fb7b-bab7-46e7-b6aa-1f77008fda97</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>ActVelo</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>14</IndexOffset>
-          <SymbolName>AXES.M2L0-Ydwn.SetVelo</SymbolName>
+          <SymbolName>AXES.M1K4-Xdwn.SetVelo</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>114</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -3066,6 +3056,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>None</Area>
+          <Guid>c78012cd-a34d-4c2b-9e6b-ecd3d9bf3695</Guid>
+          <Name>SetVelo</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>24</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -3102,37 +3105,24 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>None</Area>
-          <Guid>c78012cd-a34d-4c2b-9e6b-ecd3d9bf3695</Guid>
           <Title>AdsAcquisition_34</Title>
-          <Name>SetVelo</Name>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>131087</IndexOffset>
-          <SymbolName>AXES.M2L0-Ydwn.PosDiff</SymbolName>
+          <SymbolName>AXES.M1K4-Xdwn.PosDiff</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
-          <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>115</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>20000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>0</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -3146,86 +3136,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
-          <RawUnit>
-            <Unit>
-              <BaseUnitValue>0</BaseUnitValue>
-              <Prefix>none</Prefix>
-              <ScaleFactor>1</ScaleFactor>
-              <Offset>0</Offset>
-              <Symbol></Symbol>
-              <ReturnText> (None) </ReturnText>
-              <BaseUnitString></BaseUnitString>
-              <NameExtension></NameExtension>
-            </Unit>
-            <Transformation>
-              <BaseUnitValue>0</BaseUnitValue>
-              <TargetUnitValue>0</TargetUnitValue>
-              <ScaleFactor>1</ScaleFactor>
-              <Name>None</Name>
-              <SourceUnitString></SourceUnitString>
-              <TargetUnitString></TargetUnitString>
-              <SourceUnitPrefix>none</SourceUnitPrefix>
-              <Symbol>1</Symbol>
-            </Transformation>
-            <UserUnit>
-              <BaseUnitValue>0</BaseUnitValue>
-              <Prefix>none</Prefix>
-              <ScaleFactor>1</ScaleFactor>
-              <Offset>0</Offset>
-              <Name>None</Name>
-              <BaseName>UnitOfOne</BaseName>
-              <NameExtension></NameExtension>
-              <Symbol></Symbol>
-              <BaseUnitString></BaseUnitString>
-              <UserPrefix>none</UserPrefix>
-            </UserUnit>
-            <UnitScaleResult>1</UnitScaleResult>
-            <UnitOffsetResult>0</UnitOffsetResult>
-          </RawUnit>
           <Area>None</Area>
           <Guid>55464ac5-0ac7-46ea-a269-ad6803c96632</Guid>
-          <Title>AdsAcquisition_34</Title>
           <Name>PosDiff</Name>
-          <Comment></Comment>
-          <DisplayColor>Black</DisplayColor>
           <SortPriority>10</SortPriority>
-          <IsFileBased>false</IsFileBased>
-          <Suffix>.svacq</Suffix>
-        </AdsAcquisition>
-        <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
-          <IndexGroup>16448</IndexGroup>
-          <IndexOffset>1542432</IndexOffset>
-          <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryX</SymbolName>
-          <SymbolBased>true</SymbolBased>
-          <TargetPort>851</TargetPort>
-          <ContextMask>2</ContextMask>
-          <IsHistorical>false</IsHistorical>
-          <FileHandle>116</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
-          <DataType>INT64</DataType>
-          <BaseSampleTime>100000</BaseSampleTime>
-          <UseTaskSampleTime>true</UseTaskSampleTime>
+          <FileHandle>25</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>20000</BaseSampleTime>
           <Oversample>0</Oversample>
           <ForceOversampling>false</ForceOversampling>
           <ArrayLength>0</ArrayLength>
           <TimeOffset>0</TimeOffset>
-          <VariableSize>8</VariableSize>
-          <DataAccess>
-            <DataAccessMode>
-              <Source>TwinCAT</Source>
-              <Protocoll>ADS</Protocoll>
-              <Format>TcBinary</Format>
-              <TimeContext>Present</TimeContext>
-              <TimeTangeInfo>
-                <StartTimeStamp>0</StartTimeStamp>
-                <EndTimeStamp>0</EndTimeStamp>
-              </TimeTangeInfo>
-            </DataAccessMode>
-          </DataAccess>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -3262,37 +3185,104 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
+          <Title>AdsAcquisition_34</Title>
+          <Comment></Comment>
+          <DisplayColor>Black</DisplayColor>
+          <IsFileBased>false</IsFileBased>
+          <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
+        </AdsAcquisition>
+        <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+          <IndexGroup>16448</IndexGroup>
+          <IndexOffset>1184008</IndexOffset>
+          <SymbolName>Main.M1K4.fbRunHOMS.nCurrGantryX</SymbolName>
+          <SymbolBased>true</SymbolBased>
+          <TargetPort>851</TargetPort>
+          <IsHistorical>false</IsHistorical>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
+          <DataType>INT64</DataType>
+          <UseTaskSampleTime>true</UseTaskSampleTime>
+          <ContextMask>2</ContextMask>
+          <VariableSize>8</VariableSize>
+          <DataAccess>
+            <DataAccessMode>
+              <Source>TwinCAT</Source>
+              <Protocoll>ADS</Protocoll>
+              <Format>TcBinary</Format>
+              <TimeContext>Present</TimeContext>
+              <TimeTangeInfo>
+                <StartTimeStamp>0</StartTimeStamp>
+                <EndTimeStamp>0</EndTimeStamp>
+              </TimeTangeInfo>
+            </DataAccessMode>
+          </DataAccess>
           <Area>None</Area>
           <Guid>fe6c8eb9-5aa7-48bd-91e6-55d3d93be79c</Guid>
-          <Title>AdsAcquisition_34</Title>
           <Name>nCurrGantryX</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>26</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>100000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
+          <RawUnit>
+            <Unit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Symbol></Symbol>
+              <ReturnText> (None) </ReturnText>
+              <BaseUnitString></BaseUnitString>
+              <NameExtension></NameExtension>
+            </Unit>
+            <Transformation>
+              <BaseUnitValue>0</BaseUnitValue>
+              <TargetUnitValue>0</TargetUnitValue>
+              <ScaleFactor>1</ScaleFactor>
+              <Name>None</Name>
+              <SourceUnitString></SourceUnitString>
+              <TargetUnitString></TargetUnitString>
+              <SourceUnitPrefix>none</SourceUnitPrefix>
+              <Symbol>1</Symbol>
+            </Transformation>
+            <UserUnit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Name>None</Name>
+              <BaseName>UnitOfOne</BaseName>
+              <NameExtension></NameExtension>
+              <Symbol></Symbol>
+              <BaseUnitString></BaseUnitString>
+              <UserPrefix>none</UserPrefix>
+            </UserUnit>
+            <UnitScaleResult>1</UnitScaleResult>
+            <UnitOffsetResult>0</UnitOffsetResult>
+          </RawUnit>
+          <Title>AdsAcquisition_34</Title>
           <Comment></Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>1542424</IndexOffset>
-          <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryY</SymbolName>
+          <IndexOffset>1184000</IndexOffset>
+          <SymbolName>Main.M1K4.fbRunHOMS.nCurrGantryY</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
-          <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>117</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>INT64</DataType>
-          <BaseSampleTime>100000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>2</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -3306,73 +3296,73 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
-          <RawUnit>
-            <Unit>
-              <BaseUnitValue>0</BaseUnitValue>
-              <Prefix>none</Prefix>
-              <ScaleFactor>1</ScaleFactor>
-              <Offset>0</Offset>
-              <Symbol></Symbol>
-              <ReturnText> (None) </ReturnText>
-              <BaseUnitString></BaseUnitString>
-              <NameExtension></NameExtension>
-            </Unit>
-            <Transformation>
-              <BaseUnitValue>0</BaseUnitValue>
-              <TargetUnitValue>0</TargetUnitValue>
-              <ScaleFactor>1</ScaleFactor>
-              <Name>None</Name>
-              <SourceUnitString></SourceUnitString>
-              <TargetUnitString></TargetUnitString>
-              <SourceUnitPrefix>none</SourceUnitPrefix>
-              <Symbol>1</Symbol>
-            </Transformation>
-            <UserUnit>
-              <BaseUnitValue>0</BaseUnitValue>
-              <Prefix>none</Prefix>
-              <ScaleFactor>1</ScaleFactor>
-              <Offset>0</Offset>
-              <Name>None</Name>
-              <BaseName>UnitOfOne</BaseName>
-              <NameExtension></NameExtension>
-              <Symbol></Symbol>
-              <BaseUnitString></BaseUnitString>
-              <UserPrefix>none</UserPrefix>
-            </UserUnit>
-            <UnitScaleResult>1</UnitScaleResult>
-            <UnitOffsetResult>0</UnitOffsetResult>
-          </RawUnit>
           <Area>None</Area>
           <Guid>a7c38c13-8271-4d90-b0c5-361e18415226</Guid>
-          <Title>AdsAcquisition_34</Title>
           <Name>nCurrGantryY</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>27</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>100000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
+          <RawUnit>
+            <Unit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Symbol></Symbol>
+              <ReturnText> (None) </ReturnText>
+              <BaseUnitString></BaseUnitString>
+              <NameExtension></NameExtension>
+            </Unit>
+            <Transformation>
+              <BaseUnitValue>0</BaseUnitValue>
+              <TargetUnitValue>0</TargetUnitValue>
+              <ScaleFactor>1</ScaleFactor>
+              <Name>None</Name>
+              <SourceUnitString></SourceUnitString>
+              <TargetUnitString></TargetUnitString>
+              <SourceUnitPrefix>none</SourceUnitPrefix>
+              <Symbol>1</Symbol>
+            </Transformation>
+            <UserUnit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Name>None</Name>
+              <BaseName>UnitOfOne</BaseName>
+              <NameExtension></NameExtension>
+              <Symbol></Symbol>
+              <BaseUnitString></BaseUnitString>
+              <UserPrefix>none</UserPrefix>
+            </UserUnit>
+            <UnitScaleResult>1</UnitScaleResult>
+            <UnitOffsetResult>0</UnitOffsetResult>
+          </RawUnit>
+          <Title>AdsAcquisition_34</Title>
           <Comment> Current gantry difference</Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>61462</IndexGroup>
           <IndexOffset>0</IndexOffset>
-          <SymbolName>Main.fbM2L0PitchControl.Pitch.Piezo.rActVoltage</SymbolName>
+          <SymbolName>Main.fbM1K4PitchControl.Pitch.Piezo.rActVoltage</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
-          <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>118</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL32</DataType>
-          <BaseSampleTime>100000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>2</ContextMask>
           <VariableSize>4</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -3386,86 +3376,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
-          <RawUnit>
-            <Unit>
-              <BaseUnitValue>0</BaseUnitValue>
-              <Prefix>none</Prefix>
-              <ScaleFactor>1</ScaleFactor>
-              <Offset>0</Offset>
-              <Symbol></Symbol>
-              <ReturnText> (None) </ReturnText>
-              <BaseUnitString></BaseUnitString>
-              <NameExtension></NameExtension>
-            </Unit>
-            <Transformation>
-              <BaseUnitValue>0</BaseUnitValue>
-              <TargetUnitValue>0</TargetUnitValue>
-              <ScaleFactor>1</ScaleFactor>
-              <Name>None</Name>
-              <SourceUnitString></SourceUnitString>
-              <TargetUnitString></TargetUnitString>
-              <SourceUnitPrefix>none</SourceUnitPrefix>
-              <Symbol>1</Symbol>
-            </Transformation>
-            <UserUnit>
-              <BaseUnitValue>0</BaseUnitValue>
-              <Prefix>none</Prefix>
-              <ScaleFactor>1</ScaleFactor>
-              <Offset>0</Offset>
-              <Name>None</Name>
-              <BaseName>UnitOfOne</BaseName>
-              <NameExtension></NameExtension>
-              <Symbol></Symbol>
-              <BaseUnitString></BaseUnitString>
-              <UserPrefix>none</UserPrefix>
-            </UserUnit>
-            <UnitScaleResult>1</UnitScaleResult>
-            <UnitOffsetResult>0</UnitOffsetResult>
-          </RawUnit>
           <Area>Local</Area>
           <Guid>e160e8d3-9a1b-44bc-8258-bf94d04821d8</Guid>
-          <Title>AdsAcquisition_129</Title>
           <Name>rActVoltage</Name>
-          <Comment>Actual voltage</Comment>
-          <DisplayColor>Black</DisplayColor>
           <SortPriority>10</SortPriority>
-          <IsFileBased>false</IsFileBased>
-          <Suffix>.svacq</Suffix>
-        </AdsAcquisition>
-        <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
-          <IndexGroup>61462</IndexGroup>
-          <IndexOffset>0</IndexOffset>
-          <SymbolName>Main.fbM2L0PitchControl.Pitch.Piezo.rSetVoltage</SymbolName>
-          <SymbolBased>true</SymbolBased>
-          <TargetPort>851</TargetPort>
-          <ContextMask>2</ContextMask>
-          <IsHistorical>false</IsHistorical>
-          <FileHandle>119</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
-          <DataType>REAL32</DataType>
+          <FileHandle>28</FileHandle>
+          <ServerHandle>0</ServerHandle>
           <BaseSampleTime>100000</BaseSampleTime>
-          <UseTaskSampleTime>true</UseTaskSampleTime>
           <Oversample>0</Oversample>
           <ForceOversampling>false</ForceOversampling>
           <ArrayLength>0</ArrayLength>
           <TimeOffset>0</TimeOffset>
-          <VariableSize>4</VariableSize>
-          <DataAccess>
-            <DataAccessMode>
-              <Source>TwinCAT</Source>
-              <Protocoll>ADS</Protocoll>
-              <Format>TcBinary</Format>
-              <TimeContext>Present</TimeContext>
-              <TimeTangeInfo>
-                <StartTimeStamp>0</StartTimeStamp>
-                <EndTimeStamp>0</EndTimeStamp>
-              </TimeTangeInfo>
-            </DataAccessMode>
-          </DataAccess>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -3502,37 +3425,104 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>Local</Area>
-          <Guid>7ff21fd1-804f-4744-b2bc-a232de0535de</Guid>
           <Title>AdsAcquisition_129</Title>
-          <Name>rSetVoltage</Name>
-          <Comment>this parameter is set by the control loop/ voltage mode</Comment>
+          <Comment>Actual voltage</Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
+        </AdsAcquisition>
+        <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+          <IndexGroup>61462</IndexGroup>
+          <IndexOffset>0</IndexOffset>
+          <SymbolName>Main.fbM1K4PitchControl.Pitch.Piezo.rSetVoltage</SymbolName>
+          <SymbolBased>true</SymbolBased>
+          <TargetPort>851</TargetPort>
+          <IsHistorical>false</IsHistorical>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
+          <DataType>REAL32</DataType>
+          <UseTaskSampleTime>true</UseTaskSampleTime>
+          <ContextMask>2</ContextMask>
+          <VariableSize>4</VariableSize>
+          <DataAccess>
+            <DataAccessMode>
+              <Source>TwinCAT</Source>
+              <Protocoll>ADS</Protocoll>
+              <Format>TcBinary</Format>
+              <TimeContext>Present</TimeContext>
+              <TimeTangeInfo>
+                <StartTimeStamp>0</StartTimeStamp>
+                <EndTimeStamp>0</EndTimeStamp>
+              </TimeTangeInfo>
+            </DataAccessMode>
+          </DataAccess>
+          <Area>Local</Area>
+          <Guid>7ff21fd1-804f-4744-b2bc-a232de0535de</Guid>
+          <Name>rSetVoltage</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>29</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>100000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
+          <RawUnit>
+            <Unit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Symbol></Symbol>
+              <ReturnText> (None) </ReturnText>
+              <BaseUnitString></BaseUnitString>
+              <NameExtension></NameExtension>
+            </Unit>
+            <Transformation>
+              <BaseUnitValue>0</BaseUnitValue>
+              <TargetUnitValue>0</TargetUnitValue>
+              <ScaleFactor>1</ScaleFactor>
+              <Name>None</Name>
+              <SourceUnitString></SourceUnitString>
+              <TargetUnitString></TargetUnitString>
+              <SourceUnitPrefix>none</SourceUnitPrefix>
+              <Symbol>1</Symbol>
+            </Transformation>
+            <UserUnit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Name>None</Name>
+              <BaseName>UnitOfOne</BaseName>
+              <NameExtension></NameExtension>
+              <Symbol></Symbol>
+              <BaseUnitString></BaseUnitString>
+              <UserPrefix>none</UserPrefix>
+            </UserUnit>
+            <UnitScaleResult>1</UnitScaleResult>
+            <UnitOffsetResult>0</UnitOffsetResult>
+          </RawUnit>
+          <Title>AdsAcquisition_129</Title>
+          <Comment>this parameter is set by the control loop/ voltage mode</Comment>
+          <DisplayColor>Black</DisplayColor>
+          <IsFileBased>false</IsFileBased>
+          <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>1738344</IndexOffset>
-          <SymbolName>Main.fbM2L0PitchControl.lrCurrentSetpoint</SymbolName>
+          <IndexOffset>1379920</IndexOffset>
+          <SymbolName>Main.fbM1K4PitchControl.lrCurrentSetpoint</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
-          <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>120</FileHandle>
-          <ServerHandle>0</ServerHandle>
-          <ChannelStyleInformation />
-          <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
-          <UseLocalServer>true</UseLocalServer>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <DataType>REAL64</DataType>
-          <BaseSampleTime>100000</BaseSampleTime>
           <UseTaskSampleTime>true</UseTaskSampleTime>
-          <Oversample>0</Oversample>
-          <ForceOversampling>false</ForceOversampling>
-          <ArrayLength>0</ArrayLength>
-          <TimeOffset>0</TimeOffset>
+          <ContextMask>2</ContextMask>
           <VariableSize>8</VariableSize>
           <DataAccess>
             <DataAccessMode>
@@ -3546,6 +3536,19 @@
               </TimeTangeInfo>
             </DataAccessMode>
           </DataAccess>
+          <Area>Local</Area>
+          <Guid>0de3d5ec-dd29-4fdf-bc45-8781864d54c9</Guid>
+          <Name>lrCurrentSetpoint</Name>
+          <SortPriority>10</SortPriority>
+          <Enabled>true</Enabled>
+          <UseLocalServer>true</UseLocalServer>
+          <FileHandle>30</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <BaseSampleTime>100000</BaseSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
           <RawUnit>
             <Unit>
               <BaseUnitValue>0</BaseUnitValue>
@@ -3582,15 +3585,12 @@
             <UnitScaleResult>1</UnitScaleResult>
             <UnitOffsetResult>0</UnitOffsetResult>
           </RawUnit>
-          <Area>Local</Area>
-          <Guid>0de3d5ec-dd29-4fdf-bc45-8781864d54c9</Guid>
           <Title>AdsAcquisition_129</Title>
-          <Name>lrCurrentSetpoint</Name>
           <Comment> Setpoint: Epics writes to DUT_MotionStage which gets fed into this</Comment>
           <DisplayColor>Black</DisplayColor>
-          <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
           <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
         </AdsAcquisition>
       </SubMember>
       <Guid>fa79a670-5848-423d-b58d-6241dacc1c23</Guid>

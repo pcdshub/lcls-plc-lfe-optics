@@ -49,7 +49,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L0:LFE:MMS:BENDER
 	'}
-	M6 : DUT_MotionStage; // M1L0 Bender
+	M6 : DUT_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Bender
 	fbMotionStage_m6 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;
@@ -144,7 +144,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L0:LFE:MMS:BENDER
 	'}
-	M12 : DUT_MotionStage; // M2L0 Bender
+	M12 : DUT_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Bender
 	fbMotionStage_m12 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;
