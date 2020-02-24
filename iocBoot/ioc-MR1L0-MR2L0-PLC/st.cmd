@@ -277,16 +277,22 @@ dbLoadRecords("db/save_restoreStatus.db", "P=PREFIX::")
 # Setup autosave
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
+set_requestfile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 save_restoreSet_status_prefix( "PREFIX::" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "$(IOC).sav" )
+set_pass0_restoreFile( "autoSettings.sav" )
 set_pass1_restoreFile( "$(IOC).sav" )
+set_pass1_restoreFile( "autoSettings.sav" )
 
 # Initialize the IOC and start processing records
 iocInit()
 
+makeAutosaveFileFromDbInfo( "$(IOC_DATA)/$(IOC)/autosave/autoSettings.req", "autosave_pass0" )
+
 # Start autosave backups
+create_monitor_set( "autoSettings.req", 5, "" )
 create_monitor_set( "$(IOC).req", 5, "" )
 
 # All IOCs should dump some common info after initial startup.
