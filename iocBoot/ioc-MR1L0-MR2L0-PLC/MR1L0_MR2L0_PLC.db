@@ -1,3 +1,39 @@
+record(longin, "$(IOC):LCLSGeneral:LogPort_RBV") {
+  field(DESC, "The log host UDP port")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.iLogPort?")
+}
+
+record(longout, "$(IOC):LCLSGeneral:LogPort") {
+  field(DESC, "The log host UDP port")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(waveform, "$(IOC):LCLSGeneral:LogHost_RBV") {
+  field(DESC, "The log host IP address")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.cLogHost?")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+}
+
+record(waveform, "$(IOC):LCLSGeneral:LogHost") {
+  field(DESC, "The log host IP address")
+  field(DTYP, "asynInt8ArrayOut")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost=")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+  info(autosaveFields_pass0, "VAL")
+}
+
 record(bi, "MR1L0:LFE:MMS:YUP:PLC:bLimitForwardEnable_RBV") {
   field(DESC, "FALSE if forward limit hit")
   field(SCAN, "I/O Intr")
@@ -198,7 +234,7 @@ record(bo, "MR1L0:LFE:MMS:YUP:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:YUP:PLC:bReset_RBV") {
@@ -218,7 +254,7 @@ record(bo, "MR1L0:LFE:MMS:YUP:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:YUP:PLC:bExecute_RBV") {
@@ -238,7 +274,7 @@ record(bo, "MR1L0:LFE:MMS:YUP:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:YUP:PLC:nCommand_RBV") {
@@ -254,7 +290,7 @@ record(longout, "MR1L0:LFE:MMS:YUP:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:YUP:PLC:nCmdData_RBV") {
@@ -270,7 +306,7 @@ record(longout, "MR1L0:LFE:MMS:YUP:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YUP:PLC:fPosition_RBV") {
@@ -281,7 +317,7 @@ record(ai, "MR1L0:LFE:MMS:YUP:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YUP:PLC:fPosition") {
@@ -289,7 +325,7 @@ record(ao, "MR1L0:LFE:MMS:YUP:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YUP:PLC:fVelocity_RBV") {
@@ -300,7 +336,7 @@ record(ai, "MR1L0:LFE:MMS:YUP:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YUP:PLC:fVelocity") {
@@ -308,7 +344,7 @@ record(ao, "MR1L0:LFE:MMS:YUP:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YUP:PLC:fAcceleration_RBV") {
@@ -319,7 +355,7 @@ record(ai, "MR1L0:LFE:MMS:YUP:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YUP:PLC:fAcceleration") {
@@ -327,7 +363,7 @@ record(ao, "MR1L0:LFE:MMS:YUP:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YUP:PLC:fDeceleration_RBV") {
@@ -338,7 +374,7 @@ record(ai, "MR1L0:LFE:MMS:YUP:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YUP:PLC:fDeceleration") {
@@ -346,7 +382,7 @@ record(ao, "MR1L0:LFE:MMS:YUP:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YUP:PLC:fHomePosition_RBV") {
@@ -357,7 +393,7 @@ record(ai, "MR1L0:LFE:MMS:YUP:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YUP:PLC:fHomePosition") {
@@ -365,7 +401,7 @@ record(ao, "MR1L0:LFE:MMS:YUP:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:YUP:PLC:nMotionAxisID_RBV") {
@@ -641,7 +677,7 @@ record(bo, "MR1L0:LFE:MMS:YDWN:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:YDWN:PLC:bReset_RBV") {
@@ -661,7 +697,7 @@ record(bo, "MR1L0:LFE:MMS:YDWN:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:YDWN:PLC:bExecute_RBV") {
@@ -681,7 +717,7 @@ record(bo, "MR1L0:LFE:MMS:YDWN:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:YDWN:PLC:nCommand_RBV") {
@@ -697,7 +733,7 @@ record(longout, "MR1L0:LFE:MMS:YDWN:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:YDWN:PLC:nCmdData_RBV") {
@@ -713,7 +749,7 @@ record(longout, "MR1L0:LFE:MMS:YDWN:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fPosition_RBV") {
@@ -724,7 +760,7 @@ record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fPosition") {
@@ -732,7 +768,7 @@ record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fVelocity_RBV") {
@@ -743,7 +779,7 @@ record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fVelocity") {
@@ -751,7 +787,7 @@ record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fAcceleration_RBV") {
@@ -762,7 +798,7 @@ record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fAcceleration") {
@@ -770,7 +806,7 @@ record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fDeceleration_RBV") {
@@ -781,7 +817,7 @@ record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fDeceleration") {
@@ -789,7 +825,7 @@ record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fHomePosition_RBV") {
@@ -800,7 +836,7 @@ record(ai, "MR1L0:LFE:MMS:YDWN:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fHomePosition") {
@@ -808,7 +844,7 @@ record(ao, "MR1L0:LFE:MMS:YDWN:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:YDWN:PLC:nMotionAxisID_RBV") {
@@ -1084,7 +1120,7 @@ record(bo, "MR1L0:LFE:MMS:XUP:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:XUP:PLC:bReset_RBV") {
@@ -1104,7 +1140,7 @@ record(bo, "MR1L0:LFE:MMS:XUP:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:XUP:PLC:bExecute_RBV") {
@@ -1124,7 +1160,7 @@ record(bo, "MR1L0:LFE:MMS:XUP:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:XUP:PLC:nCommand_RBV") {
@@ -1140,7 +1176,7 @@ record(longout, "MR1L0:LFE:MMS:XUP:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:XUP:PLC:nCmdData_RBV") {
@@ -1156,7 +1192,7 @@ record(longout, "MR1L0:LFE:MMS:XUP:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XUP:PLC:fPosition_RBV") {
@@ -1167,7 +1203,7 @@ record(ai, "MR1L0:LFE:MMS:XUP:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XUP:PLC:fPosition") {
@@ -1175,7 +1211,7 @@ record(ao, "MR1L0:LFE:MMS:XUP:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XUP:PLC:fVelocity_RBV") {
@@ -1186,7 +1222,7 @@ record(ai, "MR1L0:LFE:MMS:XUP:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XUP:PLC:fVelocity") {
@@ -1194,7 +1230,7 @@ record(ao, "MR1L0:LFE:MMS:XUP:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XUP:PLC:fAcceleration_RBV") {
@@ -1205,7 +1241,7 @@ record(ai, "MR1L0:LFE:MMS:XUP:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XUP:PLC:fAcceleration") {
@@ -1213,7 +1249,7 @@ record(ao, "MR1L0:LFE:MMS:XUP:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XUP:PLC:fDeceleration_RBV") {
@@ -1224,7 +1260,7 @@ record(ai, "MR1L0:LFE:MMS:XUP:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XUP:PLC:fDeceleration") {
@@ -1232,7 +1268,7 @@ record(ao, "MR1L0:LFE:MMS:XUP:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XUP:PLC:fHomePosition_RBV") {
@@ -1243,7 +1279,7 @@ record(ai, "MR1L0:LFE:MMS:XUP:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XUP:PLC:fHomePosition") {
@@ -1251,7 +1287,7 @@ record(ao, "MR1L0:LFE:MMS:XUP:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:XUP:PLC:nMotionAxisID_RBV") {
@@ -1527,7 +1563,7 @@ record(bo, "MR1L0:LFE:MMS:XDWN:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:XDWN:PLC:bReset_RBV") {
@@ -1547,7 +1583,7 @@ record(bo, "MR1L0:LFE:MMS:XDWN:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:XDWN:PLC:bExecute_RBV") {
@@ -1567,7 +1603,7 @@ record(bo, "MR1L0:LFE:MMS:XDWN:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:XDWN:PLC:nCommand_RBV") {
@@ -1583,7 +1619,7 @@ record(longout, "MR1L0:LFE:MMS:XDWN:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:XDWN:PLC:nCmdData_RBV") {
@@ -1599,7 +1635,7 @@ record(longout, "MR1L0:LFE:MMS:XDWN:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fPosition_RBV") {
@@ -1610,7 +1646,7 @@ record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fPosition") {
@@ -1618,7 +1654,7 @@ record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fVelocity_RBV") {
@@ -1629,7 +1665,7 @@ record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fVelocity") {
@@ -1637,7 +1673,7 @@ record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fAcceleration_RBV") {
@@ -1648,7 +1684,7 @@ record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fAcceleration") {
@@ -1656,7 +1692,7 @@ record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fDeceleration_RBV") {
@@ -1667,7 +1703,7 @@ record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fDeceleration") {
@@ -1675,7 +1711,7 @@ record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fHomePosition_RBV") {
@@ -1686,7 +1722,7 @@ record(ai, "MR1L0:LFE:MMS:XDWN:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fHomePosition") {
@@ -1694,7 +1730,7 @@ record(ao, "MR1L0:LFE:MMS:XDWN:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:XDWN:PLC:nMotionAxisID_RBV") {
@@ -1970,7 +2006,7 @@ record(bo, "MR1L0:LFE:MMS:PITCH:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:PITCH:PLC:bReset_RBV") {
@@ -1990,7 +2026,7 @@ record(bo, "MR1L0:LFE:MMS:PITCH:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:PITCH:PLC:bExecute_RBV") {
@@ -2010,7 +2046,7 @@ record(bo, "MR1L0:LFE:MMS:PITCH:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:PITCH:PLC:nCommand_RBV") {
@@ -2026,7 +2062,7 @@ record(longout, "MR1L0:LFE:MMS:PITCH:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:PITCH:PLC:nCmdData_RBV") {
@@ -2042,7 +2078,7 @@ record(longout, "MR1L0:LFE:MMS:PITCH:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fPosition_RBV") {
@@ -2053,7 +2089,7 @@ record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fPosition") {
@@ -2061,7 +2097,7 @@ record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fVelocity_RBV") {
@@ -2072,7 +2108,7 @@ record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fVelocity") {
@@ -2080,7 +2116,7 @@ record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fAcceleration_RBV") {
@@ -2091,7 +2127,7 @@ record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fAcceleration") {
@@ -2099,7 +2135,7 @@ record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fDeceleration_RBV") {
@@ -2110,7 +2146,7 @@ record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fDeceleration") {
@@ -2118,7 +2154,7 @@ record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fHomePosition_RBV") {
@@ -2129,7 +2165,7 @@ record(ai, "MR1L0:LFE:MMS:PITCH:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fHomePosition") {
@@ -2137,7 +2173,7 @@ record(ao, "MR1L0:LFE:MMS:PITCH:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:PITCH:PLC:nMotionAxisID_RBV") {
@@ -2413,7 +2449,7 @@ record(bo, "MR1L0:LFE:MMS:BENDER:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:BENDER:PLC:bReset_RBV") {
@@ -2433,7 +2469,7 @@ record(bo, "MR1L0:LFE:MMS:BENDER:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:MMS:BENDER:PLC:bExecute_RBV") {
@@ -2453,7 +2489,7 @@ record(bo, "MR1L0:LFE:MMS:BENDER:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:BENDER:PLC:nCommand_RBV") {
@@ -2469,7 +2505,7 @@ record(longout, "MR1L0:LFE:MMS:BENDER:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:BENDER:PLC:nCmdData_RBV") {
@@ -2485,7 +2521,7 @@ record(longout, "MR1L0:LFE:MMS:BENDER:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fPosition_RBV") {
@@ -2496,7 +2532,7 @@ record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fPosition") {
@@ -2504,7 +2540,7 @@ record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fVelocity_RBV") {
@@ -2515,7 +2551,7 @@ record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fVelocity") {
@@ -2523,7 +2559,7 @@ record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fAcceleration_RBV") {
@@ -2534,7 +2570,7 @@ record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fAcceleration") {
@@ -2542,7 +2578,7 @@ record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fDeceleration_RBV") {
@@ -2553,7 +2589,7 @@ record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fDeceleration") {
@@ -2561,7 +2597,7 @@ record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fHomePosition_RBV") {
@@ -2572,7 +2608,7 @@ record(ai, "MR1L0:LFE:MMS:BENDER:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fHomePosition") {
@@ -2580,7 +2616,7 @@ record(ao, "MR1L0:LFE:MMS:BENDER:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR1L0:LFE:MMS:BENDER:PLC:nMotionAxisID_RBV") {
@@ -2673,7 +2709,7 @@ record(bo, "MR1L0:LFE:COUPLE_Y") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleY=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:DECOUPLE_Y_RBV") {
@@ -2693,7 +2729,7 @@ record(bo, "MR1L0:LFE:DECOUPLE_Y") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleY=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:COUPLE_X_RBV") {
@@ -2713,7 +2749,7 @@ record(bo, "MR1L0:LFE:COUPLE_X") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleX=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:DECOUPLE_X_RBV") {
@@ -2733,7 +2769,7 @@ record(bo, "MR1L0:LFE:DECOUPLE_X") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleX=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR1L0:LFE:ALREADY_COUPLED_Y_RBV") {
@@ -2767,7 +2803,7 @@ record(ai, "MR1L0:LFE:GANTRY_Y_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryY_um?")
   field(PREC, "3")
   field(EGU, "um")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:GANTRY_X_RBV") {
@@ -2779,7 +2815,7 @@ record(ai, "MR1L0:LFE:GANTRY_X_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryX_um?")
   field(PREC, "3")
   field(EGU, "um")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:Y_ENC:MEAN_RBV") {
@@ -2790,7 +2826,7 @@ record(ai, "MR1L0:LFE:Y_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:Y_ENC:STDEV_RBV") {
@@ -2801,7 +2837,7 @@ record(ai, "MR1L0:LFE:Y_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:Y_ENC:RMS_RBV") {
@@ -2812,7 +2848,7 @@ record(ai, "MR1L0:LFE:Y_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR1L0:LFE:Y_ENC:ACTPOSARRAY_RBV") {
@@ -2845,7 +2881,7 @@ record(ai, "MR1L0:LFE:X_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:X_ENC:STDEV_RBV") {
@@ -2856,7 +2892,7 @@ record(ai, "MR1L0:LFE:X_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:X_ENC:RMS_RBV") {
@@ -2867,7 +2903,7 @@ record(ai, "MR1L0:LFE:X_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR1L0:LFE:X_ENC:ACTPOSARRAY_RBV") {
@@ -2900,7 +2936,7 @@ record(ai, "MR1L0:LFE:PITCH_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:PITCH_ENC:STDEV_RBV") {
@@ -2911,7 +2947,7 @@ record(ai, "MR1L0:LFE:PITCH_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:PITCH_ENC:RMS_RBV") {
@@ -2922,7 +2958,7 @@ record(ai, "MR1L0:LFE:PITCH_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR1L0:LFE:PITCH_ENC:ACTPOSARRAY_RBV") {
@@ -2955,7 +2991,7 @@ record(ai, "MR1L0:LFE:BENDER_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:BENDER_ENC:STDEV_RBV") {
@@ -2966,7 +3002,7 @@ record(ai, "MR1L0:LFE:BENDER_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR1L0:LFE:BENDER_ENC:RMS_RBV") {
@@ -2977,7 +3013,7 @@ record(ai, "MR1L0:LFE:BENDER_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR1L0:LFE:BENDER_ENC:ACTPOSARRAY_RBV") {
@@ -3202,7 +3238,7 @@ record(bo, "MR2L0:LFE:MMS:YUP:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:YUP:PLC:bReset_RBV") {
@@ -3222,7 +3258,7 @@ record(bo, "MR2L0:LFE:MMS:YUP:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:YUP:PLC:bExecute_RBV") {
@@ -3242,7 +3278,7 @@ record(bo, "MR2L0:LFE:MMS:YUP:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:YUP:PLC:nCommand_RBV") {
@@ -3258,7 +3294,7 @@ record(longout, "MR2L0:LFE:MMS:YUP:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:YUP:PLC:nCmdData_RBV") {
@@ -3274,7 +3310,7 @@ record(longout, "MR2L0:LFE:MMS:YUP:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YUP:PLC:fPosition_RBV") {
@@ -3285,7 +3321,7 @@ record(ai, "MR2L0:LFE:MMS:YUP:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YUP:PLC:fPosition") {
@@ -3293,7 +3329,7 @@ record(ao, "MR2L0:LFE:MMS:YUP:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YUP:PLC:fVelocity_RBV") {
@@ -3304,7 +3340,7 @@ record(ai, "MR2L0:LFE:MMS:YUP:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YUP:PLC:fVelocity") {
@@ -3312,7 +3348,7 @@ record(ao, "MR2L0:LFE:MMS:YUP:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YUP:PLC:fAcceleration_RBV") {
@@ -3323,7 +3359,7 @@ record(ai, "MR2L0:LFE:MMS:YUP:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YUP:PLC:fAcceleration") {
@@ -3331,7 +3367,7 @@ record(ao, "MR2L0:LFE:MMS:YUP:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YUP:PLC:fDeceleration_RBV") {
@@ -3342,7 +3378,7 @@ record(ai, "MR2L0:LFE:MMS:YUP:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YUP:PLC:fDeceleration") {
@@ -3350,7 +3386,7 @@ record(ao, "MR2L0:LFE:MMS:YUP:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YUP:PLC:fHomePosition_RBV") {
@@ -3361,7 +3397,7 @@ record(ai, "MR2L0:LFE:MMS:YUP:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YUP:PLC:fHomePosition") {
@@ -3369,7 +3405,7 @@ record(ao, "MR2L0:LFE:MMS:YUP:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:YUP:PLC:nMotionAxisID_RBV") {
@@ -3645,7 +3681,7 @@ record(bo, "MR2L0:LFE:MMS:YDWN:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:YDWN:PLC:bReset_RBV") {
@@ -3665,7 +3701,7 @@ record(bo, "MR2L0:LFE:MMS:YDWN:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:YDWN:PLC:bExecute_RBV") {
@@ -3685,7 +3721,7 @@ record(bo, "MR2L0:LFE:MMS:YDWN:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:YDWN:PLC:nCommand_RBV") {
@@ -3701,7 +3737,7 @@ record(longout, "MR2L0:LFE:MMS:YDWN:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:YDWN:PLC:nCmdData_RBV") {
@@ -3717,7 +3753,7 @@ record(longout, "MR2L0:LFE:MMS:YDWN:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fPosition_RBV") {
@@ -3728,7 +3764,7 @@ record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fPosition") {
@@ -3736,7 +3772,7 @@ record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fVelocity_RBV") {
@@ -3747,7 +3783,7 @@ record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fVelocity") {
@@ -3755,7 +3791,7 @@ record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fAcceleration_RBV") {
@@ -3766,7 +3802,7 @@ record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fAcceleration") {
@@ -3774,7 +3810,7 @@ record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fDeceleration_RBV") {
@@ -3785,7 +3821,7 @@ record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fDeceleration") {
@@ -3793,7 +3829,7 @@ record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fHomePosition_RBV") {
@@ -3804,7 +3840,7 @@ record(ai, "MR2L0:LFE:MMS:YDWN:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fHomePosition") {
@@ -3812,7 +3848,7 @@ record(ao, "MR2L0:LFE:MMS:YDWN:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:YDWN:PLC:nMotionAxisID_RBV") {
@@ -4088,7 +4124,7 @@ record(bo, "MR2L0:LFE:MMS:XUP:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:XUP:PLC:bReset_RBV") {
@@ -4108,7 +4144,7 @@ record(bo, "MR2L0:LFE:MMS:XUP:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:XUP:PLC:bExecute_RBV") {
@@ -4128,7 +4164,7 @@ record(bo, "MR2L0:LFE:MMS:XUP:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:XUP:PLC:nCommand_RBV") {
@@ -4144,7 +4180,7 @@ record(longout, "MR2L0:LFE:MMS:XUP:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:XUP:PLC:nCmdData_RBV") {
@@ -4160,7 +4196,7 @@ record(longout, "MR2L0:LFE:MMS:XUP:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XUP:PLC:fPosition_RBV") {
@@ -4171,7 +4207,7 @@ record(ai, "MR2L0:LFE:MMS:XUP:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XUP:PLC:fPosition") {
@@ -4179,7 +4215,7 @@ record(ao, "MR2L0:LFE:MMS:XUP:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XUP:PLC:fVelocity_RBV") {
@@ -4190,7 +4226,7 @@ record(ai, "MR2L0:LFE:MMS:XUP:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XUP:PLC:fVelocity") {
@@ -4198,7 +4234,7 @@ record(ao, "MR2L0:LFE:MMS:XUP:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XUP:PLC:fAcceleration_RBV") {
@@ -4209,7 +4245,7 @@ record(ai, "MR2L0:LFE:MMS:XUP:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XUP:PLC:fAcceleration") {
@@ -4217,7 +4253,7 @@ record(ao, "MR2L0:LFE:MMS:XUP:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XUP:PLC:fDeceleration_RBV") {
@@ -4228,7 +4264,7 @@ record(ai, "MR2L0:LFE:MMS:XUP:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XUP:PLC:fDeceleration") {
@@ -4236,7 +4272,7 @@ record(ao, "MR2L0:LFE:MMS:XUP:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XUP:PLC:fHomePosition_RBV") {
@@ -4247,7 +4283,7 @@ record(ai, "MR2L0:LFE:MMS:XUP:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XUP:PLC:fHomePosition") {
@@ -4255,7 +4291,7 @@ record(ao, "MR2L0:LFE:MMS:XUP:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:XUP:PLC:nMotionAxisID_RBV") {
@@ -4531,7 +4567,7 @@ record(bo, "MR2L0:LFE:MMS:XDWN:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:XDWN:PLC:bReset_RBV") {
@@ -4551,7 +4587,7 @@ record(bo, "MR2L0:LFE:MMS:XDWN:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:XDWN:PLC:bExecute_RBV") {
@@ -4571,7 +4607,7 @@ record(bo, "MR2L0:LFE:MMS:XDWN:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:XDWN:PLC:nCommand_RBV") {
@@ -4587,7 +4623,7 @@ record(longout, "MR2L0:LFE:MMS:XDWN:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:XDWN:PLC:nCmdData_RBV") {
@@ -4603,7 +4639,7 @@ record(longout, "MR2L0:LFE:MMS:XDWN:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fPosition_RBV") {
@@ -4614,7 +4650,7 @@ record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fPosition") {
@@ -4622,7 +4658,7 @@ record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fVelocity_RBV") {
@@ -4633,7 +4669,7 @@ record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fVelocity") {
@@ -4641,7 +4677,7 @@ record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fAcceleration_RBV") {
@@ -4652,7 +4688,7 @@ record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fAcceleration") {
@@ -4660,7 +4696,7 @@ record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fDeceleration_RBV") {
@@ -4671,7 +4707,7 @@ record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fDeceleration") {
@@ -4679,7 +4715,7 @@ record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fHomePosition_RBV") {
@@ -4690,7 +4726,7 @@ record(ai, "MR2L0:LFE:MMS:XDWN:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fHomePosition") {
@@ -4698,7 +4734,7 @@ record(ao, "MR2L0:LFE:MMS:XDWN:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:XDWN:PLC:nMotionAxisID_RBV") {
@@ -4974,7 +5010,7 @@ record(bo, "MR2L0:LFE:MMS:PITCH:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:PITCH:PLC:bReset_RBV") {
@@ -4994,7 +5030,7 @@ record(bo, "MR2L0:LFE:MMS:PITCH:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:PITCH:PLC:bExecute_RBV") {
@@ -5014,7 +5050,7 @@ record(bo, "MR2L0:LFE:MMS:PITCH:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:PITCH:PLC:nCommand_RBV") {
@@ -5030,7 +5066,7 @@ record(longout, "MR2L0:LFE:MMS:PITCH:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:PITCH:PLC:nCmdData_RBV") {
@@ -5046,7 +5082,7 @@ record(longout, "MR2L0:LFE:MMS:PITCH:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fPosition_RBV") {
@@ -5057,7 +5093,7 @@ record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fPosition") {
@@ -5065,7 +5101,7 @@ record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fVelocity_RBV") {
@@ -5076,7 +5112,7 @@ record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fVelocity") {
@@ -5084,7 +5120,7 @@ record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fAcceleration_RBV") {
@@ -5095,7 +5131,7 @@ record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fAcceleration") {
@@ -5103,7 +5139,7 @@ record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fDeceleration_RBV") {
@@ -5114,7 +5150,7 @@ record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fDeceleration") {
@@ -5122,7 +5158,7 @@ record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fHomePosition_RBV") {
@@ -5133,7 +5169,7 @@ record(ai, "MR2L0:LFE:MMS:PITCH:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fHomePosition") {
@@ -5141,7 +5177,7 @@ record(ao, "MR2L0:LFE:MMS:PITCH:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:PITCH:PLC:nMotionAxisID_RBV") {
@@ -5417,7 +5453,7 @@ record(bo, "MR2L0:LFE:MMS:BENDER:PLC:bEnable") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bEnable=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:BENDER:PLC:bReset_RBV") {
@@ -5437,7 +5473,7 @@ record(bo, "MR2L0:LFE:MMS:BENDER:PLC:bReset") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bReset=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:MMS:BENDER:PLC:bExecute_RBV") {
@@ -5457,7 +5493,7 @@ record(bo, "MR2L0:LFE:MMS:BENDER:PLC:bExecute") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bExecute=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:BENDER:PLC:nCommand_RBV") {
@@ -5473,7 +5509,7 @@ record(longout, "MR2L0:LFE:MMS:BENDER:PLC:nCommand") {
   field(DESC, "Used internally and by the IOC to pick move type")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.nCommand=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:BENDER:PLC:nCmdData_RBV") {
@@ -5489,7 +5525,7 @@ record(longout, "MR2L0:LFE:MMS:BENDER:PLC:nCmdData") {
   field(DESC, "Used internally and by the IOC to pass extra args")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.nCmdData=")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fPosition_RBV") {
@@ -5500,7 +5536,7 @@ record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fPosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fPosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fPosition") {
@@ -5508,7 +5544,7 @@ record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fPosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fPosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fVelocity_RBV") {
@@ -5519,7 +5555,7 @@ record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fVelocity_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fVelocity?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fVelocity") {
@@ -5527,7 +5563,7 @@ record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fVelocity") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fVelocity=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fAcceleration_RBV") {
@@ -5538,7 +5574,7 @@ record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fAcceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fAcceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fAcceleration") {
@@ -5546,7 +5582,7 @@ record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fAcceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fAcceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fDeceleration_RBV") {
@@ -5557,7 +5593,7 @@ record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fDeceleration_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fDeceleration?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fDeceleration") {
@@ -5565,7 +5601,7 @@ record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fDeceleration") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fDeceleration=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fHomePosition_RBV") {
@@ -5576,7 +5612,7 @@ record(ai, "MR2L0:LFE:MMS:BENDER:PLC:fHomePosition_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fHomePosition?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fHomePosition") {
@@ -5584,7 +5620,7 @@ record(ao, "MR2L0:LFE:MMS:BENDER:PLC:fHomePosition") {
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fHomePosition=")
   field(PREC, "3")
-  info(autosave_pass0, "PREC VAL")
+  info(autosaveFields_pass0, "PREC VAL")
 }
 
 record(longin, "MR2L0:LFE:MMS:BENDER:PLC:nMotionAxisID_RBV") {
@@ -5677,7 +5713,7 @@ record(bo, "MR2L0:LFE:COUPLE_Y") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleY=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:DECOUPLE_Y_RBV") {
@@ -5697,7 +5733,7 @@ record(bo, "MR2L0:LFE:DECOUPLE_Y") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleY=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:COUPLE_X_RBV") {
@@ -5717,7 +5753,7 @@ record(bo, "MR2L0:LFE:COUPLE_X") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleX=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:DECOUPLE_X_RBV") {
@@ -5737,7 +5773,7 @@ record(bo, "MR2L0:LFE:DECOUPLE_X") {
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleX=")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  info(autosave_pass0, "VAL")
+  info(autosaveFields_pass0, "VAL")
 }
 
 record(bi, "MR2L0:LFE:ALREADY_COUPLED_Y_RBV") {
@@ -5771,7 +5807,7 @@ record(ai, "MR2L0:LFE:GANTRY_Y_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryY_um?")
   field(PREC, "3")
   field(EGU, "um")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:GANTRY_X_RBV") {
@@ -5783,7 +5819,7 @@ record(ai, "MR2L0:LFE:GANTRY_X_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryX_um?")
   field(PREC, "3")
   field(EGU, "um")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:Y_ENC:MEAN_RBV") {
@@ -5794,7 +5830,7 @@ record(ai, "MR2L0:LFE:Y_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:Y_ENC:STDEV_RBV") {
@@ -5805,7 +5841,7 @@ record(ai, "MR2L0:LFE:Y_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:Y_ENC:RMS_RBV") {
@@ -5816,7 +5852,7 @@ record(ai, "MR2L0:LFE:Y_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR2L0:LFE:Y_ENC:ACTPOSARRAY_RBV") {
@@ -5849,7 +5885,7 @@ record(ai, "MR2L0:LFE:X_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:X_ENC:STDEV_RBV") {
@@ -5860,7 +5896,7 @@ record(ai, "MR2L0:LFE:X_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:X_ENC:RMS_RBV") {
@@ -5871,7 +5907,7 @@ record(ai, "MR2L0:LFE:X_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR2L0:LFE:X_ENC:ACTPOSARRAY_RBV") {
@@ -5904,7 +5940,7 @@ record(ai, "MR2L0:LFE:PITCH_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:PITCH_ENC:STDEV_RBV") {
@@ -5915,7 +5951,7 @@ record(ai, "MR2L0:LFE:PITCH_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:PITCH_ENC:RMS_RBV") {
@@ -5926,7 +5962,7 @@ record(ai, "MR2L0:LFE:PITCH_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR2L0:LFE:PITCH_ENC:ACTPOSARRAY_RBV") {
@@ -5959,7 +5995,7 @@ record(ai, "MR2L0:LFE:BENDER_ENC:MEAN_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.fEncMean?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:BENDER_ENC:STDEV_RBV") {
@@ -5970,7 +6006,7 @@ record(ai, "MR2L0:LFE:BENDER_ENC:STDEV_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.fEncStDev?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(ai, "MR2L0:LFE:BENDER_ENC:RMS_RBV") {
@@ -5981,7 +6017,7 @@ record(ai, "MR2L0:LFE:BENDER_ENC:RMS_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.fCurrRMSError?")
   field(PREC, "3")
-  info(autosave_pass0, "PREC")
+  info(autosaveFields_pass0, "PREC")
 }
 
 record(waveform, "MR2L0:LFE:BENDER_ENC:ACTPOSARRAY_RBV") {
