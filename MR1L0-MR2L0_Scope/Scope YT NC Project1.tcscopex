@@ -2,7 +2,7 @@
 <ScopeProject AssemblyName="TwinCAT.Measurement.Scope.API.Model">
   <Layout>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132271613173048004" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="b1560a06-9992-4c8c-9f35-e7602e22de09" LastFocused="132272394523782477" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="f3b8c023-96c3-40a7-ae7f-aa2b1b1dd97e" Collapsed="0" SelectedControl="b1560a06-9992-4c8c-9f35-e7602e22de09"&gt;
@@ -353,11 +353,11 @@
                     <UnitOffsetResult>0</UnitOffsetResult>
                   </ResultingUnit>
                   <Usage>Y</Usage>
-                  <AcquisitionGUID>77bbde6b-709e-432b-9e8c-5c4af4157b0e</AcquisitionGUID>
+                  <AcquisitionGUID>0de3d5ec-dd29-4fdf-bc45-8781864d54c9</AcquisitionGUID>
                   <SubMember />
-                  <Guid>03e57b9d-21ff-456e-b16e-78746ca0567d</Guid>
+                  <Guid>5c77d47b-51ed-4d67-8758-1ca0f218c48b</Guid>
                   <Title>AcquisitionInterpreter_25</Title>
-                  <Name>Y: SETPOS</Name>
+                  <Name>Y: lrCurrentSetpoint</Name>
                   <Comment />
                   <DisplayColor>Black</DisplayColor>
                   <SortPriority>2</SortPriority>
@@ -376,7 +376,7 @@
                       <SeriesType>Line</SeriesType>
                       <LineWidth>1</LineWidth>
                       <Antialias>true</Antialias>
-                      <Guid>ffd17f2c-cd47-487a-b15a-c158adabd13c</Guid>
+                      <Guid>c73bd97f-c59d-4af8-8c0e-afc46263927c</Guid>
                       <Title>SeriesStyle_29</Title>
                       <Name>Series Style (2)</Name>
                       <Comment />
@@ -388,7 +388,7 @@
                     <MinMaxStyle AssemblyName="TwinCAT.Measurement.Scope.API.Model">
                       <ShowMin>false</ShowMin>
                       <ShowMax>false</ShowMax>
-                      <Guid>8cac84d4-b4f9-453c-9d35-91f413dbfd7c</Guid>
+                      <Guid>d836e83a-643c-4fee-8191-ab2784922c1d</Guid>
                       <Title>MinMaxStyle_165</Title>
                       <Name>Min/Max Style (2)</Name>
                       <Comment />
@@ -399,7 +399,7 @@
                     </MinMaxStyle>
                     <TimeShiftStyle AssemblyName="TwinCAT.Measurement.Scope.API.Model">
                       <TimeShift>0</TimeShift>
-                      <Guid>2d1aadb6-ca38-4775-a49c-d1a5b7900bf5</Guid>
+                      <Guid>daf13aa8-225b-4c72-9173-bea95e7d05c3</Guid>
                       <Title>TimeShiftStyle_166</Title>
                       <Name>TimeShiftStyle_166</Name>
                       <Comment />
@@ -409,7 +409,7 @@
                       <Suffix>.svtss</Suffix>
                     </TimeShiftStyle>
                   </SubMember>
-                  <Guid>8a7b0aed-a77a-4bfa-a906-9b1a90a1cd78</Guid>
+                  <Guid>97cb5110-f669-4fee-9393-c797d74a69bf</Guid>
                   <Title>ChannelStyle_27</Title>
                   <Name>Channel Style (2)</Name>
                   <Comment />
@@ -419,9 +419,9 @@
                   <Suffix>.svstyle</Suffix>
                 </ChannelStyle>
               </SubMember>
-              <Guid>2d34d5c0-cdb4-477c-8db3-59b1641c8e3a</Guid>
+              <Guid>1d4d8d87-9986-4552-882e-a17d60a36038</Guid>
               <Title>Channel_23</Title>
-              <Name>SETPOS</Name>
+              <Name>lrCurrentSetpoint</Name>
               <Comment />
               <DisplayColor>-16776961</DisplayColor>
               <SortPriority>0</SortPriority>
@@ -2380,6 +2380,58 @@
           <IsFileBased>false</IsFileBased>
           <Suffix>.svagroup</Suffix>
         </AxisGroup>
+        <MarkerContainer AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+          <SubMember>
+            <TimeMarker AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+              <AttachToAxis>false</AttachToAxis>
+              <Position>7.2794966399669647</Position>
+              <TimePosition>363974</TimePosition>
+              <Bandwidth>0</Bandwidth>
+              <Width>3</Width>
+              <Orientation>Vertical</Orientation>
+              <Locked>false</Locked>
+              <ShowPosition>true</ShowPosition>
+              <ShowTitle>true</ShowTitle>
+              <ValuePrecision>4</ValuePrecision>
+              <Guid>92ef566c-0cd2-4677-9c43-24a147ef77a7</Guid>
+              <Title>Time Marker</Title>
+              <Name>Time Marker</Name>
+              <Comment />
+              <DisplayColor>-23296</DisplayColor>
+              <SortPriority>100</SortPriority>
+              <IsFileBased>false</IsFileBased>
+              <Suffix>.svmk</Suffix>
+            </TimeMarker>
+            <TimeMarker AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+              <AttachToAxis>false</AttachToAxis>
+              <Position>83.615177869796753</Position>
+              <TimePosition>4180758</TimePosition>
+              <Bandwidth>0</Bandwidth>
+              <Width>3</Width>
+              <Orientation>Vertical</Orientation>
+              <Locked>false</Locked>
+              <ShowPosition>true</ShowPosition>
+              <ShowTitle>true</ShowTitle>
+              <ValuePrecision>4</ValuePrecision>
+              <Guid>4a8248f3-8688-442d-b2d7-715d950a276d</Guid>
+              <Title>Time Marker (1)</Title>
+              <Name>Time Marker (1)</Name>
+              <Comment />
+              <DisplayColor>-16711936</DisplayColor>
+              <SortPriority>100</SortPriority>
+              <IsFileBased>false</IsFileBased>
+              <Suffix>.svmk</Suffix>
+            </TimeMarker>
+          </SubMember>
+          <Guid>4c62036c-07bf-4ded-8c6f-4c30572932e6</Guid>
+          <Title>MarkerContainer_167</Title>
+          <Name>Marker Container (9)</Name>
+          <Comment />
+          <DisplayColor>Black</DisplayColor>
+          <SortPriority>100</SortPriority>
+          <IsFileBased>false</IsFileBased>
+          <Suffix>.svmc</Suffix>
+        </MarkerContainer>
       </SubMember>
       <Guid>b1560a06-9992-4c8c-9f35-e7602e22de09</Guid>
       <Title>NC Axis 1</Title>
@@ -2395,16 +2447,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>65538</IndexOffset>
-          <SymbolName>AXES.M1L0-Bender.ACTPOS</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.ACTPOS</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>31</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -2475,16 +2527,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>10</IndexOffset>
-          <SymbolName>AXES.M1L0-Bender.SETPOS</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.SETPOS</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>32</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -2555,16 +2607,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>65541</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.ACTVELO</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.ACTVELO</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>33</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -2635,16 +2687,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>14</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.SETVELO</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.SETVELO</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>34</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -2715,16 +2767,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16641</IndexGroup>
           <IndexOffset>131087</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.POSDIFF</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.POSDIFF</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>35</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -2795,16 +2847,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>65538</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.ActPos</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.ActPos</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>36</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -2875,16 +2927,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>10</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.SetPos</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.SetPos</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>37</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -2955,16 +3007,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>65541</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.ActVelo</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.ActVelo</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>38</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -3035,16 +3087,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>14</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.SetVelo</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.SetVelo</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>39</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -3115,16 +3167,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16644</IndexGroup>
           <IndexOffset>131087</IndexOffset>
-          <SymbolName>AXES.M2L0-Bender.PosDiff</SymbolName>
+          <SymbolName>AXES.M1K4-Pitch.PosDiff</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>40</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>20000</BaseSampleTime>
@@ -3194,17 +3246,17 @@
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>1542536</IndexOffset>
-          <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryX</SymbolName>
+          <IndexOffset>1184008</IndexOffset>
+          <SymbolName>Main.M1K4.fbRunHOMS.nCurrGantryX</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>41</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>INT64</DataType>
           <BaseSampleTime>100000</BaseSampleTime>
@@ -3274,17 +3326,17 @@
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>1542528</IndexOffset>
-          <SymbolName>Main.M2L0.fbRunHOMS.nCurrGantryY</SymbolName>
+          <IndexOffset>1184000</IndexOffset>
+          <SymbolName>Main.M1K4.fbRunHOMS.nCurrGantryY</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>42</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>INT64</DataType>
           <BaseSampleTime>100000</BaseSampleTime>
@@ -3355,16 +3407,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>61462</IndexGroup>
           <IndexOffset>0</IndexOffset>
-          <SymbolName>Main.fbM2L0PitchControl.Pitch.Piezo.rActVoltage</SymbolName>
+          <SymbolName>Main.fbM1K4PitchControl.Pitch.Piezo.rActVoltage</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>43</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL32</DataType>
           <BaseSampleTime>100000</BaseSampleTime>
@@ -3435,16 +3487,16 @@
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>61462</IndexGroup>
           <IndexOffset>0</IndexOffset>
-          <SymbolName>Main.fbM2L0PitchControl.Pitch.Piezo.rSetVoltage</SymbolName>
+          <SymbolName>Main.fbM1K4PitchControl.Pitch.Piezo.rSetVoltage</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>44</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL32</DataType>
           <BaseSampleTime>100000</BaseSampleTime>
@@ -3514,17 +3566,17 @@
         </AdsAcquisition>
         <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
           <IndexGroup>16448</IndexGroup>
-          <IndexOffset>1738448</IndexOffset>
-          <SymbolName>Main.fbM2L0PitchControl.lrCurrentSetpoint</SymbolName>
+          <IndexOffset>1379920</IndexOffset>
+          <SymbolName>Main.fbM1K4PitchControl.lrCurrentSetpoint</SymbolName>
           <SymbolBased>true</SymbolBased>
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>45</FileHandle>
+          <FileHandle>0</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
-          <AmsNetId>172.21.88.30.1.1</AmsNetId>
+          <AmsNetId>172.21.92.63.1.1</AmsNetId>
           <UseLocalServer>true</UseLocalServer>
           <DataType>REAL64</DataType>
           <BaseSampleTime>100000</BaseSampleTime>

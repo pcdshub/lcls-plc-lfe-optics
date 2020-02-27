@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>{0472c0d6-6f80-4aa6-8559-9308bb184757}</ProjectGuid>
     <AssemblyName>MR1L0-MR2L0_Scope</AssemblyName>
-    <Name>MR1K4_Scope</Name>
+    <Name>MR1L0-MR2L0_Scope</Name>
     <RootNamespace>MR1L0-MR2L0_Scope</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
