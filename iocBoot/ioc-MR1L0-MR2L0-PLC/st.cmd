@@ -1,11 +1,11 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.2.0/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.2.1/bin/rhel7-x86_64/adsIoc
 
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("IOCNAME", "ioc-MR1L0-MR2L0-PLC" )
-epicsEnvSet("ENGINEER", "root" )
+epicsEnvSet("ENGINEER", "sheppard" )
 epicsEnvSet("LOCATION", "PREFIX" )
 epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
 
