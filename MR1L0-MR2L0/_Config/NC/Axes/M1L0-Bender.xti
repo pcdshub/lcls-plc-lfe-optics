@@ -1325,18 +1325,15 @@ External Setpoint Generation:
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<General UnitName="um"/>
-			<Dynamic Acceleration="50" Deceleration="50" DelayTime="0.008"/>
+			<Dynamic Acceleration="150" Deceleration="150" DelayTime="0.008"/>
 			<Velo Maximum="150"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="0.001" MaxCount="#xffffffff" ReferenceSystem="1">
-				<SoftEndMinControl Enable="true" Range="4268930"/>
-				<SoftEndMaxControl Enable="true" Range="4278146"/>
+				<SoftEndMinControl Enable="true" Range="4268900"/>
+				<SoftEndMaxControl Enable="true" Range="4278150"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
-				<ParameterChanged>14</ParameterChanged>
-				<ParameterChanged>13</ParameterChanged>
-				<ParameterChanged>12</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
@@ -1469,7 +1466,6 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="1"/>
 				<PID PosKp="10" PosExtKp="0.001" PosExtVelo="0.9" DeadBandPosition="0.1"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
