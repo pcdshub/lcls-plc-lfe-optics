@@ -194,7 +194,8 @@ VAR
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
-M1L0.fbRunHOMS(stYup:=M1,
+M1L0.fbRunHOMS(bBenderIncluded:=True,
+               stYup:=M1,
                stYdwn:=M2,
                stXup:=M3,
                stXdwn:=M4,
@@ -252,7 +253,8 @@ IF NOT M5.bHardwareEnable THEN
 END_IF
 
 // M2L0
-M2L0.fbRunHOMS(stYup:=M7,
+M2L0.fbRunHOMS(bBenderIncluded:=True,
+               stYup:=M7,
                stYdwn:=M8,
                stXup:=M9,
                stXdwn:=M10,
