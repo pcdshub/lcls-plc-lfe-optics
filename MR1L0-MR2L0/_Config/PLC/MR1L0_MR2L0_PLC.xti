@@ -775,15 +775,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{5BF86E93-422F-42A4-8C2E-71FCAE223E5C}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{1AC1CA03-F175-42BC-B14F-D4424F0BD618}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{40266973-4E42-46DB-9683-54FF26BAFE25}"/>
+				<Hide GUID="{5BF86E93-422F-42A4-8C2E-71FCAE223E5C}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -805,7 +805,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{5BF86E93-422F-42A4-8C2E-71FCAE223E5C}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{1AC1CA03-F175-42BC-B14F-D4424F0BD618}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -822,7 +822,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{A8436E45-2D5B-40CB-9AC8-5864D1BFEBEE}"/>
+				<Hide GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -1768,6 +1768,136 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>Main.M1L0.fbRunHOMS.bSTOEnable1</Name>
+					<Comment>
+						<![CDATA[ STO Button]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.bSTOEnable2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stYupEnc</Name>
+					<Comment>
+						<![CDATA[ Encoders]]>
+					</Comment>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stYdwnEnc</Name>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stXupEnc</Name>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.stXdwnEnc</Name>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
 					<Name>Main.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -2524,6 +2654,136 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>Main.M2L0.fbRunHOMS.bSTOEnable1</Name>
+					<Comment>
+						<![CDATA[ STO Button]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.bSTOEnable2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.stYupEnc</Name>
+					<Comment>
+						<![CDATA[ Encoders]]>
+					</Comment>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.stYdwnEnc</Name>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.stXupEnc</Name>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.stXdwnEnc</Name>
+					<Type GUID="{5FB681CE-C52B-4280-AF48-3D5DC9FEA170}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
 					<Name>Main.fbM2L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -2585,266 +2845,6 @@ External Setpoint Generation:
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>LINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.bSTOEnable1</Name>
-					<Comment>
-						<![CDATA[ STO Button]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.bSTOEnable2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.stYupEnc</Name>
-					<Comment>
-						<![CDATA[ Encoders]]>
-					</Comment>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M1L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.bSTOEnable1</Name>
-					<Comment>
-						<![CDATA[ STO Button]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.bSTOEnable2</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.stYupEnc</Name>
-					<Comment>
-						<![CDATA[ Encoders]]>
-					</Comment>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{A41C7CAA-2A91-4497-BE9C-602DEFACD739}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
-					<SubVar>
-						<Name>Count</Name>
-						<Comment>
-							<![CDATA[ Connect to encoder "Position" input]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Status</Name>
-						<Comment>
-							<![CDATA[ Status struct placeholder]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>Ref</Name>
-						<Comment>
-							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.M2L0.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
-					<Comment>
-						<![CDATA[ Connect to encoder "Position" input]]>
-					</Comment>
-					<Type>ULINT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -3032,8 +3032,8 @@ External Setpoint Generation:
 			</Vars>
 			<TaskPouOids>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
-				<TaskPouOid Prio="3" OTCID="#x08502002"/>
 				<TaskPouOid Prio="20" OTCID="#x08502003"/>
+				<TaskPouOid Prio="3" OTCID="#x08502002"/>
 			</TaskPouOids>
 		</Instance>
 	</Project>
