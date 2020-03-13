@@ -4,15 +4,11 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
 	// Encoder reference values in counts = nm
-	(*
-	nYUP_ENC_REF : ULINT := 14897597;
-	nYDWN_ENC_REF : ULINT := 14551600;
-	*)
-	// Unsure on Y ref vals, using starting motor positions for now
-	nYUP_ENC_REF : ULINT := 12959000;
-	nYDWN_ENC_REF : ULINT := 15964000;
-	nXUP_ENC_REF : ULINT := 23972500;
-	nXDWN_ENC_REF : ULINT := 24766500;
+	// Encoder reference values after alignment 3-13-20
+	nYUP_ENC_REF : ULINT := 11805150;
+	nYDWN_ENC_REF : ULINT := 14830760;
+	nXUP_ENC_REF : ULINT := 25288760;
+	nXDWN_ENC_REF : ULINT := 24194070;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

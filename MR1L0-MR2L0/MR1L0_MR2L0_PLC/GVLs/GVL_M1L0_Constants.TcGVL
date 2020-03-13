@@ -4,11 +4,11 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
 	// Encoder reference values in counts = nm
-	// Enc Ref Vals from alignment 2020-2-20
-	nYUP_ENC_REF : ULINT := 15899920;
-	nYDWN_ENC_REF : ULINT := 14863020;
-	nXUP_ENC_REF : ULINT := 24435400;
-	nXDWN_ENC_REF : ULINT := 25239600;
+	// Enc Ref Vals from alignment 2020-3-13
+	nYUP_ENC_REF : ULINT := 15417790;
+	nYDWN_ENC_REF : ULINT := 14628620;
+	nXUP_ENC_REF : ULINT := 25479550;
+	nXDWN_ENC_REF : ULINT := 24312380;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
