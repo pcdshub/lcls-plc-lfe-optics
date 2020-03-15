@@ -97,6 +97,9 @@ VAR
 	bM1L0PitchDone : BOOL;
 	bM1L0PitchBusy : BOOL;
 
+	// Bender Control
+	fbBenderM1L0 : FB_Bender;
+
 
 	// M2L0
 	// Motors
@@ -191,16 +194,17 @@ VAR
 	fbM2L0PitchControl : FB_PitchControl;
 	bM2L0PitchDone : BOOL;
 	bM2L0PitchBusy : BOOL;
+
+	// Bender Control
+	fbBenderM2L0 : FB_Bender;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
-M1L0.fbRunHOMS(bBenderIncluded:=True,
-               stYup:=M1,
+M1L0.fbRunHOMS(stYup:=M1,
                stYdwn:=M2,
                stXup:=M3,
                stXdwn:=M4,
                stPitch:=M5,
-               stBender:=M6,
 	           nYupEncRef:=GVL_M1L0_Constants.nYUP_ENC_REF,
                nYdwnEncRef:=GVL_M1L0_Constants.nYDWN_ENC_REF,
                nXupEncRef:=GVL_M1L0_Constants.nXUP_ENC_REF,
@@ -213,6 +217,9 @@ M1L0.fbRunHOMS(bBenderIncluded:=True,
                bGantryAlreadyCoupledX=>M1L0.bGantryAlreadyCoupledX,
                nCurrGantryY=>M1L0.nCurrGantryY,
                nCurrGantryX=>M1L0.nCurrGantryX);
+fbBenderM1L0(stBender:=M6,
+	         bSTOEnable1:=M1L0.fbRunHOMS.bSTOEnable1,
+		     bSTOEnable2:=M1L0.fbRunHOMS.bSTOEnable2);
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
 M1L0.fCurrGantryY_um := LINT_TO_REAL(M1L0.nCurrGantryY) / 1000.0;
@@ -253,13 +260,11 @@ IF NOT M5.bHardwareEnable THEN
 END_IF
 
 // M2L0
-M2L0.fbRunHOMS(bBenderIncluded:=True,
-               stYup:=M7,
+M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
                stXup:=M9,
                stXdwn:=M10,
 			   stPitch:=M11,
-               stBender:=M12,
 	           nYupEncRef:=GVL_M2L0_Constants.nYUP_ENC_REF,
                nYdwnEncRef:=GVL_M2L0_Constants.nYDWN_ENC_REF,
                nXupEncRef:=GVL_M2L0_Constants.nXUP_ENC_REF,
@@ -272,6 +277,9 @@ M2L0.fbRunHOMS(bBenderIncluded:=True,
                bGantryAlreadyCoupledX=>M2L0.bGantryAlreadyCoupledX,
                nCurrGantryY=>M2L0.nCurrGantryY,
                nCurrGantryX=>M2L0.nCurrGantryX);
+fbBenderM2L0(stBender:=M12,
+	         bSTOEnable1:=M2L0.fbRunHOMS.bSTOEnable1,
+		     bSTOEnable2:=M2L0.fbRunHOMS.bSTOEnable2);
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
 M2L0.fCurrGantryY_um := LINT_TO_REAL(M2L0.nCurrGantryY) / 1000;
