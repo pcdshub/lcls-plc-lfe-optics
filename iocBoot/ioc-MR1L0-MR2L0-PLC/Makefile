@@ -9,6 +9,6 @@ PROJECT_PATH := ../../MR1L0-MR2L0/MR1L0-MR2L0.tsproj
 PLC := MR1L0_MR2L0_PLC
 
 PYTMC_OPTS := 
-PREFIX := PREFIX
+PREFIX := PLC:LFE:OPTICS
 
 include $(IOC_TOP)/iocBoot/templates/Makefile.base

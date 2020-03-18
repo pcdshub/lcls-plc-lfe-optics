@@ -4,12 +4,12 @@
     <Declaration><![CDATA[VAR_GLOBAL
 	//Better have your inputs and outputs!
 	// M1L0
-	Serial_stComIn_M1L0   AT %I*	:	EL6inData22B (*KL6inData22B*);
-	Serial_stComOut_M1L0  AT %Q*	:	EL6outData22B (*KL6outData22B*);
+	Serial_stComIn_M1L0 AT %I* : EL6inData22B; // M1L0 In Serial Comm Array
+	Serial_stComOut_M1L0 AT %Q* : EL6outData22B; // M1L0 Out Serual Comm Array
 
 	// M2L0
-	Serial_stComIn_M2L0   AT %I*	:	EL6inData22B (*KL6inData22B*);
-	Serial_stComOut_M2L0  AT %Q*	:	EL6outData22B (*KL6outData22B*);
+	Serial_stComIn_M2L0 AT %I* : EL6inData22B; // M2L0 In Serial Comm Array
+	Serial_stComOut_M2L0 AT %Q* : EL6outData22B; // M2L0 Out Serial Comm Array
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
