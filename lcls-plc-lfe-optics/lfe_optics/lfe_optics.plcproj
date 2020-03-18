@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{d9d193c5-2676-4de2-94d2-3f5b7910bf73}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
-    <Name>MR1L0_MR2L0_PLC</Name>
+    <Name>lfe_optics</Name>
     <ProgramVersion>3.1.4022.7</ProgramVersion>
     <Application>{485084e3-fc90-4356-a525-58c175f6b1d6}</Application>
     <TypeSystem>{2f246db6-ef8d-4b50-b897-eb358e942341}</TypeSystem>
@@ -146,7 +146,7 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MR1L0_MR2L0_PLC.tmc">
+    <None Include="lfe_optics.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>
