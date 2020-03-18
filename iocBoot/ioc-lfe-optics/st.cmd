@@ -5,8 +5,8 @@
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("IOCNAME", "ioc-lfe-optics" )
-epicsEnvSet("ENGINEER", "root" )
-epicsEnvSet("LOCATION", "PREFIX" )
+epicsEnvSet("ENGINEER", "sheppard" )
+epicsEnvSet("LOCATION", "PLC:LFE:OPTICS" )
 epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
 
 # Run common startup commands for linux soft IOC's
@@ -55,7 +55,7 @@ cd "$(ADS_IOC_TOP)/db"
 
 
 epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
-epicsEnvSet("PREFIX",         "PREFIX:")
+epicsEnvSet("PREFIX",         "PLC:LFE:OPTICS:")
 epicsEnvSet("NUMAXES",        "12")
 epicsEnvSet("MOVE_POLL_RATE", "200")
 epicsEnvSet("IDLE_POLL_RATE", "1000")
