@@ -1,0 +1,6043 @@
+record(longin, "$(PREFIX)LCLSGeneral:LogPort_RBV") {
+  field(DESC, "The log host UDP port")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.iLogPort?")
+}
+
+record(longout, "$(PREFIX)LCLSGeneral:LogPort") {
+  field(DESC, "The log host UDP port")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(waveform, "$(PREFIX)LCLSGeneral:LogHost_RBV") {
+  field(DESC, "The log host IP address")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.cLogHost?")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+}
+
+record(waveform, "$(PREFIX)LCLSGeneral:LogHost") {
+  field(DESC, "The log host IP address")
+  field(DTYP, "asynInt8ArrayOut")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost=")
+  field(FTVL, "CHAR")
+  field(NELM, "15")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR1L0:MMS:YUP:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR1L0:MMS:YUP:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR1L0:MMS:YUP:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:YUP:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:YUP:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:YUP:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:YUP:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nCommand?")
+}
+
+record(longout, "MR1L0:MMS:YUP:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:YUP:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nCmdData?")
+}
+
+record(longout, "MR1L0:MMS:YUP:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR1L0:MMS:YUP:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YUP:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YUP:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YUP:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YUP:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YUP:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YUP:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YUP:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YUP:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YUP:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR1L0:MMS:YUP:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nMotionAxisID?")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:YUP:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR1L0:MMS:YUP:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nErrorId?")
+}
+
+record(waveform, "MR1L0:MMS:YUP:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR1L0:MMS:YDWN:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR1L0:MMS:YDWN:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR1L0:MMS:YDWN:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:YDWN:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:YDWN:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:YDWN:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:YDWN:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nCommand?")
+}
+
+record(longout, "MR1L0:MMS:YDWN:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:YDWN:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nCmdData?")
+}
+
+record(longout, "MR1L0:MMS:YDWN:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR1L0:MMS:YDWN:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YDWN:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YDWN:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YDWN:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YDWN:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YDWN:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YDWN:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YDWN:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:YDWN:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:YDWN:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR1L0:MMS:YDWN:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nMotionAxisID?")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:YDWN:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR1L0:MMS:YDWN:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nErrorId?")
+}
+
+record(waveform, "MR1L0:MMS:YDWN:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR1L0:MMS:XUP:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR1L0:MMS:XUP:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR1L0:MMS:XUP:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:XUP:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:XUP:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:XUP:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:XUP:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nCommand?")
+}
+
+record(longout, "MR1L0:MMS:XUP:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:XUP:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nCmdData?")
+}
+
+record(longout, "MR1L0:MMS:XUP:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR1L0:MMS:XUP:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XUP:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XUP:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XUP:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XUP:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XUP:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XUP:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XUP:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XUP:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XUP:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR1L0:MMS:XUP:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nMotionAxisID?")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:XUP:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR1L0:MMS:XUP:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nErrorId?")
+}
+
+record(waveform, "MR1L0:MMS:XUP:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR1L0:MMS:XDWN:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR1L0:MMS:XDWN:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR1L0:MMS:XDWN:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:XDWN:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:XDWN:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:XDWN:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:XDWN:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nCommand?")
+}
+
+record(longout, "MR1L0:MMS:XDWN:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:XDWN:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nCmdData?")
+}
+
+record(longout, "MR1L0:MMS:XDWN:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR1L0:MMS:XDWN:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XDWN:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XDWN:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XDWN:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XDWN:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XDWN:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XDWN:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XDWN:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:XDWN:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:XDWN:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR1L0:MMS:XDWN:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nMotionAxisID?")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:XDWN:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR1L0:MMS:XDWN:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nErrorId?")
+}
+
+record(waveform, "MR1L0:MMS:XDWN:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR1L0:MMS:PITCH:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR1L0:MMS:PITCH:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR1L0:MMS:PITCH:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:PITCH:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:PITCH:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:PITCH:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:PITCH:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nCommand?")
+}
+
+record(longout, "MR1L0:MMS:PITCH:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:PITCH:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nCmdData?")
+}
+
+record(longout, "MR1L0:MMS:PITCH:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR1L0:MMS:PITCH:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:PITCH:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:PITCH:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:PITCH:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:PITCH:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:PITCH:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:PITCH:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:PITCH:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:PITCH:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:PITCH:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR1L0:MMS:PITCH:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nMotionAxisID?")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:PITCH:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR1L0:MMS:PITCH:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nErrorId?")
+}
+
+record(waveform, "MR1L0:MMS:PITCH:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR1L0:MMS:BENDER:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR1L0:MMS:BENDER:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR1L0:MMS:BENDER:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:BENDER:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:BENDER:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR1L0:MMS:BENDER:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:BENDER:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nCommand?")
+}
+
+record(longout, "MR1L0:MMS:BENDER:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR1L0:MMS:BENDER:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nCmdData?")
+}
+
+record(longout, "MR1L0:MMS:BENDER:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR1L0:MMS:BENDER:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:BENDER:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:BENDER:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:BENDER:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:BENDER:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:BENDER:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:BENDER:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:BENDER:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR1L0:MMS:BENDER:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR1L0:MMS:BENDER:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR1L0:MMS:BENDER:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nMotionAxisID?")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR1L0:MMS:BENDER:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR1L0:MMS:BENDER:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nErrorId?")
+}
+
+record(waveform, "MR1L0:MMS:BENDER:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR1L0:COUPLE_Y_RBV") {
+  field(DESC, "ads:Main.M1L0.bExecuteCoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteCoupleY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR1L0:COUPLE_Y") {
+  field(DESC, "ads:Main.M1L0.bExecuteCoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleY=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:DECOUPLE_Y_RBV") {
+  field(DESC, "ads:Main.M1L0.bExecuteDecoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteDecoupleY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR1L0:DECOUPLE_Y") {
+  field(DESC, "ads:Main.M1L0.bExecuteDecoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleY=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:COUPLE_X_RBV") {
+  field(DESC, "ads:Main.M1L0.bExecuteCoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteCoupleX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR1L0:COUPLE_X") {
+  field(DESC, "ads:Main.M1L0.bExecuteCoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleX=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:DECOUPLE_X_RBV") {
+  field(DESC, "ads:Main.M1L0.bExecuteDecoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteDecoupleX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR1L0:DECOUPLE_X") {
+  field(DESC, "ads:Main.M1L0.bExecuteDecoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleX=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR1L0:ALREADY_COUPLED_Y_RBV") {
+  field(DESC, "ads:Main.M1L0.bGantryAlreadyCoupledY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bGantryAlreadyCoupledY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bi, "MR1L0:ALREADY_COUPLED_X_RBV") {
+  field(DESC, "ads:Main.M1L0.bGantryAlreadyCoupledX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bGantryAlreadyCoupledX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(ai, "MR1L0:GANTRY_Y_RBV") {
+  field(DESC, "ads:Main.M1L0.fCurrGantryY_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryY_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:GANTRY_X_RBV") {
+  field(DESC, "ads:Main.M1L0.fCurrGantryX_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryX_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:Y:MEAN_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM1L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:Y:STDEV_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM1L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:Y:RMS_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM1L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR1L0:ENC:Y:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM1L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR1L0:ENC:Y:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM1L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(ai, "MR1L0:ENC:X:MEAN_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM1L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:X:STDEV_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM1L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:X:RMS_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM1L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR1L0:ENC:X:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM1L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR1L0:ENC:X:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM1L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(ai, "MR1L0:ENC:PITCH:MEAN_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM1L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:PITCH:STDEV_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM1L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:PITCH:RMS_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSE...1L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR1L0:ENC:PITCH:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM1L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR1L0:ENC:PITCH:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM1L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(ai, "MR1L0:ENC:BENDER:MEAN_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM1L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:BENDER:STDEV_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM1L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR1L0:ENC:BENDER:RMS_RBV") {
+  field(DESC, "ads:Main.fbBenderRMS...1L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR1L0:ENC:BENDER:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM1L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR1L0:ENC:BENDER:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM1L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR2L0:MMS:YUP:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR2L0:MMS:YUP:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR2L0:MMS:YUP:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:YUP:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:YUP:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:YUP:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:YUP:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nCommand?")
+}
+
+record(longout, "MR2L0:MMS:YUP:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:YUP:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nCmdData?")
+}
+
+record(longout, "MR2L0:MMS:YUP:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR2L0:MMS:YUP:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YUP:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YUP:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YUP:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YUP:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YUP:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YUP:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YUP:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YUP:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YUP:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR2L0:MMS:YUP:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nMotionAxisID?")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:YUP:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR2L0:MMS:YUP:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nErrorId?")
+}
+
+record(waveform, "MR2L0:MMS:YUP:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR2L0:MMS:YDWN:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR2L0:MMS:YDWN:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR2L0:MMS:YDWN:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:YDWN:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:YDWN:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:YDWN:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:YDWN:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nCommand?")
+}
+
+record(longout, "MR2L0:MMS:YDWN:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:YDWN:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nCmdData?")
+}
+
+record(longout, "MR2L0:MMS:YDWN:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR2L0:MMS:YDWN:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YDWN:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YDWN:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YDWN:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YDWN:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YDWN:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YDWN:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YDWN:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:YDWN:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:YDWN:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR2L0:MMS:YDWN:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nMotionAxisID?")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:YDWN:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR2L0:MMS:YDWN:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nErrorId?")
+}
+
+record(waveform, "MR2L0:MMS:YDWN:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR2L0:MMS:XUP:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR2L0:MMS:XUP:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR2L0:MMS:XUP:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:XUP:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:XUP:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:XUP:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:XUP:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nCommand?")
+}
+
+record(longout, "MR2L0:MMS:XUP:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:XUP:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nCmdData?")
+}
+
+record(longout, "MR2L0:MMS:XUP:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR2L0:MMS:XUP:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XUP:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XUP:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XUP:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XUP:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XUP:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XUP:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XUP:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XUP:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XUP:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR2L0:MMS:XUP:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nMotionAxisID?")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:XUP:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR2L0:MMS:XUP:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nErrorId?")
+}
+
+record(waveform, "MR2L0:MMS:XUP:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR2L0:MMS:XDWN:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR2L0:MMS:XDWN:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR2L0:MMS:XDWN:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:XDWN:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:XDWN:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:XDWN:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:XDWN:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nCommand?")
+}
+
+record(longout, "MR2L0:MMS:XDWN:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:XDWN:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nCmdData?")
+}
+
+record(longout, "MR2L0:MMS:XDWN:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR2L0:MMS:XDWN:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XDWN:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XDWN:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XDWN:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XDWN:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XDWN:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XDWN:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XDWN:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:XDWN:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:XDWN:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR2L0:MMS:XDWN:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nMotionAxisID?")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:XDWN:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR2L0:MMS:XDWN:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nErrorId?")
+}
+
+record(waveform, "MR2L0:MMS:XDWN:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR2L0:MMS:PITCH:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR2L0:MMS:PITCH:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR2L0:MMS:PITCH:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:PITCH:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:PITCH:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:PITCH:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:PITCH:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nCommand?")
+}
+
+record(longout, "MR2L0:MMS:PITCH:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:PITCH:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nCmdData?")
+}
+
+record(longout, "MR2L0:MMS:PITCH:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR2L0:MMS:PITCH:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:PITCH:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:PITCH:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:PITCH:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:PITCH:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:PITCH:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:PITCH:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:PITCH:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:PITCH:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:PITCH:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR2L0:MMS:PITCH:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nMotionAxisID?")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:PITCH:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR2L0:MMS:PITCH:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nErrorId?")
+}
+
+record(waveform, "MR2L0:MMS:PITCH:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bLimitForwardEnable_RBV") {
+  field(DESC, "FALSE if forward limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bLimitForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bLimitBackwardEnable_RBV") {
+  field(DESC, "FALSE if reverse limit hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bLimitBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bHome_RBV") {
+  field(DESC, "TRUE if at homing switch")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bHome?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bBrakeRelease_RBV") {
+  field(DESC, "TRUE if brake released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bBrakeRelease?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bHardwareEnable_RBV") {
+  field(DESC, "TRUE if STO not hit")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bHardwareEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bAllForwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bAllForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bAllBackwardEnable_RBV") {
+  field(DESC, "Summary of axis permission to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bAllBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bAllEnable_RBV") {
+  field(DESC, "Summary of axis permission to have power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bAllEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bGantryForwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move forward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bGantryForwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bGantryBackwardEnable_RBV") {
+  field(DESC, "TRUE if gantry ok to move backward")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bGantryBackwardEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bPowerSelf_RBV") {
+  field(DESC, "FALSE if axis is in PMPS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bPowerSelf?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(mbbi, "MR2L0:MMS:BENDER:PLC:nEnableMode_RBV") {
+  field(DESC, "Describes when the axis will automatically get power")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nEnableMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "ALWAYS")
+  field(ONST, "NEVER")
+  field(TWST, "DURING_MOTION")
+}
+
+record(mbbi, "MR2L0:MMS:BENDER:PLC:nBrakeMode_RBV") {
+  field(DESC, "Describes when the brake will be released")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nBrakeMode?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "IF_ENABLED")
+  field(ONST, "IF_MOVING")
+  field(TWST, "NO_BRAKE")
+}
+
+record(mbbi, "MR2L0:MMS:BENDER:PLC:nHomingMode_RBV") {
+  field(DESC, "Describes our homing strategy")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nHomingMode?")
+  field(ZRVL, "-1")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(FRVL, "4")
+  field(FVVL, "15")
+  field(ZRST, "NONE")
+  field(ONST, "LOW_LIMIT")
+  field(TWST, "HIGH_LIMIT")
+  field(THST, "HOME_VIA_LOW")
+  field(FRST, "HOME_VIA_HIGH")
+  field(FVST, "ABSOLUTE_SET")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bGantryAxis_RBV") {
+  field(DESC, "TRUE if gantry EPS active")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bGantryAxis?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bEnable_RBV") {
+  field(DESC, "Used internally to request enables")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bEnable?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:BENDER:PLC:bEnable") {
+  field(DESC, "Used internally to request enables")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bEnable=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bReset_RBV") {
+  field(DESC, "Used internally to reset errors")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bReset?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:BENDER:PLC:bReset") {
+  field(DESC, "Used internally to reset errors")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bReset=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bExecute_RBV") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bExecute?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+}
+
+record(bo, "MR2L0:MMS:BENDER:PLC:bExecute") {
+  field(DESC, "Used internally and by the IOC to start or stop")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:BENDER:PLC:nCommand_RBV") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nCommand?")
+}
+
+record(longout, "MR2L0:MMS:BENDER:PLC:nCommand") {
+  field(DESC, "Used internally and by the IOC to pick move type")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.nCommand=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(longin, "MR2L0:MMS:BENDER:PLC:nCmdData_RBV") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nCmdData?")
+}
+
+record(longout, "MR2L0:MMS:BENDER:PLC:nCmdData") {
+  field(DESC, "Used internally and by the IOC to pass extra args")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.nCmdData=")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(ai, "MR2L0:MMS:BENDER:PLC:fPosition_RBV") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fPosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:BENDER:PLC:fPosition") {
+  field(DESC, "Used internally and by the IOC as the set position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fPosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:BENDER:PLC:fVelocity_RBV") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fVelocity?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:BENDER:PLC:fVelocity") {
+  field(DESC, "Used internally and by the IOC to set velocity")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fVelocity=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:BENDER:PLC:fAcceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fAcceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:BENDER:PLC:fAcceleration") {
+  field(DESC, "Used internally and by the IOC to set acceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fAcceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:BENDER:PLC:fDeceleration_RBV") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fDeceleration?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:BENDER:PLC:fDeceleration") {
+  field(DESC, "Used internally and by the IOC to set deceleration")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fDeceleration=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(ai, "MR2L0:MMS:BENDER:PLC:fHomePosition_RBV") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fHomePosition?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ao, "MR2L0:MMS:BENDER:PLC:fHomePosition") {
+  field(DESC, "Used internally and by the IOC to pick home position")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.fHomePosition=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+}
+
+record(longin, "MR2L0:MMS:BENDER:PLC:nMotionAxisID_RBV") {
+  field(DESC, "Unique ID assigned to each axis in the NC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nMotionAxisID?")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bEnableDone_RBV") {
+  field(DESC, "TRUE if done enabling")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bEnableDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bBusy_RBV") {
+  field(DESC, "TRUE if in the middle of a command")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bBusy?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bDone_RBV") {
+  field(DESC, "TRUE if command finished successfully")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(bi, "MR2L0:MMS:BENDER:PLC:bError_RBV") {
+  field(DESC, "TRUE if we")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bError?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+}
+
+record(longin, "MR2L0:MMS:BENDER:PLC:nErrorId_RBV") {
+  field(DESC, "Error code if nonzero")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nErrorId?")
+}
+
+record(waveform, "MR2L0:MMS:BENDER:PLC:sErrorMessage_RBV") {
+  field(DESC, "Message to identify the error state")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.sErrorMessage?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}
+
+record(bi, "MR2L0:COUPLE_Y_RBV") {
+  field(DESC, "ads:Main.M2L0.bExecuteCoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteCoupleY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR2L0:COUPLE_Y") {
+  field(DESC, "ads:Main.M2L0.bExecuteCoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleY=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:DECOUPLE_Y_RBV") {
+  field(DESC, "ads:Main.M2L0.bExecuteDecoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteDecoupleY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR2L0:DECOUPLE_Y") {
+  field(DESC, "ads:Main.M2L0.bExecuteDecoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleY=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:COUPLE_X_RBV") {
+  field(DESC, "ads:Main.M2L0.bExecuteCoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteCoupleX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR2L0:COUPLE_X") {
+  field(DESC, "ads:Main.M2L0.bExecuteCoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleX=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:DECOUPLE_X_RBV") {
+  field(DESC, "ads:Main.M2L0.bExecuteDecoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteDecoupleX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bo, "MR2L0:DECOUPLE_X") {
+  field(DESC, "ads:Main.M2L0.bExecuteDecoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleX=")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+  info(autosaveFields_pass0, "VAL")
+}
+
+record(bi, "MR2L0:ALREADY_COUPLED_Y_RBV") {
+  field(DESC, "ads:Main.M2L0.bGantryAlreadyCoupledY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bGantryAlreadyCoupledY?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(bi, "MR2L0:ALREADY_COUPLED_X_RBV") {
+  field(DESC, "ads:Main.M2L0.bGantryAlreadyCoupledX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bGantryAlreadyCoupledX?")
+  field(ZNAM, "Zero")
+  field(ONAM, "One")
+}
+
+record(ai, "MR2L0:GANTRY_Y_RBV") {
+  field(DESC, "ads:Main.M2L0.fCurrGantryY_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryY_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:GANTRY_X_RBV") {
+  field(DESC, "ads:Main.M2L0.fCurrGantryX_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryX_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:Y:MEAN_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM2L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:Y:STDEV_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM2L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:Y:RMS_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM2L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR2L0:ENC:Y:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM2L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR2L0:ENC:Y:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbYRMSErrorM2L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(ai, "MR2L0:ENC:X:MEAN_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM2L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:X:STDEV_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM2L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:X:RMS_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM2L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR2L0:ENC:X:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM2L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR2L0:ENC:X:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbXRMSErrorM2L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(ai, "MR2L0:ENC:PITCH:MEAN_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM2L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:PITCH:STDEV_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM2L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:PITCH:RMS_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSE...2L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR2L0:ENC:PITCH:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM2L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR2L0:ENC:PITCH:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbPitchRMSErrorM2L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(ai, "MR2L0:ENC:BENDER:MEAN_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM2L0.fEncMean")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.fEncMean?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:BENDER:STDEV_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM2L0.fEncStDev")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.fEncStDev?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(ai, "MR2L0:ENC:BENDER:RMS_RBV") {
+  field(DESC, "ads:Main.fbBenderRMS...2L0.fCurrRMSError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.fCurrRMSError?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+}
+
+record(waveform, "MR2L0:ENC:BENDER:ACTPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM2L0.aEncActPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.aEncActPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
+
+record(waveform, "MR2L0:ENC:BENDER:SETPOSARRAY_RBV") {
+  field(DESC, "ads:Main.fbBenderRMSErrorM2L0.aEncSetPos")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.aEncSetPos?")
+  field(FTVL, "DOUBLE")
+  field(NELM, "1000")
+}
