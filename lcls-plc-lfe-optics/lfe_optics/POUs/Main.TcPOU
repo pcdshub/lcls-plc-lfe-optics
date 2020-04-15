@@ -8,7 +8,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR1L0:MMS:YUP
+		pv: MR1L0:HOMS:MMS:YUP
 	'}
 	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Yup
 	fbMotionStage_m1 : FB_MotionStage;
@@ -16,7 +16,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR1L0:MMS:YDWN
+		pv: MR1L0:HOMS:MMS:YDWN
 	'}
 	M2 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Ydwn
 	fbMotionStage_m2 : FB_MotionStage;
@@ -24,7 +24,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR1L0:MMS:XUP
+		pv: MR1L0:HOMS:MMS:XUP
 	'}
 	M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Xup
 	fbMotionStage_m3 : FB_MotionStage;
@@ -32,7 +32,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR1L0:MMS:XDWN
+		pv: MR1L0:HOMS:MMS:XDWN
 	'}
 	M4 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Xdwn
 	fbMotionStage_m4 : FB_MotionStage;
@@ -40,14 +40,14 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR1L0:MMS:PITCH
+		pv: MR1L0:HOMS:MMS:PITCH
 	'}
 	M5 : DUT_MotionStage := (fVelocity:=150.0); // M1L0 Pitch Stepper
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR1L0:MMS:BENDER
+		pv: MR1L0:HOMS:MMS:BENDER
 	'}
 	M6 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Bender
 	fbMotionStage_m6 : FB_MotionStage;
@@ -59,34 +59,34 @@ VAR
 	                          .fbRunHOMS.stXupEnc.Count:=TIIB[EL5042_M1L0_Xupdwn]^FB Inputs Channel 1^Position;
 	                          .fbRunHOMS.stXdwnEnc.Count:=TIIB[EL5042_M1L0_Xupdwn]^FB Inputs Channel 2^Position'}
 	{attribute 'pytmc' := '
-		pv: MR1L0
+		pv: MR1L0:HOMS
 	'}
 	M1L0 : DUT_HOMS;
 
 	// Encoder Arrays/RMS Watch:
 	{attribute 'pytmc' := '
-		pv: MR1L0:ENC:Y
+		pv: MR1L0:HOMS:ENC:Y
 	'}
 	fbYRMSErrorM1L0 : FB_RMSWatch;
 	fMaxYRMSErrorM1L0 : LREAL;
 	fMinYRMSErrorM1L0 : LREAL;
 
 	{attribute 'pytmc' := '
-		pv: MR1L0:ENC:X
+		pv: MR1L0:HOMS:ENC:X
 	'}
 	fbXRMSErrorM1L0 : FB_RMSWatch;
 	fMaxXRMSErrorM1L0 : LREAL;
 	fMinXRMSErrorM1L0 : LREAL;
 
 	{attribute 'pytmc' := '
-		pv: MR1L0:ENC:PITCH
+		pv: MR1L0:HOMS:ENC:PITCH
 	'}
 	fbPitchRMSErrorM1L0 : FB_RMSWatch;
 	fMaxPitchRMSErrorM1L0 : LREAL;
 	fMinPitchRMSErrorM1L0 : LREAL;
 
 	{attribute 'pytmc' := '
-		pv: MR1L0:ENC:BENDER
+		pv: MR1L0:HOMS:ENC:BENDER
 	'}
 	fbBenderRMSErrorM1L0 : FB_RMSWatch;
 	fMaxBenderRMSErrorM1L0 : LREAL;
@@ -106,7 +106,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR2L0:MMS:YUP
+		pv: MR2L0:HOMS:MMS:YUP
 	'}
 	M7 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Yup
 	fbMotionStage_m7 : FB_MotionStage;
@@ -114,7 +114,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR2L0:MMS:YDWN
+		pv: MR2L0:HOMS:MMS:YDWN
 	'}
 	M8 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Ydwn
 	fbMotionStage_m8 : FB_MotionStage;
@@ -122,7 +122,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR2L0:MMS:XUP
+		pv: MR2L0:HOMS:MMS:XUP
 	'}
 	M9 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Xup
 	fbMotionStage_m9 : FB_MotionStage;
@@ -130,7 +130,7 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR2L0:MMS:XDWN
+		pv: MR2L0:HOMS:MMS:XDWN
 	'}
 	M10 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Xdwn
 	fbMotionStage_m10 : FB_MotionStage;
@@ -138,14 +138,14 @@ VAR
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR2L0:MMS:PITCH
+		pv: MR2L0:HOMS:MMS:PITCH
 	'}
 	M11 : DUT_MotionStage := (fVelocity:=150.0); // M2L0 Pitch Stepper
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
-		pv: MR2L0:MMS:BENDER
+		pv: MR2L0:HOMS:MMS:BENDER
 	'}
 	M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Bender
 	fbMotionStage_m12 : FB_MotionStage;
@@ -157,34 +157,34 @@ VAR
 	                          .fbRunHOMS.stXupEnc.Count:=TIIB[EL5042_M2L0_Xupdwn]^FB Inputs Channel 1^Position;
 	                          .fbRunHOMS.stXdwnEnc.Count:=TIIB[EL5042_M2L0_Xupdwn]^FB Inputs Channel 2^Position'}
 	{attribute 'pytmc' := '
-		pv: MR2L0
+		pv: MR2L0:HOMS
 	'}
 	M2L0 : DUT_HOMS;
 
 	// Encoder Arrays/RMS Watch:
 	{attribute 'pytmc' := '
-		pv: MR2L0:ENC:Y
+		pv: MR2L0:HOMS:ENC:Y
 	'}
 	fbYRMSErrorM2L0 : FB_RMSWatch;
 	fMaxYRMSErrorM2L0 : LREAL;
 	fMinYRMSErrorM2L0 : LREAL;
 
 	{attribute 'pytmc' := '
-		pv: MR2L0:ENC:X
+		pv: MR2L0:HOMS:ENC:X
 	'}
 	fbXRMSErrorM2L0 : FB_RMSWatch;
 	fMaxXRMSErrorM2L0 : LREAL;
 	fMinXRMSErrorM2L0 : LREAL;
 
 	{attribute 'pytmc' := '
-		pv: MR2L0:ENC:PITCH
+		pv: MR2L0:HOMS:ENC:PITCH
 	'}
 	fbPitchRMSErrorM2L0 : FB_RMSWatch;
 	fMaxPitchRMSErrorM2L0 : LREAL;
 	fMinPitchRMSErrorM2L0 : LREAL;
 
 	{attribute 'pytmc' := '
-		pv: MR2L0:ENC:BENDER
+		pv: MR2L0:HOMS:ENC:BENDER
 	'}
 	fbBenderRMSErrorM2L0 : FB_RMSWatch;
 	fMaxBenderRMSErrorM2L0 : LREAL;
