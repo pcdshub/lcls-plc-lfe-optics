@@ -268,8 +268,8 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 
-dbLoadRecords("iocSoft.db", "IOC=PREFIX")
-dbLoadRecords("save_restoreStatus.db", "P=PREFIX:")
+dbLoadRecords("iocSoft.db", "IOC=PLC:LFE:OPTICS")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:LFE:OPTICS:")
 
 cd "$(IOC_TOP)"
 
@@ -281,7 +281,7 @@ cd "$(IOC_TOP)"
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
 
-save_restoreSet_status_prefix( "PREFIX:" )
+save_restoreSet_status_prefix( "PLC:LFE:OPTICS:" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "info_positions.sav" )
