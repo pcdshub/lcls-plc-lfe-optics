@@ -197,6 +197,9 @@ VAR
 
 	// Bender Control
 	fbBenderM2L0 : FB_Bender;
+
+	// Logging
+	fbLogHandler : FB_LogHandler;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
@@ -318,7 +321,10 @@ fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
 // When STO hit, need to reset SP
 IF NOT M11.bHardwareEnable THEN
 	M11.fPosition := M11.stAxisStatus.fActPosition;
-END_IF]]></ST>
+END_IF
+
+// Logging
+fbLogHandler();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
