@@ -1331,12 +1331,13 @@ External Setpoint Generation:
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
 			<EncPara ScaleFactorNumerator="0.001" Offset="-16171.8" MaxCount="#xffffffff" ReferenceSystem="1">
-				<SoftEndMinControl Enable="true" Range="-12557.2"/>
-				<SoftEndMaxControl Enable="true" Range="10833"/>
+				<SoftEndMinControl Enable="true" Range="-12605.3"/>
+				<SoftEndMaxControl Enable="true" Range="10852.77"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 				<ParameterChanged>14</ParameterChanged>
+				<ParameterChanged>11</ParameterChanged>
 				<ParameterChanged>13</ParameterChanged>
-				<ParameterChanged>7</ParameterChanged>
+				<ParameterChanged>12</ParameterChanged>
 			</EncPara>
 			<Vars VarGrpType="1">
 				<Name>Inputs</Name>
