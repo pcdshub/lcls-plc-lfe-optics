@@ -1,4 +1,5 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.2.2/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.2.5/bin/rhel7-x86_64/adsIoc
+###### AUTO-GENERATED DO NOT EDIT ##############
 
 < envPaths
 
@@ -290,6 +291,9 @@ set_pass1_restoreFile( "info_settings.sav" )
 cd "$(IOC_TOP)/autosave"
 makeAutosaveFiles()
 cd "$(IOC_TOP)"
+
+# Create the archiver file
+makeArchiveFromDbInfo("$(IOC_DATA)/$(IOC)/archive/$(IOC).archive", "archive")
 
 # Initialize the IOC and start processing records
 iocInit()
