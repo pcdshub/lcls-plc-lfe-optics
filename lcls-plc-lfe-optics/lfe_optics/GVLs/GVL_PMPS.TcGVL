@@ -8,8 +8,16 @@ VAR_GLOBAL
 		pv: <Subsystem_PLC_PREFIX>:FFO:<FFO Index>
 	'}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-	g_FastFaultOutput1 : FB_HardwareFFOutput;
-	g_fbArbiter1 : FB_Arbiter(<ArbiterID>);
+	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+
+	{attribute 'pytmc' := '
+		pv: <Subsystem_PLC_PREFIX>:FFO:<FFO Index>
+	'}
+	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
+	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+
+	g_fbArbiter1 : FB_Arbiter(1);
+	g_fbArbiter2 : FB_Arbiter(2);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

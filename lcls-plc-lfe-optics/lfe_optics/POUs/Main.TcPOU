@@ -200,6 +200,10 @@ VAR
 
 	// Logging
 	fbLogHandler : FB_LogHandler;
+
+	// PMPS
+//	fbArbiterIO1 : FB_SubSysToArbiter_IO;
+//	fbArbiterIO2 : FB_SubSysToArbiter_IO;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
@@ -324,11 +328,13 @@ IF NOT M11.bHardwareEnable THEN
 END_IF
 
 // Logging
-fbLogHandler();]]></ST>
+fbLogHandler();
+
+// PMPS
+GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
+GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
+//fbArbiterIO1(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+//fbArbiterIO2(Arbiter := GVL_PMPS.g_fbArbiter2, fbFFHWO := GVL_PMPS.g_FastFaultOutput2);]]></ST>
     </Implementation>
-    <LineIds Name="Main">
-      <LineId Id="3" Count="121" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

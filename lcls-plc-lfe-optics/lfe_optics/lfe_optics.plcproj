@@ -56,9 +56,6 @@
     <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PMPS.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\Serial Comm\PiezoSerial.TcPOU">
       <SubType>Code</SubType>
     </Compile>
