@@ -326,5 +326,9 @@ END_IF
 // Logging
 fbLogHandler();]]></ST>
     </Implementation>
+    <LineIds Name="Main">
+      <LineId Id="3" Count="121" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

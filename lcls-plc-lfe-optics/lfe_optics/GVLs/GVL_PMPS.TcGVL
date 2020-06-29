@@ -9,7 +9,7 @@ VAR_GLOBAL
 	'}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
 	g_FastFaultOutput1 : FB_HardwareFFOutput;
-	g_fbArbiter1 : FB_Arbiter;
+	g_fbArbiter1 : FB_Arbiter(<ArbiterID>);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
