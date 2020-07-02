@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "lcls-plc-lfe-optics", "lcls-plc-lfe-optics\lcls-plc-lfe-optics.tsproj", "{F5A65E79-053C-4C26-9754-FDF7BA66D0EB}"
 EndProject
-Project("{FD9F1D59-E000-42F3-8744-88DE1BE93C06}") = "lcls-plc-lfe-optics_scope", "lcls-plc-lfe-optics_scope\lcls-plc-lfe-optics_scope.tcmproj", "{63D52511-3EF5-449F-94AE-B3B844D48B9F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|TwinCAT CE7 (ARMV7) = Debug|TwinCAT CE7 (ARMV7)
@@ -35,14 +33,6 @@ Global
 		{F5A65E79-053C-4C26-9754-FDF7BA66D0EB}.Release|TwinCAT RT (x64).Build.0 = Release|TwinCAT RT (x64)
 		{F5A65E79-053C-4C26-9754-FDF7BA66D0EB}.Release|TwinCAT RT (x86).ActiveCfg = Release|TwinCAT RT (x86)
 		{F5A65E79-053C-4C26-9754-FDF7BA66D0EB}.Release|TwinCAT RT (x86).Build.0 = Release|TwinCAT RT (x86)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Debug|TwinCAT CE7 (ARMV7).ActiveCfg = Debug|TwinCAT CE7 (ARMV7)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Debug|TwinCAT OS (ARMT2).ActiveCfg = Debug|TwinCAT OS (ARMT2)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Debug|TwinCAT RT (x64).ActiveCfg = Debug|TwinCAT RT (x64)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Debug|TwinCAT RT (x86).ActiveCfg = Debug|TwinCAT RT (x86)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Release|TwinCAT CE7 (ARMV7).ActiveCfg = Release|TwinCAT CE7 (ARMV7)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Release|TwinCAT OS (ARMT2).ActiveCfg = Release|TwinCAT OS (ARMT2)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Release|TwinCAT RT (x64).ActiveCfg = Release|TwinCAT RT (x64)
-		{63D52511-3EF5-449F-94AE-B3B844D48B9F}.Release|TwinCAT RT (x86).ActiveCfg = Release|TwinCAT RT (x86)
 		{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}.Debug|TwinCAT CE7 (ARMV7).ActiveCfg = Debug|TwinCAT CE7 (ARMV7)
 		{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}.Debug|TwinCAT CE7 (ARMV7).Build.0 = Debug|TwinCAT CE7 (ARMV7)
 		{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}.Debug|TwinCAT OS (ARMT2).ActiveCfg = Debug|TwinCAT OS (ARMT2)

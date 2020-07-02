@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_PMPS" Id="{dbb69905-b1f8-4d24-b473-51203e2d0846}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Implementation of the FFO
+	{attribute 'pytmc' := '
+		pv: <Subsystem_PLC_PREFIX>:FFO:<FFO Index>
+	'}
+	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
+	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+
+	{attribute 'pytmc' := '
+		pv: <Subsystem_PLC_PREFIX>:FFO:<FFO Index>
+	'}
+	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
+	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+
+	g_fbArbiter1 : FB_Arbiter(1);
+	g_fbArbiter2 : FB_Arbiter(2);
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

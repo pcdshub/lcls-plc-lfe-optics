@@ -37,6 +37,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\GVL_PMPS.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_SerialIO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -157,8 +161,11 @@
     <LibraryReference Include="lcls-twincat-motion,1.1.0,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>
-    <LibraryReference Include="lcls-twincat-optics,0.0.0,SLAC">
+    <LibraryReference Include="lcls-twincat-optics,0.0.1,SLAC">
       <Namespace>lcls_twincat_optics</Namespace>
+    </LibraryReference>
+    <LibraryReference Include="PMPS,0.0.0,SLAC - LCLS">
+      <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
