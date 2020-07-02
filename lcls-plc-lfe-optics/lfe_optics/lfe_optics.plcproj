@@ -50,9 +50,6 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_PhotonEnergyWatcher.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -164,7 +161,7 @@
     <LibraryReference Include="lcls-twincat-motion,1.1.0,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>
-    <LibraryReference Include="lcls-twincat-optics,0.0.0,SLAC">
+    <LibraryReference Include="lcls-twincat-optics,0.0.1,SLAC">
       <Namespace>lcls_twincat_optics</Namespace>
     </LibraryReference>
     <LibraryReference Include="PMPS,0.0.0,SLAC - LCLS">
