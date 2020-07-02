@@ -5,13 +5,13 @@
 VAR_GLOBAL
 	// Implementation of the FFO
 	{attribute 'pytmc' := '
-		pv: <Subsystem_PLC_PREFIX>:FFO:<FFO Index>
+		pv: PLC:LFE:OPTICS:FFO:01
 	'}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
 	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
 
 	{attribute 'pytmc' := '
-		pv: <Subsystem_PLC_PREFIX>:FFO:<FFO Index>
+		pv: PLC:LFE:OPTICS:FFO:02
 	'}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
 	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
