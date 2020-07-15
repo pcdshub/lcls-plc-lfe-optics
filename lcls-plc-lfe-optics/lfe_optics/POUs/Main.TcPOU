@@ -287,8 +287,8 @@ fbBenderM2L0(stBender:=M12,
 	         bSTOEnable1:=M2L0.fbRunHOMS.bSTOEnable1,
 		     bSTOEnable2:=M2L0.fbRunHOMS.bSTOEnable2);
 // No slave motion through Epics
-M8.bExecute := FALSE; // M1L0-Ydwn
-M10.bExecute := FALSE; // M1L0-Xdwn
+M8.bExecute := FALSE; // M2L0-Ydwn
+M10.bExecute := FALSE; // M2L0-Xdwn
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
 M2L0.fCurrGantryY_um := LINT_TO_REAL(M2L0.nCurrGantryY) / 1000;
