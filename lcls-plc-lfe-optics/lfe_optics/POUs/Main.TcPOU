@@ -100,6 +100,37 @@ VAR
 	// Bender Control
 	fbBenderM1L0 : FB_Bender;
 
+	// Raw Encoder Counts
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:YUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:YDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:XUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:XDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:PITCH:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntPitchM1L0 : UDINT;
 
 	// M2L0
 	// Motors
@@ -198,6 +229,38 @@ VAR
 	// Bender Control
 	fbBenderM2L0 : FB_Bender;
 
+	// Raw Encoder Counts
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:YUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYupM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:YDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYdwnM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:XUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXupM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:XDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXdwnM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:PITCH:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntPitchM2L0 : UDINT;
+
 	// Logging
 	fbLogHandler : FB_LogHandler;
 END_VAR]]></Declaration>
@@ -265,6 +328,13 @@ IF NOT M5.bHardwareEnable THEN
 	M5.fPosition := M5.stAxisStatus.fActPosition;
 END_IF
 
+// Raw Encoder Counts For Epics
+nEncCntYupM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stYupEnc.Count);
+nEncCntYdwnM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stYdwnEnc.Count);
+nEncCntXupM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stXupEnc.Count);
+nEncCntXdwnM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stXdwnEnc.Count);
+nEncCntPitchM1L0 := LINT_TO_UDINT(GVL_M1L0.M1L0_Pitch.diEncCnt);
+
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
@@ -328,6 +398,13 @@ fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
 IF NOT M11.bHardwareEnable THEN
 	M11.fPosition := M11.stAxisStatus.fActPosition;
 END_IF
+
+// Raw Encoder Counts For Epics
+nEncCntYupM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stYupEnc.Count);
+nEncCntYdwnM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stYdwnEnc.Count);
+nEncCntXupM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stXupEnc.Count);
+nEncCntXdwnM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stXdwnEnc.Count);
+nEncCntPitchM2L0 := LINT_TO_UDINT(GVL_M2L0.M2L0_Pitch.diEncCnt);
 
 // Logging
 fbLogHandler();
