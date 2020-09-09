@@ -132,6 +132,40 @@ VAR
 	'}
 	nEncCntPitchM1L0 : UDINT;
 
+	// Encoder Reference Values
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:YUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:YDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:XUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:XDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L0:HOMS:ENC:PITCH:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefPitchM1L0 : UDINT;
+	mcReadParameterPitchM1L0 : MC_ReadParameter;
+	fEncRefPitchM1L0_urad : LREAL; // Current Pitch encoder offset in urad
+
 	// M2L0
 	// Motors
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;
@@ -261,6 +295,42 @@ VAR
 	'}
 	nEncCntPitchM2L0 : UDINT;
 
+	// Encoder Reference Values
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:YUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYupM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:YDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYdwnM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:XUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXupM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:XDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXdwnM2L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR2L0:HOMS:ENC:PITCH:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefPitchM2L0 : UDINT;
+	mcReadParameterPitchM2L0 : MC_ReadParameter;
+	fEncRefPitchM2L0_urad : LREAL; // Current Pitch encoder offset in urad
+
+	// Common
+	fEncLeverArm_mm : LREAL := 513.0;
 	// Logging
 	fbLogHandler : FB_LogHandler;
 END_VAR]]></Declaration>
@@ -335,6 +405,19 @@ nEncCntXupM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stXupEnc.Count);
 nEncCntXdwnM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stXdwnEnc.Count);
 nEncCntPitchM1L0 := LINT_TO_UDINT(GVL_M1L0.M1L0_Pitch.diEncCnt);
 
+// Encoder Reference Values For Epics
+nEncRefYupM1L0 := ULINT_TO_UDINT(GVL_M1L0_Constants.nYUP_ENC_REF);
+nEncRefYdwnM1L0 := ULINT_TO_UDINT(GVL_M1L0_Constants.nYDWN_ENC_REF);
+nEncRefXupM1L0 := ULINT_TO_UDINT(GVL_M1L0_Constants.nXUP_ENC_REF);
+nEncRefXdwnM1L0 := ULINT_TO_UDINT(GVL_M1L0_Constants.nXDWN_ENC_REF);
+mcReadParameterPitchM1L0(Axis:=M5.Axis,
+	                     Enable:=TRUE,
+				         ParameterNumber:=MC_AxisParameter.AxisEncoderOffset,
+				         ReadMode:=READMODE_CYCLIC,
+				         Value=>fEncRefPitchM1L0_urad);
+
+nEncRefPitchM1L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM1L0_urad) * fEncLeverArm_mm);
+
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
@@ -405,6 +488,19 @@ nEncCntYdwnM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stYdwnEnc.Count);
 nEncCntXupM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stXupEnc.Count);
 nEncCntXdwnM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stXdwnEnc.Count);
 nEncCntPitchM2L0 := LINT_TO_UDINT(GVL_M2L0.M2L0_Pitch.diEncCnt);
+
+// Encoder Reference Values For Epics
+nEncRefYupM2L0 := ULINT_TO_UDINT(GVL_M2L0_Constants.nYUP_ENC_REF);
+nEncRefYdwnM2L0 := ULINT_TO_UDINT(GVL_M2L0_Constants.nYDWN_ENC_REF);
+nEncRefXupM2L0 := ULINT_TO_UDINT(GVL_M2L0_Constants.nXUP_ENC_REF);
+nEncRefXdwnM2L0 := ULINT_TO_UDINT(GVL_M2L0_Constants.nXDWN_ENC_REF);
+mcReadParameterPitchM2L0(Axis:=M11.Axis,
+	                     Enable:=TRUE,
+				         ParameterNumber:=MC_AxisParameter.AxisEncoderOffset,
+				         ReadMode:=READMODE_CYCLIC,
+				         Value=>fEncRefPitchM2L0_urad);
+
+nEncRefPitchM2L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM2L0_urad) * fEncLeverArm_mm);
 
 // Logging
 fbLogHandler();
