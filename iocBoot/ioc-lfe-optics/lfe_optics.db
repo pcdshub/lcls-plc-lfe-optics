@@ -93,6 +93,17 @@ record(longin, "MR1L0:HOMS:ENC:PITCH:CNT_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR2L0:HOMS:ENC:YUP:REF_RBV") {
+  field(DESC, "Main.nEncRefYupM2L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefYupM2L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
 record(longin, "MR2L0:HOMS:ENC:YUP:CNT_RBV") {
   field(DESC, "Main.nEncCntYupM2L0")
   field(SCAN, "I/O Intr")
@@ -420,6 +431,105 @@ record(longin, "MR2L0:HOMS:ENC:PITCH:CNT_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntPitchM2L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:ENC:YUP:REF_RBV") {
+  field(DESC, "Main.nEncRefYupM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefYupM1L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:ENC:YDWN:REF_RBV") {
+  field(DESC, "Main.nEncRefYdwnM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefYdwnM1L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:ENC:XUP:REF_RBV") {
+  field(DESC, "Main.nEncRefXupM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefXupM1L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:ENC:XDWN:REF_RBV") {
+  field(DESC, "Main.nEncRefXdwnM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefXdwnM1L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:ENC:PITCH:REF_RBV") {
+  field(DESC, "Main.nEncRefPitchM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefPitchM1L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:ENC:YDWN:REF_RBV") {
+  field(DESC, "Main.nEncRefYdwnM2L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefYdwnM2L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:ENC:XUP:REF_RBV") {
+  field(DESC, "Main.nEncRefXupM2L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefXupM2L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:ENC:XDWN:REF_RBV") {
+  field(DESC, "Main.nEncRefXdwnM2L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefXdwnM2L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:ENC:PITCH:REF_RBV") {
+  field(DESC, "Main.nEncRefPitchM2L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefPitchM2L0?")
   field(EGU, "cnt")
   info(archive, "VAL")
 }
