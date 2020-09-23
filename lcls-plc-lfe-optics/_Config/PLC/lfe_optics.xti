@@ -3306,22 +3306,6 @@ External Setpoint Generation:
 					<Type>UDINT</Type>
 					<InOut>7</InOut>
 				</Var>
-				<Var>
-					<Name>PMPS_GVL.SuccessfulPreemption</Name>
-					<Comment>
-						<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
-					</Comment>
-					<Type>UDINT</Type>
-					<InOut>7</InOut>
-				</Var>
-				<Var>
-					<Name>PMPS_GVL.AccumulatedFF</Name>
-					<Comment>
-						<![CDATA[ Any time a FF occurs]]>
-					</Comment>
-					<Type>UDINT</Type>
-					<InOut>7</InOut>
-				</Var>
 			</Vars>
 			<TaskPouOids>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
