@@ -318,6 +318,86 @@ record(longin, "$(PREFIX)FullBeamCnst:Cohort_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(longin, "$(PREFIX)0RateBeamCnst:Transmission_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nTran?")
+  field(EGU, "%")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Rate_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nRate?")
+  field(EGU, "Hz")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:PulseEnergy_RBV") {
+  field(DESC, "This beam parameter is non-op for now.")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.fPP_mJ?")
+  field(PREC, "3")
+  field(EGU, "mJ")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:PhotonEnergyRanges_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.neVRange?")
+  field(EGU, "eV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)0RateBeamCnst:ST_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.aStoppers?")
+  field(FTVL, "CHAR")
+  field(NELM, "16")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Valid_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.xValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Cohort_RBV") {
+  field(DESC, "Cohort inc on each arb cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nCohortInt?")
+  info(archive, "monitor 1: VAL")
+}
+
 record(longin, "$(PREFIX)SafeBeamCnst:Transmission_RBV") {
   field(DESC, "Safe beam constant")
   field(SCAN, "I/O Intr")
@@ -398,63 +478,6 @@ record(longin, "$(PREFIX)SafeBeamCnst:Cohort_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(longin, "$(PREFIX)L:UND:FirstSegment_RBV") {
-  field(DESC, "PMPS_GVL.iLowBound_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.iLowBound_LUnd?")
-  info(archive, "VAL")
-}
-
-record(longin, "$(PREFIX)L:UND:LastSegment_RBV") {
-  field(DESC, "PMPS_GVL.iHighBound_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.iHighBound_LUnd?")
-  info(archive, "VAL")
-}
-
-record(ai, "Period_RBV") {
-  field(DESC, "PMPS_GVL.fPeriod_mm_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fPeriod_mm_LUnd?")
-  field(PREC, "3")
-  field(EGU, "mm")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(PREFIX)L:UND:LowK_RBV") {
-  field(DESC, "PMPS_GVL.fLowK_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fLowK_LUnd?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(PREFIX)L:UND:HiK_RBV") {
-  field(DESC, "PMPS_GVL.fHiK_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fHiK_LUnd?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
 record(ai, "$(PREFIX)eVRangeHyst_RBV") {
   field(DESC, "eV Range hystersis")
   field(SCAN, "I/O Intr")
@@ -501,6 +524,17 @@ record(longin, "MR1L0:HOMS:ENC:YUP:CNT_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupM1L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:ENC:YDWN:CNT_RBV") {
+  field(DESC, "Main.nEncCntYdwnM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYdwnM1L0?")
   field(EGU, "cnt")
   info(archive, "VAL")
 }
@@ -624,6 +658,28 @@ record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:MMS:YUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:YUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -977,6 +1033,18 @@ record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -1130,6 +1198,28 @@ record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:MMS:YDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:YDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -1483,6 +1573,18 @@ record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -1636,6 +1738,28 @@ record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:MMS:XUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:XUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -1989,6 +2113,18 @@ record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -2142,6 +2278,28 @@ record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:MMS:XDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:XDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -2495,6 +2653,18 @@ record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -2648,6 +2818,28 @@ record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:MMS:PITCH:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:PITCH:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -3001,6 +3193,18 @@ record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -3154,6 +3358,28 @@ record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:MMS:BENDER:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:BENDER:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -3502,6 +3728,18 @@ record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bSafetyReady?")
   field(ZNAM, "TRUE")
   field(ONAM, "FALSE")
   info(archive, "VAL")
@@ -3919,17 +4157,6 @@ record(waveform, "MR1L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "MR1L0:HOMS:ENC:YDWN:CNT_RBV") {
-  field(DESC, "Main.nEncCntYdwnM1L0")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYdwnM1L0?")
-  field(EGU, "cnt")
-  info(archive, "VAL")
-}
-
 record(longin, "MR1L0:HOMS:ENC:XUP:CNT_RBV") {
   field(DESC, "Main.nEncCntXupM1L0")
   field(SCAN, "I/O Intr")
@@ -4137,6 +4364,28 @@ record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:MMS:YUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:YUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -4490,6 +4739,18 @@ record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -4643,6 +4904,28 @@ record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:MMS:YDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:YDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -4996,6 +5279,18 @@ record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -5149,6 +5444,28 @@ record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:MMS:XUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:XUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -5502,6 +5819,18 @@ record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -5655,6 +5984,28 @@ record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:MMS:XDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:XDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -6008,6 +6359,18 @@ record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -6161,6 +6524,28 @@ record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:MMS:PITCH:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:PITCH:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -6514,6 +6899,18 @@ record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -6667,6 +7064,28 @@ record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L0:HOMS:MMS:BENDER:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:BENDER:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -7015,6 +7434,18 @@ record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bSafetyReady?")
   field(ZNAM, "TRUE")
   field(ONAM, "FALSE")
   info(archive, "VAL")
