@@ -10,7 +10,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L0:HOMS:MMS:YUP
 	'}
-	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Yup
+	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M1L0 Yup
 	fbMotionStage_m1 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 1;
@@ -18,7 +18,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L0:HOMS:MMS:YDWN
 	'}
-	M2 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Ydwn
+	M2 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M1L0 Ydwn
 	fbMotionStage_m2 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 1;
@@ -26,7 +26,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L0:HOMS:MMS:XUP
 	'}
-	M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Xup
+	M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M1L0 Xup
 	fbMotionStage_m3 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 1;
@@ -34,7 +34,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L0:HOMS:MMS:XDWN
 	'}
-	M4 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Xdwn
+	M4 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M1L0 Xdwn
 	fbMotionStage_m4 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;
@@ -49,7 +49,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L0:HOMS:MMS:BENDER
 	'}
-	M6 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M1L0 Bender
+	M6 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M1L0 Bender
 	fbMotionStage_m6 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;
@@ -173,7 +173,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L0:HOMS:MMS:YUP
 	'}
-	M7 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Yup
+	M7 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M2L0 Yup
 	fbMotionStage_m7 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;
@@ -181,7 +181,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L0:HOMS:MMS:YDWN
 	'}
-	M8 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Ydwn
+	M8 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M2L0 Ydwn
 	fbMotionStage_m8 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;
@@ -189,7 +189,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L0:HOMS:MMS:XUP
 	'}
-	M9 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Xup
+	M9 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M2L0 Xup
 	fbMotionStage_m9 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;
@@ -197,7 +197,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L0:HOMS:MMS:XDWN
 	'}
-	M10 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Xdwn
+	M10 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M2L0 Xdwn
 	fbMotionStage_m10 : FB_MotionStage;
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
@@ -212,7 +212,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L0:HOMS:MMS:BENDER
 	'}
-	M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS); // M2L0 Bender
+	M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // M2L0 Bender
 	fbMotionStage_m12 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;
