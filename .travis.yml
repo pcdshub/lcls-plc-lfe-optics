@@ -1,0 +1,47 @@
+language: python
+python: 3.7
+
+env:
+  global:
+    # doctr generated secure variable for documentation upload
+    - secure: "l/OrWP418H+ntjgYnGwrdVDGW7VsDR2fDKjQHovEWjK1dJRV/A+67JtPeErlGgmhiW3aUOlTIRtKXtFgGyoKyWrLVosYFNnCqhP5tV2rzmVttV0XRYGi/A7IrqfVU/lP0tk9tVpZQa0BEMYphVE8s20LODdbXMOKM/YJmABiBMrIZE90mDnMnMSe1CTdZcoT56zG9lwlm6olP2MRhgg2lrSF5kwpdSiUrcSSbnMeH7YxFD1DtxHGUc/HLJ6sxsyZzb2JfHw+2ZLOKArtlbEbUcbd33g0nhQ+6o9FYX7lWKKEh8WkIrKX6VfePlvuU4hze0K4NFLvlwW7GLBvA61NvtVlKdf9KEKhZFEla4XP9/dp1+d0c4GN/fnnLKIojQd6alxt4KbjZe1kZgE4mW9ClUpfc2i8xbFfIFIGsOR5P17nXuUaogXTltsrtCvolYBvZGKkVaJDIQ5MQzlmn0TAdooqsgGBTA5AGsHDUxjIECmVx+TVBqwF5WyJDxzpr2/4/PhTuUn37MJwmy5uzHSagy7fKjnGF98JaPNxc9Zxo6pPGlD1U5HgITMEIUZZmgVOIiic4CVPmpTR/e12RF/FMmKlJq1oyU9fXsN/+p2u892wNmRfszL122y8WSa8MUIsBRVsuVKQTZNFR/Pk+1E8VyhzhHub0yPQaSXTqu6E2Ck="
+    - TWINCAT_STYLE_EXCLUDE=
+    # If using a custom version of the CI helpers, change the following in
+    # addition to the `import` block elow:
+    # - CI_HELPER_URL=https://github.com/klauer/pcds-ci-helpers
+    # - CI_HELPER_BRANCH=twincat_shared_configs
+
+# Uncomment this block if you would like to make a test an allowed failure
+#jobs:
+#  allow_failures:
+#    - name: "Style Check"
+#    - name: "Pre-commit Checks"
+
+import:
+  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/standard.yml
+
+# If not using the standard-python-conda above please uncomment the required
+# (language, os, dist and stages) and optional (import statements) entries from
+# the blocks below.
+#
+#language: python
+#os: linux
+#dist: xenial
+#
+#stages:
+#  - build
+#  - test
+#  - name: deploy
+#    if: (branch = master OR tag IS present) AND type != pull_request
+#
+#import:
+#  # Build stage
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/setup.yml
+#  # Test stage
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/docs-build.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/pragmalint.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/pre-commit.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/style.yml
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/summary.yml
+#  # Deploy stage
+#  - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/doctr-upload.yml
