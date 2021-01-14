@@ -17,12 +17,12 @@ VAR_GLOBAL
 	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
 
 	{attribute 'pytmc' := '
-		pv: PLC:LFE:OPTICS:Arbiter:01
+		pv: PLC:LFE:OPTICS:ARB:01
 	'}
 	g_fbArbiter1 : FB_Arbiter(1);
 
 	{attribute 'pytmc' := '
-		pv: PLC:LFE:OPTICS:Arbiter:02
+		pv: PLC:LFE:OPTICS:ARB:02
 	'}
 	g_fbArbiter2 : FB_Arbiter(2);
 END_VAR]]></Declaration>
