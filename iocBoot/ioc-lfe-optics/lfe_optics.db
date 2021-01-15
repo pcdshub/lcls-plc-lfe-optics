@@ -117,6 +117,8 @@ record(waveform, "$(PREFIX)RequestedBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stRequestedBeamParameters.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -200,6 +202,8 @@ record(waveform, "$(PREFIX)CurrentBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.stCurrentBeamParameters.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -235,6 +239,8 @@ record(waveform, "$(PREFIX)eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -293,6 +299,8 @@ record(waveform, "$(PREFIX)FullBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -315,6 +323,88 @@ record(longin, "$(PREFIX)FullBeamCnst:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstFullBeam.nCohortInt?")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Transmission_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nTran?")
+  field(EGU, "%")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Rate_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nRate?")
+  field(EGU, "Hz")
+  info(archive, "monitor 1: VAL")
+}
+
+record(ai, "$(PREFIX)0RateBeamCnst:PulseEnergy_RBV") {
+  field(DESC, "This beam parameter is non-op for now.")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.fPP_mJ?")
+  field(PREC, "3")
+  field(EGU, "mJ")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:PhotonEnergyRanges_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.neVRange?")
+  field(EGU, "eV")
+  info(archive, "monitor 1: VAL")
+}
+
+record(waveform, "$(PREFIX)0RateBeamCnst:ST_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.aStoppers?")
+  field(FTVL, "CHAR")
+  field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+  info(archive, "monitor 1: VAL")
+}
+
+record(bi, "$(PREFIX)0RateBeamCnst:Valid_RBV") {
+  field(DESC, "0-rate beam constant")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.xValid?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "monitor 1: VAL")
+}
+
+record(longin, "$(PREFIX)0RateBeamCnst:Cohort_RBV") {
+  field(DESC, "Cohort inc on each arb cycle")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cst0RateBeam.nCohortInt?")
   info(archive, "monitor 1: VAL")
 }
 
@@ -373,6 +463,8 @@ record(waveform, "$(PREFIX)SafeBeamCnst:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.cstSafeBeam.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -398,63 +490,6 @@ record(longin, "$(PREFIX)SafeBeamCnst:Cohort_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(longin, "$(PREFIX)L:UND:FirstSegment_RBV") {
-  field(DESC, "PMPS_GVL.iLowBound_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.iLowBound_LUnd?")
-  info(archive, "VAL")
-}
-
-record(longin, "$(PREFIX)L:UND:LastSegment_RBV") {
-  field(DESC, "PMPS_GVL.iHighBound_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.iHighBound_LUnd?")
-  info(archive, "VAL")
-}
-
-record(ai, "Period_RBV") {
-  field(DESC, "PMPS_GVL.fPeriod_mm_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fPeriod_mm_LUnd?")
-  field(PREC, "3")
-  field(EGU, "mm")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(PREFIX)L:UND:LowK_RBV") {
-  field(DESC, "PMPS_GVL.fLowK_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fLowK_LUnd?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(PREFIX)L:UND:HiK_RBV") {
-  field(DESC, "PMPS_GVL.fHiK_LUnd")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/PMPS_GVL.fHiK_LUnd?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
 record(ai, "$(PREFIX)eVRangeHyst_RBV") {
   field(DESC, "eV Range hystersis")
   field(SCAN, "I/O Intr")
@@ -478,6 +513,8 @@ record(waveform, "$(PREFIX)L:eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
 }
 
@@ -491,18 +528,9 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   field(FTVL, "FLOAT")
   field(EGU, "eV")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "monitor 1: VAL")
-}
-
-record(longin, "MR1L0:HOMS:ENC:YUP:CNT_RBV") {
-  field(DESC, "Main.nEncCntYupM1L0")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupM1L0?")
-  field(EGU, "cnt")
-  info(archive, "VAL")
 }
 
 record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bLimitForwardEnable_RBV") {
@@ -624,6 +652,28 @@ record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bGantryBackwardEnable_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bGantryBackwardEnable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L0:HOMS:MMS:YUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:YUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 
@@ -769,6 +819,50 @@ record(bo, "MR1L0:HOMS:MMS:YUP:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:YUP:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:YUP:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -977,6 +1071,30 @@ record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -1133,6 +1251,28 @@ record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR1L0:HOMS:MMS:YDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:YDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -1275,6 +1415,50 @@ record(bo, "MR1L0:HOMS:MMS:YDWN:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:YDWN:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:YDWN:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -1483,6 +1667,30 @@ record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -1639,6 +1847,28 @@ record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR1L0:HOMS:MMS:XUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:XUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -1781,6 +2011,50 @@ record(bo, "MR1L0:HOMS:MMS:XUP:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:XUP:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:XUP:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M3.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -1989,6 +2263,30 @@ record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -2145,6 +2443,28 @@ record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR1L0:HOMS:MMS:XDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:XDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -2287,6 +2607,50 @@ record(bo, "MR1L0:HOMS:MMS:XDWN:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:XDWN:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:XDWN:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M4.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -2495,6 +2859,30 @@ record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -2651,6 +3039,28 @@ record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR1L0:HOMS:MMS:PITCH:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:PITCH:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -2793,6 +3203,50 @@ record(bo, "MR1L0:HOMS:MMS:PITCH:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:PITCH:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:PITCH:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M5.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -3001,6 +3455,30 @@ record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -3157,6 +3635,28 @@ record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR1L0:HOMS:MMS:BENDER:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR1L0:HOMS:MMS:BENDER:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -3299,6 +3799,50 @@ record(bo, "MR1L0:HOMS:MMS:BENDER:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:BENDER:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:MMS:BENDER:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M6.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -3502,6 +4046,30 @@ record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bSafetyReady?")
   field(ZNAM, "TRUE")
   field(ONAM, "FALSE")
   info(archive, "VAL")
@@ -3724,7 +4292,8 @@ record(waveform, "MR1L0:HOMS:ENC:Y:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR1L0:HOMS:ENC:Y:SETPOSARRAY_RBV") {
@@ -3736,7 +4305,8 @@ record(waveform, "MR1L0:HOMS:ENC:Y:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM1L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "MR1L0:HOMS:ENC:X:MEAN_RBV") {
@@ -3784,7 +4354,8 @@ record(waveform, "MR1L0:HOMS:ENC:X:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR1L0:HOMS:ENC:X:SETPOSARRAY_RBV") {
@@ -3796,7 +4367,8 @@ record(waveform, "MR1L0:HOMS:ENC:X:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM1L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "MR1L0:HOMS:ENC:PITCH:MEAN_RBV") {
@@ -3844,7 +4416,8 @@ record(waveform, "MR1L0:HOMS:ENC:PITCH:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR1L0:HOMS:ENC:PITCH:SETPOSARRAY_RBV") {
@@ -3856,7 +4429,8 @@ record(waveform, "MR1L0:HOMS:ENC:PITCH:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM1L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "MR1L0:HOMS:ENC:BENDER:MEAN_RBV") {
@@ -3904,7 +4478,8 @@ record(waveform, "MR1L0:HOMS:ENC:BENDER:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR1L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
@@ -3916,6 +4491,18 @@ record(waveform, "MR1L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM1L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
+  field(MPST, "On Change")
+  field(APST, "On Change")
+}
+
+record(longin, "MR1L0:HOMS:ENC:YUP:CNT_RBV") {
+  field(DESC, "Main.nEncCntYupM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupM1L0?")
+  field(EGU, "cnt")
   info(archive, "VAL")
 }
 
@@ -4140,6 +4727,28 @@ record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR2L0:HOMS:MMS:YUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:YUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -4282,6 +4891,50 @@ record(bo, "MR2L0:HOMS:MMS:YUP:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:YUP:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:YUP:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M7.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -4490,6 +5143,30 @@ record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -4646,6 +5323,28 @@ record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR2L0:HOMS:MMS:YDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:YDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -4788,6 +5487,50 @@ record(bo, "MR2L0:HOMS:MMS:YDWN:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:YDWN:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:YDWN:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M8.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -4996,6 +5739,30 @@ record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -5152,6 +5919,28 @@ record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR2L0:HOMS:MMS:XUP:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:XUP:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -5294,6 +6083,50 @@ record(bo, "MR2L0:HOMS:MMS:XUP:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:XUP:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:XUP:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M9.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -5502,6 +6335,30 @@ record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -5658,6 +6515,28 @@ record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR2L0:HOMS:MMS:XDWN:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:XDWN:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -5800,6 +6679,50 @@ record(bo, "MR2L0:HOMS:MMS:XDWN:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:XDWN:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:XDWN:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M10.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -6008,6 +6931,30 @@ record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -6164,6 +7111,28 @@ record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR2L0:HOMS:MMS:PITCH:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:PITCH:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -6306,6 +7275,50 @@ record(bo, "MR2L0:HOMS:MMS:PITCH:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:PITCH:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:PITCH:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M11.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -6514,6 +7527,30 @@ record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bDone_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bSafetyReady?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bError_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
@@ -6670,6 +7707,28 @@ record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bGantryBackwardEnable_RBV") {
   info(archive, "VAL")
 }
 
+record(longin, "MR2L0:HOMS:MMS:BENDER:PLC:nEncoderCount_RBV") {
+  field(DESC, "Count from encoder hardware")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nEncoderCount?")
+  info(archive, "VAL")
+}
+
+record(waveform, "MR2L0:HOMS:MMS:BENDER:PLC:sName_RBV") {
+  field(DESC, "PLC program name")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.sName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bPowerSelf_RBV") {
   field(DESC, "FALSE if axis is in PMPS")
   field(SCAN, "I/O Intr")
@@ -6812,6 +7871,50 @@ record(bo, "MR2L0:HOMS:MMS:BENDER:PLC:bExecute") {
   field(DESC, "Used internally and ... to start or stop")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bExecute=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bMoveCmd_RBV") {
+  field(DESC, "Start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bMoveCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:BENDER:PLC:bMoveCmd") {
+  field(DESC, "Start a move")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bMoveCmd=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bHomeCmd_RBV") {
+  field(DESC, "Start the homing routine")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bHomeCmd?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:MMS:BENDER:PLC:bHomeCmd") {
+  field(DESC, "Start the homing routine")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M12.bHomeCmd=")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "VAL")
@@ -7015,6 +8118,30 @@ record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bDone_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bDone?")
+  field(ZNAM, "TRUE")
+  field(ONAM, "FALSE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bHomed_RBV") {
+  field(DESC, "TRUE if the motor has been homed")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bHomed?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
+  field(DESC, "TRUE if safe to start a move")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bSafetyReady?")
   field(ZNAM, "TRUE")
   field(ONAM, "FALSE")
   info(archive, "VAL")
@@ -7237,7 +8364,8 @@ record(waveform, "MR2L0:HOMS:ENC:Y:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR2L0:HOMS:ENC:Y:SETPOSARRAY_RBV") {
@@ -7249,7 +8377,8 @@ record(waveform, "MR2L0:HOMS:ENC:Y:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbYRMSErrorM2L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "MR2L0:HOMS:ENC:X:MEAN_RBV") {
@@ -7297,7 +8426,8 @@ record(waveform, "MR2L0:HOMS:ENC:X:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR2L0:HOMS:ENC:X:SETPOSARRAY_RBV") {
@@ -7309,7 +8439,8 @@ record(waveform, "MR2L0:HOMS:ENC:X:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbXRMSErrorM2L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "MR2L0:HOMS:ENC:PITCH:MEAN_RBV") {
@@ -7357,7 +8488,8 @@ record(waveform, "MR2L0:HOMS:ENC:PITCH:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR2L0:HOMS:ENC:PITCH:SETPOSARRAY_RBV") {
@@ -7369,7 +8501,8 @@ record(waveform, "MR2L0:HOMS:ENC:PITCH:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbPitchRMSErrorM2L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(ai, "MR2L0:HOMS:ENC:BENDER:MEAN_RBV") {
@@ -7417,7 +8550,8 @@ record(waveform, "MR2L0:HOMS:ENC:BENDER:ACTPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.aEncActPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(waveform, "MR2L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
@@ -7429,7 +8563,8 @@ record(waveform, "MR2L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbBenderRMSErrorM2L0.aEncSetPos?")
   field(FTVL, "DOUBLE")
   field(NELM, "1000")
-  info(archive, "VAL")
+  field(MPST, "On Change")
+  field(APST, "On Change")
 }
 
 record(longin, "MR2L0:HOMS:ENC:YUP:CNT_RBV") {
@@ -30526,7 +31661,7 @@ record(bi, "PLC:LFE:OPTICS:FFO:02:OK_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30537,7 +31672,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30548,7 +31683,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30559,7 +31694,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30570,7 +31705,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30581,7 +31716,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30592,7 +31727,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30603,7 +31738,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30614,7 +31749,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30625,7 +31760,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30636,7 +31771,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30647,7 +31782,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30658,7 +31793,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30669,7 +31804,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30680,7 +31815,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30691,7 +31826,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30702,7 +31837,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30713,7 +31848,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30724,7 +31859,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30735,7 +31870,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30746,7 +31881,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30757,7 +31892,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30768,7 +31903,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30779,7 +31914,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30790,7 +31925,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30801,7 +31936,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30812,7 +31947,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30823,7 +31958,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30834,7 +31969,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30845,7 +31980,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30856,7 +31991,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30867,7 +32002,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30878,7 +32013,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30889,7 +32024,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30900,7 +32035,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30911,7 +32046,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30922,7 +32057,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30933,7 +32068,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30944,7 +32079,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30955,7 +32090,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30966,7 +32101,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30979,7 +32114,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -30992,7 +32127,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31005,7 +32140,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31018,7 +32153,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31031,7 +32166,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31044,7 +32179,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31057,7 +32192,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31070,7 +32205,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31083,7 +32218,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31096,7 +32231,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31109,7 +32244,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31122,7 +32257,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31135,7 +32270,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31148,7 +32283,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31161,7 +32296,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31174,7 +32309,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31187,7 +32322,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31200,7 +32335,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31213,7 +32348,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31226,7 +32361,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31237,7 +32372,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31248,7 +32383,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31259,7 +32394,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31270,7 +32405,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31281,7 +32416,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31292,7 +32427,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31303,7 +32438,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31314,7 +32449,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31325,7 +32460,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31336,7 +32471,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31347,7 +32482,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31358,7 +32493,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31369,7 +32504,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31380,7 +32515,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31391,7 +32526,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31402,7 +32537,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31413,7 +32548,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31424,7 +32559,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31435,7 +32570,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31446,7 +32581,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31455,10 +32590,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[1].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31467,10 +32604,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[2].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31479,10 +32618,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[3].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31491,10 +32632,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[4].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31503,10 +32646,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[5].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31515,10 +32660,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[6].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31527,10 +32674,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[7].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31539,10 +32688,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[8].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31551,10 +32702,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[9].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31563,10 +32716,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[10].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31575,10 +32730,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[11].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31587,10 +32744,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[12].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31599,10 +32758,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[13].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31611,10 +32772,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[14].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31623,10 +32786,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[15].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31635,10 +32800,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[16].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31647,10 +32814,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[17].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31659,10 +32828,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[18].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31671,10 +32842,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[19].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31683,10 +32856,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[20].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31698,7 +32873,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31710,7 +32885,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31722,7 +32897,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31734,7 +32909,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31746,7 +32921,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31758,7 +32933,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31770,7 +32945,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31782,7 +32957,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31794,7 +32969,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31806,7 +32981,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31818,7 +32993,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31830,7 +33005,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31842,7 +33017,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31854,7 +33029,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31866,7 +33041,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31878,7 +33053,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31890,7 +33065,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31902,7 +33077,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31914,7 +33089,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31926,7 +33101,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31936,7 +33111,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31946,7 +33121,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31956,7 +33131,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31966,7 +33141,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31976,7 +33151,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31986,7 +33161,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -31996,7 +33171,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32006,7 +33181,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32016,7 +33191,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32026,7 +33201,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32036,7 +33211,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32046,7 +33221,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32056,7 +33231,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32066,7 +33241,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32076,7 +33251,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32086,7 +33261,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32096,7 +33271,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32106,7 +33281,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32116,7 +33291,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32126,7 +33301,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32136,7 +33311,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32146,7 +33321,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32156,7 +33331,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32166,7 +33341,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32176,7 +33351,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32186,7 +33361,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32196,7 +33371,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32206,7 +33381,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32216,7 +33391,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32226,7 +33401,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32236,7 +33411,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32246,7 +33421,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32256,7 +33431,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32266,7 +33441,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32276,7 +33451,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32286,7 +33461,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32296,7 +33471,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32306,7 +33481,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32316,7 +33491,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32326,7 +33501,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32338,7 +33513,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:001:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32350,7 +33525,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:002:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32362,7 +33537,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:003:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32374,7 +33549,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:004:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32386,7 +33561,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:005:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32398,7 +33573,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:006:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32410,7 +33585,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:007:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32422,7 +33597,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:008:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32434,7 +33609,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:009:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32446,7 +33621,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:010:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32458,7 +33633,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:011:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32470,7 +33645,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:012:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32482,7 +33657,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:013:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32494,7 +33669,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:014:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32506,7 +33681,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:015:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32518,7 +33693,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:016:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32530,7 +33705,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:017:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32542,7 +33717,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:018:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32554,7 +33729,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:019:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32566,7 +33741,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:AP:Entry:020:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbiterID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:ArbiterID_RBV") {
   field(DESC, "Arbiter ID for elev. req.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32576,29 +33751,17 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbiterID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:CohortCounter_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:CohortCounter_RBV") {
   field(DESC, "Intrnl cohort counter")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.nArbiterCohort?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.nActiveCohort?")
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:ActiveInArbitration_RBV") {
-  field(DESC, "True if this arbiter")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.xActiveInArbitration?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:ArbitratedBP:Transmission_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32609,7 +33772,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:ArbitratedBP:Rate_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32620,7 +33783,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:01:ArbitratedBP:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32633,7 +33796,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:ArbitratedBP:PhotonEnergyRanges_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32644,7 +33807,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:01:ArbitratedBP:ST_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32653,10 +33816,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.q_stBeamParams.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:01:ArbitratedBP:Valid_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32668,7 +33833,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:01:ArbitratedBP:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32678,7 +33843,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:01:ArbitratedBP:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32689,7 +33854,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32700,7 +33865,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32711,7 +33876,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32722,7 +33887,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32733,7 +33898,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32744,7 +33909,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32755,7 +33920,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32766,7 +33931,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32777,7 +33942,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32788,7 +33953,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32799,7 +33964,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32810,7 +33975,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32821,7 +33986,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32832,7 +33997,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32843,7 +34008,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32854,7 +34019,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32865,7 +34030,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32876,7 +34041,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32887,7 +34052,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Transmission_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32898,7 +34063,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32909,7 +34074,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32920,7 +34085,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32931,7 +34096,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32942,7 +34107,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32953,7 +34118,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32964,7 +34129,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32975,7 +34140,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32986,7 +34151,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -32997,7 +34162,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33008,7 +34173,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33019,7 +34184,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33030,7 +34195,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33041,7 +34206,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33052,7 +34217,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33063,7 +34228,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33074,7 +34239,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33085,7 +34250,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33096,7 +34261,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33107,7 +34272,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Rate_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33118,7 +34283,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33131,7 +34296,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33144,7 +34309,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33157,7 +34322,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33170,7 +34335,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33183,7 +34348,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33196,7 +34361,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33209,7 +34374,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33222,7 +34387,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33235,7 +34400,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33248,7 +34413,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33261,7 +34426,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33274,7 +34439,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33287,7 +34452,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33300,7 +34465,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33313,7 +34478,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33326,7 +34491,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33339,7 +34504,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33352,7 +34517,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33365,7 +34530,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33378,7 +34543,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33389,7 +34554,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33400,7 +34565,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33411,7 +34576,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33422,7 +34587,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33433,7 +34598,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33444,7 +34609,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33455,7 +34620,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33466,7 +34631,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33477,7 +34642,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33488,7 +34653,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33499,7 +34664,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33510,7 +34675,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33521,7 +34686,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33532,7 +34697,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33543,7 +34708,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33554,7 +34719,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33565,7 +34730,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33576,7 +34741,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33587,7 +34752,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:PhotonEnergyRanges_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33598,7 +34763,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33607,10 +34772,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[1].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33619,10 +34786,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[2].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33631,10 +34800,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[3].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33643,10 +34814,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[4].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33655,10 +34828,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[5].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33667,10 +34842,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[6].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33679,10 +34856,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[7].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33691,10 +34870,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[8].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33703,10 +34884,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[9].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33715,10 +34898,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[10].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33727,10 +34912,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[11].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33739,10 +34926,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[12].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33751,10 +34940,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[13].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33763,10 +34954,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[14].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33775,10 +34968,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[15].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33787,10 +34982,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[16].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33799,10 +34996,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[17].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33811,10 +35010,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[18].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33823,10 +35024,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[19].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:ST_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33835,10 +35038,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[20].aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33850,7 +35055,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33862,7 +35067,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33874,7 +35079,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33886,7 +35091,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33898,7 +35103,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33910,7 +35115,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33922,7 +35127,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33934,7 +35139,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33946,7 +35151,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33958,7 +35163,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33970,7 +35175,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33982,7 +35187,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -33994,7 +35199,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34006,7 +35211,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34018,7 +35223,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34030,7 +35235,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34042,7 +35247,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34054,7 +35259,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34066,7 +35271,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Valid_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34078,7 +35283,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34088,7 +35293,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34098,7 +35303,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34108,7 +35313,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34118,7 +35323,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34128,7 +35333,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34138,7 +35343,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34148,7 +35353,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34158,7 +35363,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34168,7 +35373,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34178,7 +35383,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34188,7 +35393,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34198,7 +35403,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34208,7 +35413,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34218,7 +35423,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34228,7 +35433,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34238,7 +35443,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34248,7 +35453,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34258,7 +35463,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34268,7 +35473,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34278,7 +35483,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Cohort_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34288,7 +35493,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34298,7 +35503,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34308,7 +35513,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34318,7 +35523,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34328,7 +35533,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34338,7 +35543,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34348,7 +35553,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34358,7 +35563,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34368,7 +35573,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34378,7 +35583,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34388,7 +35593,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34398,7 +35603,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34408,7 +35613,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34418,7 +35623,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34428,7 +35633,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34438,7 +35643,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34448,7 +35653,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34458,7 +35663,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34468,7 +35673,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:ID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:ID_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34478,7 +35683,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:ID_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34490,7 +35695,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:001:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34502,7 +35707,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:002:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34514,7 +35719,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:003:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34526,7 +35731,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:004:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34538,7 +35743,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:005:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34550,7 +35755,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:006:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34562,7 +35767,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:007:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34574,7 +35779,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:008:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34586,7 +35791,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:009:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34598,7 +35803,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:010:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34610,7 +35815,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:011:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34622,7 +35827,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:012:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34634,7 +35839,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:013:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34646,7 +35851,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:014:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34658,7 +35863,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:015:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34670,7 +35875,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:016:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34682,7 +35887,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:017:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34694,7 +35899,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:018:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34706,7 +35911,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:019:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Live_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Live_RBV") {
   field(DESC, "Assertion Pool")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34718,7 +35923,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:AP:Entry:020:Live_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbiterID_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:ArbiterID_RBV") {
   field(DESC, "Arbiter ID for elev. req.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34728,29 +35933,17 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbiterID_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:CohortCounter_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:CohortCounter_RBV") {
   field(DESC, "Intrnl cohort counter")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.nArbiterCohort?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.nActiveCohort?")
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:ActiveInArbitration_RBV") {
-  field(DESC, "True if this arbiter")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.xActiveInArbitration?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:Transmission_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:Transmission_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34761,7 +35954,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:Transmission_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:Rate_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:Rate_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34772,7 +35965,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:Rate_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:PulseEnergy_RBV") {
+record(ai, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:PulseEnergy_RBV") {
   field(DESC, "This beam parameter is non-op for now.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34785,7 +35978,7 @@ record(ai, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:PulseEnergy_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:PhotonEnergyRanges_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:PhotonEnergyRanges_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34796,7 +35989,7 @@ record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:PhotonEnergyRanges_RBV") 
   info(archive, "VAL")
 }
 
-record(waveform, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:ST_RBV") {
+record(waveform, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:ST_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34805,10 +35998,12 @@ record(waveform, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:ST_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.q_stBeamParams.aStoppers?")
   field(FTVL, "CHAR")
   field(NELM, "16")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
-record(bi, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:Valid_RBV") {
+record(bi, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:Valid_RBV") {
   field(DESC, "Arbitrated BP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -34820,7 +36015,7 @@ record(bi, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:Valid_RBV") {
   info(archive, "VAL")
 }
 
-record(longin, "PLC:LFE:OPTICS:Arbiter:02:ArbitratedBP:Cohort_RBV") {
+record(longin, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:Cohort_RBV") {
   field(DESC, "Cohort inc on each arb cycle")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
