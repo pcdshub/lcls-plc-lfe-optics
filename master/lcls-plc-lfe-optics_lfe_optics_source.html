@@ -112,6 +112,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#pous">POUs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#main">Main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#p-coatingprotections">P_CoatingProtections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#p-serial-com">P_Serial_Com</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#piezoserial">PiezoSerial</a></li>
 </ul>
@@ -808,12 +809,50 @@ END_VAR
 
 <span class="n">nEncRefPitchM2L0</span> <span class="o">:=</span> <span class="n">LREAL_TO_UDINT</span><span class="p">(</span><span class="n">ABS</span><span class="p">(</span><span class="n">fEncRefPitchM2L0_urad</span><span class="p">)</span> <span class="o">*</span> <span class="n">fEncLeverArm_mm</span><span class="p">);</span>
 
+<span class="n">P_CoatingProtections</span><span class="p">();</span>
+
 <span class="o">//</span> <span class="n">Logging</span>
 <span class="n">fbLogHandler</span><span class="p">();</span>
 
 <span class="o">//</span> <span class="n">PMPS</span>
 <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
 <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="p-coatingprotections">
+<h2>P_CoatingProtections<a class="headerlink" href="#p-coatingprotections" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_CoatingProtections</span>
+<span class="n">VAR</span>
+            <span class="n">fbStripProtMR1L0</span> <span class="p">:</span> <span class="n">FB_MirrorTwoCoatingProtection</span> <span class="o">:=</span> <span class="p">(</span>
+            <span class="n">sDevName</span> <span class="o">:=</span> <span class="s1">&#39;MR1L0&#39;</span><span class="p">,</span>
+            <span class="n">nUpperCoatingBoundary</span> <span class="o">:=</span> <span class="mi">13300000</span><span class="p">,</span>
+            <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
+            <span class="n">sUpperCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span><span class="p">,</span>
+            <span class="n">nLowerCoatingBoundary</span> <span class="o">:=</span> <span class="mi">11800000</span><span class="p">,</span>
+            <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000,</span>
+            <span class="n">sLowerCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C/Ni&#39;</span><span class="p">);</span>
+
+            <span class="n">fbStripProtMR2L0</span> <span class="p">:</span> <span class="n">FB_MirrorTwoCoatingProtection</span> <span class="o">:=</span> <span class="p">(</span>
+            <span class="n">sDevName</span> <span class="o">:=</span> <span class="s1">&#39;MR2L0&#39;</span><span class="p">,</span>
+            <span class="n">nUpperCoatingBoundary</span> <span class="o">:=</span> <span class="mi">14300000</span><span class="p">,</span>
+            <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000,</span>
+            <span class="n">sUpperCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;Ni&#39;</span><span class="p">,</span>
+            <span class="n">nLowerCoatingBoundary</span> <span class="o">:=</span> <span class="mi">12800000</span><span class="p">,</span>
+            <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
+            <span class="n">sLowerCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span><span class="p">);</span>
+<span class="n">END_VAR</span>
+<span class="n">fbStripProtMR1L0</span><span class="p">(</span>
+    <span class="n">nCurrentEncoderCount</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">nEncCntYupM1L0</span><span class="p">,</span>
+    <span class="n">neVRange</span> <span class="o">:=</span> <span class="n">PMPS</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neVRange</span><span class="p">,</span>
+    <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
+
+<span class="n">fbStripProtMR2L0</span><span class="p">(</span>
+    <span class="n">nCurrentEncoderCount</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">nEncCntYupM2L0</span><span class="p">,</span>
+    <span class="n">neVRange</span> <span class="o">:=</span> <span class="n">PMPS</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neVRange</span><span class="p">,</span>
+    <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>

@@ -646,12 +646,52 @@ Main
 
     nEncRefPitchM2L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM2L0_urad) * fEncLeverArm_mm);
 
+    P_CoatingProtections();
+
     // Logging
     fbLogHandler();
 
     // PMPS
     GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
     GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
+
+    END_PROGRAM
+
+
+P_CoatingProtections
+^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM P_CoatingProtections
+    VAR
+        	fbStripProtMR1L0 : FB_MirrorTwoCoatingProtection := (
+                sDevName := 'MR1L0',
+                nUpperCoatingBoundary := 13300000,
+                nUpperCoatingBitmask := 2#0000_0011_1111_1111,
+                sUpperCoatingType := 'B4C',
+                nLowerCoatingBoundary := 11800000,
+                nLowerCoatingBitMask := 2#1111_1110_0000_0000,
+                sLowerCoatingType := 'B4C/Ni');
+
+        	fbStripProtMR2L0 : FB_MirrorTwoCoatingProtection := (
+                sDevName := 'MR2L0',
+                nUpperCoatingBoundary := 14300000,
+                nUpperCoatingBitmask := 2#1111_1110_0000_0000,
+                sUpperCoatingType := 'Ni',
+                nLowerCoatingBoundary := 12800000,
+                nLowerCoatingBitMask := 2#0000_0011_1111_1111,
+                sLowerCoatingType := 'B4C');
+    END_VAR
+    fbStripProtMR1L0(
+        nCurrentEncoderCount := MAIN.nEncCntYupM1L0,
+        neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+        FFO := GVL_PMPS.g_FastFaultOutput1);
+        
+    fbStripProtMR2L0(
+        nCurrentEncoderCount := MAIN.nEncCntYupM2L0,
+        neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+        FFO := GVL_PMPS.g_FastFaultOutput1);
 
     END_PROGRAM
 
