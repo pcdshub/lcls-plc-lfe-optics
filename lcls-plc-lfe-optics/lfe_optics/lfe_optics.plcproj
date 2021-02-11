@@ -53,6 +53,9 @@
     <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\P_CoatingProtections.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Serial Comm\PiezoSerial.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -161,7 +164,7 @@
     <LibraryReference Include="lcls-twincat-motion,1.4.1,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>
-    <LibraryReference Include="lcls-twincat-optics,0.0.2,SLAC">
+    <LibraryReference Include="lcls-twincat-optics,0.0.0,SLAC">
       <Namespace>lcls_twincat_optics</Namespace>
     </LibraryReference>
     <LibraryReference Include="PMPS,0.17.0,SLAC - LCLS">
