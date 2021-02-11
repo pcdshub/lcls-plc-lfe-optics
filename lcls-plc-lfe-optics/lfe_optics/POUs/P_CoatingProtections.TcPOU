@@ -9,13 +9,13 @@ VAR
             nUpperCoatingBitmask := 2#0000_0011_1111_1111,
             sUpperCoatingType := 'B4C',
             nLowerCoatingBoundary := 11800000,
-            nLowerCoatingBitMask := 2#1111_1100_0000_0000,
+            nLowerCoatingBitMask := 2#1111_1110_0000_0000,
             sLowerCoatingType := 'B4C/Ni');
 
     	fbStripProtMR2L0 : FB_MirrorTwoCoatingProtection := (
             sDevName := 'MR2L0',
             nUpperCoatingBoundary := 12800000,
-            nUpperCoatingBitmask := 2#1111_1100_0000_0000,
+            nUpperCoatingBitmask := 2#1111_1110_0000_0000,
             sUpperCoatingType := 'Ni',
             nLowerCoatingBoundary := 15998960,
             nLowerCoatingBitMask := 2#0000_0011_1111_1111,
