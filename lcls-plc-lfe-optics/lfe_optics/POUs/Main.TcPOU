@@ -502,6 +502,8 @@ mcReadParameterPitchM2L0(Axis:=M11.Axis,
 
 nEncRefPitchM2L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM2L0_urad) * fEncLeverArm_mm);
 
+P_CoatingProtections();
+
 // Logging
 fbLogHandler();
 
