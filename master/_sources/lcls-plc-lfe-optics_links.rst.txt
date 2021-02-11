@@ -368,6 +368,9 @@ Links
         lfe_optics Instance, PlcTask Inputs^Main.M9.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Xup, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M9.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Xup, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M9.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Xup, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.fbArbiterIO.i_stCurrentBP, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_PRE, IO Inputs^CurrentBP
+        lfe_optics Instance, PlcTask Inputs^Main.fbArbiterIO.xTxPDO_state, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO state
+        lfe_optics Instance, PlcTask Inputs^Main.fbArbiterIO.xTxPDO_toggle, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO toggle
         lfe_optics Instance, PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_FFO, Channel 1^Output
         lfe_optics Instance, PlcTask Outputs^GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_FFO, Channel 2^Output
         lfe_optics Instance, PlcTask Outputs^Main.M1.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^M1L0-Yup, Inputs^FromPlc
@@ -382,6 +385,7 @@ Links
         lfe_optics Instance, PlcTask Outputs^Main.M7.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^M2L0-Yup, Inputs^FromPlc
         lfe_optics Instance, PlcTask Outputs^Main.M8.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^M2L0-Ydwn, Inputs^FromPlc
         lfe_optics Instance, PlcTask Outputs^Main.M9.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^M2L0-Xup, Inputs^FromPlc
+        lfe_optics Instance, PlcTask Outputs^Main.fbArbiterIO.q_stRequestedBP, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_PRE, IO Outputs^RequestedBP
         lfe_optics Instance, SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[0], TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL6001_M1L0_PitchFine, COM Inputs^Data In 0
         lfe_optics Instance, SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[10], TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL6001_M1L0_PitchFine, COM Inputs^Data In 10
         lfe_optics Instance, SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1L0^D[11], TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL6001_M1L0_PitchFine, COM Inputs^Data In 11

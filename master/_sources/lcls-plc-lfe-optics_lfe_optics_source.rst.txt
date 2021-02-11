@@ -474,6 +474,9 @@ Main
     	mcReadParameterPitchM2L0 : MC_ReadParameter;
     	fEncRefPitchM2L0_urad : LREAL; // Current Pitch encoder offset in urad
 
+    	// PMPS arbiter interface
+    	fbArbiterIO : FB_SubSysToArbiter_IO;
+    	
     	// Common
     	fEncLeverArm_mm : LREAL := 513.0;
     	// Logging
@@ -652,6 +655,7 @@ Main
     fbLogHandler();
 
     // PMPS
+    fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
     GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
     GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
 

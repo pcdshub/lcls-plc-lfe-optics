@@ -3,7 +3,7 @@ Data Types
 ----------
 
 
-   
+    
 LCLS_General.FB_BasicStats
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1013,7 +1013,7 @@ LCLS_General.ST_PendingEvent
       - | io: input
 
 
-                      
+                                        
 lcls_twincat_motion.DUT_MotionStage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1567,7 +1567,7 @@ lcls_twincat_optics.DUT_HOMS
         | io: input
 
 
-      
+       
 lcls_twincat_optics.FB_RMSWatch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4011,7 +4011,7 @@ PMPS.FB_BeamParamAssertionPool
       - | io: input
 
 
- 
+  
 PMPS.FB_HardwareFFOutput
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -9771,7 +9771,31 @@ PMPS.FB_HardwareFFOutput
       - | io: output
 
 
-    
+ 
+PMPS.FB_SubSysToArbiter_IO
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):ActiveCohort_RBV
+      - longin
+      - $(SYMBOL).nActiveCohort
+      - | io: input
+
+
+    * - $(PREFIX):RequestCohort_RBV
+      - longin
+      - $(SYMBOL).nRequestCohort
+      - | io: input
+
+
+     
 PMPS.ST_BeamParams
 ^^^^^^^^^^^^^^^^^^
 
@@ -10189,6 +10213,60 @@ PMPS.T_HashTableEntry
       - | io: input
 
 
+ 
+ST_BeamParams_IO
+^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Attenuation_RBV
+      - longin
+      - $(SYMBOL).nTran
+      - | io: input
+
+
+    * - $(PREFIX):Attenuation_RBV
+      - longin
+      - $(SYMBOL).nCohortInt
+      - | io: input
+
+
+    * - $(PREFIX):AuxAttenuator_RBV
+      - waveform
+      - $(SYMBOL).aStoppers
+      - | io: input
+
+
+    * - $(PREFIX):PhotonEnergy_RBV
+      - longin
+      - $(SYMBOL).neVRange
+      - | io: input
+
+
+    * - $(PREFIX):PulseEnergy_RBV
+      - ai
+      - $(SYMBOL).fPP_mJ
+      - | io: input
+
+
+    * - $(PREFIX):Rate_RBV
+      - longin
+      - $(SYMBOL).nRate
+      - | io: input
+
+
+    * - $(PREFIX):Valid_RBV
+      - bi
+      - $(SYMBOL).xValid
+      - | io: input
+
+
   
 ST_LoggingEventInfo
 ^^^^^^^^^^^^^^^^^^^
@@ -10297,7 +10375,7 @@ ST_PMPS_Aperture_IO
         | io: input
 
 
-                                                                                                                    
+                                                                                                                   
 Database Records
 ----------------
 

@@ -637,6 +637,9 @@ END_VAR
     <span class="n">mcReadParameterPitchM2L0</span> <span class="p">:</span> <span class="n">MC_ReadParameter</span><span class="p">;</span>
     <span class="n">fEncRefPitchM2L0_urad</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">Pitch</span> <span class="n">encoder</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">urad</span>
 
+    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">arbiter</span> <span class="n">interface</span>
+    <span class="n">fbArbiterIO</span> <span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
+
     <span class="o">//</span> <span class="n">Common</span>
     <span class="n">fEncLeverArm_mm</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">513.0</span><span class="p">;</span>
     <span class="o">//</span> <span class="n">Logging</span>
@@ -815,6 +818,7 @@ END_VAR
 <span class="n">fbLogHandler</span><span class="p">();</span>
 
 <span class="o">//</span> <span class="n">PMPS</span>
+<span class="n">fbArbiterIO</span><span class="p">(</span><span class="n">Arbiter</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
 <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
 <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
 
