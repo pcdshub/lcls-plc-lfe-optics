@@ -511,6 +511,7 @@ P_CoatingProtections();
 fbLogHandler();
 
 // PMPS
+GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
 fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
 GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
 GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);]]></ST>
