@@ -963,8 +963,8 @@ P_CoatingProtections
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        P_CoatingProtections.fbStripProtMR1L0, FB_MirrorTwoCoatingProtection, 20686784 (52384)
-        P_CoatingProtections.fbStripProtMR2L0, FB_MirrorTwoCoatingProtection, 20739168 (52384)
+        P_CoatingProtections.fbStripProtMR1L0, FB_MirrorTwoCoatingProtection, 26981152 (52384)
+        P_CoatingProtections.fbStripProtMR2L0, FB_MirrorTwoCoatingProtection, 27033536 (52384)
 
 
 P_Serial_Com
