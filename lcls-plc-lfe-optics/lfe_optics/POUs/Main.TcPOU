@@ -165,7 +165,34 @@ VAR
 	nEncRefPitchM1L0 : UDINT;
 	mcReadParameterPitchM1L0 : MC_ReadParameter;
 	fEncRefPitchM1L0_urad : LREAL; // Current Pitch encoder offset in urad
-
+	
+	// PMPS States
+	{attribute 'pytmc' := '
+        pv: MR1L0:COATING:STATE:SET
+        io: io
+    '}
+    MR1L0_Coating_enumSet: ENUM_Coating_States;
+	 {attribute 'pytmc' := '
+        pv: MR1L0:COATING:STATE;
+        io: io;
+		field: ZRST Unknown ;
+		field: ONST B4C;
+		field: TWST B4C_Ni ;
+    '}
+    fbMR1L0_States: FB_Coatings_States:= ( 
+			bEnable:= TRUE , 
+			stTransitionBeam:= PMPS_GVL.cst0RateBeam , 
+			nTransitionAssertionID:= 16#C11 , 
+			nUnknownAssertionID:= 16#C10 , 
+			sB4CType:= 'B4C' , 
+			nB4CPosition:= 21171800 , 
+			fB4CDelta:= 1000, 
+			nB4CCoatingBitmask:= 2#0000_0011_1111_1111, 
+			sNiType:= 'B4C/Ni', 
+			nNiPosition:= 9171800, 
+			fNiDelta:= 1000, 
+			nNiCoatingBitmask:= 2#1111_1110_0000_0000 );
+	
 	// M2L0
 	// Motors
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;
@@ -329,7 +356,37 @@ VAR
 	mcReadParameterPitchM2L0 : MC_ReadParameter;
 	fEncRefPitchM2L0_urad : LREAL; // Current Pitch encoder offset in urad
 
-	// PMPS arbiter interface
+	
+	// PMPS States
+	{attribute 'pytmc' := '
+        pv: MR2L0:COATING:STATE:SET;
+        io: io;
+		field: ZRST Unknown ;
+		field: ONST B4C;
+		field: TWST Ni ;
+    '}
+    MR2L0_Coating_enumSet: ENUM_Coating_States;
+	 {attribute 'pytmc' := '
+        pv: MR2L0:COATING:STATE;
+        io: io;
+    '}
+    fbMR2L0_States: FB_Coatings_States:= ( 
+			bEnable:= TRUE , 
+			stTransitionBeam:= PMPS_GVL.cst0RateBeam , 
+			nTransitionAssertionID:= 16#C21 , 
+			nUnknownAssertionID:= 16#C20 , 
+			sB4CType:= 'B4C' , 
+			nB4CPosition:= 7018200 , 
+			fB4CDelta:= 1000 , 
+			nB4CCoatingBitmask:= 2#0000_0011_1111_1111, 
+			sNiType:= 'Ni', 
+			nNiPosition:= 16018200, 
+			fNiDelta:= 1000 , 
+			nNiCoatingBitmask:= 2#1111_1110_0000_0000 );
+
+
+    
+    // PMPS arbiter interface
 	fbArbiterIO : FB_SubSysToArbiter_IO;
 	
 	// Common
@@ -421,6 +478,17 @@ mcReadParameterPitchM1L0(Axis:=M5.Axis,
 
 nEncRefPitchM1L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM1L0_urad) * fEncLeverArm_mm);
 
+//Coatings States With PMPS
+fbMR1L0_States(
+    fbArbiter:=GVL_PMPS.g_fbArbiter1,
+    fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+    stMotionStage:=M1 );// Y Gantry Master Axis , stYup
+
+
+
+
+
+
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
@@ -505,6 +573,15 @@ mcReadParameterPitchM2L0(Axis:=M11.Axis,
 
 nEncRefPitchM2L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM2L0_urad) * fEncLeverArm_mm);
 
+//Coatings States With PMPS
+fbMR2L0_States(
+    fbArbiter:=GVL_PMPS.g_fbArbiter1,
+    fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+    stMotionStage:=M7 );// Y Gantry Master Axis , stYup
+
+
+
+
 P_CoatingProtections();
 
 // Logging
@@ -514,7 +591,9 @@ fbLogHandler();
 GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
 fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
 GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
-GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);]]></ST>
+GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
