@@ -168,12 +168,12 @@ VAR
 	
 	// PMPS States
 	{attribute 'pytmc' := '
-        pv: MR1L0:COATING:STATE:SET
+        pv: MR1L0:HOMS:COATING:STATE:SET
         io: io
     '}
     MR1L0_Coating_enumSet: ENUM_Coating_States;
 	 {attribute 'pytmc' := '
-        pv: MR1L0:COATING:STATE;
+        pv: MR1L0:HOMS:COATING:STATE;
         io: io;
 		field: ZRST Unknown ;
 		field: ONST B4C;
@@ -359,7 +359,7 @@ VAR
 	
 	// PMPS States
 	{attribute 'pytmc' := '
-        pv: MR2L0:COATING:STATE:SET;
+        pv: MR2L0:HOMS:COATING:STATE:SET;
         io: io;
 		field: ZRST Unknown ;
 		field: ONST B4C;
@@ -367,7 +367,7 @@ VAR
     '}
     MR2L0_Coating_enumSet: ENUM_Coating_States;
 	 {attribute 'pytmc' := '
-        pv: MR2L0:COATING:STATE;
+        pv: MR2L0:HOMS:COATING:STATE;
         io: io;
     '}
     fbMR2L0_States: FB_Coatings_States:= ( 
