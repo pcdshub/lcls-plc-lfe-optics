@@ -480,6 +480,7 @@ nEncRefPitchM1L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM1L0_urad) * fEncLeverArm_mm)
 
 //Coatings States With PMPS
 fbMR1L0_States(
+	enumSet :=MR1L0_Coating_enumSet,
     fbArbiter:=GVL_PMPS.g_fbArbiter1,
     fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
     stMotionStage:=M1 );// Y Gantry Master Axis , stYup
@@ -575,6 +576,7 @@ nEncRefPitchM2L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM2L0_urad) * fEncLeverArm_mm)
 
 //Coatings States With PMPS
 fbMR2L0_States(
+	enumSet :=MR2L0_Coating_enumSet,
     fbArbiter:=GVL_PMPS.g_fbArbiter1,
     fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
     stMotionStage:=M7 );// Y Gantry Master Axis , stYup
