@@ -9,12 +9,13 @@ VAR_INPUT
 	sB4CType : STRING := ''; //Type of Material on Coating 1
 	nB4CPosition: UDINT; // Encoder Count Position of Coating 1
 	fB4CDelta: LREAL;//Position Boundary delta in scaled position units
+	fB4CVelocity: LREAL;//Velocity
 	nB4CCoatingBitmask: WORD; //Safe Beam Bitmask for the first coating
 	sNiType : STRING := '';// Type of Material on Coating 2
 	nNiPosition: UDINT; // Encoder Count Position of Coating 2
 	fNiDelta: LREAL;//Position Boundary delta in scaled position units
 	nNiCoatingBitmask: WORD; //Safe Beam Bitmask for the second coating
-
+	fNiVelocity: LREAL;//Velocity
     bStatesLock: BOOL;
 END_VAR
 VAR_OUTPUT
@@ -35,24 +36,25 @@ END_VAR
 	stB4C.bUseRawCounts := TRUE;
 	stB4C.bMoveOk := TRUE;
 	stB4C.bValid := TRUE;
-	stB4C.nRequestAssertionID := nTransitionAssertionID;
+	stB4C.nRequestAssertionID := nTransitionAssertionID+1;
 	stB4C.sName := sB4CType;
 	stB4C.nEncoderCount := nB4CPosition;
 	stB4C.stBeamParams := PMPS_GVL.cstFullBeam;
 	stB4C.stBeamParams.neVRange := nB4CCoatingBitmask;
 	stB4C.fDelta := fB4CDelta;
+	stB4C.fVelocity :=fB4CVelocity;
 	
 	stNi.bUseRawCounts := TRUE;
 	stNi.bValid := TRUE;
 	stNi.bMoveOk := TRUE;
 	stNi.bValid := TRUE;
-	stNi.nRequestAssertionID := nTransitionAssertionID+1;
+	stNi.nRequestAssertionID := nTransitionAssertionID+2;
 	stNi.sName := sNiType;
 	stNi.nEncoderCount := nNiPosition;
 	stNi.stBeamParams := PMPS_GVL.cstFullBeam;
 	stNi.stBeamParams.neVRange := nNiCoatingBitmask;
 	stNi.fDelta := fNiDelta;
-	
+	stNi.fVelocity := fNiVelocity;
 	
 	
     arrStates[1] := stB4C;
