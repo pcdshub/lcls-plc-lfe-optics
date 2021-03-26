@@ -323,6 +323,7 @@ Links
         lfe_optics Instance, PlcTask Inputs^Main.M1.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M1L0-Yup, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M1.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Yup, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M1.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Yup, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M1.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_Yupdwn, FB Inputs Channel 1^Position
         lfe_optics Instance, PlcTask Inputs^Main.M10.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Xdwn, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M10.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Xdwn, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M10.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Xdwn, STM Status^Status^Digital input 1
@@ -362,6 +363,7 @@ Links
         lfe_optics Instance, PlcTask Inputs^Main.M7.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Yup, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M7.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Yup, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M7.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Yup, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M7.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL5042_M2L0_Yupdwn, FB Inputs Channel 1^Position
         lfe_optics Instance, PlcTask Inputs^Main.M8.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Ydwn, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M8.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Ydwn, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M8.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Ydwn, STM Status^Status^Digital input 1

@@ -334,12 +334,13 @@ END_VAR
     <span class="n">sB4CType</span> <span class="p">:</span> <span class="n">STRING</span> <span class="o">:=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="o">//</span><span class="n">Type</span> <span class="n">of</span> <span class="n">Material</span> <span class="n">on</span> <span class="n">Coating</span> <span class="mi">1</span>
     <span class="n">nB4CPosition</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Count</span> <span class="n">Position</span> <span class="n">of</span> <span class="n">Coating</span> <span class="mi">1</span>
     <span class="n">fB4CDelta</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Position</span> <span class="n">Boundary</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">scaled</span> <span class="n">position</span> <span class="n">units</span>
+    <span class="n">fB4CVelocity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Velocity</span>
     <span class="n">nB4CCoatingBitmask</span><span class="p">:</span> <span class="n">WORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">coating</span>
     <span class="n">sNiType</span> <span class="p">:</span> <span class="n">STRING</span> <span class="o">:=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span><span class="o">//</span> <span class="n">Type</span> <span class="n">of</span> <span class="n">Material</span> <span class="n">on</span> <span class="n">Coating</span> <span class="mi">2</span>
     <span class="n">nNiPosition</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Count</span> <span class="n">Position</span> <span class="n">of</span> <span class="n">Coating</span> <span class="mi">2</span>
     <span class="n">fNiDelta</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Position</span> <span class="n">Boundary</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">scaled</span> <span class="n">position</span> <span class="n">units</span>
     <span class="n">nNiCoatingBitmask</span><span class="p">:</span> <span class="n">WORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">second</span> <span class="n">coating</span>
-
+    <span class="n">fNiVelocity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Velocity</span>
     <span class="n">bStatesLock</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="n">VAR_OUTPUT</span>
@@ -357,24 +358,25 @@ END_VAR
     <span class="n">stB4C</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
     <span class="n">stB4C</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
     <span class="n">stB4C</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-    <span class="n">stB4C</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="n">nTransitionAssertionID</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="n">nTransitionAssertionID</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
     <span class="n">stB4C</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="n">sB4CType</span><span class="p">;</span>
     <span class="n">stB4C</span><span class="o">.</span><span class="n">nEncoderCount</span> <span class="o">:=</span> <span class="n">nB4CPosition</span><span class="p">;</span>
     <span class="n">stB4C</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
     <span class="n">stB4C</span><span class="o">.</span><span class="n">stBeamParams</span><span class="o">.</span><span class="n">neVRange</span> <span class="o">:=</span> <span class="n">nB4CCoatingBitmask</span><span class="p">;</span>
     <span class="n">stB4C</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fB4CDelta</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span><span class="n">fB4CVelocity</span><span class="p">;</span>
 
     <span class="n">stNi</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-    <span class="n">stNi</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="n">nTransitionAssertionID</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="n">nTransitionAssertionID</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="n">sNiType</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">nEncoderCount</span> <span class="o">:=</span> <span class="n">nNiPosition</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">stBeamParams</span><span class="o">.</span><span class="n">neVRange</span> <span class="o">:=</span> <span class="n">nNiCoatingBitmask</span><span class="p">;</span>
     <span class="n">stNi</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fNiDelta</span><span class="p">;</span>
-
+    <span class="n">stNi</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">fNiVelocity</span><span class="p">;</span>
 
 
     <span class="n">arrStates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stB4C</span><span class="p">;</span>
@@ -397,7 +399,8 @@ END_VAR
     <span class="o">//</span> <span class="n">M1L0</span>
     <span class="o">//</span> <span class="n">Motors</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Yup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Yup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">YUP</span>
     <span class="s1">&#39;}</span>
@@ -557,37 +560,12 @@ END_VAR
     <span class="n">mcReadParameterPitchM1L0</span> <span class="p">:</span> <span class="n">MC_ReadParameter</span><span class="p">;</span>
     <span class="n">fEncRefPitchM1L0_urad</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">Pitch</span> <span class="n">encoder</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">urad</span>
 
-    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">States</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">SET</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">MR1L0_Coating_enumSet</span><span class="p">:</span> <span class="n">ENUM_Coating_States</span><span class="p">;</span>
-     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">;</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
-            <span class="n">field</span><span class="p">:</span> <span class="n">ZRST</span> <span class="n">Unknown</span> <span class="p">;</span>
-            <span class="n">field</span><span class="p">:</span> <span class="n">ONST</span> <span class="n">B4C</span><span class="p">;</span>
-            <span class="n">field</span><span class="p">:</span> <span class="n">TWST</span> <span class="n">B4C_Ni</span> <span class="p">;</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fbMR1L0_States</span><span class="p">:</span> <span class="n">FB_Coatings_States</span><span class="o">:=</span> <span class="p">(</span>
-                    <span class="n">bEnable</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
-                    <span class="n">stTransitionBeam</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cst0RateBeam</span> <span class="p">,</span>
-                    <span class="n">nTransitionAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#C11 ,</span>
-                    <span class="n">nUnknownAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#C10 ,</span>
-                    <span class="n">sB4CType</span><span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span> <span class="p">,</span>
-                    <span class="n">nB4CPosition</span><span class="o">:=</span> <span class="mi">21171800</span> <span class="p">,</span>
-                    <span class="n">fB4CDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
-                    <span class="n">nB4CCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
-                    <span class="n">sNiType</span><span class="o">:=</span> <span class="s1">&#39;B4C/Ni&#39;</span><span class="p">,</span>
-                    <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">9171800</span><span class="p">,</span>
-                    <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
-                    <span class="n">nNiCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000 );</span>
 
     <span class="o">//</span> <span class="n">M2L0</span>
     <span class="o">//</span> <span class="n">Motors</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Yup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Yup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">YUP</span>
     <span class="s1">&#39;}</span>
@@ -748,6 +726,45 @@ END_VAR
     <span class="n">fEncRefPitchM2L0_urad</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">Pitch</span> <span class="n">encoder</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">urad</span>
 
 
+
+
+
+    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">arbiter</span> <span class="n">interface</span>
+    <span class="n">fbArbiterIO</span> <span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Common</span>
+    <span class="n">fEncLeverArm_mm</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">513.0</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">Logging</span>
+    <span class="n">fbLogHandler</span> <span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">States</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">SET</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">MR1L0_Coating_enumSet</span><span class="p">:</span> <span class="n">ENUM_Coating_States</span><span class="p">;</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">;</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+            <span class="n">field</span><span class="p">:</span> <span class="n">ZRST</span> <span class="n">Unknown</span> <span class="p">;</span>
+            <span class="n">field</span><span class="p">:</span> <span class="n">ONST</span> <span class="n">B4C</span><span class="p">;</span>
+            <span class="n">field</span><span class="p">:</span> <span class="n">TWST</span> <span class="n">B4C_Ni</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L0_States</span><span class="p">:</span> <span class="n">FB_Coatings_States</span><span class="o">:=</span> <span class="p">(</span>
+                    <span class="n">bEnable</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
+                    <span class="n">stTransitionBeam</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cst0RateBeam</span> <span class="p">,</span>
+                    <span class="n">nTransitionAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC11 ,</span>
+                    <span class="n">nUnknownAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC10 ,</span>
+                    <span class="n">sB4CType</span><span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span> <span class="p">,</span>
+                    <span class="n">nB4CPosition</span><span class="o">:=</span> <span class="mi">21171800</span> <span class="p">,</span>
+                    <span class="n">fB4CDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
+                    <span class="n">fB4CVelocity</span><span class="o">:=</span><span class="mi">100</span><span class="p">,</span>
+                    <span class="n">nB4CCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
+                    <span class="n">sNiType</span><span class="o">:=</span> <span class="s1">&#39;B4C/Ni&#39;</span><span class="p">,</span>
+                    <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">9171800</span><span class="p">,</span>
+                    <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
+                    <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">,</span>
+                    <span class="n">nNiCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000 );</span>
     <span class="o">//</span> <span class="n">PMPS</span> <span class="n">States</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">SET</span><span class="p">;</span>
@@ -764,26 +781,21 @@ END_VAR
     <span class="n">fbMR2L0_States</span><span class="p">:</span> <span class="n">FB_Coatings_States</span><span class="o">:=</span> <span class="p">(</span>
                     <span class="n">bEnable</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
                     <span class="n">stTransitionBeam</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cst0RateBeam</span> <span class="p">,</span>
-                    <span class="n">nTransitionAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#C21 ,</span>
-                    <span class="n">nUnknownAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#C20 ,</span>
+                    <span class="n">nTransitionAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC21 ,</span>
+                    <span class="n">nUnknownAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC20 ,</span>
                     <span class="n">sB4CType</span><span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span> <span class="p">,</span>
                     <span class="n">nB4CPosition</span><span class="o">:=</span> <span class="mi">7018200</span> <span class="p">,</span>
                     <span class="n">fB4CDelta</span><span class="o">:=</span> <span class="mi">1000</span> <span class="p">,</span>
+                    <span class="n">fB4CVelocity</span><span class="o">:=</span><span class="mi">100</span> <span class="p">,</span>
                     <span class="n">nB4CCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
                     <span class="n">sNiType</span><span class="o">:=</span> <span class="s1">&#39;Ni&#39;</span><span class="p">,</span>
                     <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">16018200</span><span class="p">,</span>
                     <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span> <span class="p">,</span>
+                    <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">,</span>
                     <span class="n">nNiCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000 );</span>
 
 
 
-    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">arbiter</span> <span class="n">interface</span>
-    <span class="n">fbArbiterIO</span> <span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">Common</span>
-    <span class="n">fEncLeverArm_mm</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">513.0</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Logging</span>
-    <span class="n">fbLogHandler</span> <span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">M1L0</span>
 <span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="p">(</span><span class="n">stYup</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span>
@@ -869,12 +881,13 @@ END_VAR
 <span class="n">nEncRefPitchM1L0</span> <span class="o">:=</span> <span class="n">LREAL_TO_UDINT</span><span class="p">(</span><span class="n">ABS</span><span class="p">(</span><span class="n">fEncRefPitchM1L0_urad</span><span class="p">)</span> <span class="o">*</span> <span class="n">fEncLeverArm_mm</span><span class="p">);</span>
 
 <span class="o">//</span><span class="n">Coatings</span> <span class="n">States</span> <span class="n">With</span> <span class="n">PMPS</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbMR1L0_States</span><span class="p">(</span>
     <span class="n">enumSet</span> <span class="o">:=</span><span class="n">MR1L0_Coating_enumSet</span><span class="p">,</span>
     <span class="n">fbArbiter</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M1</span> <span class="p">);</span><span class="o">//</span> <span class="n">Y</span> <span class="n">Gantry</span> <span class="n">Master</span> <span class="n">Axis</span> <span class="p">,</span> <span class="n">stYup</span>
-
+<span class="n">MR1L0_Coating_enumSet</span> <span class="o">:=</span> <span class="n">fbMR1L0_States</span><span class="o">.</span><span class="n">setState</span><span class="p">;</span>
 
 
 
@@ -965,13 +978,14 @@ END_VAR
 <span class="n">nEncRefPitchM2L0</span> <span class="o">:=</span> <span class="n">LREAL_TO_UDINT</span><span class="p">(</span><span class="n">ABS</span><span class="p">(</span><span class="n">fEncRefPitchM2L0_urad</span><span class="p">)</span> <span class="o">*</span> <span class="n">fEncLeverArm_mm</span><span class="p">);</span>
 
 <span class="o">//</span><span class="n">Coatings</span> <span class="n">States</span> <span class="n">With</span> <span class="n">PMPS</span>
+<span class="n">M7</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
 <span class="n">fbMR2L0_States</span><span class="p">(</span>
     <span class="n">enumSet</span> <span class="o">:=</span><span class="n">MR2L0_Coating_enumSet</span><span class="p">,</span>
     <span class="n">fbArbiter</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M7</span> <span class="p">);</span><span class="o">//</span> <span class="n">Y</span> <span class="n">Gantry</span> <span class="n">Master</span> <span class="n">Axis</span> <span class="p">,</span> <span class="n">stYup</span>
 
-
+<span class="n">MR2L0_Coating_enumSet</span> <span class="o">:=</span> <span class="n">fbMR2L0_States</span><span class="o">.</span><span class="n">setState</span><span class="p">;</span>
 
 
 <span class="n">P_CoatingProtections</span><span class="p">();</span>
