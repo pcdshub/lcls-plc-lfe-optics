@@ -9,7 +9,7 @@ VAR
             nUpperCoatingBitmask := 2#0000_0000_0000_0000_1111_1111_1111_1100, // Exclusion range 0,1 AND 14,90
             sUpperCoatingType := 'B4C',
             nLowerCoatingBoundary := 11800000,
-            nLowerCoatingBitMask := 2#0011_1111_1111_1111_1110_0000_0000_0000, //exclusion range 0,12 AND 27???,90
+            nLowerCoatingBitMask := 2#0000_0001_1111_1111_1110_0000_0000_0000, //exclusion range 0,12 AND 27,90 
             sLowerCoatingType := 'B4C/Ni');
 
     	fbStripProtMR2L0 : FB_MirrorTwoCoatingProtection := (
@@ -18,7 +18,7 @@ VAR
             nUpperCoatingBitmask := 2#0000_0000_0000_0000_1111_1111_1111_1100, // Exclusion range 0,1 AND 14,90
             sUpperCoatingType := 'Ni',
             nLowerCoatingBoundary := 12800000,
-            nLowerCoatingBitMask :=  2#0011_1111_1111_1111_1110_0000_0000_0000, //exclusion range 0,12 AND 27???,90
+            nLowerCoatingBitMask :=  2#0000_0001_1111_1111_1110_0000_0000_0000, //exclusion range 0,12 AND 27,90
             sLowerCoatingType := 'B4C');
 END_VAR
 ]]></Declaration>

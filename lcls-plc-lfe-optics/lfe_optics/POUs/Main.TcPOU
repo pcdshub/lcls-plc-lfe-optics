@@ -371,7 +371,7 @@ VAR
 			nNiPosition:= 9171800, 
 			fNiDelta:= 1000, 
 			fNiVelocity:= 100,
-			nNiCoatingBitmask:= 2#0011_1111_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27???,90
+			nNiCoatingBitmask:= 2#0000_0001_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27,90
 	// PMPS States
 	{attribute 'pytmc' := '
         pv: MR2L0:HOMS:COATING:STATE:SET;
@@ -399,7 +399,7 @@ VAR
 			nNiPosition:= 16018200, 
 			fNiDelta:= 1000 , 
 			fNiVelocity:= 100,
-			nNiCoatingBitmask:= 2#0011_1111_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27???,90 
+			nNiCoatingBitmask:= 2#0000_0001_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27,90 
 
 	
 	
