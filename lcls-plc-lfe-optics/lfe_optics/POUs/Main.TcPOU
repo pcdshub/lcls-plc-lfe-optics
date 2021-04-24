@@ -366,12 +366,12 @@ VAR
 			nB4CPosition:= 21171800 , 
 			fB4CDelta:= 1000, 
 			fB4CVelocity:=100,
-			nB4CCoatingBitmask:= 2#0000_0011_1111_1111, 
+			nB4CCoatingBitmask:= 2#0000_0000_0000_0000_1111_1111_1111_1100, // Exclusion range 0,1 AND 14,90
 			sNiType:= 'B4C/Ni', 
 			nNiPosition:= 9171800, 
 			fNiDelta:= 1000, 
 			fNiVelocity:= 100,
-			nNiCoatingBitmask:= 2#1111_1110_0000_0000 );
+			nNiCoatingBitmask:= 2#0011_1111_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27???,90
 	// PMPS States
 	{attribute 'pytmc' := '
         pv: MR2L0:HOMS:COATING:STATE:SET;
@@ -394,12 +394,12 @@ VAR
 			nB4CPosition:= 7018200 , 
 			fB4CDelta:= 1000 ,
 			fB4CVelocity:=100 ,
-			nB4CCoatingBitmask:= 2#0000_0011_1111_1111, 
+			nB4CCoatingBitmask:= 2#0000_0000_0000_0000_1111_1111_1111_1100, // Exclusion range 0,1 AND 14,90
 			sNiType:= 'Ni', 
 			nNiPosition:= 16018200, 
 			fNiDelta:= 1000 , 
 			fNiVelocity:= 100,
-			nNiCoatingBitmask:= 2#1111_1110_0000_0000 );
+			nNiCoatingBitmask:= 2#0011_1111_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27???,90 
 
 	
 	

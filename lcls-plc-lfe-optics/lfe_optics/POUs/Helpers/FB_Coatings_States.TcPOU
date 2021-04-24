@@ -10,11 +10,11 @@ VAR_INPUT
 	nB4CPosition: UDINT; // Encoder Count Position of Coating 1
 	fB4CDelta: LREAL;//Position Boundary delta in scaled position units
 	fB4CVelocity: LREAL;//Velocity
-	nB4CCoatingBitmask: WORD; //Safe Beam Bitmask for the first coating
+	nB4CCoatingBitmask: DWORD; //Safe Beam Bitmask for the first coating
 	sNiType : STRING := '';// Type of Material on Coating 2
 	nNiPosition: UDINT; // Encoder Count Position of Coating 2
 	fNiDelta: LREAL;//Position Boundary delta in scaled position units
-	nNiCoatingBitmask: WORD; //Safe Beam Bitmask for the second coating
+	nNiCoatingBitmask: DWORD; //Safe Beam Bitmask for the second coating
 	fNiVelocity: LREAL;//Velocity
     bStatesLock: BOOL;
 END_VAR

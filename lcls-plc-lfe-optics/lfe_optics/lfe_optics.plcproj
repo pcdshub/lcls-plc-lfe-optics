@@ -160,21 +160,16 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="lfe_optics.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <LibraryReference Include="LCLS General,2.4.2,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
     <LibraryReference Include="lcls-twincat-motion,1.5.0,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>
-    <LibraryReference Include="lcls-twincat-optics,0.1.1,SLAC">
+    <LibraryReference Include="lcls-twincat-optics,0.2.0,SLAC">
       <Namespace>lcls_twincat_optics</Namespace>
     </LibraryReference>
-    <LibraryReference Include="PMPS,0.17.0,SLAC - LCLS">
+    <LibraryReference Include="PMPS,0.18.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
@@ -182,6 +177,11 @@
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 1.5.0 (SLAC)</Resolution>
     </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lfe_optics.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
