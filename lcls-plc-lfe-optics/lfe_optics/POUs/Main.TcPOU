@@ -366,12 +366,10 @@ VAR
 			nB4CPosition:= 21171800 , 
 			fB4CDelta:= 1000, 
 			fB4CVelocity:=100,
-			nB4CCoatingBitmask:= 2#0000_0000_0000_0000_1111_1111_1111_1100, // Exclusion range 0,1 AND 14,90
 			sNiType:= 'B4C/Ni', 
 			nNiPosition:= 9171800, 
 			fNiDelta:= 1000, 
-			fNiVelocity:= 100,
-			nNiCoatingBitmask:= 2#0000_0001_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27,90
+			fNiVelocity:= 100); //exclusion range 0,12 AND 27,90
 	// PMPS States
 	{attribute 'pytmc' := '
         pv: MR2L0:HOMS:COATING:STATE:SET;
@@ -393,13 +391,11 @@ VAR
 			sB4CType:= 'B4C' , 
 			nB4CPosition:= 7018200 , 
 			fB4CDelta:= 1000 ,
-			fB4CVelocity:=100 ,
-			nB4CCoatingBitmask:= 2#0000_0000_0000_0000_1111_1111_1111_1100, // Exclusion range 0,1 AND 14,90
+			fB4CVelocity:=100, // Exclusion range 0,1 AND 14,90
 			sNiType:= 'Ni', 
 			nNiPosition:= 16018200, 
 			fNiDelta:= 1000 , 
-			fNiVelocity:= 100,
-			nNiCoatingBitmask:= 2#0000_0001_1111_1111_1110_0000_0000_0000); //exclusion range 0,12 AND 27,90 
+			fNiVelocity:= 100); //exclusion range 0,12 AND 27,90 
 
 	
 	
@@ -494,6 +490,8 @@ fbMR1L0_States(
 	enumSet :=MR1L0_Coating_enumSet,
     fbArbiter:=GVL_PMPS.g_fbArbiter1,
     fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+	nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
+    nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90 
     stMotionStage:=M1 );// Y Gantry Master Axis , stYup
 MR1L0_Coating_enumSet := fbMR1L0_States.setState;
 
@@ -591,6 +589,8 @@ fbMR2L0_States(
 	enumSet :=MR2L0_Coating_enumSet,
     fbArbiter:=GVL_PMPS.g_fbArbiter1,
     fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+	nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
+    nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90 
     stMotionStage:=M7 );// Y Gantry Master Axis , stYup
 
 MR2L0_Coating_enumSet := fbMR2L0_States.setState;
