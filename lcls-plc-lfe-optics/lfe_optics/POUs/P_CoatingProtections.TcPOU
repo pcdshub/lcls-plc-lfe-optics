@@ -6,19 +6,15 @@ VAR
     	fbStripProtMR1L0 : FB_MirrorTwoCoatingProtection := (
             sDevName := 'MR1L0',
             nUpperCoatingBoundary := 13300000,
-            nUpperCoatingBitmask := 2#0000_0011_1111_1111,
             sUpperCoatingType := 'B4C',
             nLowerCoatingBoundary := 11800000,
-            nLowerCoatingBitMask := 2#1111_1110_0000_0000,
             sLowerCoatingType := 'B4C/Ni');
 
     	fbStripProtMR2L0 : FB_MirrorTwoCoatingProtection := (
             sDevName := 'MR2L0',
             nUpperCoatingBoundary := 14300000,
-            nUpperCoatingBitmask := 2#1111_1110_0000_0000,
             sUpperCoatingType := 'Ni',
             nLowerCoatingBoundary := 12800000,
-            nLowerCoatingBitMask := 2#0000_0011_1111_1111,
             sLowerCoatingType := 'B4C');
 END_VAR
 ]]></Declaration>
@@ -26,11 +22,15 @@ END_VAR
       <ST><![CDATA[fbStripProtMR1L0(
     nCurrentEncoderCount := MAIN.nEncCntYupM1L0,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+	nUpperCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
+    nLowerCoatingBitMask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90 
     FFO := GVL_PMPS.g_FastFaultOutput1);
     
 fbStripProtMR2L0(
     nCurrentEncoderCount := MAIN.nEncCntYupM2L0,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+	nUpperCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
+    nLowerCoatingBitMask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90 
     FFO := GVL_PMPS.g_FastFaultOutput1);]]></ST>
     </Implementation>
   </POU>
