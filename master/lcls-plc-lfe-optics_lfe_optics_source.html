@@ -335,11 +335,11 @@ END_VAR
     <span class="n">nB4CPosition</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Count</span> <span class="n">Position</span> <span class="n">of</span> <span class="n">Coating</span> <span class="mi">1</span>
     <span class="n">fB4CDelta</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Position</span> <span class="n">Boundary</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">scaled</span> <span class="n">position</span> <span class="n">units</span>
     <span class="n">fB4CVelocity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Velocity</span>
-    <span class="n">nB4CCoatingBitmask</span><span class="p">:</span> <span class="n">WORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">coating</span>
+    <span class="n">nB4CCoatingBitmask</span><span class="p">:</span> <span class="n">DWORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">coating</span>
     <span class="n">sNiType</span> <span class="p">:</span> <span class="n">STRING</span> <span class="o">:=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span><span class="o">//</span> <span class="n">Type</span> <span class="n">of</span> <span class="n">Material</span> <span class="n">on</span> <span class="n">Coating</span> <span class="mi">2</span>
     <span class="n">nNiPosition</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Count</span> <span class="n">Position</span> <span class="n">of</span> <span class="n">Coating</span> <span class="mi">2</span>
     <span class="n">fNiDelta</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Position</span> <span class="n">Boundary</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">scaled</span> <span class="n">position</span> <span class="n">units</span>
-    <span class="n">nNiCoatingBitmask</span><span class="p">:</span> <span class="n">WORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">second</span> <span class="n">coating</span>
+    <span class="n">nNiCoatingBitmask</span><span class="p">:</span> <span class="n">DWORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">second</span> <span class="n">coating</span>
     <span class="n">fNiVelocity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Velocity</span>
     <span class="n">bStatesLock</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 <span class="n">END_VAR</span>
@@ -759,12 +759,10 @@ END_VAR
                     <span class="n">nB4CPosition</span><span class="o">:=</span> <span class="mi">21171800</span> <span class="p">,</span>
                     <span class="n">fB4CDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
                     <span class="n">fB4CVelocity</span><span class="o">:=</span><span class="mi">100</span><span class="p">,</span>
-                    <span class="n">nB4CCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
                     <span class="n">sNiType</span><span class="o">:=</span> <span class="s1">&#39;B4C/Ni&#39;</span><span class="p">,</span>
                     <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">9171800</span><span class="p">,</span>
                     <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
-                    <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">,</span>
-                    <span class="n">nNiCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000 );</span>
+                    <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">);</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
     <span class="o">//</span> <span class="n">PMPS</span> <span class="n">States</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">SET</span><span class="p">;</span>
@@ -786,13 +784,11 @@ END_VAR
                     <span class="n">sB4CType</span><span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span> <span class="p">,</span>
                     <span class="n">nB4CPosition</span><span class="o">:=</span> <span class="mi">7018200</span> <span class="p">,</span>
                     <span class="n">fB4CDelta</span><span class="o">:=</span> <span class="mi">1000</span> <span class="p">,</span>
-                    <span class="n">fB4CVelocity</span><span class="o">:=</span><span class="mi">100</span> <span class="p">,</span>
-                    <span class="n">nB4CCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
+                    <span class="n">fB4CVelocity</span><span class="o">:=</span><span class="mi">100</span><span class="p">,</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
                     <span class="n">sNiType</span><span class="o">:=</span> <span class="s1">&#39;Ni&#39;</span><span class="p">,</span>
                     <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">16018200</span><span class="p">,</span>
                     <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span> <span class="p">,</span>
-                    <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">,</span>
-                    <span class="n">nNiCoatingBitmask</span><span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000 );</span>
+                    <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">);</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
 
 
 
@@ -886,10 +882,10 @@ END_VAR
     <span class="n">enumSet</span> <span class="o">:=</span><span class="n">MR1L0_Coating_enumSet</span><span class="p">,</span>
     <span class="n">fbArbiter</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span>
+    <span class="n">nB4CCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nNiCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M1</span> <span class="p">);</span><span class="o">//</span> <span class="n">Y</span> <span class="n">Gantry</span> <span class="n">Master</span> <span class="n">Axis</span> <span class="p">,</span> <span class="n">stYup</span>
 <span class="n">MR1L0_Coating_enumSet</span> <span class="o">:=</span> <span class="n">fbMR1L0_States</span><span class="o">.</span><span class="n">setState</span><span class="p">;</span>
-
-
 
 
 
@@ -983,6 +979,8 @@ END_VAR
     <span class="n">enumSet</span> <span class="o">:=</span><span class="n">MR2L0_Coating_enumSet</span><span class="p">,</span>
     <span class="n">fbArbiter</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span>
     <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span>
+    <span class="n">nB4CCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nNiCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
     <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M7</span> <span class="p">);</span><span class="o">//</span> <span class="n">Y</span> <span class="n">Gantry</span> <span class="n">Master</span> <span class="n">Axis</span> <span class="p">,</span> <span class="n">stYup</span>
 
 <span class="n">MR2L0_Coating_enumSet</span> <span class="o">:=</span> <span class="n">fbMR2L0_States</span><span class="o">.</span><span class="n">setState</span><span class="p">;</span>
@@ -1010,29 +1008,29 @@ END_VAR
             <span class="n">fbStripProtMR1L0</span> <span class="p">:</span> <span class="n">FB_MirrorTwoCoatingProtection</span> <span class="o">:=</span> <span class="p">(</span>
             <span class="n">sDevName</span> <span class="o">:=</span> <span class="s1">&#39;MR1L0&#39;</span><span class="p">,</span>
             <span class="n">nUpperCoatingBoundary</span> <span class="o">:=</span> <span class="mi">13300000</span><span class="p">,</span>
-            <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
             <span class="n">sUpperCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span><span class="p">,</span>
             <span class="n">nLowerCoatingBoundary</span> <span class="o">:=</span> <span class="mi">11800000</span><span class="p">,</span>
-            <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000,</span>
             <span class="n">sLowerCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C/Ni&#39;</span><span class="p">);</span>
 
             <span class="n">fbStripProtMR2L0</span> <span class="p">:</span> <span class="n">FB_MirrorTwoCoatingProtection</span> <span class="o">:=</span> <span class="p">(</span>
             <span class="n">sDevName</span> <span class="o">:=</span> <span class="s1">&#39;MR2L0&#39;</span><span class="p">,</span>
             <span class="n">nUpperCoatingBoundary</span> <span class="o">:=</span> <span class="mi">14300000</span><span class="p">,</span>
-            <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#1111_1110_0000_0000,</span>
             <span class="n">sUpperCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;Ni&#39;</span><span class="p">,</span>
             <span class="n">nLowerCoatingBoundary</span> <span class="o">:=</span> <span class="mi">12800000</span><span class="p">,</span>
-            <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="mi">2</span><span class="c1">#0000_0011_1111_1111,</span>
             <span class="n">sLowerCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span><span class="p">);</span>
 <span class="n">END_VAR</span>
 <span class="n">fbStripProtMR1L0</span><span class="p">(</span>
     <span class="n">nCurrentEncoderCount</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">nEncCntYupM1L0</span><span class="p">,</span>
     <span class="n">neVRange</span> <span class="o">:=</span> <span class="n">PMPS</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neVRange</span><span class="p">,</span>
+    <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
     <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
 
 <span class="n">fbStripProtMR2L0</span><span class="p">(</span>
     <span class="n">nCurrentEncoderCount</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">nEncCntYupM2L0</span><span class="p">,</span>
     <span class="n">neVRange</span> <span class="o">:=</span> <span class="n">PMPS</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neVRange</span><span class="p">,</span>
+    <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
     <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
