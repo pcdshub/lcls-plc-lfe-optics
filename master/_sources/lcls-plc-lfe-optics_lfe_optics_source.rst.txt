@@ -868,8 +868,8 @@ P_CoatingProtections
     fbStripProtMR2L0(
         nCurrentEncoderCount := MAIN.nEncCntYupM2L0,
         neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
-    	nUpperCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
-        nLowerCoatingBitMask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90 
+    	nUpperCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90  
+        nLowerCoatingBitMask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
         FFO := GVL_PMPS.g_FastFaultOutput1);
 
     END_PROGRAM

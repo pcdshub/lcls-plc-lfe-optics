@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -1029,8 +1032,8 @@ END_VAR
 <span class="n">fbStripProtMR2L0</span><span class="p">(</span>
     <span class="n">nCurrentEncoderCount</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">nEncCntYupM2L0</span><span class="p">,</span>
     <span class="n">neVRange</span> <span class="o">:=</span> <span class="n">PMPS</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neVRange</span><span class="p">,</span>
-    <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
-    <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
     <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
