@@ -231,12 +231,12 @@ GVL_PMPS
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL_PMPS.g_FastFaultOutput1, FB_HardwareFFOutput, 647812160 (494912)
-        GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 647812424 (8)
-        GVL_PMPS.g_FastFaultOutput2, FB_HardwareFFOutput, 648307072 (494912)
-        GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 648307336 (8)
-        GVL_PMPS.g_fbArbiter1, FB_Arbiter, 648801984 (466304)
-        GVL_PMPS.g_fbArbiter2, FB_Arbiter, 649268288 (466304)
+        GVL_PMPS.g_FastFaultOutput1, FB_HardwareFFOutput, 647811392 (494912)
+        GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 647811656 (8)
+        GVL_PMPS.g_FastFaultOutput2, FB_HardwareFFOutput, 648306304 (494912)
+        GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 648306568 (8)
+        GVL_PMPS.g_fbArbiter1, FB_Arbiter, 648801216 (466304)
+        GVL_PMPS.g_fbArbiter2, FB_Arbiter, 649267520 (466304)
 
 
 GVL_Param_TcUnit
@@ -263,10 +263,10 @@ GVL_SerialIO
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL_SerialIO.Serial_stComIn_M1L0, EL6inData22B, 647811392 (192)
-        GVL_SerialIO.Serial_stComIn_M2L0, EL6inData22B, 647811776 (192)
-        GVL_SerialIO.Serial_stComOut_M1L0, EL6outData22B, 647811584 (192)
-        GVL_SerialIO.Serial_stComOut_M2L0, EL6outData22B, 647811968 (192)
+        GVL_SerialIO.Serial_stComIn_M1L0, EL6inData22B, 649733824 (192)
+        GVL_SerialIO.Serial_stComIn_M2L0, EL6inData22B, 649734208 (192)
+        GVL_SerialIO.Serial_stComOut_M1L0, EL6outData22B, 649734016 (192)
+        GVL_SerialIO.Serial_stComOut_M2L0, EL6outData22B, 649734400 (192)
 
 
 GVL_TcUnit
