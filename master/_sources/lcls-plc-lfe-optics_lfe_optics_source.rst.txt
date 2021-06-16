@@ -115,13 +115,13 @@ GVL_PMPS
     		pv: PLC:LFE:OPTICS:FFO:01
     	'}
     	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-    	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+    	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
 
     	{attribute 'pytmc' := '
     		pv: PLC:LFE:OPTICS:FFO:02
     	'}
     	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
-    	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+    	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
 
     	{attribute 'pytmc' := '
     		pv: PLC:LFE:OPTICS:ARB:01
@@ -829,7 +829,7 @@ Main
     fbLogHandler();
 
     // PMPS
-    GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
+    GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam, 'LFE Optics');
     fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
     GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
     GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
