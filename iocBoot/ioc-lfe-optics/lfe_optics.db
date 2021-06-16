@@ -483,6 +483,17 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(longin, "MR1L0:HOMS:ENC:YUP:CNT_RBV") {
+  field(DESC, "Main.nEncCntYupM1L0")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupM1L0?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bLimitForwardEnable_RBV") {
   field(DESC, "FALSE if forward limit hit")
   field(SCAN, "I/O Intr")
@@ -4661,17 +4672,6 @@ record(waveform, "MR1L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(APST, "On Change")
 }
 
-record(longin, "MR1L0:HOMS:ENC:YUP:CNT_RBV") {
-  field(DESC, "Main.nEncCntYupM1L0")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupM1L0?")
-  field(EGU, "cnt")
-  info(archive, "VAL")
-}
-
 record(longin, "MR1L0:HOMS:ENC:YDWN:CNT_RBV") {
   field(DESC, "Main.nEncCntYdwnM1L0")
   field(SCAN, "I/O Intr")
@@ -4768,6 +4768,36 @@ record(longin, "MR1L0:HOMS:ENC:PITCH:REF_RBV") {
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefPitchM1L0?")
   field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(mbbi, "MR1L0:HOMS:COATING:STATE:SET_RBV") {
+  field(DESC, "Main.MR1L0_Coating_enumSet")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L0_Coating_enumSet?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  info(archive, "VAL")
+}
+
+record(mbbo, "MR1L0:HOMS:COATING:STATE:SET") {
+  field(DESC, "Main.MR1L0_Coating_enumSet")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR1L0_Coating_enumSet=")
+  info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
 
@@ -8949,36 +8979,6 @@ record(waveform, "MR2L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(APST, "On Change")
 }
 
-record(mbbi, "MR1L0:HOMS:COATING:STATE:SET_RBV") {
-  field(DESC, "Main.MR1L0_Coating_enumSet")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L0_Coating_enumSet?")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  info(archive, "VAL")
-}
-
-record(mbbo, "MR1L0:HOMS:COATING:STATE:SET") {
-  field(DESC, "Main.MR1L0_Coating_enumSet")
-  field(DTYP, "asynInt32")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR1L0_Coating_enumSet=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
 record(longin, "MR2L0:HOMS:ENC:YUP:CNT_RBV") {
   field(DESC, "Main.nEncCntYupM2L0")
   field(SCAN, "I/O Intr")
@@ -9086,36 +9086,6 @@ record(longin, "MR2L0:HOMS:ENC:PITCH:REF_RBV") {
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefPitchM2L0?")
   field(EGU, "cnt")
-  info(archive, "VAL")
-}
-
-record(mbbi, "MR2L0:HOMS:COATING:STATE:SET_RBV") {
-  field(DESC, "Main.MR2L0_Coating_enumSet")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR2L0_Coating_enumSet?")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  info(archive, "VAL")
-}
-
-record(mbbo, "MR2L0:HOMS:COATING:STATE:SET") {
-  field(DESC, "Main.MR2L0_Coating_enumSet")
-  field(DTYP, "asynInt32")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR2L0_Coating_enumSet=")
-  info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
 
@@ -11226,6 +11196,36 @@ record(mbbi, "MR1L0:HOMS:COATING:STATE:GET_RBV") {
   field(ZRST, "Unknown")
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
+  info(archive, "VAL")
+}
+
+record(mbbi, "MR2L0:HOMS:COATING:STATE:SET_RBV") {
+  field(DESC, "Main.MR2L0_Coating_enumSet")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR2L0_Coating_enumSet?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  info(archive, "VAL")
+}
+
+record(mbbo, "MR2L0:HOMS:COATING:STATE:SET") {
+  field(DESC, "Main.MR2L0_Coating_enumSet")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR2L0_Coating_enumSet=")
+  info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
 
@@ -17753,6 +17753,2006 @@ record(longout, "PLC:LFE:OPTICS:FFO:01:FF:050:Ovrd:Duration") {
   field(DESC, "GVL_PMPS.g_FastFault...50].Ovrd.Duration")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.Duration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:001:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:001:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:002:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:002:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:003:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:003:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:004:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:004:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:005:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:005:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:006:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:006:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:007:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:007:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:008:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:008:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:009:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:009:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:010:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:010:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:011:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:011:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:012:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:012:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:013:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:013:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:014:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:014:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:015:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:015:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:016:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:016:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:017:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:017:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:018:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:018:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:019:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:019:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:020:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:020:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:021:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:021:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:022:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:022:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:023:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:023:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:024:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:024:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:025:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:025:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:026:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:026:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:027:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:027:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:028:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:028:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:029:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:029:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:030:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:030:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:031:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:031:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:032:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:032:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:033:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:033:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:034:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:034:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:035:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:035:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:036:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:036:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:037:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:037:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:038:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:038:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:039:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:039:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:040:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:040:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:041:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:041:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:042:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:042:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:043:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:043:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:044:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:044:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:045:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:045:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:046:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:046:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:047:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:047:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:048:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:048:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:049:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:049:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:050:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:050:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:001:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[1].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:001:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[1].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[1].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:002:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[2].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:002:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[2].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[2].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:003:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[3].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:003:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[3].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[3].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:004:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[4].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:004:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[4].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[4].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:005:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[5].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:005:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[5].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[5].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:006:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[6].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:006:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[6].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[6].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:007:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[7].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:007:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[7].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[7].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:008:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[8].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:008:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[8].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[8].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:009:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[9].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:009:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[9].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[9].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:010:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[10].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:010:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[10].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[10].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:011:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[11].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:011:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[11].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[11].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:012:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[12].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:012:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[12].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[12].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:013:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[13].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:013:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[13].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[13].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:014:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[14].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:014:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[14].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[14].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:015:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[15].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:015:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[15].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[15].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:016:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[16].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:016:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[16].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[16].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:017:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[17].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:017:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[17].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[17].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:018:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[18].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:018:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[18].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[18].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:019:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[19].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:019:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[19].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[19].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:020:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[20].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:020:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[20].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[20].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:021:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[21].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:021:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[21].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[21].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:022:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[22].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:022:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[22].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[22].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:023:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[23].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:023:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[23].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[23].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:024:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[24].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:024:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[24].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[24].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:025:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[25].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:025:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[25].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[25].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:026:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[26].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:026:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[26].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[26].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:027:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[27].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:027:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[27].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[27].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:028:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[28].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:028:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[28].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[28].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:029:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[29].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:029:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[29].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[29].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:030:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[30].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:030:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[30].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[30].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:031:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[31].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:031:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[31].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[31].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:032:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[32].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:032:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[32].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[32].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:033:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[33].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:033:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[33].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[33].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:034:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[34].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:034:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[34].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[34].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:035:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[35].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:035:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[35].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[35].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:036:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[36].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:036:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[36].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[36].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:037:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[37].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:037:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[37].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[37].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:038:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[38].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:038:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[38].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[38].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:039:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[39].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:039:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[39].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[39].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:040:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[40].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:040:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[40].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[40].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:041:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[41].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:041:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[41].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[41].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:042:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[42].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:042:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[42].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[42].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:043:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[43].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:043:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[43].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[43].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:044:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[44].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:044:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[44].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[44].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:045:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[45].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:045:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[45].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[45].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:046:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[46].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:046:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[46].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[46].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:047:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[47].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:047:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[47].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[47].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:048:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[48].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:048:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[48].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[48].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:049:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[49].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:049:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[49].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[49].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:01:FF:050:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[50].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:01:FF:050:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[50].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput1.astFF[50].Ovrd.StartDT=")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -29249,6 +31249,2006 @@ record(longout, "PLC:LFE:OPTICS:FFO:02:FF:050:Ovrd:Duration") {
   info(archive, "VAL")
 }
 
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:001:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:001:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:002:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:002:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:003:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:003:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:004:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:004:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:005:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:005:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:006:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:006:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:007:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:007:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:008:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:008:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:009:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:009:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:010:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:010:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:011:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:011:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:012:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:012:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:013:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:013:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:014:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:014:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:015:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:015:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:016:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:016:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:017:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:017:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:018:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:018:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:019:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:019:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:020:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:020:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:021:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:021:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:022:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:022:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:023:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:023:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:024:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:024:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:025:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:025:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:026:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:026:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:027:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:027:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:028:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:028:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:029:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:029:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:030:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:030:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:031:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:031:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:032:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:032:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:033:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:033:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:034:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:034:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:035:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:035:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:036:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:036:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:037:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:037:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:038:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:038:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:039:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:039:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:040:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:040:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:041:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:041:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:042:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:042:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:043:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:043:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:044:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:044:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:045:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:045:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:046:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:046:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:047:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:047:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:048:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:048:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:049:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:049:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:050:Ovrd:Expiration_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.Expiration?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:050:Ovrd:Expiration") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.Expiration
+  field(DESC, "GVL_PMPS.g_FastFault...].Ovrd.Expiration")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.Expiration=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:001:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[1].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:001:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[1].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:002:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[2].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:002:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[2].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[2].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:003:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[3].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:003:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[3].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[3].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:004:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[4].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:004:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[4].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[4].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:005:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[5].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:005:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[5].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[5].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:006:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[6].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:006:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[6].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[6].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:007:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[7].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:007:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[7].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[7].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:008:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[8].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:008:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[8].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[8].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:009:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[9].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:009:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...F[9].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[9].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:010:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[10].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:010:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[10].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[10].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:011:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[11].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:011:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[11].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[11].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:012:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[12].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:012:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[12].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[12].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:013:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[13].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:013:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[13].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[13].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:014:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[14].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:014:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[14].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[14].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:015:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[15].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:015:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[15].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[15].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:016:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[16].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:016:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[16].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[16].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:017:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[17].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:017:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[17].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[17].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:018:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[18].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:018:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[18].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[18].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:019:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[19].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:019:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[19].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[19].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:020:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[20].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:020:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[20].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[20].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:021:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[21].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:021:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[21].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[21].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:022:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[22].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:022:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[22].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[22].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:023:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[23].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:023:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[23].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[23].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:024:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[24].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:024:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[24].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[24].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:025:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[25].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:025:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[25].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[25].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:026:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[26].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:026:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[26].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[26].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:027:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[27].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:027:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[27].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[27].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:028:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[28].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:028:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[28].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[28].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:029:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[29].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:029:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[29].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[29].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:030:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[30].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:030:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[30].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[30].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:031:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[31].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:031:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[31].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[31].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:032:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[32].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:032:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[32].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[32].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:033:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[33].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:033:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[33].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[33].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:034:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[34].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:034:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[34].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[34].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:035:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[35].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:035:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[35].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[35].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:036:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[36].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:036:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[36].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[36].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:037:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[37].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:037:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[37].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[37].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:038:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[38].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:038:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[38].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[38].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:039:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[39].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:039:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[39].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[39].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:040:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[40].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:040:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[40].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[40].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:041:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[41].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:041:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[41].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[41].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:042:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[42].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:042:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[42].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[42].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:043:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[43].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:043:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[43].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[43].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:044:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[44].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:044:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[44].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[44].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:045:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[45].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:045:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[45].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[45].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:046:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[46].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:046:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[46].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[46].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:047:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[47].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:047:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[47].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[47].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:048:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[48].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:048:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[48].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[48].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:049:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[49].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:049:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[49].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[49].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "PLC:LFE:OPTICS:FFO:02:FF:050:Ovrd:StartDT_RBV") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[50].Ovrd.StartDT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.StartDT?")
+  info(archive, "VAL")
+}
+
+record(longout, "PLC:LFE:OPTICS:FFO:02:FF:050:Ovrd:StartDT") {
+  # GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.StartDT
+  field(DESC, "GVL_PMPS.g_FastFault...[50].Ovrd.StartDT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_PMPS.g_FastFaultOutput2.astFF[50].Ovrd.StartDT=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "PLC:LFE:OPTICS:FFO:02:FF:001:Ovrd:Activate_RBV") {
   # GVL_PMPS.g_FastFaultOutput2.astFF[1].Ovrd.Activate
   field(DESC, "GVL_PMPS.g_FastFault...[1].Ovrd.Activate")
@@ -37765,6 +41765,246 @@ record(bi, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Live_RBV") {
   info(archive, "VAL")
 }
 
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[1].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[2].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[3].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[4].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[5].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[6].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[7].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[8].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[9].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[10].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[11].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[12].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[13].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[14].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[15].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[16].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[17].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[18].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[19].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[20].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
 record(longin, "PLC:LFE:OPTICS:ARB:01:ArbiterID_RBV") {
   field(DESC, "Arbiter ID for elev. req.")
   field(SCAN, "I/O Intr")
@@ -39734,6 +43974,246 @@ record(bi, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Live_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[20].LiveInTable?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[1].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[2].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[3].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[4].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[5].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[6].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[7].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[8].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[9].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[10].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[11].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[12].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[13].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[14].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[15].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[16].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[17].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[18].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[19].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+  info(archive, "VAL")
+}
+
+record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Device_RBV") {
+  field(DESC, "Assertion Pool")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt8ArrayIn")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[20].sDevName?")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
   info(archive, "VAL")
 }
 

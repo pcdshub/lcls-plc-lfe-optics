@@ -8,13 +8,13 @@ VAR_GLOBAL
 		pv: PLC:LFE:OPTICS:FFO:01
 	'}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
 
 	{attribute 'pytmc' := '
 		pv: PLC:LFE:OPTICS:FFO:02
 	'}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
-	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE);
+	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
 
 	{attribute 'pytmc' := '
 		pv: PLC:LFE:OPTICS:ARB:01
