@@ -43,7 +43,8 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L0:HOMS:MMS:PITCH
 	'}
-	M5 : DUT_MotionStage := (fVelocity:=150.0, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
+	M5 : DUT_MotionStage := (fVelocity:=150.0,nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
+    fbMotionStage_m5 : FB_MotionStage;
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 2'}
@@ -94,9 +95,9 @@ VAR
 	fMinBenderRMSErrorM1L0 : LREAL;
 
 	// Pitch Control
-	fbM1L0PitchControl : FB_PitchControl;
-	bM1L0PitchDone : BOOL;
-	bM1L0PitchBusy : BOOL;
+	//fbM1L0PitchControl : FB_PitchControl;
+	//bM1L0PitchDone : BOOL;
+	//bM1L0PitchBusy : BOOL;
 
 	// Bender Control
 	fbBenderM1L0 : FB_Bender;
@@ -208,8 +209,8 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L0:HOMS:MMS:PITCH
 	'}
-	M11 : DUT_MotionStage := (fVelocity:=150.0, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
-
+	M11 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
+    fbMotionStage_m11 : FB_MotionStage;
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
@@ -259,9 +260,9 @@ VAR
 	fMinBenderRMSErrorM2L0 : LREAL;
 
 	// Pitch Control
-	fbM2L0PitchControl : FB_PitchControl;
-	bM2L0PitchDone : BOOL;
-	bM2L0PitchBusy : BOOL;
+	//fbM2L0PitchControl : FB_PitchControl;
+	//bM2L0PitchDone : BOOL;
+	//bM2L0PitchBusy : BOOL;
 
 	// Bender Control
 	fbBenderM2L0 : FB_Bender;
@@ -435,6 +436,7 @@ fbMotionStage_m1(stMotionStage:=M1);
 fbMotionStage_m2(stMotionStage:=M2);
 fbMotionStage_m3(stMotionStage:=M3);
 fbMotionStage_m4(stMotionStage:=M4);
+fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
 // Calculate Pitch RMS Error:
@@ -454,15 +456,15 @@ fbBenderRMSErrorM1L0(stMotionStage:=M6,
 	                 fMaxRMSError=>fMaxBenderRMSErrorM1L0,
 					 fMinRMSError=>fMinBenderRMSErrorM1L0);
 // Pitch Control
-fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
-				   Stepper:=M5,
-				   lrCurrentSetpoint:=M5.fPosition,
-                   q_bDone=>bM1L0PitchDone,
-                   q_bBusy=>bM1L0PitchBusy);
+//fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
+				   //Stepper:=M5,
+				   //lrCurrentSetpoint:=M5.fPosition,
+                   //q_bDone=>bM1L0PitchDone,
+                   //q_bBusy=>bM1L0PitchBusy);
 // When STO hit, need to reset SP
-IF NOT M5.bHardwareEnable THEN
-	M5.fPosition := M5.stAxisStatus.fActPosition;
-END_IF
+//IF NOT M5.bHardwareEnable THEN
+	//M5.fPosition := M5.stAxisStatus.fActPosition;
+//END_IF
 
 // Raw Encoder Counts For Epics
 nEncCntYupM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stYupEnc.Count);
@@ -531,6 +533,7 @@ fbMotionStage_m7(stMotionStage:=M7);
 fbMotionStage_m8(stMotionStage:=M8);
 fbMotionStage_m9(stMotionStage:=M9);
 fbMotionStage_m10(stMotionStage:=M10);
+fbMotionStage_m11(stMotionStage:=M11);
 fbMotionStage_m12(stMotionStage:=M12);
 
 // Calculate RMS Error:
@@ -551,15 +554,15 @@ fbBenderRMSErrorM2L0(stMotionStage:=M12,
 				     fMinRMSError=>fMinBenderRMSErrorM2L0);
 
 // Pitch Control
-fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
-				   Stepper:=M11,
-				   lrCurrentSetpoint:=M11.fPosition,
-                   q_bDone=>bM2L0PitchDone,
-                   q_bBusy=>bM2L0PitchBusy);
+//fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
+				   //Stepper:=M11,
+				   //lrCurrentSetpoint:=M11.fPosition,
+                   //q_bDone=>bM2L0PitchDone,
+                   //q_bBusy=>bM2L0PitchBusy);
 // When STO hit, need to reset SP
-IF NOT M11.bHardwareEnable THEN
-	M11.fPosition := M11.stAxisStatus.fActPosition;
-END_IF
+//IF NOT M11.bHardwareEnable THEN
+	//M11.fPosition := M11.stAxisStatus.fActPosition;
+//END_IF
 
 // Raw Encoder Counts For Epics
 nEncCntYupM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stYupEnc.Count);
