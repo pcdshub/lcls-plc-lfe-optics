@@ -19,6 +19,10 @@ ENUM_Coating_States
     END_TYPE
 
 
+Related:
+    * `ENUM_Coating_States`_
+
+
 GVLs
 ----
 
@@ -39,6 +43,8 @@ GVL_COM_Buffers
     END_VAR
 
 
+
+
 GVL_M1L0
 ^^^^^^^^
 
@@ -53,6 +59,8 @@ GVL_M1L0
     		                                 diEncPosLimHi := 8662020,
     		                                 diEncPosLimLo := 8507095);
     END_VAR
+
+
 
 
 GVL_M1L0_Constants
@@ -71,6 +79,8 @@ GVL_M1L0_Constants
     END_VAR
 
 
+
+
 GVL_M2L0
 ^^^^^^^^
 
@@ -87,6 +97,8 @@ GVL_M2L0
     END_VAR
 
 
+
+
 GVL_M2L0_Constants
 ^^^^^^^^^^^^^^^^^^
 
@@ -101,6 +113,8 @@ GVL_M2L0_Constants
     	nXUP_ENC_REF : ULINT := 25363400;
     	nXDWN_ENC_REF : ULINT := 24398100;
     END_VAR
+
+
 
 
 GVL_PMPS
@@ -135,6 +149,8 @@ GVL_PMPS
     END_VAR
 
 
+
+
 GVL_SerialIO
 ^^^^^^^^^^^^
 
@@ -150,6 +166,8 @@ GVL_SerialIO
     	Serial_stComIn_M2L0 AT %I* : EL6inData22B; // M2L0 In Serial Comm Array
     	Serial_stComOut_M2L0 AT %Q* : EL6outData22B; // M2L0 Out Serial Comm Array
     END_VAR
+
+
 
 
 POUs
@@ -226,6 +244,10 @@ FB_Coatings_States
     END_FUNCTION_BLOCK
 
 
+Related:
+    * `ENUM_Coating_States`_
+
+
 Main
 ^^^^
 
@@ -273,7 +295,8 @@ Main
     	{attribute 'pytmc' := '
     		pv: MR1L0:HOMS:MMS:PITCH
     	'}
-    	M5 : DUT_MotionStage := (fVelocity:=150.0, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
+    	M5 : DUT_MotionStage := (fVelocity:=150.0,nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
+        fbMotionStage_m5 : FB_MotionStage;
 
     	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 2'}
@@ -324,9 +347,9 @@ Main
     	fMinBenderRMSErrorM1L0 : LREAL;
 
     	// Pitch Control
-    	fbM1L0PitchControl : FB_PitchControl;
-    	bM1L0PitchDone : BOOL;
-    	bM1L0PitchBusy : BOOL;
+    	//fbM1L0PitchControl : FB_PitchControl;
+    	//bM1L0PitchDone : BOOL;
+    	//bM1L0PitchBusy : BOOL;
 
     	// Bender Control
     	fbBenderM1L0 : FB_Bender;
@@ -438,8 +461,8 @@ Main
     	{attribute 'pytmc' := '
     		pv: MR2L0:HOMS:MMS:PITCH
     	'}
-    	M11 : DUT_MotionStage := (fVelocity:=150.0, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
-
+    	M11 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
+        fbMotionStage_m11 : FB_MotionStage;
     	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2'}
     	{attribute 'pytmc' := '
@@ -489,9 +512,9 @@ Main
     	fMinBenderRMSErrorM2L0 : LREAL;
 
     	// Pitch Control
-    	fbM2L0PitchControl : FB_PitchControl;
-    	bM2L0PitchDone : BOOL;
-    	bM2L0PitchBusy : BOOL;
+    	//fbM2L0PitchControl : FB_PitchControl;
+    	//bM2L0PitchDone : BOOL;
+    	//bM2L0PitchBusy : BOOL;
 
     	// Bender Control
     	fbBenderM2L0 : FB_Bender;
@@ -664,6 +687,7 @@ Main
     fbMotionStage_m2(stMotionStage:=M2);
     fbMotionStage_m3(stMotionStage:=M3);
     fbMotionStage_m4(stMotionStage:=M4);
+    fbMotionStage_m5(stMotionStage:=M5);
     fbMotionStage_m6(stMotionStage:=M6);
 
     // Calculate Pitch RMS Error:
@@ -683,15 +707,15 @@ Main
     	                 fMaxRMSError=>fMaxBenderRMSErrorM1L0,
     					 fMinRMSError=>fMinBenderRMSErrorM1L0);
     // Pitch Control
-    fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
-    				   Stepper:=M5,
-    				   lrCurrentSetpoint:=M5.fPosition,
-                       q_bDone=>bM1L0PitchDone,
-                       q_bBusy=>bM1L0PitchBusy);
+    //fbM1L0PitchControl(Pitch:=GVL_M1L0.M1L0_Pitch,
+    				   //Stepper:=M5,
+    				   //lrCurrentSetpoint:=M5.fPosition,
+                       //q_bDone=>bM1L0PitchDone,
+                       //q_bBusy=>bM1L0PitchBusy);
     // When STO hit, need to reset SP
-    IF NOT M5.bHardwareEnable THEN
-    	M5.fPosition := M5.stAxisStatus.fActPosition;
-    END_IF
+    //IF NOT M5.bHardwareEnable THEN
+    	//M5.fPosition := M5.stAxisStatus.fActPosition;
+    //END_IF
 
     // Raw Encoder Counts For Epics
     nEncCntYupM1L0 := ULINT_TO_UDINT(M1L0.fbRunHOMS.stYupEnc.Count);
@@ -760,6 +784,7 @@ Main
     fbMotionStage_m8(stMotionStage:=M8);
     fbMotionStage_m9(stMotionStage:=M9);
     fbMotionStage_m10(stMotionStage:=M10);
+    fbMotionStage_m11(stMotionStage:=M11);
     fbMotionStage_m12(stMotionStage:=M12);
 
     // Calculate RMS Error:
@@ -780,15 +805,15 @@ Main
     				     fMinRMSError=>fMinBenderRMSErrorM2L0);
 
     // Pitch Control
-    fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
-    				   Stepper:=M11,
-    				   lrCurrentSetpoint:=M11.fPosition,
-                       q_bDone=>bM2L0PitchDone,
-                       q_bBusy=>bM2L0PitchBusy);
+    //fbM2L0PitchControl(Pitch:=GVL_M2L0.M2L0_Pitch,
+    				   //Stepper:=M11,
+    				   //lrCurrentSetpoint:=M11.fPosition,
+                       //q_bDone=>bM2L0PitchDone,
+                       //q_bBusy=>bM2L0PitchBusy);
     // When STO hit, need to reset SP
-    IF NOT M11.bHardwareEnable THEN
-    	M11.fPosition := M11.stAxisStatus.fActPosition;
-    END_IF
+    //IF NOT M11.bHardwareEnable THEN
+    	//M11.fPosition := M11.stAxisStatus.fActPosition;
+    //END_IF
 
     // Raw Encoder Counts For Epics
     nEncCntYupM2L0 := ULINT_TO_UDINT(M2L0.fbRunHOMS.stYupEnc.Count);
@@ -837,6 +862,17 @@ Main
     END_PROGRAM
 
 
+Related:
+    * `ENUM_Coating_States`_
+    * `FB_Coatings_States`_
+    * `GVL_M1L0`_
+    * `GVL_M1L0_Constants`_
+    * `GVL_M2L0`_
+    * `GVL_M2L0_Constants`_
+    * `GVL_PMPS`_
+    * `P_CoatingProtections`_
+
+
 P_CoatingProtections
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -875,6 +911,10 @@ P_CoatingProtections
     END_PROGRAM
 
 
+Related:
+    * `GVL_PMPS`_
+
+
 P_Serial_Com
 ^^^^^^^^^^^^
 
@@ -909,6 +949,8 @@ P_Serial_Com
     END_PROGRAM
 
 
+
+
 PiezoSerial
 ^^^^^^^^^^^
 
@@ -940,4 +982,9 @@ PiezoSerial
     		                iq_stSerialTXBuffer:= Serial_TXBuffer_M2L0);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL_M1L0`_
+    * `GVL_M2L0`_
 

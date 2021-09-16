@@ -165,6 +165,7 @@ Axis 5: M1L0-Pitch
     Dynamic:Deceleration, 390
     Dynamic:DelayTime, 0.008
     Enc:EncType, 29
+    Enc:FilterTime:TPos, 0.2
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
     Enc:Offset, -16765.03
@@ -356,6 +357,7 @@ Axis 11: M2L0-Pitch
     Dynamic:Acceleration, 390
     Dynamic:Deceleration, 390
     Enc:EncType, 29
+    Enc:FilterTime:TPos, 0.2
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
     Enc:Offset, -18462.6
