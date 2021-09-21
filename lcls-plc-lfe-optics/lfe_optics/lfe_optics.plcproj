@@ -14,6 +14,11 @@
     <Implicit_Jitter_Distribution>{4f1ac732-8061-41a3-996d-e958e0b372e0}</Implicit_Jitter_Distribution>
     <LibraryReferences>{9c3eb579-952b-48e6-8012-6deca8aa13af}</LibraryReferences>
     <CompilerDefines>L</CompilerDefines>
+    <CombineIds>false</CombineIds>
+    <Company>SLAC</Company>
+    <Released>true</Released>
+    <Title>lcls-plc-lfe-optics</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\ENUM_Coating_States.TcDUT">
