@@ -103,13 +103,13 @@ Axis 3: M1L0-Xup
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -24901.7
+    Enc:Offset, -24797.788
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
-    Enc:SoftEndMaxControl:Range, 1780.4
+    Enc:SoftEndMaxControl:Range, 690
     Enc:SoftEndMinControl:Enable, true
-    Enc:SoftEndMinControl:Range, -219.6
+    Enc:SoftEndMinControl:Range, -600
     General:UnitName, um
     Id, 3
     OtherSettings:AllowMotionCmdToSlave, true
@@ -135,13 +135,13 @@ Axis 4: M1L0-Xdwn
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
-    Enc:Offset, -22921.5
+    Enc:Offset, -22825.528
     Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
-    Enc:SoftEndMaxControl:Range, 1773.4
+    Enc:SoftEndMaxControl:Range, 690
     Enc:SoftEndMinControl:Enable, true
-    Enc:SoftEndMinControl:Range, -327.8
+    Enc:SoftEndMinControl:Range, -600
     General:UnitName, um
     Id, 4
     OtherSettings:AllowMotionCmdToSlave, true
