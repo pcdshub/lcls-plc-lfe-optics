@@ -494,7 +494,8 @@ fbMR1L0_States(
     fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
 	nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
     nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90 
-    stMotionStage:=M1 );// Y Gantry Master Axis , stYup
+    stMotionStage:=M1,
+    bBPOkAutoReset := TRUE);// Y Gantry Master Axis , stYup
 MR1L0_Coating_enumSet := fbMR1L0_States.setState;
 
 
@@ -592,7 +593,8 @@ fbMR2L0_States(
     fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
 	nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
     nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90 
-    stMotionStage:=M7 );// Y Gantry Master Axis , stYup
+    stMotionStage:=M7,
+    bBPOkAutoReset := TRUE);// Y Gantry Master Axis , stYup
 
 MR2L0_Coating_enumSet := fbMR2L0_States.setState;
 
