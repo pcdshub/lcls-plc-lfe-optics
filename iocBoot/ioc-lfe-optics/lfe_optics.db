@@ -37,6 +37,8 @@ record(waveform, "$(PREFIX)LCLSGeneral:LogHost_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Logger.cLogHost?")
   field(FTVL, "CHAR")
   field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -46,6 +48,8 @@ record(waveform, "$(PREFIX)LCLSGeneral:LogHost") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost=")
   field(FTVL, "CHAR")
   field(NELM, "15")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(autosaveFields_pass0, "VAL")
   info(archive, "VAL")
 }
@@ -635,6 +639,8 @@ record(waveform, "MR1L0:HOMS:MMS:YUP:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -1081,12 +1087,12 @@ record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L0:HOMS:MMS:YUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M1.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -1098,7 +1104,7 @@ record(longin, "MR1L0:HOMS:MMS:YUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M1.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -1108,9 +1114,11 @@ record(waveform, "MR1L0:HOMS:MMS:YUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M1.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -1267,6 +1275,8 @@ record(waveform, "MR1L0:HOMS:MMS:YDWN:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -1713,12 +1723,12 @@ record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L0:HOMS:MMS:YDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M2.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -1730,7 +1740,7 @@ record(longin, "MR1L0:HOMS:MMS:YDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M2.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -1740,9 +1750,11 @@ record(waveform, "MR1L0:HOMS:MMS:YDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M2.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -1899,6 +1911,8 @@ record(waveform, "MR1L0:HOMS:MMS:XUP:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -2345,12 +2359,12 @@ record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L0:HOMS:MMS:XUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M3.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -2362,7 +2376,7 @@ record(longin, "MR1L0:HOMS:MMS:XUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M3.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -2372,9 +2386,11 @@ record(waveform, "MR1L0:HOMS:MMS:XUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M3.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -2531,6 +2547,8 @@ record(waveform, "MR1L0:HOMS:MMS:XDWN:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -2977,12 +2995,12 @@ record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L0:HOMS:MMS:XDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M4.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -2994,7 +3012,7 @@ record(longin, "MR1L0:HOMS:MMS:XDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M4.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -3004,9 +3022,11 @@ record(waveform, "MR1L0:HOMS:MMS:XDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M4.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -3163,6 +3183,8 @@ record(waveform, "MR1L0:HOMS:MMS:PITCH:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -3609,12 +3631,12 @@ record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L0:HOMS:MMS:PITCH:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M5.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -3626,7 +3648,7 @@ record(longin, "MR1L0:HOMS:MMS:PITCH:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M5.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -3636,9 +3658,11 @@ record(waveform, "MR1L0:HOMS:MMS:PITCH:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M5.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -3795,6 +3819,8 @@ record(waveform, "MR1L0:HOMS:MMS:BENDER:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -4241,12 +4267,12 @@ record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L0:HOMS:MMS:BENDER:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M6.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -4258,7 +4284,7 @@ record(longin, "MR1L0:HOMS:MMS:BENDER:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M6.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -4268,9 +4294,11 @@ record(waveform, "MR1L0:HOMS:MMS:BENDER:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M6.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -4282,144 +4310,6 @@ record(ai, "MR1L0:HOMS:MMS:BENDER:PLC:fPosDiff_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.fPosDiff?")
   field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(bi, "MR1L0:HOMS:COUPLE_Y_RBV") {
-  field(DESC, "Main.M1L0.bExecuteCoupleY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteCoupleY?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR1L0:HOMS:COUPLE_Y") {
-  field(DESC, "Main.M1L0.bExecuteCoupleY")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleY=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR1L0:HOMS:DECOUPLE_Y_RBV") {
-  field(DESC, "Main.M1L0.bExecuteDecoupleY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteDecoupleY?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR1L0:HOMS:DECOUPLE_Y") {
-  field(DESC, "Main.M1L0.bExecuteDecoupleY")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleY=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR1L0:HOMS:COUPLE_X_RBV") {
-  field(DESC, "Main.M1L0.bExecuteCoupleX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteCoupleX?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR1L0:HOMS:COUPLE_X") {
-  field(DESC, "Main.M1L0.bExecuteCoupleX")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleX=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR1L0:HOMS:DECOUPLE_X_RBV") {
-  field(DESC, "Main.M1L0.bExecuteDecoupleX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteDecoupleX?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR1L0:HOMS:DECOUPLE_X") {
-  field(DESC, "Main.M1L0.bExecuteDecoupleX")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleX=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR1L0:HOMS:ALREADY_COUPLED_Y_RBV") {
-  field(DESC, "Main.M1L0.bGantryAlreadyCoupledY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bGantryAlreadyCoupledY?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "MR1L0:HOMS:ALREADY_COUPLED_X_RBV") {
-  field(DESC, "Main.M1L0.bGantryAlreadyCoupledX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bGantryAlreadyCoupledX?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "MR1L0:HOMS:GANTRY_Y_RBV") {
-  field(DESC, "Main.M1L0.fCurrGantryY_um")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryY_um?")
-  field(PREC, "3")
-  field(EGU, "um")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "MR1L0:HOMS:GANTRY_X_RBV") {
-  field(DESC, "Main.M1L0.fCurrGantryX_um")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryX_um?")
-  field(PREC, "3")
-  field(EGU, "um")
   info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
@@ -4771,33 +4661,14 @@ record(longin, "MR1L0:HOMS:ENC:PITCH:REF_RBV") {
   info(archive, "VAL")
 }
 
-record(mbbi, "MR1L0:HOMS:COATING:STATE:SET_RBV") {
-  field(DESC, "Main.MR1L0_Coating_enumSet")
+record(longin, "MR2L0:HOMS:ENC:YUP:CNT_RBV") {
+  field(DESC, "Main.nEncCntYupM2L0")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L0_Coating_enumSet?")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  info(archive, "VAL")
-}
-
-record(mbbo, "MR1L0:HOMS:COATING:STATE:SET") {
-  field(DESC, "Main.MR1L0_Coating_enumSet")
-  field(DTYP, "asynInt32")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR1L0_Coating_enumSet=")
-  info(autosaveFields_pass0, "VAL")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupM2L0?")
+  field(EGU, "cnt")
   info(archive, "VAL")
 }
 
@@ -4942,6 +4813,8 @@ record(waveform, "MR2L0:HOMS:MMS:YUP:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -5388,12 +5261,12 @@ record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L0:HOMS:MMS:YUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M7.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -5405,7 +5278,7 @@ record(longin, "MR2L0:HOMS:MMS:YUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M7.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -5415,9 +5288,11 @@ record(waveform, "MR2L0:HOMS:MMS:YUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M7.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -5574,6 +5449,8 @@ record(waveform, "MR2L0:HOMS:MMS:YDWN:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -6020,12 +5897,12 @@ record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L0:HOMS:MMS:YDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M8.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -6037,7 +5914,7 @@ record(longin, "MR2L0:HOMS:MMS:YDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M8.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -6047,9 +5924,11 @@ record(waveform, "MR2L0:HOMS:MMS:YDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M8.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -6206,6 +6085,8 @@ record(waveform, "MR2L0:HOMS:MMS:XUP:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -6652,12 +6533,12 @@ record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L0:HOMS:MMS:XUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M9.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -6669,7 +6550,7 @@ record(longin, "MR2L0:HOMS:MMS:XUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M9.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -6679,9 +6560,11 @@ record(waveform, "MR2L0:HOMS:MMS:XUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M9.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -6838,6 +6721,8 @@ record(waveform, "MR2L0:HOMS:MMS:XDWN:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -7284,12 +7169,12 @@ record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L0:HOMS:MMS:XDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M10.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -7301,7 +7186,7 @@ record(longin, "MR2L0:HOMS:MMS:XDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M10.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -7311,9 +7196,11 @@ record(waveform, "MR2L0:HOMS:MMS:XDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M10.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -7470,6 +7357,8 @@ record(waveform, "MR2L0:HOMS:MMS:PITCH:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -7916,12 +7805,12 @@ record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L0:HOMS:MMS:PITCH:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M11.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -7933,7 +7822,7 @@ record(longin, "MR2L0:HOMS:MMS:PITCH:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M11.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -7943,9 +7832,11 @@ record(waveform, "MR2L0:HOMS:MMS:PITCH:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M11.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -8102,6 +7993,8 @@ record(waveform, "MR2L0:HOMS:MMS:BENDER:PLC:sName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -8548,12 +8441,12 @@ record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L0:HOMS:MMS:BENDER:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M12.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -8565,7 +8458,7 @@ record(longin, "MR2L0:HOMS:MMS:BENDER:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M12.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -8575,9 +8468,11 @@ record(waveform, "MR2L0:HOMS:MMS:BENDER:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M12.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -8589,144 +8484,6 @@ record(ai, "MR2L0:HOMS:MMS:BENDER:PLC:fPosDiff_RBV") {
   field(DTYP, "asynFloat64")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.fPosDiff?")
   field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(bi, "MR2L0:HOMS:COUPLE_Y_RBV") {
-  field(DESC, "Main.M2L0.bExecuteCoupleY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteCoupleY?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR2L0:HOMS:COUPLE_Y") {
-  field(DESC, "Main.M2L0.bExecuteCoupleY")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleY=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR2L0:HOMS:DECOUPLE_Y_RBV") {
-  field(DESC, "Main.M2L0.bExecuteDecoupleY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteDecoupleY?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR2L0:HOMS:DECOUPLE_Y") {
-  field(DESC, "Main.M2L0.bExecuteDecoupleY")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleY=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR2L0:HOMS:COUPLE_X_RBV") {
-  field(DESC, "Main.M2L0.bExecuteCoupleX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteCoupleX?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR2L0:HOMS:COUPLE_X") {
-  field(DESC, "Main.M2L0.bExecuteCoupleX")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleX=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR2L0:HOMS:DECOUPLE_X_RBV") {
-  field(DESC, "Main.M2L0.bExecuteDecoupleX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteDecoupleX?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "MR2L0:HOMS:DECOUPLE_X") {
-  field(DESC, "Main.M2L0.bExecuteDecoupleX")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleX=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "MR2L0:HOMS:ALREADY_COUPLED_Y_RBV") {
-  field(DESC, "Main.M2L0.bGantryAlreadyCoupledY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bGantryAlreadyCoupledY?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "MR2L0:HOMS:ALREADY_COUPLED_X_RBV") {
-  field(DESC, "Main.M2L0.bGantryAlreadyCoupledX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bGantryAlreadyCoupledX?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "MR2L0:HOMS:GANTRY_Y_RBV") {
-  field(DESC, "Main.M2L0.fCurrGantryY_um")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryY_um?")
-  field(PREC, "3")
-  field(EGU, "um")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "MR2L0:HOMS:GANTRY_X_RBV") {
-  field(DESC, "Main.M2L0.fCurrGantryX_um")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryX_um?")
-  field(PREC, "3")
-  field(EGU, "um")
   info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
@@ -8979,17 +8736,6 @@ record(waveform, "MR2L0:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(APST, "On Change")
 }
 
-record(longin, "MR2L0:HOMS:ENC:YUP:CNT_RBV") {
-  field(DESC, "Main.nEncCntYupM2L0")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupM2L0?")
-  field(EGU, "cnt")
-  info(archive, "VAL")
-}
-
 record(longin, "MR2L0:HOMS:ENC:YDWN:CNT_RBV") {
   field(DESC, "Main.nEncCntYdwnM2L0")
   field(SCAN, "I/O Intr")
@@ -9089,6 +8835,66 @@ record(longin, "MR2L0:HOMS:ENC:PITCH:REF_RBV") {
   info(archive, "VAL")
 }
 
+record(mbbi, "MR1L0:HOMS:COATING:STATE:SET_RBV") {
+  field(DESC, "Main.MR1L0_Coating_enumSet")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L0_Coating_enumSet?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  info(archive, "VAL")
+}
+
+record(mbbo, "MR1L0:HOMS:COATING:STATE:SET") {
+  field(DESC, "Main.MR1L0_Coating_enumSet")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR1L0_Coating_enumSet=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(mbbi, "MR2L0:HOMS:COATING:STATE:SET_RBV") {
+  field(DESC, "Main.MR2L0_Coating_enumSet")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR2L0_Coating_enumSet?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  info(archive, "VAL")
+}
+
+record(mbbo, "MR2L0:HOMS:COATING:STATE:SET") {
+  field(DESC, "Main.MR2L0_Coating_enumSet")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "B4C")
+  field(TWST, "Ni")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR2L0_Coating_enumSet=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "MR1L0:HOMS:COATING:STATE:RESET_RBV") {
   field(DESC, "Main.fbMR1L0_States.bReset")
   field(SCAN, "I/O Intr")
@@ -9157,6 +8963,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:ERRMSG_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9202,6 +9010,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:01:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9217,6 +9027,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:02:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9232,6 +9044,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:03:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9247,6 +9061,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:04:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9262,6 +9078,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:05:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9277,6 +9095,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:06:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9292,6 +9112,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:07:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9307,6 +9129,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:08:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -9322,6 +9146,8 @@ record(waveform, "MR1L0:HOMS:COATING:STATE:09:NAME_RBV") {
   field(ONST, "B4C")
   field(TWST, "B4C_Ni")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11199,36 +11025,6 @@ record(mbbi, "MR1L0:HOMS:COATING:STATE:GET_RBV") {
   info(archive, "VAL")
 }
 
-record(mbbi, "MR2L0:HOMS:COATING:STATE:SET_RBV") {
-  field(DESC, "Main.MR2L0_Coating_enumSet")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR2L0_Coating_enumSet?")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  info(archive, "VAL")
-}
-
-record(mbbo, "MR2L0:HOMS:COATING:STATE:SET") {
-  field(DESC, "Main.MR2L0_Coating_enumSet")
-  field(DTYP, "asynInt32")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "B4C")
-  field(TWST, "Ni")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR2L0_Coating_enumSet=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
 record(bi, "MR2L0:HOMS:COATING:STATE:RESET_RBV") {
   field(DESC, "Main.fbMR2L0_States.bReset")
   field(SCAN, "I/O Intr")
@@ -11282,6 +11078,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:ERRMSG_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11318,6 +11116,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:01:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[1].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11330,6 +11130,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:02:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[2].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11342,6 +11144,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:03:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[3].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11354,6 +11158,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:04:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[4].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11366,6 +11172,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:05:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[5].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11378,6 +11186,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:06:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[6].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11390,6 +11200,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:07:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[7].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11402,6 +11214,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:08:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[8].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -11414,6 +11228,8 @@ record(waveform, "MR2L0:HOMS:COATING:STATE:09:NAME_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR2L0_States.arrStates[9].sName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -12967,6 +12783,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:001:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[1].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -12980,6 +12798,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:002:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[2].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -12993,6 +12813,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:003:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[3].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13006,6 +12828,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:004:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[4].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13019,6 +12843,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:005:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[5].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13032,6 +12858,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:006:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[6].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13045,6 +12873,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:007:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[7].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13058,6 +12888,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:008:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[8].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13071,6 +12903,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:009:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[9].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13084,6 +12918,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:010:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[10].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13097,6 +12933,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:011:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[11].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13110,6 +12948,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:012:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[12].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13123,6 +12963,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:013:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[13].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13136,6 +12978,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:014:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[14].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13149,6 +12993,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:015:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[15].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13162,6 +13008,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:016:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[16].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13175,6 +13023,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:017:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[17].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13188,6 +13038,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:018:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[18].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13201,6 +13053,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:019:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[19].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13214,6 +13068,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:020:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[20].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13227,6 +13083,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:021:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[21].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13240,6 +13098,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:022:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[22].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13253,6 +13113,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:023:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[23].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13266,6 +13128,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:024:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[24].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13279,6 +13143,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:025:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[25].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13292,6 +13158,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:026:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[26].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13305,6 +13173,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:027:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[27].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13318,6 +13188,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:028:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[28].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13331,6 +13203,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:029:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[29].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13344,6 +13218,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:030:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[30].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13357,6 +13233,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:031:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[31].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13370,6 +13248,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:032:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[32].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13383,6 +13263,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:033:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[33].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13396,6 +13278,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:034:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[34].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13409,6 +13293,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:035:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[35].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13422,6 +13308,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:036:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[36].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13435,6 +13323,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:037:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[37].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13448,6 +13338,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:038:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[38].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13461,6 +13353,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:039:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[39].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13474,6 +13368,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:040:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[40].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13487,6 +13383,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:041:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[41].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13500,6 +13398,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:042:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[42].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13513,6 +13413,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:043:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[43].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13526,6 +13428,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:044:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[44].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13539,6 +13443,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:045:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[45].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13552,6 +13458,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:046:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[46].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13565,6 +13473,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:047:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[47].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13578,6 +13488,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:048:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[48].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13591,6 +13503,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:049:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[49].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13604,6 +13518,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:050:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[50].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13617,6 +13533,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:001:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[1].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13630,6 +13548,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:002:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[2].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13643,6 +13563,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:003:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[3].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13656,6 +13578,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:004:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[4].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13669,6 +13593,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:005:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[5].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13682,6 +13608,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:006:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[6].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13695,6 +13623,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:007:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[7].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13708,6 +13638,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:008:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[8].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13721,6 +13653,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:009:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[9].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13734,6 +13668,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:010:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[10].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13747,6 +13683,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:011:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[11].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13760,6 +13698,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:012:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[12].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13773,6 +13713,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:013:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[13].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13786,6 +13728,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:014:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[14].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13799,6 +13743,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:015:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[15].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13812,6 +13758,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:016:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[16].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13825,6 +13773,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:017:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[17].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13838,6 +13788,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:018:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[18].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13851,6 +13803,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:019:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[19].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13864,6 +13818,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:020:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[20].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13877,6 +13833,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:021:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[21].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13890,6 +13848,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:022:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[22].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13903,6 +13863,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:023:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[23].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13916,6 +13878,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:024:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[24].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13929,6 +13893,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:025:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[25].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13942,6 +13908,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:026:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[26].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13955,6 +13923,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:027:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[27].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13968,6 +13938,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:028:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[28].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13981,6 +13953,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:029:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[29].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -13994,6 +13968,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:030:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[30].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14007,6 +13983,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:031:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[31].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14020,6 +13998,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:032:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[32].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14033,6 +14013,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:033:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[33].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14046,6 +14028,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:034:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[34].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14059,6 +14043,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:035:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[35].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14072,6 +14058,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:036:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[36].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14085,6 +14073,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:037:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[37].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14098,6 +14088,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:038:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[38].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14111,6 +14103,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:039:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[39].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14124,6 +14118,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:040:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[40].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14137,6 +14133,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:041:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[41].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14150,6 +14148,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:042:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[42].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14163,6 +14163,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:043:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[43].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14176,6 +14178,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:044:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[44].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14189,6 +14193,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:045:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[45].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14202,6 +14208,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:046:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[46].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14215,6 +14223,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:047:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[47].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14228,6 +14238,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:048:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[48].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14241,6 +14253,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:049:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[49].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14254,6 +14268,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:050:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[50].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14267,6 +14283,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:001:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[1].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14280,6 +14298,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:002:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[2].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14293,6 +14313,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:003:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[3].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14306,6 +14328,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:004:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[4].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14319,6 +14343,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:005:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[5].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14332,6 +14358,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:006:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[6].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14345,6 +14373,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:007:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[7].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14358,6 +14388,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:008:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[8].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14371,6 +14403,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:009:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[9].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14384,6 +14418,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:010:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[10].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14397,6 +14433,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:011:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[11].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14410,6 +14448,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:012:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[12].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14423,6 +14463,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:013:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[13].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14436,6 +14478,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:014:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[14].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14449,6 +14493,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:015:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[15].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14462,6 +14508,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:016:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[16].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14475,6 +14523,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:017:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[17].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14488,6 +14538,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:018:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[18].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14501,6 +14553,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:019:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[19].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14514,6 +14568,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:020:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[20].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14527,6 +14583,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:021:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[21].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14540,6 +14598,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:022:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[22].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14553,6 +14613,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:023:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[23].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14566,6 +14628,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:024:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[24].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14579,6 +14643,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:025:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[25].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14592,6 +14658,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:026:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[26].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14605,6 +14673,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:027:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[27].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14618,6 +14688,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:028:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[28].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14631,6 +14703,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:029:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[29].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14644,6 +14718,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:030:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[30].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14657,6 +14733,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:031:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[31].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14670,6 +14748,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:032:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[32].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14683,6 +14763,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:033:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[33].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14696,6 +14778,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:034:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[34].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14709,6 +14793,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:035:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[35].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14722,6 +14808,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:036:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[36].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14735,6 +14823,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:037:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[37].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14748,6 +14838,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:038:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[38].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14761,6 +14853,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:039:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[39].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14774,6 +14868,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:040:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[40].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14787,6 +14883,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:041:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[41].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14800,6 +14898,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:042:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[42].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14813,6 +14913,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:043:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[43].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14826,6 +14928,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:044:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[44].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14839,6 +14943,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:045:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[45].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14852,6 +14958,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:046:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[46].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14865,6 +14973,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:047:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[47].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14878,6 +14988,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:048:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[48].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14891,6 +15003,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:049:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[49].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -14904,6 +15018,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:050:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[50].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16117,6 +16233,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:001:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[1].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16130,6 +16248,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:002:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[2].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16143,6 +16263,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:003:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[3].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16156,6 +16278,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:004:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[4].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16169,6 +16293,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:005:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[5].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16182,6 +16308,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:006:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[6].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16195,6 +16323,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:007:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[7].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16208,6 +16338,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:008:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[8].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16221,6 +16353,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:009:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[9].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16234,6 +16368,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:010:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[10].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16247,6 +16383,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:011:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[11].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16260,6 +16398,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:012:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[12].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16273,6 +16413,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:013:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[13].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16286,6 +16428,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:014:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[14].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16299,6 +16443,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:015:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[15].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16312,6 +16458,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:016:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[16].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16325,6 +16473,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:017:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[17].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16338,6 +16488,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:018:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[18].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16351,6 +16503,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:019:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[19].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16364,6 +16518,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:020:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[20].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16377,6 +16533,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:021:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[21].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16390,6 +16548,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:022:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[22].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16403,6 +16563,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:023:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[23].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16416,6 +16578,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:024:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[24].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16429,6 +16593,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:025:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[25].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16442,6 +16608,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:026:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[26].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16455,6 +16623,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:027:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[27].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16468,6 +16638,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:028:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[28].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16481,6 +16653,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:029:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[29].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16494,6 +16668,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:030:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[30].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16507,6 +16683,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:031:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[31].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16520,6 +16698,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:032:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[32].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16533,6 +16713,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:033:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[33].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16546,6 +16728,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:034:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[34].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16559,6 +16743,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:035:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[35].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16572,6 +16758,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:036:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[36].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16585,6 +16773,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:037:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[37].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16598,6 +16788,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:038:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[38].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16611,6 +16803,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:039:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[39].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16624,6 +16818,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:040:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[40].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16637,6 +16833,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:041:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[41].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16650,6 +16848,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:042:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[42].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16663,6 +16863,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:043:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[43].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16676,6 +16878,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:044:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[44].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16689,6 +16893,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:045:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[45].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16702,6 +16908,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:046:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[46].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16715,6 +16923,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:047:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[47].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16728,6 +16938,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:048:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[48].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16741,6 +16953,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:049:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[49].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -16754,6 +16968,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:01:FF:050:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput1.astFF[50].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26459,6 +26675,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:001:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[1].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26472,6 +26690,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:002:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[2].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26485,6 +26705,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:003:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[3].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26498,6 +26720,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:004:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[4].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26511,6 +26735,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:005:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[5].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26524,6 +26750,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:006:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[6].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26537,6 +26765,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:007:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[7].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26550,6 +26780,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:008:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[8].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26563,6 +26795,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:009:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[9].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26576,6 +26810,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:010:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[10].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26589,6 +26825,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:011:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[11].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26602,6 +26840,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:012:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[12].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26615,6 +26855,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:013:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[13].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26628,6 +26870,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:014:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[14].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26641,6 +26885,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:015:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[15].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26654,6 +26900,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:016:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[16].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26667,6 +26915,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:017:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[17].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26680,6 +26930,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:018:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[18].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26693,6 +26945,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:019:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[19].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26706,6 +26960,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:020:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[20].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26719,6 +26975,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:021:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[21].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26732,6 +26990,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:022:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[22].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26745,6 +27005,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:023:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[23].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26758,6 +27020,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:024:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[24].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26771,6 +27035,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:025:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[25].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26784,6 +27050,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:026:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[26].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26797,6 +27065,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:027:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[27].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26810,6 +27080,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:028:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[28].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26823,6 +27095,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:029:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[29].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26836,6 +27110,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:030:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[30].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26849,6 +27125,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:031:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[31].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26862,6 +27140,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:032:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[32].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26875,6 +27155,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:033:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[33].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26888,6 +27170,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:034:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[34].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26901,6 +27185,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:035:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[35].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26914,6 +27200,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:036:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[36].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26927,6 +27215,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:037:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[37].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26940,6 +27230,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:038:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[38].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26953,6 +27245,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:039:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[39].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26966,6 +27260,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:040:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[40].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26979,6 +27275,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:041:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[41].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -26992,6 +27290,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:042:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[42].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27005,6 +27305,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:043:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[43].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27018,6 +27320,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:044:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[44].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27031,6 +27335,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:045:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[45].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27044,6 +27350,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:046:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[46].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27057,6 +27365,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:047:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[47].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27070,6 +27380,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:048:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[48].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27083,6 +27395,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:049:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[49].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27096,6 +27410,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:050:Info:Path_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[50].Info.sPath?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27109,6 +27425,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:001:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[1].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27122,6 +27440,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:002:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[2].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27135,6 +27455,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:003:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[3].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27148,6 +27470,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:004:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[4].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27161,6 +27485,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:005:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[5].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27174,6 +27500,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:006:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[6].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27187,6 +27515,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:007:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[7].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27200,6 +27530,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:008:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[8].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27213,6 +27545,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:009:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[9].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27226,6 +27560,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:010:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[10].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27239,6 +27575,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:011:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[11].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27252,6 +27590,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:012:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[12].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27265,6 +27605,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:013:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[13].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27278,6 +27620,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:014:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[14].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27291,6 +27635,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:015:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[15].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27304,6 +27650,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:016:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[16].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27317,6 +27665,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:017:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[17].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27330,6 +27680,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:018:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[18].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27343,6 +27695,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:019:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[19].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27356,6 +27710,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:020:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[20].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27369,6 +27725,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:021:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[21].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27382,6 +27740,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:022:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[22].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27395,6 +27755,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:023:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[23].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27408,6 +27770,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:024:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[24].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27421,6 +27785,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:025:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[25].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27434,6 +27800,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:026:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[26].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27447,6 +27815,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:027:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[27].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27460,6 +27830,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:028:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[28].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27473,6 +27845,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:029:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[29].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27486,6 +27860,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:030:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[30].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27499,6 +27875,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:031:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[31].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27512,6 +27890,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:032:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[32].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27525,6 +27905,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:033:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[33].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27538,6 +27920,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:034:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[34].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27551,6 +27935,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:035:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[35].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27564,6 +27950,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:036:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[36].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27577,6 +27965,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:037:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[37].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27590,6 +27980,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:038:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[38].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27603,6 +27995,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:039:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[39].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27616,6 +28010,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:040:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[40].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27629,6 +28025,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:041:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[41].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27642,6 +28040,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:042:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[42].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27655,6 +28055,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:043:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[43].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27668,6 +28070,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:044:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[44].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27681,6 +28085,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:045:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[45].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27694,6 +28100,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:046:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[46].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27707,6 +28115,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:047:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[47].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27720,6 +28130,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:048:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[48].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27733,6 +28145,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:049:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[49].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27746,6 +28160,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:050:Info:Desc_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[50].Info.Desc?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27759,6 +28175,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:001:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[1].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27772,6 +28190,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:002:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[2].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27785,6 +28205,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:003:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[3].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27798,6 +28220,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:004:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[4].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27811,6 +28235,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:005:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[5].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27824,6 +28250,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:006:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[6].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27837,6 +28265,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:007:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[7].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27850,6 +28280,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:008:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[8].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27863,6 +28295,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:009:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[9].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27876,6 +28310,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:010:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[10].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27889,6 +28325,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:011:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[11].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27902,6 +28340,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:012:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[12].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27915,6 +28355,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:013:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[13].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27928,6 +28370,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:014:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[14].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27941,6 +28385,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:015:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[15].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27954,6 +28400,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:016:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[16].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27967,6 +28415,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:017:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[17].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27980,6 +28430,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:018:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[18].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -27993,6 +28445,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:019:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[19].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28006,6 +28460,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:020:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[20].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28019,6 +28475,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:021:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[21].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28032,6 +28490,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:022:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[22].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28045,6 +28505,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:023:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[23].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28058,6 +28520,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:024:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[24].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28071,6 +28535,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:025:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[25].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28084,6 +28550,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:026:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[26].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28097,6 +28565,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:027:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[27].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28110,6 +28580,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:028:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[28].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28123,6 +28595,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:029:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[29].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28136,6 +28610,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:030:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[30].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28149,6 +28625,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:031:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[31].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28162,6 +28640,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:032:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[32].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28175,6 +28655,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:033:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[33].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28188,6 +28670,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:034:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[34].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28201,6 +28685,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:035:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[35].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28214,6 +28700,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:036:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[36].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28227,6 +28715,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:037:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[37].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28240,6 +28730,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:038:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[38].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28253,6 +28745,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:039:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[39].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28266,6 +28760,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:040:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[40].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28279,6 +28775,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:041:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[41].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28292,6 +28790,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:042:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[42].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28305,6 +28805,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:043:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[43].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28318,6 +28820,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:044:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[44].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28331,6 +28835,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:045:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[45].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28344,6 +28850,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:046:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[46].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28357,6 +28865,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:047:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[47].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28370,6 +28880,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:048:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[48].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28383,6 +28895,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:049:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[49].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -28396,6 +28910,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:050:Info:DevName_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[50].Info.DevName?")
   field(FTVL, "CHAR")
   field(NELM, "255")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29609,6 +30125,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:001:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[1].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29622,6 +30140,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:002:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[2].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29635,6 +30155,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:003:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[3].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29648,6 +30170,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:004:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[4].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29661,6 +30185,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:005:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[5].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29674,6 +30200,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:006:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[6].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29687,6 +30215,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:007:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[7].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29700,6 +30230,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:008:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[8].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29713,6 +30245,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:009:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[9].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29726,6 +30260,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:010:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[10].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29739,6 +30275,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:011:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[11].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29752,6 +30290,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:012:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[12].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29765,6 +30305,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:013:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[13].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29778,6 +30320,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:014:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[14].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29791,6 +30335,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:015:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[15].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29804,6 +30350,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:016:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[16].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29817,6 +30365,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:017:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[17].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29830,6 +30380,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:018:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[18].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29843,6 +30395,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:019:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[19].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29856,6 +30410,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:020:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[20].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29869,6 +30425,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:021:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[21].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29882,6 +30440,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:022:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[22].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29895,6 +30455,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:023:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[23].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29908,6 +30470,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:024:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[24].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29921,6 +30485,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:025:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[25].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29934,6 +30500,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:026:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[26].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29947,6 +30515,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:027:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[27].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29960,6 +30530,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:028:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[28].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29973,6 +30545,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:029:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[29].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29986,6 +30560,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:030:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[30].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -29999,6 +30575,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:031:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[31].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30012,6 +30590,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:032:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[32].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30025,6 +30605,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:033:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[33].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30038,6 +30620,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:034:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[34].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30051,6 +30635,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:035:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[35].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30064,6 +30650,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:036:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[36].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30077,6 +30665,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:037:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[37].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30090,6 +30680,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:038:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[38].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30103,6 +30695,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:039:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[39].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30116,6 +30710,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:040:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[40].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30129,6 +30725,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:041:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[41].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30142,6 +30740,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:042:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[42].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30155,6 +30755,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:043:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[43].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30168,6 +30770,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:044:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[44].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30181,6 +30785,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:045:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[45].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30194,6 +30800,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:046:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[46].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30207,6 +30815,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:047:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[47].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30220,6 +30830,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:048:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[48].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30233,6 +30845,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:049:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[49].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -30246,6 +30860,8 @@ record(waveform, "PLC:LFE:OPTICS:FFO:02:FF:050:Info:InfoString_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_FastFaultOutput2.astFF[50].Info.InfoString?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41774,6 +42390,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:001:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[1].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41786,6 +42404,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:002:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[2].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41798,6 +42418,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:003:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[3].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41810,6 +42432,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:004:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[4].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41822,6 +42446,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:005:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[5].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41834,6 +42460,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:006:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[6].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41846,6 +42474,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:007:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[7].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41858,6 +42488,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:008:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[8].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41870,6 +42502,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:009:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[9].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41882,6 +42516,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:010:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[10].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41894,6 +42530,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:011:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[11].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41906,6 +42544,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:012:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[12].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41918,6 +42558,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:013:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[13].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41930,6 +42572,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:014:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[14].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41942,6 +42586,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:015:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[15].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41954,6 +42600,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:016:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[16].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41966,6 +42614,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:017:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[17].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41978,6 +42628,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:018:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[18].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -41990,6 +42642,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:019:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[19].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -42002,6 +42656,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:01:AP:Entry:020:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter1.fbBPAssertionPool.epicsDataPool[20].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -43986,6 +44642,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:001:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[1].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -43998,6 +44656,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:002:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[2].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44010,6 +44670,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:003:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[3].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44022,6 +44684,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:004:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[4].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44034,6 +44698,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:005:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[5].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44046,6 +44712,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:006:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[6].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44058,6 +44726,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:007:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[7].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44070,6 +44740,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:008:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[8].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44082,6 +44754,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:009:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[9].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44094,6 +44768,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:010:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[10].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44106,6 +44782,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:011:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[11].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44118,6 +44796,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:012:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[12].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44130,6 +44810,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:013:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[13].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44142,6 +44824,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:014:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[14].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44154,6 +44838,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:015:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[15].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44166,6 +44852,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:016:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[16].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44178,6 +44866,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:017:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[17].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44190,6 +44880,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:018:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[18].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44202,6 +44894,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:019:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[19].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44214,6 +44908,8 @@ record(waveform, "PLC:LFE:OPTICS:ARB:02:AP:Entry:020:Device_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.fbBPAssertionPool.epicsDataPool[20].sDevName?")
   field(FTVL, "CHAR")
   field(NELM, "80")
+  field(MPST, "On Change")
+  field(APST, "On Change")
   info(archive, "VAL")
 }
 
@@ -44306,6 +45002,282 @@ record(longin, "PLC:LFE:OPTICS:ARB:02:ArbitratedBP:Cohort_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_PMPS.g_fbArbiter2.q_stBeamParams.nCohortInt?")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:COUPLE_Y_RBV") {
+  field(DESC, "Main.M1L0.bExecuteCoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteCoupleY?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:COUPLE_Y") {
+  field(DESC, "Main.M1L0.bExecuteCoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleY=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:DECOUPLE_Y_RBV") {
+  field(DESC, "Main.M1L0.bExecuteDecoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteDecoupleY?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:DECOUPLE_Y") {
+  field(DESC, "Main.M1L0.bExecuteDecoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleY=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:COUPLE_X_RBV") {
+  field(DESC, "Main.M1L0.bExecuteCoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteCoupleX?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:COUPLE_X") {
+  field(DESC, "Main.M1L0.bExecuteCoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteCoupleX=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:DECOUPLE_X_RBV") {
+  field(DESC, "Main.M1L0.bExecuteDecoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bExecuteDecoupleX?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L0:HOMS:DECOUPLE_X") {
+  field(DESC, "Main.M1L0.bExecuteDecoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M1L0.bExecuteDecoupleX=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:ALREADY_COUPLED_Y_RBV") {
+  field(DESC, "Main.M1L0.bGantryAlreadyCoupledY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bGantryAlreadyCoupledY?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L0:HOMS:ALREADY_COUPLED_X_RBV") {
+  field(DESC, "Main.M1L0.bGantryAlreadyCoupledX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.bGantryAlreadyCoupledX?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "MR1L0:HOMS:GANTRY_Y_RBV") {
+  field(DESC, "Main.M1L0.fCurrGantryY_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryY_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR1L0:HOMS:GANTRY_X_RBV") {
+  field(DESC, "Main.M1L0.fCurrGantryX_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1L0.fCurrGantryX_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:COUPLE_Y_RBV") {
+  field(DESC, "Main.M2L0.bExecuteCoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteCoupleY?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:COUPLE_Y") {
+  field(DESC, "Main.M2L0.bExecuteCoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleY=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:DECOUPLE_Y_RBV") {
+  field(DESC, "Main.M2L0.bExecuteDecoupleY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteDecoupleY?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:DECOUPLE_Y") {
+  field(DESC, "Main.M2L0.bExecuteDecoupleY")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleY=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:COUPLE_X_RBV") {
+  field(DESC, "Main.M2L0.bExecuteCoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteCoupleX?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:COUPLE_X") {
+  field(DESC, "Main.M2L0.bExecuteCoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteCoupleX=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:DECOUPLE_X_RBV") {
+  field(DESC, "Main.M2L0.bExecuteDecoupleX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bExecuteDecoupleX?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR2L0:HOMS:DECOUPLE_X") {
+  field(DESC, "Main.M2L0.bExecuteDecoupleX")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.M2L0.bExecuteDecoupleX=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:ALREADY_COUPLED_Y_RBV") {
+  field(DESC, "Main.M2L0.bGantryAlreadyCoupledY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bGantryAlreadyCoupledY?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "MR2L0:HOMS:ALREADY_COUPLED_X_RBV") {
+  field(DESC, "Main.M2L0.bGantryAlreadyCoupledX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.bGantryAlreadyCoupledX?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "MR2L0:HOMS:GANTRY_Y_RBV") {
+  field(DESC, "Main.M2L0.fCurrGantryY_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryY_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR2L0:HOMS:GANTRY_X_RBV") {
+  field(DESC, "Main.M2L0.fCurrGantryX_um")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2L0.fCurrGantryX_um?")
+  field(PREC, "3")
+  field(EGU, "um")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
