@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/doctr-versions-menu.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -114,9 +115,9 @@
            <div itemprop="articleBody">
              
   <section id="data-types">
-<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline"></a></h1>
+<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading"></a></h1>
 <section id="fb-coatings-states">
-<h2>FB_Coatings_States<a class="headerlink" href="#fb-coatings-states" title="Permalink to this headline"></a></h2>
+<h2>FB_Coatings_States<a class="headerlink" href="#fb-coatings-states" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -1529,7 +1530,7 @@
 </table>
 </section>
 <section id="lcls-general-fb-basicstats">
-<h2>LCLS_General.FB_BasicStats<a class="headerlink" href="#lcls-general-fb-basicstats" title="Permalink to this headline"></a></h2>
+<h2>LCLS_General.FB_BasicStats<a class="headerlink" href="#lcls-general-fb-basicstats" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -1661,7 +1662,7 @@
 </table>
 </section>
 <section id="lcls-general-fb-listener">
-<h2>LCLS_General.FB_Listener<a class="headerlink" href="#lcls-general-fb-listener" title="Permalink to this headline"></a></h2>
+<h2>LCLS_General.FB_Listener<a class="headerlink" href="#lcls-general-fb-listener" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -1829,7 +1830,7 @@
 </table>
 </section>
 <section id="lcls-general-fb-loghandler">
-<h2>LCLS_General.FB_LogHandler<a class="headerlink" href="#lcls-general-fb-loghandler" title="Permalink to this headline"></a></h2>
+<h2>LCLS_General.FB_LogHandler<a class="headerlink" href="#lcls-general-fb-loghandler" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -2737,7 +2738,7 @@
 </table>
 </section>
 <section id="lcls-general-fb-logmessage">
-<h2>LCLS_General.FB_LogMessage<a class="headerlink" href="#lcls-general-fb-logmessage" title="Permalink to this headline"></a></h2>
+<h2>LCLS_General.FB_LogMessage<a class="headerlink" href="#lcls-general-fb-logmessage" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -2781,7 +2782,7 @@
 </table>
 </section>
 <section id="lcls-general-st-pendingevent">
-<h2>LCLS_General.ST_PendingEvent<a class="headerlink" href="#lcls-general-st-pendingevent" title="Permalink to this headline"></a></h2>
+<h2>LCLS_General.ST_PendingEvent<a class="headerlink" href="#lcls-general-st-pendingevent" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -2885,7 +2886,7 @@
 </table>
 </section>
 <section id="lcls-twincat-motion-dut-motionstage">
-<h2>lcls_twincat_motion.DUT_MotionStage<a class="headerlink" href="#lcls-twincat-motion-dut-motionstage" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_motion.DUT_MotionStage<a class="headerlink" href="#lcls-twincat-motion-dut-motionstage" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -2993,11 +2994,12 @@
 </tr>
 <tr class="row-odd"><td><p>$(PREFIX):PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -3340,6 +3342,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -3364,6 +3367,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -3379,7 +3383,7 @@
 </table>
 </section>
 <section id="lcls-twincat-motion-dut-positionstate">
-<h2>lcls_twincat_motion.DUT_PositionState<a class="headerlink" href="#lcls-twincat-motion-dut-positionstate" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_motion.DUT_PositionState<a class="headerlink" href="#lcls-twincat-motion-dut-positionstate" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -3527,7 +3531,7 @@
 </table>
 </section>
 <section id="lcls-twincat-motion-fb-positionstatebase">
-<h2>lcls_twincat_motion.FB_PositionStateBase<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatebase" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_motion.FB_PositionStateBase<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatebase" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -4900,7 +4904,7 @@
 </table>
 </section>
 <section id="lcls-twincat-motion-fb-positionstatebase-withpmps">
-<h2>lcls_twincat_motion.FB_PositionStateBase_WithPMPS<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatebase-withpmps" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_motion.FB_PositionStateBase_WithPMPS<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatebase-withpmps" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -6305,7 +6309,7 @@
 </table>
 </section>
 <section id="lcls-twincat-motion-fb-positionstatemove">
-<h2>lcls_twincat_motion.FB_PositionStateMove<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatemove" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_motion.FB_PositionStateMove<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatemove" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -6549,7 +6553,7 @@
 </table>
 </section>
 <section id="lcls-twincat-motion-fb-positionstatepmps">
-<h2>lcls_twincat_motion.FB_PositionStatePMPS<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatepmps" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_motion.FB_PositionStatePMPS<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatepmps" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -6585,7 +6589,7 @@
 </table>
 </section>
 <section id="lcls-twincat-motion-fb-positionstatepmps-base">
-<h2>lcls_twincat_motion.FB_PositionStatePMPS_Base<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatepmps-base" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_motion.FB_PositionStatePMPS_Base<a class="headerlink" href="#lcls-twincat-motion-fb-positionstatepmps-base" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -6621,7 +6625,7 @@
 </table>
 </section>
 <section id="lcls-twincat-optics-dut-homs">
-<h2>lcls_twincat_optics.DUT_HOMS<a class="headerlink" href="#lcls-twincat-optics-dut-homs" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_optics.DUT_HOMS<a class="headerlink" href="#lcls-twincat-optics-dut-homs" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -6739,7 +6743,7 @@
 </table>
 </section>
 <section id="lcls-twincat-optics-fb-rmswatch">
-<h2>lcls_twincat_optics.FB_RMSWatch<a class="headerlink" href="#lcls-twincat-optics-fb-rmswatch" title="Permalink to this headline"></a></h2>
+<h2>lcls_twincat_optics.FB_RMSWatch<a class="headerlink" href="#lcls-twincat-optics-fb-rmswatch" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -6799,7 +6803,7 @@
 </table>
 </section>
 <section id="pmps-fb-arbiter">
-<h2>PMPS.FB_Arbiter<a class="headerlink" href="#pmps-fb-arbiter" title="Permalink to this headline"></a></h2>
+<h2>PMPS.FB_Arbiter<a class="headerlink" href="#pmps-fb-arbiter" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -8428,7 +8432,7 @@
 </table>
 </section>
 <section id="pmps-fb-beamparamassertionpool">
-<h2>PMPS.FB_BeamParamAssertionPool<a class="headerlink" href="#pmps-fb-beamparamassertionpool" title="Permalink to this headline"></a></h2>
+<h2>PMPS.FB_BeamParamAssertionPool<a class="headerlink" href="#pmps-fb-beamparamassertionpool" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -9988,7 +9992,7 @@
 </table>
 </section>
 <section id="pmps-fb-hardwareffoutput">
-<h2>PMPS.FB_HardwareFFOutput<a class="headerlink" href="#pmps-fb-hardwareffoutput" title="Permalink to this headline"></a></h2>
+<h2>PMPS.FB_HardwareFFOutput<a class="headerlink" href="#pmps-fb-hardwareffoutput" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19272,7 +19276,7 @@
 </table>
 </section>
 <section id="pmps-fb-subsystoarbiter-io">
-<h2>PMPS.FB_SubSysToArbiter_IO<a class="headerlink" href="#pmps-fb-subsystoarbiter-io" title="Permalink to this headline"></a></h2>
+<h2>PMPS.FB_SubSysToArbiter_IO<a class="headerlink" href="#pmps-fb-subsystoarbiter-io" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19308,7 +19312,7 @@
 </table>
 </section>
 <section id="pmps-st-beamparams">
-<h2>PMPS.ST_BeamParams<a class="headerlink" href="#pmps-st-beamparams" title="Permalink to this headline"></a></h2>
+<h2>PMPS.ST_BeamParams<a class="headerlink" href="#pmps-st-beamparams" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19381,7 +19385,7 @@
 </table>
 </section>
 <section id="pmps-st-bp-arbinternal">
-<h2>PMPS.ST_BP_ArbInternal<a class="headerlink" href="#pmps-st-bp-arbinternal" title="Permalink to this headline"></a></h2>
+<h2>PMPS.ST_BP_ArbInternal<a class="headerlink" href="#pmps-st-bp-arbinternal" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19478,7 +19482,7 @@
 </table>
 </section>
 <section id="pmps-st-ff">
-<h2>PMPS.ST_FF<a class="headerlink" href="#pmps-st-ff" title="Permalink to this headline"></a></h2>
+<h2>PMPS.ST_FF<a class="headerlink" href="#pmps-st-ff" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19682,7 +19686,7 @@
 </table>
 </section>
 <section id="pmps-st-ffinfo">
-<h2>PMPS.ST_FFInfo<a class="headerlink" href="#pmps-st-ffinfo" title="Permalink to this headline"></a></h2>
+<h2>PMPS.ST_FFInfo<a class="headerlink" href="#pmps-st-ffinfo" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19750,7 +19754,7 @@
 </table>
 </section>
 <section id="pmps-st-ffoverride">
-<h2>PMPS.ST_FFOverride<a class="headerlink" href="#pmps-st-ffoverride" title="Permalink to this headline"></a></h2>
+<h2>PMPS.ST_FFOverride<a class="headerlink" href="#pmps-st-ffoverride" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19874,7 +19878,7 @@
 </table>
 </section>
 <section id="pmps-st-pmps-aperture">
-<h2>PMPS.ST_PMPS_Aperture<a class="headerlink" href="#pmps-st-pmps-aperture" title="Permalink to this headline"></a></h2>
+<h2>PMPS.ST_PMPS_Aperture<a class="headerlink" href="#pmps-st-pmps-aperture" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19920,7 +19924,7 @@
 </table>
 </section>
 <section id="pmps-t-hashtableentry">
-<h2>PMPS.T_HashTableEntry<a class="headerlink" href="#pmps-t-hashtableentry" title="Permalink to this headline"></a></h2>
+<h2>PMPS.T_HashTableEntry<a class="headerlink" href="#pmps-t-hashtableentry" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -19948,7 +19952,7 @@
 </table>
 </section>
 <section id="st-beamparams-io">
-<h2>ST_BeamParams_IO<a class="headerlink" href="#st-beamparams-io" title="Permalink to this headline"></a></h2>
+<h2>ST_BeamParams_IO<a class="headerlink" href="#st-beamparams-io" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -20016,7 +20020,7 @@
 </table>
 </section>
 <section id="st-loggingeventinfo">
-<h2>ST_LoggingEventInfo<a class="headerlink" href="#st-loggingeventinfo" title="Permalink to this headline"></a></h2>
+<h2>ST_LoggingEventInfo<a class="headerlink" href="#st-loggingeventinfo" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -20120,7 +20124,7 @@
 </table>
 </section>
 <section id="st-pmps-aperture-io">
-<h2>ST_PMPS_Aperture_IO<a class="headerlink" href="#st-pmps-aperture-io" title="Permalink to this headline"></a></h2>
+<h2>ST_PMPS_Aperture_IO<a class="headerlink" href="#st-pmps-aperture-io" title="Permalink to this heading"></a></h2>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -20167,7 +20171,7 @@
 </section>
 </section>
 <section id="database-records">
-<h1>Database Records<a class="headerlink" href="#database-records" title="Permalink to this headline"></a></h1>
+<h1>Database Records<a class="headerlink" href="#database-records" title="Permalink to this heading"></a></h1>
 <table class="docutils align-center">
 <colgroup>
 <col style="width: 25%" />
@@ -22872,11 +22876,12 @@
 </tr>
 <tr class="row-even"><td><p>MR1L0:HOMS:MMS:BENDER:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -23219,6 +23224,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -23243,6 +23249,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -23346,11 +23353,12 @@
 </tr>
 <tr class="row-odd"><td><p>MR1L0:HOMS:MMS:PITCH:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -23693,6 +23701,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -23717,6 +23726,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -23820,11 +23830,12 @@
 </tr>
 <tr class="row-even"><td><p>MR1L0:HOMS:MMS:XDWN:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -24167,6 +24178,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -24191,6 +24203,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -24294,11 +24307,12 @@
 </tr>
 <tr class="row-odd"><td><p>MR1L0:HOMS:MMS:XUP:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -24641,6 +24655,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -24665,6 +24680,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -24768,11 +24784,12 @@
 </tr>
 <tr class="row-even"><td><p>MR1L0:HOMS:MMS:YDWN:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -25115,6 +25132,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -25139,6 +25157,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -25242,11 +25261,12 @@
 </tr>
 <tr class="row-odd"><td><p>MR1L0:HOMS:MMS:YUP:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -25589,6 +25609,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -25613,6 +25634,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -27479,11 +27501,12 @@
 </tr>
 <tr class="row-odd"><td><p>MR2L0:HOMS:MMS:BENDER:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -27826,6 +27849,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -27850,6 +27874,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -27953,11 +27978,12 @@
 </tr>
 <tr class="row-even"><td><p>MR2L0:HOMS:MMS:PITCH:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -28300,6 +28326,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -28324,6 +28351,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -28427,11 +28455,12 @@
 </tr>
 <tr class="row-odd"><td><p>MR2L0:HOMS:MMS:XDWN:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -28774,6 +28803,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -28798,6 +28828,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -28901,11 +28932,12 @@
 </tr>
 <tr class="row-even"><td><p>MR2L0:HOMS:MMS:XUP:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -29248,6 +29280,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -29272,6 +29305,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -29375,11 +29409,12 @@
 </tr>
 <tr class="row-odd"><td><p>MR2L0:HOMS:MMS:YDWN:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -29722,6 +29757,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -29746,6 +29782,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -29849,11 +29886,12 @@
 </tr>
 <tr class="row-even"><td><p>MR2L0:HOMS:MMS:YUP:PLC:bError_RBV</p></td>
 <td><p>bi</p></td>
-<td><p>TRUE if we</p></td>
+<td><p>TRUE if we are in an error state</p></td>
 <td><div class="line-block">
 <div class="line">field: ONAM TRUE</div>
 <div class="line">field: ZNAM FALSE</div>
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -30196,6 +30234,7 @@
 <td><p>Error code if nonzero</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
@@ -30220,6 +30259,7 @@
 <td><p>Message to identify the error state</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
+<div class="line">update: 100hz notify</div>
 </div>
 </td>
 </tr>
