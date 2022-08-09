@@ -90,6 +90,10 @@
     <Folder Include="POUs\Serial Comm" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="LCLS General">
+      <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
+      <Namespace>LCLS_General</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="System_VisuElemMeter">
       <DefaultResolution>VisuElemMeter, 3.5.10.0 (System)</DefaultResolution>
       <Namespace>VisuElemMeter</Namespace>
@@ -166,9 +170,6 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,2.6.0,SLAC">
-      <Namespace>LCLS_General</Namespace>
-    </LibraryReference>
     <LibraryReference Include="lcls-twincat-motion,1.7.0,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>
@@ -180,6 +181,9 @@
     </LibraryReference>
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderResolution Include="LCLS General">
+      <Resolution>LCLS General, * (SLAC)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 1.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
