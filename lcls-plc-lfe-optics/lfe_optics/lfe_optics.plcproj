@@ -166,7 +166,7 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,2.4.2,SLAC">
+    <LibraryReference Include="LCLS General,2.6.0,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
     <LibraryReference Include="lcls-twincat-motion,1.7.0,SLAC">
