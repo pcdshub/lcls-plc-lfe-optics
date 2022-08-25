@@ -1210,7 +1210,7 @@ LCLS_General.FB_BasicStats
       - | io: input
 
 
-   
+     
 LCLS_General.FB_Listener
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2124,7 +2124,7 @@ LCLS_General.ST_PendingEvent
       - | io: input
 
 
-                                                
+   
 lcls_twincat_motion.DUT_MotionStage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -5037,7 +5037,7 @@ lcls_twincat_motion.FB_PositionStatePMPS_Base
       - | io: output
 
 
-        
+                                                     
 lcls_twincat_optics.DUT_HOMS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -5052,13 +5052,15 @@ lcls_twincat_optics.DUT_HOMS
     * - $(PREFIX):ALREADY_COUPLED_X_RBV
       - bi
       - $(SYMBOL).bGantryAlreadyCoupledX
-      - | io: input
+      - | field: ZSV MAJOR
+        | io: input
 
 
     * - $(PREFIX):ALREADY_COUPLED_Y_RBV
       - bi
       - $(SYMBOL).bGantryAlreadyCoupledY
-      - | io: input
+      - | field: ZSV MAJOR
+        | io: input
 
 
     * - $(PREFIX):COUPLE_X
@@ -5123,7 +5125,55 @@ lcls_twincat_optics.DUT_HOMS
         | io: input
 
 
-     
+  
+lcls_twincat_optics.FB_HomsStats
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):XGANDIFFARRAY_RBV
+      - waveform
+      - $(SYMBOL).aXGantryDiff
+      - | io: input
+
+
+    * - $(PREFIX):XGANDIFFMEAN_RBV
+      - ai
+      - $(SYMBOL).fXGantryDiffMean
+      - | io: input
+
+
+    * - $(PREFIX):XGANDIFFSTDEV_RBV
+      - ai
+      - $(SYMBOL).fXGantryDiffStDev
+      - | io: input
+
+
+    * - $(PREFIX):YGANDIFFARRAY_RBV
+      - waveform
+      - $(SYMBOL).aYGantryDiff
+      - | io: input
+
+
+    * - $(PREFIX):YGANDIFFMEAN_RBV
+      - ai
+      - $(SYMBOL).fYGantryDiffMean
+      - | io: input
+
+
+    * - $(PREFIX):YGANDIFFSTDEV_RBV
+      - ai
+      - $(SYMBOL).fYGantryDiffStDev
+      - | io: input
+
+
+    
 lcls_twincat_optics.FB_RMSWatch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -15534,13 +15584,15 @@ Database Records
     * - MR1L0:HOMS:ALREADY_COUPLED_X_RBV
       - bi
       - Main.M1L0.bGantryAlreadyCoupledX
-      - | io: input
+      - | field: ZSV MAJOR
+        | io: input
 
 
     * - MR1L0:HOMS:ALREADY_COUPLED_Y_RBV
       - bi
       - Main.M1L0.bGantryAlreadyCoupledY
-      - | io: input
+      - | field: ZSV MAJOR
+        | io: input
 
 
     * - MR1L0:HOMS:COATING:STATE:01:ACCL
@@ -19573,16 +19625,54 @@ Database Records
       - | io: input
 
 
+    * - MR1L0:HOMS:STATS:XGANDIFFARRAY_RBV
+      - waveform
+      - Main.fbMR1L0GantryStats.aXGantryDiff
+      - | io: input
+
+
+    * - MR1L0:HOMS:STATS:XGANDIFFMEAN_RBV
+      - ai
+      - Main.fbMR1L0GantryStats.fXGantryDiffMean
+      - | io: input
+
+
+    * - MR1L0:HOMS:STATS:XGANDIFFSTDEV_RBV
+      - ai
+      - Main.fbMR1L0GantryStats.fXGantryDiffStDev
+      - | io: input
+
+
+    * - MR1L0:HOMS:STATS:YGANDIFFARRAY_RBV
+      - waveform
+      - Main.fbMR1L0GantryStats.aYGantryDiff
+      - | io: input
+
+
+    * - MR1L0:HOMS:STATS:YGANDIFFMEAN_RBV
+      - ai
+      - Main.fbMR1L0GantryStats.fYGantryDiffMean
+      - | io: input
+
+
+    * - MR1L0:HOMS:STATS:YGANDIFFSTDEV_RBV
+      - ai
+      - Main.fbMR1L0GantryStats.fYGantryDiffStDev
+      - | io: input
+
+
     * - MR2L0:HOMS:ALREADY_COUPLED_X_RBV
       - bi
       - Main.M2L0.bGantryAlreadyCoupledX
-      - | io: input
+      - | field: ZSV MAJOR
+        | io: input
 
 
     * - MR2L0:HOMS:ALREADY_COUPLED_Y_RBV
       - bi
       - Main.M2L0.bGantryAlreadyCoupledY
-      - | io: input
+      - | field: ZSV MAJOR
+        | io: input
 
 
     * - MR2L0:HOMS:COATING:STATE:01:ACCL
@@ -23177,6 +23267,42 @@ Database Records
     * - MR2L0:HOMS:MMS:YUP:PLC:sName_RBV
       - waveform
       - PLC program name
+      - | io: input
+
+
+    * - MR2L0:HOMS:STATS:XGANDIFFARRAY_RBV
+      - waveform
+      - Main.fbMR2L0GantryStats.aXGantryDiff
+      - | io: input
+
+
+    * - MR2L0:HOMS:STATS:XGANDIFFMEAN_RBV
+      - ai
+      - Main.fbMR2L0GantryStats.fXGantryDiffMean
+      - | io: input
+
+
+    * - MR2L0:HOMS:STATS:XGANDIFFSTDEV_RBV
+      - ai
+      - Main.fbMR2L0GantryStats.fXGantryDiffStDev
+      - | io: input
+
+
+    * - MR2L0:HOMS:STATS:YGANDIFFARRAY_RBV
+      - waveform
+      - Main.fbMR2L0GantryStats.aYGantryDiff
+      - | io: input
+
+
+    * - MR2L0:HOMS:STATS:YGANDIFFMEAN_RBV
+      - ai
+      - Main.fbMR2L0GantryStats.fYGantryDiffMean
+      - | io: input
+
+
+    * - MR2L0:HOMS:STATS:YGANDIFFSTDEV_RBV
+      - ai
+      - Main.fbMR2L0GantryStats.fYGantryDiffStDev
       - | io: input
 
 

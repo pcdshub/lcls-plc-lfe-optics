@@ -6,7 +6,7 @@ Pragmas
     :header: PLC Name, Total Pragmas, Errors
     :align: center
 
-    :ref:`lfe_optics <lfe_optics_overview_pragmas>`, 75, 0
+    :ref:`lfe_optics <lfe_optics_overview_pragmas>`, 77, 0
 
 
 .. _lfe_optics_overview_pragmas:
@@ -15,7 +15,7 @@ Pragmas
 lfe_optics
 ^^^^^^^^^^
 
-Total pragmas found: 75
+Total pragmas found: 77
 Total linter errors: 0
 
 

@@ -330,9 +330,11 @@ Links
         lfe_optics Instance, PlcTask Inputs^Main.M11.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Pitch, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M11.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_PitchCoarse, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M11.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_PitchCoarse, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M11.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL5042_M2L0_PitchBender, FB Inputs Channel 1^Position
         lfe_optics Instance, PlcTask Inputs^Main.M12.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Bender, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M12.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Bender, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M12.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Bender, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M12.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL5042_M2L0_PitchBender, FB Inputs Channel 2^Position
         lfe_optics Instance, PlcTask Inputs^Main.M1L0.fbRunHOMS.bSTOEnable1, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL1004_M1L0_STO, Channel 1^Input
         lfe_optics Instance, PlcTask Inputs^Main.M1L0.fbRunHOMS.bSTOEnable2, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL1004_M1L0_STO, Channel 2^Input
         lfe_optics Instance, PlcTask Inputs^Main.M1L0.fbRunHOMS.stXdwnEnc^Count, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_Xupdwn, FB Inputs Channel 2^Position
@@ -351,15 +353,18 @@ Links
         lfe_optics Instance, PlcTask Inputs^Main.M3.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M1L0-Xup, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M3.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Xup, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M3.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Xup, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M3.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_Xupdwn, FB Inputs Channel 1^Position
         lfe_optics Instance, PlcTask Inputs^Main.M4.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M1L0-Xdwn, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M4.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Xdwn, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M4.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Xdwn, STM Status^Status^Digital input 1
         lfe_optics Instance, PlcTask Inputs^Main.M5.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M1L0-Pitch, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M5.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_PitchCoarse, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M5.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_PitchCoarse, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M5.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_PitchBender, FB Inputs Channel 1^Position
         lfe_optics Instance, PlcTask Inputs^Main.M6.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M1L0-Bender, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M6.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Bender, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M6.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL7041-1000_M1L0_Bender, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M6.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_PitchBender, FB Inputs Channel 2^Position
         lfe_optics Instance, PlcTask Inputs^Main.M7.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Yup, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M7.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Yup, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M7.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Yup, STM Status^Status^Digital input 1
@@ -370,6 +375,7 @@ Links
         lfe_optics Instance, PlcTask Inputs^Main.M9.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M2L0-Xup, Outputs^ToPlc
         lfe_optics Instance, PlcTask Inputs^Main.M9.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Xup, STM Status^Status^Digital input 2
         lfe_optics Instance, PlcTask Inputs^Main.M9.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL7041-1000_M2L0_Xup, STM Status^Status^Digital input 1
+        lfe_optics Instance, PlcTask Inputs^Main.M9.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_Xupdwn, FB Inputs Channel 1^Position
         lfe_optics Instance, PlcTask Inputs^Main.fbArbiterIO.i_stCurrentBP, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_PRE, IO Inputs^CurrentBP
         lfe_optics Instance, PlcTask Inputs^Main.fbArbiterIO.xTxPDO_state, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO state
         lfe_optics Instance, PlcTask Inputs^Main.fbArbiterIO.xTxPDO_toggle, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO toggle

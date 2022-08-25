@@ -341,7 +341,8 @@ END_VAR
     <span class="n">fbMotionStage_m2</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Xup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Xup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">XUP</span>
     <span class="s1">&#39;}</span>
@@ -357,7 +358,8 @@ END_VAR
     <span class="n">fbMotionStage_m4</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_PitchCoarse</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_PitchCoarse</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">PITCH</span>
     <span class="s1">&#39;}</span>
@@ -365,7 +367,8 @@ END_VAR
     <span class="n">fbMotionStage_m5</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Bender</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Bender</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">BENDER</span>
     <span class="s1">&#39;}</span>
@@ -382,6 +385,10 @@ END_VAR
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span>
     <span class="s1">&#39;}</span>
     <span class="n">M1L0</span> <span class="p">:</span> <span class="n">DUT_HOMS</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+            <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">STATS</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L0GantryStats</span> <span class="p">:</span> <span class="n">FB_HomsStats</span><span class="p">;</span>
 
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Arrays</span><span class="o">/</span><span class="n">RMS</span> <span class="n">Watch</span><span class="p">:</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -507,7 +514,8 @@ END_VAR
     <span class="n">fbMotionStage_m8</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Xup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Xup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">XUP</span>
     <span class="s1">&#39;}</span>
@@ -523,14 +531,16 @@ END_VAR
     <span class="n">fbMotionStage_m10</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_PitchCoarse</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_PitchCoarse</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">PITCH</span>
     <span class="s1">&#39;}</span>
     <span class="n">M11</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR2L0_PITCH&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Pitch</span> <span class="n">Stepper</span>
     <span class="n">fbMotionStage_m11</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;</span>
-                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Bender</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Bender</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">BENDER</span>
     <span class="s1">&#39;}</span>
@@ -547,6 +557,10 @@ END_VAR
             <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span>
     <span class="s1">&#39;}</span>
     <span class="n">M2L0</span> <span class="p">:</span> <span class="n">DUT_HOMS</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+            <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">STATS</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR2L0GantryStats</span> <span class="p">:</span> <span class="n">FB_HomsStats</span><span class="p">;</span>
 
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Arrays</span><span class="o">/</span><span class="n">RMS</span> <span class="n">Watch</span><span class="p">:</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -756,6 +770,11 @@ END_VAR
 <span class="n">fbMotionStage_m5</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M5</span><span class="p">);</span>
 <span class="n">fbMotionStage_m6</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M6</span><span class="p">);</span>
 
+<span class="o">//</span> <span class="n">Calulate</span> <span class="n">Gantry</span> <span class="n">Stats</span><span class="p">:</span>
+<span class="n">fbMR1L0GantryStats</span><span class="p">(</span><span class="n">homs</span><span class="o">:=</span><span class="n">M1L0</span><span class="p">,</span> <span class="n">fbUpStreamY</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span> <span class="n">fbUpStreamX</span><span class="o">:=</span><span class="n">M3</span><span class="p">);</span>
+<span class="n">fbMR2L0GantryStats</span><span class="p">(</span><span class="n">homs</span><span class="o">:=</span><span class="n">M2L0</span><span class="p">,</span> <span class="n">fbUpStreamY</span><span class="o">:=</span><span class="n">M7</span><span class="p">,</span> <span class="n">fbUpStreamX</span><span class="o">:=</span><span class="n">M9</span><span class="p">);</span>
+
+
 <span class="o">//</span> <span class="n">Calculate</span> <span class="n">Pitch</span> <span class="n">RMS</span> <span class="n">Error</span><span class="p">:</span>
 <span class="n">fbYRMSErrorM1L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span>
                 <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxYRMSErrorM1L0</span><span class="p">,</span>
@@ -864,12 +883,12 @@ END_VAR
                             <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinXRMSErrorM2L0</span><span class="p">);</span>
 
 <span class="n">fbPitchRMSErrorM2L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M11</span><span class="p">,</span>
-                    <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxPitchRMSErrorM2L0</span><span class="p">,</span>
-                                    <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinPitchRMSErrorM2L0</span><span class="p">);</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxPitchRMSErrorM2L0</span><span class="p">,</span>
+                            <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinPitchRMSErrorM2L0</span><span class="p">);</span>
 
 <span class="n">fbBenderRMSErrorM2L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M12</span><span class="p">,</span>
-                     <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxBenderRMSErrorM2L0</span><span class="p">,</span>
-                                 <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinBenderRMSErrorM2L0</span><span class="p">);</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxBenderRMSErrorM2L0</span><span class="p">,</span>
+                <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinBenderRMSErrorM2L0</span><span class="p">);</span>
 
 <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Control</span>
 <span class="o">//</span><span class="n">fbM2L0PitchControl</span><span class="p">(</span><span class="n">Pitch</span><span class="o">:=</span><span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">M2L0_Pitch</span><span class="p">,</span>

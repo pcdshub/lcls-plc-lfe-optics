@@ -67,6 +67,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-motion-fb-positionstatepmps">lcls_twincat_motion.FB_PositionStatePMPS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-motion-fb-positionstatepmps-base">lcls_twincat_motion.FB_PositionStatePMPS_Base</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-optics-dut-homs">lcls_twincat_optics.DUT_HOMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-optics-fb-homsstats">lcls_twincat_optics.FB_HomsStats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-optics-fb-rmswatch">lcls_twincat_optics.FB_RMSWatch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pmps-fb-arbiter">PMPS.FB_Arbiter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pmps-fb-beamparamassertionpool">PMPS.FB_BeamParamAssertionPool</a></li>
@@ -6645,6 +6646,7 @@
 <td><p>bi</p></td>
 <td><p>$(SYMBOL).bGantryAlreadyCoupledX</p></td>
 <td><div class="line-block">
+<div class="line">field: ZSV MAJOR</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -6653,6 +6655,7 @@
 <td><p>bi</p></td>
 <td><p>$(SYMBOL).bGantryAlreadyCoupledY</p></td>
 <td><div class="line-block">
+<div class="line">field: ZSV MAJOR</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -6735,6 +6738,74 @@
 <td><p>$(SYMBOL).fCurrGantryY_um</p></td>
 <td><div class="line-block">
 <div class="line">field: EGU um</div>
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lcls-twincat-optics-fb-homsstats">
+<h2>lcls_twincat_optics.FB_HomsStats<a class="headerlink" href="#lcls-twincat-optics-fb-homsstats" title="Permalink to this heading"></a></h2>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):XGANDIFFARRAY_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).aXGantryDiff</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):XGANDIFFMEAN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fXGantryDiffMean</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):XGANDIFFSTDEV_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fXGantryDiffStDev</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):YGANDIFFARRAY_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>$(SYMBOL).aYGantryDiff</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):YGANDIFFMEAN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fYGantryDiffMean</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):YGANDIFFSTDEV_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fYGantryDiffStDev</p></td>
+<td><div class="line-block">
 <div class="line">io: input</div>
 </div>
 </td>
@@ -20590,6 +20661,7 @@
 <td><p>bi</p></td>
 <td><p>Main.M1L0.bGantryAlreadyCoupledX</p></td>
 <td><div class="line-block">
+<div class="line">field: ZSV MAJOR</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -20598,6 +20670,7 @@
 <td><p>bi</p></td>
 <td><p>Main.M1L0.bGantryAlreadyCoupledY</p></td>
 <td><div class="line-block">
+<div class="line">field: ZSV MAJOR</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -25646,10 +25719,59 @@
 </div>
 </td>
 </tr>
+<tr class="row-odd"><td><p>MR1L0:HOMS:STATS:XGANDIFFARRAY_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Main.fbMR1L0GantryStats.aXGantryDiff</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>MR1L0:HOMS:STATS:XGANDIFFMEAN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR1L0GantryStats.fXGantryDiffMean</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MR1L0:HOMS:STATS:XGANDIFFSTDEV_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR1L0GantryStats.fXGantryDiffStDev</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>MR1L0:HOMS:STATS:YGANDIFFARRAY_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Main.fbMR1L0GantryStats.aYGantryDiff</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MR1L0:HOMS:STATS:YGANDIFFMEAN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR1L0GantryStats.fYGantryDiffMean</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>MR1L0:HOMS:STATS:YGANDIFFSTDEV_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR1L0GantryStats.fYGantryDiffStDev</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
 <tr class="row-odd"><td><p>MR2L0:HOMS:ALREADY_COUPLED_X_RBV</p></td>
 <td><p>bi</p></td>
 <td><p>Main.M2L0.bGantryAlreadyCoupledX</p></td>
 <td><div class="line-block">
+<div class="line">field: ZSV MAJOR</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -25658,6 +25780,7 @@
 <td><p>bi</p></td>
 <td><p>Main.M2L0.bGantryAlreadyCoupledY</p></td>
 <td><div class="line-block">
+<div class="line">field: ZSV MAJOR</div>
 <div class="line">io: input</div>
 </div>
 </td>
@@ -30266,6 +30389,54 @@
 <tr class="row-odd"><td><p>MR2L0:HOMS:MMS:YUP:PLC:sName_RBV</p></td>
 <td><p>waveform</p></td>
 <td><p>PLC program name</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>MR2L0:HOMS:STATS:XGANDIFFARRAY_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Main.fbMR2L0GantryStats.aXGantryDiff</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MR2L0:HOMS:STATS:XGANDIFFMEAN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR2L0GantryStats.fXGantryDiffMean</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>MR2L0:HOMS:STATS:XGANDIFFSTDEV_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR2L0GantryStats.fXGantryDiffStDev</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MR2L0:HOMS:STATS:YGANDIFFARRAY_RBV</p></td>
+<td><p>waveform</p></td>
+<td><p>Main.fbMR2L0GantryStats.aYGantryDiff</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>MR2L0:HOMS:STATS:YGANDIFFMEAN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR2L0GantryStats.fYGantryDiffMean</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>MR2L0:HOMS:STATS:YGANDIFFSTDEV_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>Main.fbMR2L0GantryStats.fYGantryDiffStDev</p></td>
 <td><div class="line-block">
 <div class="line">io: input</div>
 </div>
