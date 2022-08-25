@@ -1,0 +1,29 @@
+lcls-plc-lfe-optics
+-------------------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: lcls-plc-lfe-optics
+
+    lcls-plc-lfe-optics_pragmas
+    lcls-plc-lfe-optics_nc
+    lcls-plc-lfe-optics_boxes
+    lcls-plc-lfe-optics_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: lfe_optics
+
+    lcls-plc-lfe-optics_lfe_optics_summary
+    lcls-plc-lfe-optics_lfe_optics_epics
+    lcls-plc-lfe-optics_lfe_optics_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
