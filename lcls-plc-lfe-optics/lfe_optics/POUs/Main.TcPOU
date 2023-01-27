@@ -619,6 +619,7 @@ MR2L0_Coating_enumSet := fbMR2L0_States.setState;
 
 
 P_CoatingProtections();
+PRG_Environment();
 
 // Logging
 fbLogHandler();

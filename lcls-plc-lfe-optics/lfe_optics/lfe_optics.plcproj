@@ -65,6 +65,9 @@
     <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_Environment.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\P_CoatingProtections.TcPOU">
       <SubType>Code</SubType>
     </Compile>
