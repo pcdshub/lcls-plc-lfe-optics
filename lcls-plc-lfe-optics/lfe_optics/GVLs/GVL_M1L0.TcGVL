@@ -13,7 +13,7 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FLOW_PRESS]^AI Standard Channel 1^Value'}
     fM1L0_Flow_1 : FB_AnalogInput;
     {attribute 'pytmc' := '
-		pv: MR1L0:KBO:FLOW:1
+		pv: MR1L0:HOMS:FLOW:1
         field: EGU lpm
         io: i
     '}   
@@ -21,7 +21,7 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FLOW_PRESS]^AI Standard Channel 2^Value'}
     fM1L0_Flow_2 : FB_AnalogInput;
     {attribute 'pytmc' := '
-		pv: MR1L0:KBO:FLOW:2
+		pv: MR1L0:HOMS:FLOW:2
         field: EGU lpm
         io: i
     '} 
@@ -29,7 +29,7 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FLOW_PRESS]^AI Standard Channel 3^Value'}
     fM1L0_Press_1 : FB_AnalogInput;
     {attribute 'pytmc' := '
-		pv: MR1L0:KBO:PRESS:1
+		pv: MR1L0:HOMS:PRESS:1
         field: EGU bar
         io: i
     '}      
