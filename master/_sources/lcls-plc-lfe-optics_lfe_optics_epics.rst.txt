@@ -1792,7 +1792,7 @@ FB_Coatings_States
         | io: output
 
 
-  
+   
 LCLS_General.FB_BasicStats
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -7071,7 +7071,7 @@ lcls_twincat_motion.FB_PositionStatePMPS_Base
       - | io: output
 
 
-                                                     
+                                                      
 lcls_twincat_optics.DUT_HOMS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -18151,6 +18151,48 @@ Database Records
       - longin
       - Total log messages on the last cycle
       - | io: input
+
+
+    * - MR1L0:HOMS:FWM:1_RBV
+      - ai
+      - GVL_M1L0.fM1L0_Flow_1_val
+      - | field: EGU lpm
+        | io: input
+
+
+    * - MR1L0:HOMS:FWM:2_RBV
+      - ai
+      - GVL_M1L0.fM1L0_Flow_2_val
+      - | field: EGU lpm
+        | io: input
+
+
+    * - MR1L0:HOMS:PRSM:1_RBV
+      - ai
+      - GVL_M1L0.fM1L0_Press_1_val
+      - | field: EGU bar
+        | io: input
+
+
+    * - MR2L0:HOMS:FWM:1_RBV
+      - ai
+      - GVL_M2L0.fM2L0_Flow_1_val
+      - | field: EGU lpm
+        | io: input
+
+
+    * - MR2L0:HOMS:FWM:2_RBV
+      - ai
+      - GVL_M2L0.fM2L0_Flow_2_val
+      - | field: EGU lpm
+        | io: input
+
+
+    * - MR2L0:HOMS:PRSM:1_RBV
+      - ai
+      - GVL_M2L0.fM2L0_Press_1_val
+      - | field: EGU bar
+        | io: input
 
 
     * - PLC:LFE:OPTICS:FFO:01:FF:010:BeamPermitted_RBV
