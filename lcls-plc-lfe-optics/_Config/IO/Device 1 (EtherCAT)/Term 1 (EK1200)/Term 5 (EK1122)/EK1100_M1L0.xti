@@ -40,7 +40,7 @@
 		<Box File="EL1004_M1L0_STO.xti" Id="17">
 			<EtherCAT PortABoxInfo="#x01000010"/>
 		</Box>
-		<Box File="EL3054_M1L0_FLOW_PRESS.xti" Id="51">
+		<Box File="EL3054_M1L0_FMW_PRSM.xti" Id="51">
 			<EtherCAT PortABoxInfo="#x01000011"/>
 		</Box>
 		<Box File="EL9505_M1L0_BenderLims.xti" Id="18">

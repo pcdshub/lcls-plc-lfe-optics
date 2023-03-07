@@ -10,26 +10,26 @@ VAR_GLOBAL
 		                                 diEncPosLimHi := 8662020,
 		                                 diEncPosLimLo := 8507095);
     // M1L0 Flow Press Sensors
-    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FLOW_PRESS]^AI Standard Channel 1^Value'}
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 1^Value'}
     fM1L0_Flow_1 : FB_AnalogInput;
     {attribute 'pytmc' := '
-		pv: MR1L0:HOMS:FLOW:1
+		pv: MR1L0:HOMS:FWM:1
         field: EGU lpm
         io: i
     '}   
     fM1L0_Flow_1_val : LREAL;
-    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FLOW_PRESS]^AI Standard Channel 2^Value'}
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 2^Value'}
     fM1L0_Flow_2 : FB_AnalogInput;
     {attribute 'pytmc' := '
-		pv: MR1L0:HOMS:FLOW:2
+		pv: MR1L0:HOMS:FWM:2
         field: EGU lpm
         io: i
     '} 
     fM1L0_Flow_2_val : LREAL; 
-    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FLOW_PRESS]^AI Standard Channel 3^Value'}
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 3^Value'}
     fM1L0_Press_1 : FB_AnalogInput;
     {attribute 'pytmc' := '
-		pv: MR1L0:HOMS:PRESS:1
+		pv: MR1L0:HOMS:PRSM:1
         field: EGU bar
         io: i
     '}      
