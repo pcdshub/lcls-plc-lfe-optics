@@ -3,28 +3,28 @@
   <GVL Name="GVL_PMPS" Id="{dbb69905-b1f8-4d24-b473-51203e2d0846}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	// Implementation of the FFO
-	{attribute 'pytmc' := '
-		pv: PLC:LFE:OPTICS:FFO:01
-	'}
-	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
-	g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
+    // Implementation of the FFO
+    {attribute 'pytmc' := '
+        pv: PLC:LFE:OPTICS:FFO:01
+    '}
+    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
+    g_FastFaultOutput1 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
 
-	{attribute 'pytmc' := '
-		pv: PLC:LFE:OPTICS:FFO:02
-	'}
-	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
-	g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
+    {attribute 'pytmc' := '
+        pv: PLC:LFE:OPTICS:FFO:02
+    '}
+    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
+    g_FastFaultOutput2 : FB_HardwareFFOutput := (bAutoReset:=TRUE, i_sNetID:='172.21.88.66.1.1');
 
-	{attribute 'pytmc' := '
-		pv: PLC:LFE:OPTICS:ARB:01
-	'}
-	g_fbArbiter1 : FB_Arbiter(1);
+    {attribute 'pytmc' := '
+        pv: PLC:LFE:OPTICS:ARB:01
+    '}
+    g_fbArbiter1 : FB_Arbiter(1);
 
-	{attribute 'pytmc' := '
-		pv: PLC:LFE:OPTICS:ARB:02
-	'}
-	g_fbArbiter2 : FB_Arbiter(2);
+    {attribute 'pytmc' := '
+        pv: PLC:LFE:OPTICS:ARB:02
+    '}
+    g_fbArbiter2 : FB_Arbiter(2);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

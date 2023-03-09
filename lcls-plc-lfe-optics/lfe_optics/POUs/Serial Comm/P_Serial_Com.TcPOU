@@ -3,30 +3,30 @@
   <POU Name="P_Serial_Com" Id="{fa981f30-4d2c-4d48-ab6c-00ec78d696a1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Serial_Com
 VAR
-	fbSerialLineControl_EL6001_M1L0: SerialLineControl; // M1L0 Serial Comm Function Block
-	fbSerialLineControl_EL6001_M2L0: SerialLineControl; // M2L0 Serial Comm Function Block
+    fbSerialLineControl_EL6001_M1L0: SerialLineControl; // M1L0 Serial Comm Function Block
+    fbSerialLineControl_EL6001_M2L0: SerialLineControl; // M2L0 Serial Comm Function Block
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// These are the global IOs...don't forget to copy your data into them
 
 (* EL6001 Serial port 0 com function *)
 fbSerialLineControl_EL6001_M1L0(Mode:= SERIALLINEMODE_EL6_22B,
-						        pComIn:= ADR(Serial_stComIn_M1L0),
-						   	    pComOut:=ADR(Serial_stComOut_M1L0),
-						        SizeComIn:= SIZEOF(Serial_stComIn_M1L0),
-						        TxBuffer:= Serial_TXBuffer_M1L0,
-						        RxBuffer:= Serial_RXBuffer_M1L0,
-						        Error=>,
-						        ErrorID=>);
+                                pComIn:= ADR(Serial_stComIn_M1L0),
+                                   pComOut:=ADR(Serial_stComOut_M1L0),
+                                SizeComIn:= SIZEOF(Serial_stComIn_M1L0),
+                                TxBuffer:= Serial_TXBuffer_M1L0,
+                                RxBuffer:= Serial_RXBuffer_M1L0,
+                                Error=>,
+                                ErrorID=>);
 
 fbSerialLineControl_EL6001_M2L0(Mode:= SERIALLINEMODE_EL6_22B,
-						        pComIn:= ADR(Serial_stComIn_M2L0),
-						   	    pComOut:=ADR(Serial_stComOut_M2L0),
-						        SizeComIn:= SIZEOF(Serial_stComIn_M2L0),
-						        TxBuffer:= Serial_TXBuffer_M2L0,
-						        RxBuffer:= Serial_RXBuffer_M2L0,
-						        Error=>,
-						        ErrorID=>);]]></ST>
+                                pComIn:= ADR(Serial_stComIn_M2L0),
+                                   pComOut:=ADR(Serial_stComOut_M2L0),
+                                SizeComIn:= SIZEOF(Serial_stComIn_M2L0),
+                                TxBuffer:= Serial_TXBuffer_M2L0,
+                                RxBuffer:= Serial_RXBuffer_M2L0,
+                                Error=>,
+                                ErrorID=>);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
