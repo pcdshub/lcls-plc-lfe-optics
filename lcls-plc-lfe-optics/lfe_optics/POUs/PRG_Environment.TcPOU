@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_Environment" Id="{ba0070ff-b060-40ec-9097-5e8efb1576b9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_Environment
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[    // MR1L0 Flow Pressure Sensors
+    GVL_M1L0.fM1L0_Flow_1(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
+    GVL_M1L0.fM1L0_Flow_1_val := GVL_M1L0.fM1L0_Flow_1.fReal;
+
+    GVL_M1L0.fM1L0_Flow_2(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
+    GVL_M1L0.fM1L0_Flow_2_val := GVL_M1L0.fM1L0_Flow_2.fReal;
+
+    GVL_M1L0.fM1L0_Press_1(iTermBits:=12, fTermMax:=4.0, fTermMin:=0);
+    GVL_M1L0.fM1L0_Press_1_val := GVL_M1L0.fM1L0_Press_1.fReal;
+
+    // MR2L0 Flow Pressure Sensors
+    GVL_M2L0.fM2L0_Flow_1(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
+    GVL_M2L0.fM2L0_Flow_1_val := GVL_M2L0.fM2L0_Flow_1.fReal;
+
+    GVL_M2L0.fM2L0_Flow_2(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
+    GVL_M2L0.fM2L0_Flow_2_val := GVL_M2L0.fM2L0_Flow_2.fReal;
+
+    GVL_M2L0.fM2L0_Press_1(iTermBits:=12, fTermMax:=4.0, fTermMin:=0);
+    GVL_M2L0.fM2L0_Press_1_val := GVL_M2L0.fM2L0_Press_1.fReal;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

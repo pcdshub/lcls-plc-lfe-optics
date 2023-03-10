@@ -4,7 +4,7 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 TYPE ENUM_Coating_States :
 (
-	Unknown := 0,
+    Unknown := 0,
     B4C := 1,
     Ni := 2
 );
