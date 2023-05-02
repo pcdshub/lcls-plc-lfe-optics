@@ -7,6 +7,7 @@ lcls-plc-lfe-optics
 
     lcls-plc-lfe-optics_pragmas
     lcls-plc-lfe-optics_nc
+    lcls-plc-lfe-optics_ethercat
     lcls-plc-lfe-optics_boxes
     lcls-plc-lfe-optics_links
 
