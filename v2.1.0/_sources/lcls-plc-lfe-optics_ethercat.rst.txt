@@ -1,0 +1,179 @@
+Box Hierarchy
+-------------
+
+
+#. **Term 1 (EK1200) [ID: 1]**
+        EK1200-5000 EtherCAT Power supply (2A E-Bus)
+
+    #. PMPS_FFO [ID: 2]
+            EL2202 2Ch. Dig. Output 24V, 0.5A
+
+
+
+    #. Term 3 (EL6070) [ID: 3]
+            EL6070 1Ch. Licensing-Terminal
+
+
+
+    #. PMPS_PRE [ID: 4]
+            EL6695 EtherCAT Bridge terminal (Primary)
+
+
+
+    #. Term 5 (EK1122) [ID: 5]
+            EK1122 2 port EtherCAT junction
+
+        #. **EK1100_M1L0 [ID: 6]**
+                EK1100 EtherCAT Coupler (2A E-Bus)
+
+            #. EL7041-1000_M1L0_Xup [ID: 7]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M1L0_Xdwn [ID: 8]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M1L0_Yup [ID: 9]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M1L0_Ydwn [ID: 10]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M1L0_PitchCoarse [ID: 11]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M1L0_Bender [ID: 12]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL6001_M1L0_PitchFine [ID: 13]
+                    EL6001 Interface (RS232)
+
+
+
+            #. EL5042_M1L0_Xupdwn [ID: 14]
+                    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. EL5042_M1L0_Yupdwn [ID: 15]
+                    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. EL5042_M1L0_PitchBender [ID: 16]
+                    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. EL1004_M1L0_STO [ID: 17]
+                    EL1004 4Ch. Dig. Input 24V, 3ms
+
+
+
+            #. EL3054_M1L0_FWM_PRSM [ID: 51]
+                    EL3054 4Ch. Ana. Input 4-20mA
+
+
+
+            #. EL9505_M1L0_BenderLims [ID: 18]
+                    EL9505 Power supply terminal 5V
+
+
+
+            #. Term 32 (EL9011) [ID: 32]
+                    EL9011 End Terminal
+
+
+
+
+
+        #. **EK1100_M2L0 [ID: 19]**
+                EK1100 EtherCAT Coupler (2A E-Bus)
+
+            #. EL7041-1000_M2L0_Xup [ID: 20]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M2L0_Xdwn [ID: 21]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M2L0_Yup [ID: 22]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M2L0_Ydwn [ID: 23]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M2L0_PitchCoarse [ID: 24]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL7041-1000_M2L0_Bender [ID: 25]
+                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+
+
+
+            #. EL6001_M2L0_PitchFine [ID: 26]
+                    EL6001 Interface (RS232)
+
+
+
+            #. EL5042_M2L0_Xupdwn [ID: 27]
+                    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. EL5042_M2L0_Yupdwn [ID: 28]
+                    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. EL5042_M2L0_PitchBender [ID: 29]
+                    EL5042 2Ch. BiSS-C Encoder
+
+
+
+            #. EL1004_M2L0_STO [ID: 30]
+                    EL1004 4Ch. Dig. Input 24V, 3ms
+
+
+
+            #. EL3054_M2L0_FWM_PRSM [ID: 65]
+                    EL3054 4Ch. Ana. Input 4-20mA
+
+
+
+            #. EL9505_M2L0_BenderLims [ID: 31]
+                    EL9505 Power supply terminal 5V
+
+
+
+            #. Term 33 (EL9011) [ID: 33]
+                    EL9011 End Terminal
+
+
+
+
+
+
+
+
+
