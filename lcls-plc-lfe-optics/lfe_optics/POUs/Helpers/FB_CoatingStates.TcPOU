@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="FB_Coatings_States" Id="{436d7b1f-e2f3-44dd-bb44-390131674585}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_Coatings_States EXTENDS FB_PositionStateBase_WithPMPS
+  <POU Name="FB_CoatingStates" Id="{436d7b1f-e2f3-44dd-bb44-390131674585}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_CoatingStates EXTENDS FB_PositionStateBase_WithPMPS
 VAR_INPUT
     enumSet: INT;
-    stB4C: DUT_PositionState;
-    stNi: DUT_PositionState;
+    stB4C: ST_PositionState;
+    stNi: ST_PositionState;
     sB4CType : STRING := ''; //Type of Material on Coating 1
     nB4CPosition: UDINT; // Encoder Count Position of Coating 1
     fB4CDelta: LREAL;//Position Boundary delta in scaled position units
@@ -36,7 +36,8 @@ END_VAR
     stB4C.bUseRawCounts := TRUE;
     stB4C.bMoveOk := TRUE;
     stB4C.bValid := TRUE;
-    stB4C.nRequestAssertionID := nTransitionAssertionID+1;
+    stB4C.stPMPS.nRequestAssertionID := nTransitionAssertionID+1;
+    //stB4C.nRequestAssertionID := nTransitionAssertionID+1;
     stB4C.sName := sB4CType;
     stB4C.nEncoderCount := nB4CPosition;
     stB4C.stBeamParams := PMPS_GVL.cstFullBeam;

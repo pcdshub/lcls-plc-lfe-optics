@@ -359,7 +359,7 @@ VAR
     // Logging
     fbLogHandler : FB_LogHandler;
 
-    // PMPS States
+(*    // PMPS States
     {attribute 'pytmc' := '
         pv: MR1L0:HOMS:COATING:STATE:SET
         io: io
@@ -384,7 +384,7 @@ VAR
             sNiType:= 'B4C/Ni',
             nNiPosition:= 9171800,
             fNiDelta:= 1000,
-            fNiVelocity:= 100); //exclusion range 0,12 AND 27,90
+            fNiVelocity:= 100); //exclusion range 0,12 AND 27,90 *)
     // PMPS States
     {attribute 'pytmc' := '
         pv: MR2L0:HOMS:COATING:STATE:SET;
