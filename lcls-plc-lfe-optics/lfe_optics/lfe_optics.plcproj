@@ -74,6 +74,9 @@
     <Compile Include="POUs\PRG_MR1L0_HOMS_States.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_MR2L0_HOMS_States.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\P_CoatingProtections.TcPOU">
       <SubType>Code</SubType>
     </Compile>

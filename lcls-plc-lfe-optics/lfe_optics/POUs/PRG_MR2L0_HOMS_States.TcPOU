@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_MR2L0_HOMS_States" Id="{059930c1-c184-4306-826c-26dd0464cb9e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_MR2L0_HOMS_States
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
