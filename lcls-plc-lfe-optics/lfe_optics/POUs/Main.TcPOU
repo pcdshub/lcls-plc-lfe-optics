@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="Main" Id="{371c560d-bfd7-44d3-85a8-59ca1fa1938a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -11,7 +11,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR1L0:HOMS:MMS:YUP
     '}
-    M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YUP'); // M1L0 Yup
+    M1 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YUP'); // M1L0 Yup
     fbMotionStage_m1 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 1;
@@ -19,7 +19,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR1L0:HOMS:MMS:YDWN
     '}
-    M2 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YDWN'); // M1L0 Ydwn
+    M2 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YDWN'); // M1L0 Ydwn
     fbMotionStage_m2 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 1;
@@ -28,7 +28,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR1L0:HOMS:MMS:XUP
     '}
-    M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XUP'); // M1L0 Xup
+    M3 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XUP'); // M1L0 Xup
     fbMotionStage_m3 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 1;
@@ -36,7 +36,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR1L0:HOMS:MMS:XDWN
     '}
-    M4 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XDWN'); // M1L0 Xdwn
+    M4 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XDWN'); // M1L0 Xdwn
     fbMotionStage_m4 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;
@@ -45,7 +45,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR1L0:HOMS:MMS:PITCH
     '}
-    M5 : DUT_MotionStage := (fVelocity:=150.0,nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
+    M5 : ST_MotionStage := (fVelocity:=150.0,nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
     fbMotionStage_m5 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;
@@ -54,7 +54,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR1L0:HOMS:MMS:BENDER
     '}
-    M6 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_BENDER'); // M1L0 Bender
+    M6 : ST_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_BENDER'); // M1L0 Bender
     fbMotionStage_m6 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;
@@ -184,7 +184,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR2L0:HOMS:MMS:YUP
     '}
-    M7 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YUP'); // M2L0 Yup
+    M7 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YUP'); // M2L0 Yup
     fbMotionStage_m7 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;
@@ -192,7 +192,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR2L0:HOMS:MMS:YDWN
     '}
-    M8 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YDWN'); // M2L0 Ydwn
+    M8 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YDWN'); // M2L0 Ydwn
     fbMotionStage_m8 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;
@@ -201,7 +201,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR2L0:HOMS:MMS:XUP
     '}
-    M9 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XUP'); // M2L0 Xup
+    M9 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XUP'); // M2L0 Xup
     fbMotionStage_m9 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;
@@ -209,7 +209,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR2L0:HOMS:MMS:XDWN
     '}
-    M10 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XDWN'); // M2L0 Xdwn
+    M10 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XDWN'); // M2L0 Xdwn
     fbMotionStage_m10 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
@@ -218,7 +218,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR2L0:HOMS:MMS:PITCH
     '}
-    M11 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
+    M11 : ST_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
     fbMotionStage_m11 : FB_MotionStage;
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2;
@@ -226,7 +226,7 @@ VAR
     {attribute 'pytmc' := '
         pv: MR2L0:HOMS:MMS:BENDER
     '}
-    M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_BENDER'); // M2L0 Bender
+    M12 : ST_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_BENDER'); // M2L0 Bender
     fbMotionStage_m12 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;
@@ -347,10 +347,6 @@ VAR
     mcReadParameterPitchM2L0 : MC_ReadParameter;
     fEncRefPitchM2L0_urad : LREAL; // Current Pitch encoder offset in urad
 
-
-
-
-
     // PMPS arbiter interface
     fbArbiterIO : FB_SubSysToArbiter_IO;
 
@@ -358,62 +354,6 @@ VAR
     fEncLeverArm_mm : LREAL := 513.0;
     // Logging
     fbLogHandler : FB_LogHandler;
-
-(*    // PMPS States
-    {attribute 'pytmc' := '
-        pv: MR1L0:HOMS:COATING:STATE:SET
-        io: io
-    '}
-    MR1L0_Coating_enumSet: ENUM_Coating_States;
-     {attribute 'pytmc' := '
-        pv: MR1L0:HOMS:COATING:STATE;
-        io: io;
-        field: ZRST Unknown ;
-        field: ONST B4C;
-        field: TWST B4C_Ni ;
-    '}
-    fbMR1L0_States: FB_Coatings_States:= (
-            bEnable:= TRUE ,
-            stTransitionBeam:= PMPS_GVL.cst0RateBeam ,
-            nTransitionAssertionID:= 16#FC11 ,
-            nUnknownAssertionID:= 16#FC10 ,
-            sB4CType:= 'B4C' ,
-            nB4CPosition:= 21171800 ,
-            fB4CDelta:= 1000,
-            fB4CVelocity:=100,
-            sNiType:= 'B4C/Ni',
-            nNiPosition:= 9171800,
-            fNiDelta:= 1000,
-            fNiVelocity:= 100); //exclusion range 0,12 AND 27,90 *)
-    // PMPS States
-    {attribute 'pytmc' := '
-        pv: MR2L0:HOMS:COATING:STATE:SET;
-        io: io;
-        field: ZRST Unknown ;
-        field: ONST B4C;
-        field: TWST Ni ;
-    '}
-    MR2L0_Coating_enumSet: ENUM_Coating_States;
-     {attribute 'pytmc' := '
-        pv: MR2L0:HOMS:COATING:STATE;
-        io: io;
-    '}
-    fbMR2L0_States: FB_Coatings_States:= (
-            bEnable:= TRUE ,
-            stTransitionBeam:= PMPS_GVL.cst0RateBeam ,
-            nTransitionAssertionID:= 16#FC21 ,
-            nUnknownAssertionID:= 16#FC20 ,
-            sB4CType:= 'B4C' ,
-            nB4CPosition:= 7018200 ,
-            fB4CDelta:= 1000 ,
-            fB4CVelocity:=100, // Exclusion range 0,1 AND 14,90
-            sNiType:= 'Ni',
-            nNiPosition:= 16018200,
-            fNiDelta:= 1000 ,
-            fNiVelocity:= 100); //exclusion range 0,12 AND 27,90
-
-
-
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1L0
@@ -505,20 +445,6 @@ mcReadParameterPitchM1L0(Axis:=M5.Axis,
 
 nEncRefPitchM1L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM1L0_urad) * fEncLeverArm_mm);
 
-//Coatings States With PMPS
-M1.bPowerSelf :=FALSE;
-fbMR1L0_States(
-    enumSet :=MR1L0_Coating_enumSet,
-    fbArbiter:=GVL_PMPS.g_fbArbiter1,
-    fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
-    nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
-    nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90
-    stMotionStage:=M1,
-    bBPOkAutoReset := TRUE);// Y Gantry Master Axis , stYup
-MR1L0_Coating_enumSet := fbMR1L0_States.setState;
-
-
-
 // M2L0
 M2L0.fbRunHOMS(stYup:=M7,
                stYdwn:=M8,
@@ -605,18 +531,9 @@ mcReadParameterPitchM2L0(Axis:=M11.Axis,
 nEncRefPitchM2L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM2L0_urad) * fEncLeverArm_mm);
 
 //Coatings States With PMPS
+M1.bPowerSelf :=FALSE;
+M5.bPowerSelf :=FALSE;
 M7.bPowerSelf :=FALSE;
-fbMR2L0_States(
-    enumSet :=MR2L0_Coating_enumSet,
-    fbArbiter:=GVL_PMPS.g_fbArbiter1,
-    fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
-    nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
-    nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90
-    stMotionStage:=M7,
-    bBPOkAutoReset := TRUE);// Y Gantry Master Axis , stYup
-
-MR2L0_Coating_enumSet := fbMR2L0_States.setState;
-
 
 P_CoatingProtections();
 PRG_Environment();
