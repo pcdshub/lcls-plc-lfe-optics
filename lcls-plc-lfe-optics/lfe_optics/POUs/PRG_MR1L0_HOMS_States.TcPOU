@@ -17,32 +17,26 @@ VAR
     eStateGet: E_MR1L0_CoatingStates;
 
     stTransistion_Y_BPs : ST_BeamParams := (
-        neVRange := 16#FFFFFFFF,
         nRate := 0,
         nTran := 1.0
     );
     stTransistion_Pitch_BPs : ST_BeamParams := (
-        neVRange := 16#FFFFFFFF,
         nRate := 0,
         nTran := 1.0
     );
     stB4C_BPs : ST_BeamParams := (
-        neVRange := 16#1FFFF,
         nRate := 120,
         nTran := 1.0
     );
     stNi_BPs : ST_BeamParams := (
-        neVRange := 16#3FFFC000,
         nRate := 120,
         nTran := 1.0
     );
     stL1B4C_BPs : ST_BeamParams := (
-        neVRange := 16#3F,
         nRate := 120,
         nTran := 1.0
     );
     stL1Ni_BPs : ST_BeamParams := (
-        neVRange := 16#11F0,
         nRate := 120,
         nTran := 1.0
     );
@@ -81,19 +75,23 @@ VAR
 // MR1L0_L1 2d Local State Beam Parameters
     stMR1L0_L1_Y_B4C_DbStateParams : ST_DbStateParams := (
         sPmpsState := 'L1:Y-B4C',
-        stBeamParams := stL1B4C_BPs
+        stBeamParams := stL1B4C_BPs,
+        nRequestAssertionID := 16#FC11
     );
     stMR1L0_L1_Pitch_B4C_DbStateParams : ST_DbStateParams := (
         sPmpsState := 'L1:Pitch-B4C',
-        stBeamParams := stL1B4C_BPs
+        stBeamParams := stL1B4C_BPs,
+        nRequestAssertionID := 16#FC12
     );
     stMR1L0_L1_Y_Ni_DbStateParams : ST_DbStateParams := (
         sPmpsState := 'L1:Y-Ni',
-        stBeamParams := stL1Ni_BPs
+        stBeamParams := stL1Ni_BPs,
+        nRequestAssertionID := 16#FC11
     );
     stMR1L0_L1_Pitch_Ni_DbStateParams : ST_DbStateParams := (
         sPmpsState := 'L1:Pitch-Ni',
-        stBeamParams := stL1Ni_BPs
+        stBeamParams := stL1Ni_BPs,
+        nRequestAssertionID := 16#FC12
     );
 
     fbYSetup: FB_StateSetupHelper;
@@ -131,11 +129,13 @@ fbPitchSetup(stPositionState:=stDefaultPitch, bSetDefault:=TRUE);
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.Unknown],
     sName:='Y-Transistion'
 );
+stMR1L0_Y_Transistion_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(0, 90000);
 astCoatingStatesY[E_MR1L0_CoatingStates.Unknown].stPMPS := stMR1L0_Y_Transistion_DbStateParams;
 
 fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.Unknown],
     sName:='Pitch-Transistion'
 );
+stMR1L0_Pitch_Transistion_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(0, 90000);
 astCoatingStatesPitch[E_MR1L0_CoatingStates.Unknown].stPMPS := stMR1L0_Pitch_Transistion_DbStateParams;
 
 
@@ -144,12 +144,14 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0B4C],
     sName:='L0-Y-B4C',
     nEncoderCount:=21171800
 );
+stMR1L0_Y_B4C_DbStateParams.stBeamParams.neVRange :=  F_eVIncludeRange(0, 14000);
 astCoatingStatesY[E_MR1L0_CoatingStates.L0B4C].stPMPS := stMR1L0_Y_B4C_DbStateParams;
 
 fbPitchSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0B4C],
     sName:='L0-Pitch-B4C',
     nEncoderCount:=8602330
 );
+stMR1L0_Pitch_B4C_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(0, 14000);
 astCoatingStatesPitch[E_MR1L0_CoatingStates.L0B4C].stPMPS := stMR1L0_Pitch_B4C_DbStateParams;
 
 
@@ -158,12 +160,14 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0Ni],
     sName:='Y-Ni',
     nEncoderCount:=9171800
 );
+stMR1L0_Y_Ni_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(12000, 13000);
 astCoatingStatesY[E_MR1L0_CoatingStates.L0Ni].stPMPS := stMR1L0_Y_Ni_DbStateParams;
 
 fbPitchSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0Ni],
     sName:='Pitch-Ni',
     nEncoderCount:=8602330
 );
+stMR1L0_Pitch_Ni_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(12000, 13000);
 astCoatingStatesPitch[E_MR1L0_CoatingStates.L0Ni].stPMPS := stMR1L0_Pitch_Ni_DbStateParams;
 
 
@@ -172,6 +176,7 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1B4C],
     sName:='L1:Y-B4C',
     nEncoderCount:=21171800
 );
+stMR1L0_L1_Y_B4C_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(0, 4000);
 astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1B4C].stPMPS := stMR1L0_L1_Y_B4C_DbStateParams;
 
 fbPitchSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1B4C],
@@ -179,6 +184,7 @@ fbPitchSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1B4C],
     nEncoderCount:=11116030,
     fDelta:=500000
 );
+stMR1L0_L1_Pitch_B4C_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(0, 4000);
 astCoatingStatesPitch[E_MR1L0_CoatingStates.L0_L1B4C].stPMPS := stMR1L0_L1_Pitch_B4C_DbStateParams;
 
 
@@ -187,6 +193,7 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1Ni],
     sName:='L1:Y-Ni',
     nEncoderCount:=9171800
 );
+stMR1L0_L1_Y_Ni_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(2500, 7500);
 astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1Ni].stPMPS := stMR1L0_L1_Y_Ni_DbStateParams;
 
 fbPitchSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1Ni],
@@ -194,6 +201,7 @@ fbPitchSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0_L1Ni],
     nEncoderCount:=11116030,
     fDelta:=500000
 );
+stMR1L0_L1_Pitch_Ni_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(2500, 7500);
 astCoatingStatesPitch[E_MR1L0_CoatingStates.L0_L1Ni].stPMPS := stMR1L0_L1_Pitch_Ni_DbStateParams;
 
 fbCoatingStates(
@@ -209,7 +217,7 @@ fbCoatingStates(
     bEnableBeamParams:=TRUE,
     sDeviceName:='MR1L0:HOMS',
     sTransitionKey:='TRANSISTION',
-    bLocalPMPS:=TRUE
+    bUsePmpsDB:=FALSE,
 );
 
 
