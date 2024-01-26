@@ -17,17 +17,14 @@ VAR
     eStateGet: E_MR2L0_CoatingStates;
 
     stTransistion_Y_BPs : ST_BeamParams := (
-        neVRange := 16#FFFFFFFF,
         nRate := 0,
         nTran := 1.0
     );
     stB4C_BPs : ST_BeamParams := (
-        neVRange := 16#1FFFF,
         nRate := 120,
         nTran := 1.0
     );
     stNi_BPs : ST_BeamParams := (
-        neVRange := 16#3FFFC000,
         nRate := 120,
         nTran := 1.0
     );
@@ -66,6 +63,7 @@ END_VAR
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.Unknown],
     sName:='Y-Transistion'
 );
+stMR2L0_Y_Transistion_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(0, 90000);
 astCoatingStatesY[E_MR1L0_CoatingStates.Unknown].stPMPS := stMR2L0_Y_Transistion_DbStateParams;
 
 // MR2L0 B4C
@@ -73,6 +71,7 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.B4C],
     sName:='L0-Y-B4C',
     nEncoderCount:=7018200
 );
+stMR2L0_Y_B4C_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(1000, 14000);
 astCoatingStatesY[E_MR2L0_CoatingStates.B4C].stPMPS := stMR2L0_Y_B4C_DbStateParams;
 
 // MR2L0 Ni
@@ -80,6 +79,7 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.Ni],
     sName:='Y-Ni',
     nEncoderCount:= 16018200
 );
+stMR2L0_Y_Ni_DbStateParams.stBeamParams.neVRange :=  F_eVIncludeRange(12000, 27000);
 astCoatingStatesY[E_MR2L0_CoatingStates.Ni].stPMPS := stMR2L0_Y_Ni_DbStateParams;
 
 fbCoatingStates(
@@ -93,7 +93,7 @@ fbCoatingStates(
     bEnableBeamParams:=TRUE,
     sDeviceName:='MR2L0:HOMS',
     sTransitionKey:='TRANSISTION',
-    bLocalPMPS:=TRUE
+    bUsePmpsDB:=TRUE
 );
 
 ]]></ST>
