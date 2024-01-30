@@ -537,6 +537,8 @@ M7.bPowerSelf :=FALSE;
 
 P_CoatingProtections();
 PRG_Environment();
+PRG_MR1L0_HOMS_States();
+PRG_MR2L0_HOMS_States();
 
 // Logging
 fbLogHandler();

@@ -40,6 +40,9 @@ VAR
         nRate := 120,
         nTran := 1.0
     );
+// MR1L0 PMPS
+    {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^MR1L0_Pitch_ENC'}
+    nMR1L0_Pitch_ENC_PMPS AT %Q* : ULINT;
 // MR1L0 2d Local State Beam Parameters
     stMR1L0_Y_Transistion_DbStateParams : ST_DbStateParams := (
         sPmpsState := 'Y-TRANSISTION',
@@ -220,6 +223,7 @@ fbCoatingStates(
     bUsePmpsDB:=FALSE,
 );
 
+nMR1L0_Pitch_ENC_PMPS := Main.M5.nRawEncoderULINT;
 
 
 
