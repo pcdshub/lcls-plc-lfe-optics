@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{FDB73A9E-74E7-5DA5-76FF-844EC1B43414}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{F6D1906E-00BB-A5B1-A635-C87363F1890D}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
@@ -77442,7 +77442,7 @@ bM2L0PitchBusy : BOOL;
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-      pv: MR2L0:HOMS:STATE:SET
+      pv: MR2L0:HOMS:COATING:STATE:SET
       io: io
     </Value>
               </Property>
@@ -78016,7 +78016,7 @@ bM2L0PitchBusy : BOOL;
               <Property>
                 <Name>pytmc</Name>
                 <Value>
-      pv: MR2L0:HOMS:STATE:GET
+      pv: MR2L0:HOMS:COATING:STATE:GET
       io: i
     </Value>
               </Property>
@@ -78186,7 +78186,7 @@ bM2L0PitchBusy : BOOL;
             <Default>
               <SubItem>
                 <Name>.fDelta</Name>
-                <Value>1000</Value>
+                <Value>100</Value>
               </SubItem>
               <SubItem>
                 <Name>.fVelocity</Name>
@@ -79530,7 +79530,7 @@ bM2L0PitchBusy : BOOL;
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-01-30T17:05:47</Value>
+          <Value>2024-01-30T17:21:03</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

@@ -6,12 +6,12 @@ VAR
     {attribute 'pytmc' := 'pv: MR2L0:HOMS'}
     fbCoatingStates: FB_PositionStatePMPS1D;
     {attribute 'pytmc' := '
-      pv: MR2L0:HOMS:STATE:SET
+      pv: MR2L0:HOMS:COATING:STATE:SET
       io: io
     '}
     eStateSet: E_MR2L0_CoatingStates;
     {attribute 'pytmc' := '
-      pv: MR2L0:HOMS:STATE:GET
+      pv: MR2L0:HOMS:COATING:STATE:GET
       io: i
     '}
     eStateGet: E_MR2L0_CoatingStates;
@@ -45,7 +45,7 @@ VAR
     );
     fbYSetup: FB_StateSetupHelper;
     stDefaultY : ST_PositionState := (
-        fDelta:=1000,
+        fDelta:=100,
         fVelocity:=100,
         fAccel:=200,
         fDecel:=200,
