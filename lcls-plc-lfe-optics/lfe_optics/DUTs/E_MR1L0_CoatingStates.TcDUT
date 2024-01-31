@@ -4,11 +4,11 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 TYPE E_MR1L0_CoatingStates :
 (
-    Unknown := 1,
-    L0B4C := 2,
-    L0Ni := 3,
-    L0_L1B4C := 4,
-    L0_L1Ni := 5
+    Unknown := 0,
+    L0B4C := 1,
+    L0Ni := 2,
+    L0_L1B4C := 3,
+    L0_L1Ni := 4
 ) UINT;
 END_TYPE
 ]]></Declaration>

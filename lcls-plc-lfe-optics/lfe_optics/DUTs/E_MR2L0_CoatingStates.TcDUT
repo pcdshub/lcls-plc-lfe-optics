@@ -5,9 +5,9 @@
 {attribute 'strict'}
 TYPE E_MR2L0_CoatingStates :
 (
-    Unknown := 1,
-    B4C := 2,
-    Ni := 3
+    Unknown := 0,
+    B4C := 1,
+    Ni := 2
 ) UINT;
 END_TYPE
 ]]></Declaration>
