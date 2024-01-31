@@ -3,7 +3,7 @@
   <POU Name="PRG_MR1L0_HOMS_States" Id="{bea3f499-dddf-4426-8594-53572734fe1a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_MR1L0_HOMS_States
 VAR
-    {attribute 'pytmc' := 'pv: MR1L0:HOMS'}
+    {attribute 'pytmc' := 'pv: MR1L0:HOMS:COATING'}
     fbCoatingStates: FB_PositionStatePMPS2D;
     {attribute 'pytmc' := '
       pv: MR1L0:HOMS:COATING:STATE:SET

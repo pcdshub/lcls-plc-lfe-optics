@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{F6D1906E-00BB-A5B1-A635-C87363F1890D}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{ACA657DE-32D3-A59F-1F9E-866F72F2DD1E}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
@@ -77549,7 +77549,7 @@ bM2L0PitchBusy : BOOL;
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: MR1L0:HOMS</Value>
+                <Value>pv: MR1L0:HOMS:COATING</Value>
               </Property>
             </Properties>
             <BitOffs>649123008</BitOffs>
@@ -78003,7 +78003,7 @@ bM2L0PitchBusy : BOOL;
             <Properties>
               <Property>
                 <Name>pytmc</Name>
-                <Value>pv: MR2L0:HOMS</Value>
+                <Value>pv: MR2L0:HOMS:COATING</Value>
               </Property>
             </Properties>
             <BitOffs>650959232</BitOffs>
@@ -79530,7 +79530,7 @@ bM2L0PitchBusy : BOOL;
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-01-30T17:21:03</Value>
+          <Value>2024-01-30T17:27:33</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
