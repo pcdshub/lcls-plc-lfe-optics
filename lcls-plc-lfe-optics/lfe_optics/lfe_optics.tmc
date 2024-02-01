@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8AD80DFF-8606-A9B9-7305-AE41C31F0136}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{336B1F8A-28B9-581C-1B57-A149544CDD29}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
@@ -78072,6 +78072,16 @@ bM2L0PitchBusy : BOOL;
             <BitOffs>649459840</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PRG_MR2L0_HOMS_States.astManualDbStateParams</Name>
+            <BitSize>40960</BitSize>
+            <BaseType Namespace="PMPS">ST_DbStateParams</BaseType>
+            <ArrayInfo>
+              <LBound>0</LBound>
+              <Elements>16</Elements>
+            </ArrayInfo>
+            <BitOffs>650395776</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>PRG_MR2L0_HOMS_States.eStateGet</Name>
             <BitSize>16</BitSize>
             <BaseType>E_MR2L0_CoatingStates</BaseType>
@@ -79692,7 +79702,7 @@ bM2L0PitchBusy : BOOL;
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-01-31T17:16:51</Value>
+          <Value>2024-01-31T17:38:54</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
@@ -79700,7 +79710,7 @@ bM2L0PitchBusy : BOOL;
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>81575936</Value>
+          <Value>81580032</Value>
         </Property>
       </Properties>
     </Module>

@@ -54,6 +54,7 @@ VAR
         bUseRawCounts:=TRUE
     );
     astCoatingStatesY: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+    astManualDbStateParams:  ARRAY[0..GeneralConstants.MAX_STATES] OF ST_DbStateParams;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -81,6 +82,9 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.Ni],
 );
 stMR2L0_Y_Ni_DbStateParams.stBeamParams.neVRange :=  F_eVIncludeRange(12000, 27000);
 astCoatingStatesY[E_MR2L0_CoatingStates.Ni].stPMPS := stMR2L0_Y_Ni_DbStateParams;
+astManualDbStateParams[0] := stMR2L0_Y_Transistion_DbStateParams;
+astManualDbStateParams[1] := stMR2L0_Y_B4C_DbStateParams;
+astManualDbStateParams[2] := stMR2L0_Y_Ni_DbStateParams;
 
 fbCoatingStates(
     stMotionStage:=Main.M7,
@@ -93,7 +97,8 @@ fbCoatingStates(
     bEnableBeamParams:=TRUE,
     sDeviceName:='MR2L0:HOMS',
     sTransitionKey:='TRANSISTION',
-    bUsePmpsDB:=TRUE
+    bUsePmpsDB:=FALSE,
+    astManualDbStateParams:=astManualDbStateParams,
 );
 
 ]]></ST>
