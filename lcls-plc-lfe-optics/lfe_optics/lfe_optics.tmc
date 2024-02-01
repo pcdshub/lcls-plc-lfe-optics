@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{336B1F8A-28B9-581C-1B57-A149544CDD29}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{E92F7F0D-03FF-21DF-08B7-6A0B0716144B}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
@@ -75354,24 +75354,6 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
             <Comment> MR1L0 2d Local State Beam Parameters</Comment>
             <BitSize>2560</BitSize>
             <BaseType Namespace="PMPS">ST_DbStateParams</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.sPmpsState</Name>
-                <String>Y-TRANSISTION</String>
-              </SubItem>
-              <SubItem>
-                <Name>.stBeamParams.nRate</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.stBeamParams.nTran</Name>
-                <Value>1</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.nRequestAssertionID</Name>
-                <Value>64529</Value>
-              </SubItem>
-            </Default>
             <BitOffs>634525920</BitOffs>
           </Symbol>
           <Symbol>
@@ -77842,24 +77824,6 @@ bM2L0PitchBusy : BOOL;
             <Name>PRG_MR2L0_HOMS_States.stMR2L0_Y_Transistion_DbStateParams</Name>
             <BitSize>2560</BitSize>
             <BaseType Namespace="PMPS">ST_DbStateParams</BaseType>
-            <Default>
-              <SubItem>
-                <Name>.sPmpsState</Name>
-                <String>Y-TRANSISTION</String>
-              </SubItem>
-              <SubItem>
-                <Name>.stBeamParams.nRate</Name>
-                <Value>0</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.stBeamParams.nTran</Name>
-                <Value>1</Value>
-              </SubItem>
-              <SubItem>
-                <Name>.nRequestAssertionID</Name>
-                <Value>64545</Value>
-              </SubItem>
-            </Default>
             <BitOffs>642900736</BitOffs>
           </Symbol>
           <Symbol>
@@ -79702,7 +79666,7 @@ bM2L0PitchBusy : BOOL;
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-01-31T17:38:54</Value>
+          <Value>2024-01-31T18:11:38</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

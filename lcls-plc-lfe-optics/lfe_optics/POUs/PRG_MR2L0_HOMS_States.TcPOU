@@ -30,7 +30,7 @@ VAR
     );
     stMR2L0_Y_Transistion_DbStateParams : ST_DbStateParams := (
         sPmpsState := 'Y-TRANSISTION',
-        stBeamParams := stTransistion_Y_BPs,
+        stBeamParams := PMPS_GVL.cst0RateBeam,
         nRequestAssertionID := 16#FC21
     );
     stMR2L0_Y_B4C_DbStateParams : ST_DbStateParams := (

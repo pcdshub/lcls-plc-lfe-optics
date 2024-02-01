@@ -51,7 +51,7 @@ VAR
 // MR1L0 2d Local State Beam Parameters
     stMR1L0_Y_Transistion_DbStateParams : ST_DbStateParams := (
         sPmpsState := 'Y-TRANSISTION',
-        stBeamParams := stTransistion_Y_BPs,
+        stBeamParams := PMPS_GVL.cst0RateBeam,
         nRequestAssertionID := 16#FC11
     );
     stMR1L0_Pitch_Transistion_DbStateParams : ST_DbStateParams := (
