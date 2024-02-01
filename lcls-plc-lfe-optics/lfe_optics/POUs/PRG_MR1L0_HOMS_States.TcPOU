@@ -40,6 +40,11 @@ VAR
         nRate := 120,
         nTran := 1.0
     );
+    stDefaultReactiveParams : ST_ReactiveParams := (
+        nTempSP := 0,
+        nPressSP := 0
+    );
+
 // MR1L0 PMPS
     {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^MR1L0_Pitch_ENC'}
     nMR1L0_Pitch_ENC_PMPS AT %Q* : ULINT;
@@ -120,6 +125,7 @@ VAR
 
     astCoatingStatesY: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
     astCoatingStatesPitch: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+    astManualDbStateParams:  ARRAY[0..GeneralConstants.MAX_STATES] OF ST_DbStateParams;
 END_VAR
 
 
@@ -141,6 +147,7 @@ fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.Unknow
 stMR1L0_Pitch_Transistion_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(0, 90000);
 astCoatingStatesPitch[E_MR1L0_CoatingStates.Unknown].stPMPS := stMR1L0_Pitch_Transistion_DbStateParams;
 *)
+
 
 // MR1L0 B4C
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0B4C],
@@ -207,6 +214,12 @@ fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L0_L1N
 stMR1L0_L1_Pitch_Ni_DbStateParams.stBeamParams.neVRange := F_eVIncludeRange(2500, 7500);
 astCoatingStatesPitch[E_MR1L0_CoatingStates.L0_L1Ni].stPMPS := stMR1L0_L1_Pitch_Ni_DbStateParams;
 
+astManualDbStateParams[0] := stMR1L0_Y_Transistion_DbStateParams;
+astManualDbStateParams[1] := stMR1L0_Y_B4C_DbStateParams;
+astManualDbStateParams[2] := stMR1L0_Y_Ni_DbStateParams;
+astManualDbStateParams[3] := stMR1L0_L1_Y_B4C_DbStateParams;
+astManualDbStateParams[4] := stMR1L0_L1_Y_Ni_DbStateParams;
+
 fbCoatingStates(
     stMotionStage1:=Main.M1,
     stMotionStage2:=Main.M5,
@@ -221,6 +234,7 @@ fbCoatingStates(
     sDeviceName:='MR1L0:HOMS',
     sTransitionKey:='TRANSISTION',
     bUsePmpsDB:=FALSE,
+    astManualDbStateParams:=astManualDbStateParams,
 );
 
 nMR1L0_Pitch_ENC_PMPS := Main.M5.nRawEncoderULINT;
