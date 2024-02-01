@@ -110,6 +110,10 @@
       <DefaultResolution>lcls-twincat-optics-nrw, * (SLAC)</DefaultResolution>
       <Namespace>lcls_twincat_optics_nrw</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="PMPS">
+      <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
+      <Namespace>PMPS</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="System_VisuElemMeter">
       <DefaultResolution>VisuElemMeter, 3.5.10.0 (System)</DefaultResolution>
       <Namespace>VisuElemMeter</Namespace>
@@ -186,11 +190,6 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="PMPS,3.2.0,SLAC - LCLS">
-      <Namespace>PMPS</Namespace>
-    </LibraryReference>
-  </ItemGroup>
-  <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
       <Resolution>LCLS General, 2.9.0 (SLAC)</Resolution>
     </PlaceholderResolution>
@@ -201,7 +200,7 @@
       <Resolution>lcls-twincat-optics-nrw, 0.0.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 3.2.0 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.2.1 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
