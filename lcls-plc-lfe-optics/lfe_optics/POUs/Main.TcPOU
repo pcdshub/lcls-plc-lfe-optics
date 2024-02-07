@@ -631,7 +631,7 @@ fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOut
 GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
 GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
 
- nMR1L0_Pitch_ENC_PMPS := M1.nRawEncoderULINT;]]></ST>
+ nMR1L0_Pitch_ENC_PMPS := M5.nRawEncoderULINT;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
