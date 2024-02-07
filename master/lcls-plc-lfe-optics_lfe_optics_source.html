@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-lfe-optics  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/docs-versions-menu.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -46,7 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_links.html">Links</a></li>
 </ul>
@@ -108,9 +112,9 @@
            <div itemprop="articleBody">
              
   <section id="duts">
-<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this heading"></a></h1>
+<h1>DUTs<a class="headerlink" href="#duts" title="Link to this heading"></a></h1>
 <section id="enum-coating-states">
-<h2>ENUM_Coating_States<a class="headerlink" href="#enum-coating-states" title="Permalink to this heading"></a></h2>
+<h2>ENUM_Coating_States<a class="headerlink" href="#enum-coating-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">TYPE</span> <span class="n">ENUM_Coating_States</span> <span class="p">:</span>
 <span class="p">(</span>
@@ -130,9 +134,9 @@
 </section>
 </section>
 <section id="gvls">
-<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
+<h1>GVLs<a class="headerlink" href="#gvls" title="Link to this heading"></a></h1>
 <section id="gvl-com-buffers">
-<h2>GVL_COM_Buffers<a class="headerlink" href="#gvl-com-buffers" title="Permalink to this heading"></a></h2>
+<h2>GVL_COM_Buffers<a class="headerlink" href="#gvl-com-buffers" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">M1L0</span>
     <span class="n">Serial_RXBuffer_M1L0</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
@@ -146,7 +150,7 @@
 </div>
 </section>
 <section id="gvl-m1l0">
-<h2>GVL_M1L0<a class="headerlink" href="#gvl-m1l0" title="Permalink to this heading"></a></h2>
+<h2>GVL_M1L0<a class="headerlink" href="#gvl-m1l0" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Mechanism</span><span class="p">:</span>
@@ -185,7 +189,7 @@
 </div>
 </section>
 <section id="gvl-m1l0-constants">
-<h2>GVL_M1L0_Constants<a class="headerlink" href="#gvl-m1l0-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_M1L0_Constants<a class="headerlink" href="#gvl-m1l0-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
@@ -199,7 +203,7 @@
 </div>
 </section>
 <section id="gvl-m2l0">
-<h2>GVL_M2L0<a class="headerlink" href="#gvl-m2l0" title="Permalink to this heading"></a></h2>
+<h2>GVL_M2L0<a class="headerlink" href="#gvl-m2l0" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Mechanism</span>
@@ -238,7 +242,7 @@
 </div>
 </section>
 <section id="gvl-m2l0-constants">
-<h2>GVL_M2L0_Constants<a class="headerlink" href="#gvl-m2l0-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_M2L0_Constants<a class="headerlink" href="#gvl-m2l0-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
@@ -252,7 +256,7 @@
 </div>
 </section>
 <section id="gvl-pmps">
-<h2>GVL_PMPS<a class="headerlink" href="#gvl-pmps" title="Permalink to this heading"></a></h2>
+<h2>GVL_PMPS<a class="headerlink" href="#gvl-pmps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Implementation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">FFO</span>
@@ -282,7 +286,7 @@
 </div>
 </section>
 <section id="gvl-serialio">
-<h2>GVL_SerialIO<a class="headerlink" href="#gvl-serialio" title="Permalink to this heading"></a></h2>
+<h2>GVL_SerialIO<a class="headerlink" href="#gvl-serialio" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>VAR_GLOBAL
     //Better have your inputs and outputs!
     // M1L0
@@ -298,9 +302,9 @@ END_VAR
 </section>
 </section>
 <section id="pous">
-<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this heading"></a></h1>
+<h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
 <section id="fb-coatings-states">
-<h2>FB_Coatings_States<a class="headerlink" href="#fb-coatings-states" title="Permalink to this heading"></a></h2>
+<h2>FB_Coatings_States<a class="headerlink" href="#fb-coatings-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Coatings_States</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase_WithPMPS</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">enumSet</span><span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
@@ -374,7 +378,7 @@ END_VAR
 </dl>
 </section>
 <section id="main">
-<h2>Main<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
+<h2>Main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Main</span>
 <span class="n">VAR</span>
     <span class="o">//</span> <span class="n">M1L0</span>
@@ -785,7 +789,8 @@ END_VAR
             <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">16018200</span><span class="p">,</span>
             <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span> <span class="p">,</span>
             <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">);</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
-
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^MR1L0_Pitch_ENC&#39;</span><span class="p">}</span>
+    <span class="n">nMR1L0_Pitch_ENC_PMPS</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">ULINT</span><span class="p">;</span>
 
 
 <span class="n">END_VAR</span>
@@ -1003,6 +1008,8 @@ END_VAR
 <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
 <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
 
+ <span class="n">nMR1L0_Pitch_ENC_PMPS</span> <span class="o">:=</span> <span class="n">M5</span><span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="p">;</span>
+
 <span class="n">END_PROGRAM</span>
 </pre></div>
 </div>
@@ -1022,7 +1029,7 @@ END_VAR
 </dl>
 </section>
 <section id="p-coatingprotections">
-<h2>P_CoatingProtections<a class="headerlink" href="#p-coatingprotections" title="Permalink to this heading"></a></h2>
+<h2>P_CoatingProtections<a class="headerlink" href="#p-coatingprotections" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_CoatingProtections</span>
 <span class="n">VAR</span>
         <span class="n">fbStripProtMR1L0</span> <span class="p">:</span> <span class="n">FB_MirrorTwoCoatingProtection</span> <span class="o">:=</span> <span class="p">(</span>
@@ -1064,7 +1071,7 @@ END_VAR
 </dl>
 </section>
 <section id="p-serial-com">
-<h2>P_Serial_Com<a class="headerlink" href="#p-serial-com" title="Permalink to this heading"></a></h2>
+<h2>P_Serial_Com<a class="headerlink" href="#p-serial-com" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_Serial_Com</span>
 <span class="n">VAR</span>
     <span class="n">fbSerialLineControl_EL6001_M1L0</span><span class="p">:</span> <span class="n">SerialLineControl</span><span class="p">;</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Serial</span> <span class="n">Comm</span> <span class="n">Function</span> <span class="n">Block</span>
@@ -1096,7 +1103,7 @@ END_VAR
 </div>
 </section>
 <section id="piezoserial">
-<h2>PiezoSerial<a class="headerlink" href="#piezoserial" title="Permalink to this heading"></a></h2>
+<h2>PiezoSerial<a class="headerlink" href="#piezoserial" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PiezoSerial</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">PI</span> <span class="n">Serial</span>
@@ -1134,7 +1141,7 @@ END_VAR
 </dl>
 </section>
 <section id="prg-environment">
-<h2>PRG_Environment<a class="headerlink" href="#prg-environment" title="Permalink to this heading"></a></h2>
+<h2>PRG_Environment<a class="headerlink" href="#prg-environment" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_Environment</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -1181,7 +1188,7 @@ END_VAR
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
