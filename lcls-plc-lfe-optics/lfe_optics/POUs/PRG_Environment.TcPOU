@@ -3,6 +3,22 @@
   <POU Name="PRG_Environment" Id="{ba0070ff-b060-40ec-9097-5e8efb1576b9}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_Environment
 VAR
+    {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 1^Output'}
+    {attribute 'pytmc' := '
+        pv: MR1L0:HOMS:VCV
+        io: io
+        field: ZNAM OFF
+        field: ONAM ON
+    '}
+    bActivateVarCoolMR1L0 AT %Q* : BOOL;
+    {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 2^Output'}
+    {attribute 'pytmc' := '
+        pv: MR2L0:HOMS:VCV
+        io: io
+        field: ZNAM OFF
+        field: ONAM ON
+    '}
+    bActivateVarCoolMR2L0 AT %Q* : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
