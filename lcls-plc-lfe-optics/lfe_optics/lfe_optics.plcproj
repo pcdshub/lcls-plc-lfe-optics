@@ -16,7 +16,7 @@
     <CompilerDefines>L</CompilerDefines>
     <CombineIds>false</CombineIds>
     <Company>SLAC</Company>
-    <Released>true</Released>
+    <Released>false</Released>
     <Title>lcls-plc-lfe-optics</Title>
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
