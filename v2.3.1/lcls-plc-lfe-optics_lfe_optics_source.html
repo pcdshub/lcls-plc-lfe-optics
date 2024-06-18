@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DUTs &mdash; pcdshub/lcls-plc-lfe-optics  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Data Types" href="lcls-plc-lfe-optics_lfe_optics_epics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pcdshub/lcls-plc-lfe-optics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">lcls-plc-lfe-optics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_pragmas.html">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_ethercat.html">EtherCAT Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_boxes.html">Boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_links.html">Links</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">lfe_optics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_lfe_optics_summary.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_lfe_optics_summary.html#pragmas">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_lfe_optics_summary.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_lfe_optics_summary.html#symbols">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_lfe_optics_epics.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-lfe-optics_lfe_optics_epics.html#database-records">Database Records</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DUTs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#enum-coating-states">ENUM_Coating_States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#gvls">GVLs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#global-version">Global_Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-com-buffers">GVL_COM_Buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-m1l0">GVL_M1L0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-m1l0-constants">GVL_M1L0_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-m2l0">GVL_M2L0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-m2l0-constants">GVL_M2L0_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-pmps">GVL_PMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl-serialio">GVL_SerialIO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#pous">POUs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fb-coatings-states">FB_Coatings_States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main">Main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#p-coatingprotections">P_CoatingProtections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#p-serial-com">P_Serial_Com</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#piezoserial">PiezoSerial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-environment">PRG_Environment</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pcdshub/lcls-plc-lfe-optics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DUTs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lcls-plc-lfe-optics_lfe_optics_source.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="duts">
+<h1>DUTs<a class="headerlink" href="#duts" title="Link to this heading"></a></h1>
+<section id="enum-coating-states">
+<h2>ENUM_Coating_States<a class="headerlink" href="#enum-coating-states" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">TYPE</span> <span class="n">ENUM_Coating_States</span> <span class="p">:</span>
+<span class="p">(</span>
+    <span class="n">Unknown</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">B4C</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">Ni</span> <span class="o">:=</span> <span class="mi">2</span>
+<span class="p">);</span>
+<span class="n">END_TYPE</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#enum-coating-states">ENUM_Coating_States</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+<section id="gvls">
+<h1>GVLs<a class="headerlink" href="#gvls" title="Link to this heading"></a></h1>
+<section id="global-version">
+<h2>Global_Version<a class="headerlink" href="#global-version" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcGenerated&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;no-analysis&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;linkalways&#39;</span><span class="p">}</span>
+<span class="o">//</span> <span class="n">This</span> <span class="n">function</span> <span class="n">has</span> <span class="n">been</span> <span class="n">automatically</span> <span class="n">generated</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">project</span> <span class="n">information</span><span class="o">.</span>
+<span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;const_non_replaced&#39;</span><span class="p">}</span>
+    <span class="n">stLibVersion_lcls_plc_lfe_optics</span> <span class="p">:</span> <span class="n">ST_LibVersion</span> <span class="o">:=</span> <span class="p">(</span><span class="n">iMajor</span> <span class="o">:=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">iMinor</span> <span class="o">:=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">iBuild</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iRevision</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nFlags</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sVersion</span> <span class="o">:=</span> <span class="s1">&#39;2.3.1&#39;</span><span class="p">);</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl-com-buffers">
+<h2>GVL_COM_Buffers<a class="headerlink" href="#gvl-com-buffers" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
+    <span class="o">//</span> <span class="n">M1L0</span>
+    <span class="n">Serial_RXBuffer_M1L0</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+    <span class="n">Serial_TXBuffer_M1L0</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">M2L0</span>
+    <span class="n">Serial_RXBuffer_M2L0</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+    <span class="n">Serial_TXBuffer_M2L0</span> <span class="p">:</span> <span class="n">ComBuffer</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl-m1l0">
+<h2>GVL_M1L0<a class="headerlink" href="#gvl-m1l0" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span>
+    <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Mechanism</span><span class="p">:</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.diEncCnt:=TIIB[EL5042_M1L0_PitchBender]^FB Inputs Channel 1^Position&#39;</span><span class="p">}</span>
+    <span class="n">M1L0_Pitch</span> <span class="p">:</span> <span class="n">HOMS_PitchMechanism</span> <span class="o">:=</span> <span class="p">(</span><span class="n">ReqPosLimHi</span> <span class="o">:=</span> <span class="mf">120.0</span><span class="p">,</span>
+                                         <span class="n">ReqPosLimLo</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">182.0</span><span class="p">,</span>
+                                         <span class="n">diEncPosLimHi</span> <span class="o">:=</span> <span class="mi">8662020</span><span class="p">,</span>
+                                         <span class="n">diEncPosLimLo</span> <span class="o">:=</span> <span class="mi">8507095</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Flow</span> <span class="n">Press</span> <span class="n">Sensors</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 1^Value&#39;</span><span class="p">}</span>
+    <span class="n">fM1L0_Flow_1</span> <span class="p">:</span> <span class="n">FB_AnalogInput</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">FWM</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">lpm</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fM1L0_Flow_1_val</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 2^Value&#39;</span><span class="p">}</span>
+    <span class="n">fM1L0_Flow_2</span> <span class="p">:</span> <span class="n">FB_AnalogInput</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">FWM</span><span class="p">:</span><span class="mi">2</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">lpm</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fM1L0_Flow_2_val</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 3^Value&#39;</span><span class="p">}</span>
+    <span class="n">fM1L0_Press_1</span> <span class="p">:</span> <span class="n">FB_AnalogInput</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">PRSM</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">bar</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fM1L0_Press_1_val</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl-m1l0-constants">
+<h2>GVL_M1L0_Constants<a class="headerlink" href="#gvl-m1l0-constants" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
+    <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
+    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span> <span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">27</span>
+    <span class="n">nYUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">16171800</span><span class="p">;</span>
+    <span class="n">nYDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">14866900</span><span class="p">;</span>
+    <span class="n">nXUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">24901730</span><span class="p">;</span>
+    <span class="n">nXDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">22921460</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl-m2l0">
+<h2>GVL_M2L0<a class="headerlink" href="#gvl-m2l0" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span>
+    <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Mechanism</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.diEncCnt:=TIIB[EL5042_M2L0_PitchBender]^FB Inputs Channel 1^Position&#39;</span><span class="p">}</span>
+    <span class="n">M2L0_Pitch</span> <span class="p">:</span> <span class="n">HOMS_PitchMechanism</span> <span class="o">:=</span> <span class="p">(</span><span class="n">ReqPosLimHi</span> <span class="o">:=</span> <span class="mf">154.9</span><span class="p">,</span>
+                                         <span class="n">ReqPosLimLo</span> <span class="o">:=</span> <span class="o">-</span><span class="mf">45.1</span><span class="p">,</span>
+                                         <span class="n">diEncPosLimHi</span> <span class="o">:=</span> <span class="mi">9550777</span><span class="p">,</span>
+                                         <span class="n">diEncPosLimLo</span> <span class="o">:=</span> <span class="mi">9448178</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Flow</span> <span class="n">Press</span> <span class="n">Sensors</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 1^Value&#39;</span><span class="p">}</span>
+    <span class="n">fM2L0_Flow_1</span> <span class="p">:</span> <span class="n">FB_AnalogInput</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">FWM</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">lpm</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fM2L0_Flow_1_val</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 2^Value&#39;</span><span class="p">}</span>
+    <span class="n">fM2L0_Flow_2</span> <span class="p">:</span> <span class="n">FB_AnalogInput</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">FWM</span><span class="p">:</span><span class="mi">2</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">lpm</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fM2L0_Flow_2_val</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 3^Value&#39;</span><span class="p">}</span>
+    <span class="n">fM2L0_Press_1</span> <span class="p">:</span> <span class="n">FB_AnalogInput</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">PRSM</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">bar</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fM2L0_Press_1_val</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl-m2l0-constants">
+<h2>GVL_M2L0_Constants<a class="headerlink" href="#gvl-m2l0-constants" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
+    <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
+    <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="n">after</span> <span class="n">alignment</span> <span class="mi">5</span><span class="o">-</span><span class="mi">29</span><span class="o">-</span><span class="mi">20</span>
+    <span class="n">nYUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">12018200</span><span class="p">;</span>
+    <span class="n">nYDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">15143700</span><span class="p">;</span>
+    <span class="n">nXUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">25363400</span><span class="p">;</span>
+    <span class="n">nXDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">24398100</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl-pmps">
+<h2>GVL_PMPS<a class="headerlink" href="#gvl-pmps" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span>
+    <span class="o">//</span> <span class="n">Implementation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">FFO</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">PLC</span><span class="p">:</span><span class="n">LFE</span><span class="p">:</span><span class="n">OPTICS</span><span class="p">:</span><span class="n">FFO</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output&#39;</span><span class="p">}</span>
+    <span class="n">g_FastFaultOutput1</span> <span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.88.66.1.1&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">PLC</span><span class="p">:</span><span class="n">LFE</span><span class="p">:</span><span class="n">OPTICS</span><span class="p">:</span><span class="n">FFO</span><span class="p">:</span><span class="mi">02</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output&#39;</span><span class="p">}</span>
+    <span class="n">g_FastFaultOutput2</span> <span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;172.21.88.66.1.1&#39;</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">PLC</span><span class="p">:</span><span class="n">LFE</span><span class="p">:</span><span class="n">OPTICS</span><span class="p">:</span><span class="n">ARB</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">g_fbArbiter1</span> <span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">PLC</span><span class="p">:</span><span class="n">LFE</span><span class="p">:</span><span class="n">OPTICS</span><span class="p">:</span><span class="n">ARB</span><span class="p">:</span><span class="mi">02</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">g_fbArbiter2</span> <span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl-serialio">
+<h2>GVL_SerialIO<a class="headerlink" href="#gvl-serialio" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>VAR_GLOBAL
+    //Better have your inputs and outputs!
+    // M1L0
+    Serial_stComIn_M1L0 AT %I* : EL6inData22B; // M1L0 In Serial Comm Array
+    Serial_stComOut_M1L0 AT %Q* : EL6outData22B; // M1L0 Out Serual Comm Array
+
+    // M2L0
+    Serial_stComIn_M2L0 AT %I* : EL6inData22B; // M2L0 In Serial Comm Array
+    Serial_stComOut_M2L0 AT %Q* : EL6outData22B; // M2L0 Out Serial Comm Array
+END_VAR
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pous">
+<h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
+<section id="fb-coatings-states">
+<h2>FB_Coatings_States<a class="headerlink" href="#fb-coatings-states" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Coatings_States</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase_WithPMPS</span>
+<span class="n">VAR_INPUT</span>
+    <span class="n">enumSet</span><span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">sB4CType</span> <span class="p">:</span> <span class="n">STRING</span> <span class="o">:=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="o">//</span><span class="n">Type</span> <span class="n">of</span> <span class="n">Material</span> <span class="n">on</span> <span class="n">Coating</span> <span class="mi">1</span>
+    <span class="n">nB4CPosition</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Count</span> <span class="n">Position</span> <span class="n">of</span> <span class="n">Coating</span> <span class="mi">1</span>
+    <span class="n">fB4CDelta</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Position</span> <span class="n">Boundary</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">scaled</span> <span class="n">position</span> <span class="n">units</span>
+    <span class="n">fB4CVelocity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Velocity</span>
+    <span class="n">nB4CCoatingBitmask</span><span class="p">:</span> <span class="n">DWORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">coating</span>
+    <span class="n">sNiType</span> <span class="p">:</span> <span class="n">STRING</span> <span class="o">:=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span><span class="o">//</span> <span class="n">Type</span> <span class="n">of</span> <span class="n">Material</span> <span class="n">on</span> <span class="n">Coating</span> <span class="mi">2</span>
+    <span class="n">nNiPosition</span><span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Count</span> <span class="n">Position</span> <span class="n">of</span> <span class="n">Coating</span> <span class="mi">2</span>
+    <span class="n">fNiDelta</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Position</span> <span class="n">Boundary</span> <span class="n">delta</span> <span class="ow">in</span> <span class="n">scaled</span> <span class="n">position</span> <span class="n">units</span>
+    <span class="n">nNiCoatingBitmask</span><span class="p">:</span> <span class="n">DWORD</span><span class="p">;</span> <span class="o">//</span><span class="n">Safe</span> <span class="n">Beam</span> <span class="n">Bitmask</span> <span class="k">for</span> <span class="n">the</span> <span class="n">second</span> <span class="n">coating</span>
+    <span class="n">fNiVelocity</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span><span class="o">//</span><span class="n">Velocity</span>
+    <span class="n">bStatesLock</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR_OUTPUT</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">GET</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">enumGet</span><span class="p">:</span> <span class="n">ENUM_Coating_States</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR</span>
+     <span class="n">bInitState</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">IF</span> <span class="n">bInitState</span> <span class="n">THEN</span>
+    <span class="n">bInitState</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="n">nTransitionAssertionID</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="n">sB4CType</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">nEncoderCount</span> <span class="o">:=</span> <span class="n">nB4CPosition</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">stBeamParams</span><span class="o">.</span><span class="n">neVRange</span> <span class="o">:=</span> <span class="n">nB4CCoatingBitmask</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fB4CDelta</span><span class="p">;</span>
+    <span class="n">stB4C</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span><span class="n">fB4CVelocity</span><span class="p">;</span>
+
+    <span class="n">stNi</span><span class="o">.</span><span class="n">bUseRawCounts</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">nRequestAssertionID</span> <span class="o">:=</span> <span class="n">nTransitionAssertionID</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="n">sNiType</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">nEncoderCount</span> <span class="o">:=</span> <span class="n">nNiPosition</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">stBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cstFullBeam</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">stBeamParams</span><span class="o">.</span><span class="n">neVRange</span> <span class="o">:=</span> <span class="n">nNiCoatingBitmask</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fNiDelta</span><span class="p">;</span>
+    <span class="n">stNi</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">fNiVelocity</span><span class="p">;</span>
+
+
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stB4C</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stNi</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="n">setState</span> <span class="o">:=</span> <span class="n">enumSet</span><span class="p">;</span>
+<span class="n">Exec</span><span class="p">();</span>
+<span class="n">enumGet</span> <span class="o">:=</span> <span class="n">getState</span><span class="p">;</span>
+<span class="n">enumSet</span> <span class="o">:=</span> <span class="n">setState</span><span class="p">;</span>
+
+<span class="n">END_FUNCTION_BLOCK</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#enum-coating-states">ENUM_Coating_States</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="main">
+<h2>Main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Main</span>
+<span class="n">VAR</span>
+    <span class="o">//</span> <span class="n">M1L0</span>
+    <span class="o">//</span> <span class="n">Motors</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Yup]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Yup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">YUP</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M1</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">200.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR1L0_YUP&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Yup</span>
+    <span class="n">fbMotionStage_m1</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Ydwn</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">YDWN</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M2</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">200.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR1L0_YDWN&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Ydwn</span>
+    <span class="n">fbMotionStage_m2</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Xup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">XUP</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M3</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR1L0_XUP&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Xup</span>
+    <span class="n">fbMotionStage_m3</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Xdwn</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">XDWN</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M4</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR1L0_XDWN&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Xdwn</span>
+    <span class="n">fbMotionStage_m4</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_PitchCoarse</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">PITCH</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M5</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">150.0</span><span class="p">,</span><span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR1L0_PITCH&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Pitch</span> <span class="n">Stepper</span>
+    <span class="n">fbMotionStage_m5</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M1L0_Bender</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">BENDER</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M6</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR1L0_BENDER&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Bender</span>
+    <span class="n">fbMotionStage_m6</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">bSTOEnable2</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_M1L0_STO</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYupEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXupEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M1L0</span> <span class="p">:</span> <span class="n">DUT_HOMS</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">STATS</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L0GantryStats</span> <span class="p">:</span> <span class="n">FB_HomsStats</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Arrays</span><span class="o">/</span><span class="n">RMS</span> <span class="n">Watch</span><span class="p">:</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">Y</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbYRMSErrorM1L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxYRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinYRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">X</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbXRMSErrorM1L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxXRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinXRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">PITCH</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbPitchRMSErrorM1L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxPitchRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinPitchRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">BENDER</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbBenderRMSErrorM1L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxBenderRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinBenderRMSErrorM1L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Control</span>
+    <span class="o">//</span><span class="n">fbM1L0PitchControl</span> <span class="p">:</span> <span class="n">FB_PitchControl</span><span class="p">;</span>
+    <span class="o">//</span><span class="n">bM1L0PitchDone</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="o">//</span><span class="n">bM1L0PitchBusy</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Bender</span> <span class="n">Control</span>
+    <span class="n">fbBenderM1L0</span> <span class="p">:</span> <span class="n">FB_Bender</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Raw</span> <span class="n">Encoder</span> <span class="n">Counts</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YUP</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntYupM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YDWN</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntYdwnM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XUP</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntXupM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XDWN</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntXdwnM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">PITCH</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntPitchM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Reference</span> <span class="n">Values</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YUP</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefYupM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YDWN</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefYdwnM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XUP</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefXupM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XDWN</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefXdwnM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">PITCH</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefPitchM1L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="n">mcReadParameterPitchM1L0</span> <span class="p">:</span> <span class="n">MC_ReadParameter</span><span class="p">;</span>
+    <span class="n">fEncRefPitchM1L0_urad</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">Pitch</span> <span class="n">encoder</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">urad</span>
+
+
+    <span class="o">//</span> <span class="n">M2L0</span>
+    <span class="o">//</span> <span class="n">Motors</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Yup]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Yup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">YUP</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M7</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">200.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR2L0_YUP&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Yup</span>
+    <span class="n">fbMotionStage_m7</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Ydwn</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">YDWN</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M8</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">200.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR2L0_YDWN&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Ydwn</span>
+    <span class="n">fbMotionStage_m8</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Xup</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M1L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">XUP</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M9</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR2L0_XUP&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Xup</span>
+    <span class="n">fbMotionStage_m9</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Xdwn</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">XDWN</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M10</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">1000.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR2L0_XDWN&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Xdwn</span>
+    <span class="n">fbMotionStage_m10</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_PitchCoarse</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">PITCH</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M11</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR2L0_PITCH&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Pitch</span> <span class="n">Stepper</span>
+    <span class="n">fbMotionStage_m11</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL7041</span><span class="o">-</span><span class="mi">1000</span><span class="n">_M2L0_Bender</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_PitchBender</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">BENDER</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M12</span> <span class="p">:</span> <span class="n">DUT_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">fVelocity</span><span class="o">:=</span><span class="mf">150.0</span><span class="p">,</span> <span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;MR2L0_BENDER&#39;</span><span class="p">);</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Bender</span>
+    <span class="n">fbMotionStage_m12</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">bSTOEnable2</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_M2L0_STO</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYupEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_Yupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXupEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_M2L0_Xupdwn</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M2L0</span> <span class="p">:</span> <span class="n">DUT_HOMS</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">STATS</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR2L0GantryStats</span> <span class="p">:</span> <span class="n">FB_HomsStats</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Arrays</span><span class="o">/</span><span class="n">RMS</span> <span class="n">Watch</span><span class="p">:</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">Y</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbYRMSErrorM2L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxYRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinYRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">X</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbXRMSErrorM2L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxXRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinXRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">PITCH</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbPitchRMSErrorM2L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxPitchRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinPitchRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">BENDER</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbBenderRMSErrorM2L0</span> <span class="p">:</span> <span class="n">FB_RMSWatch</span><span class="p">;</span>
+    <span class="n">fMaxBenderRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fMinBenderRMSErrorM2L0</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Control</span>
+    <span class="o">//</span><span class="n">fbM2L0PitchControl</span> <span class="p">:</span> <span class="n">FB_PitchControl</span><span class="p">;</span>
+    <span class="o">//</span><span class="n">bM2L0PitchDone</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="o">//</span><span class="n">bM2L0PitchBusy</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Bender</span> <span class="n">Control</span>
+    <span class="n">fbBenderM2L0</span> <span class="p">:</span> <span class="n">FB_Bender</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Raw</span> <span class="n">Encoder</span> <span class="n">Counts</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YUP</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntYupM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YDWN</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntYdwnM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XUP</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntXupM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XDWN</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntXdwnM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">PITCH</span><span class="p">:</span><span class="n">CNT</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncCntPitchM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Encoder</span> <span class="n">Reference</span> <span class="n">Values</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YUP</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefYupM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">YDWN</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefYdwnM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XUP</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefXupM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">XDWN</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefXdwnM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENC</span><span class="p">:</span><span class="n">PITCH</span><span class="p">:</span><span class="n">REF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">cnt</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nEncRefPitchM2L0</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
+    <span class="n">mcReadParameterPitchM2L0</span> <span class="p">:</span> <span class="n">MC_ReadParameter</span><span class="p">;</span>
+    <span class="n">fEncRefPitchM2L0_urad</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">Pitch</span> <span class="n">encoder</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">urad</span>
+
+
+
+
+
+    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">arbiter</span> <span class="n">interface</span>
+    <span class="n">fbArbiterIO</span> <span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">Common</span>
+    <span class="n">fEncLeverArm_mm</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">513.0</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">Logging</span>
+    <span class="n">fbLogHandler</span> <span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">States</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">SET</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">MR1L0_Coating_enumSet</span><span class="p">:</span> <span class="n">ENUM_Coating_States</span><span class="p">;</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">;</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZRST</span> <span class="n">Unknown</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONST</span> <span class="n">B4C</span><span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">TWST</span> <span class="n">B4C_Ni</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L0_States</span><span class="p">:</span> <span class="n">FB_Coatings_States</span><span class="o">:=</span> <span class="p">(</span>
+            <span class="n">bEnable</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
+            <span class="n">stTransitionBeam</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cst0RateBeam</span> <span class="p">,</span>
+            <span class="n">nTransitionAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC11 ,</span>
+            <span class="n">nUnknownAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC10 ,</span>
+            <span class="n">sB4CType</span><span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span> <span class="p">,</span>
+            <span class="n">nB4CPosition</span><span class="o">:=</span> <span class="mi">21171800</span> <span class="p">,</span>
+            <span class="n">fB4CDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="n">fB4CVelocity</span><span class="o">:=</span><span class="mi">100</span><span class="p">,</span>
+            <span class="n">sNiType</span><span class="o">:=</span> <span class="s1">&#39;B4C/Ni&#39;</span><span class="p">,</span>
+            <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">9171800</span><span class="p">,</span>
+            <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">);</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="o">//</span> <span class="n">PMPS</span> <span class="n">States</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">:</span><span class="n">SET</span><span class="p">;</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZRST</span> <span class="n">Unknown</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONST</span> <span class="n">B4C</span><span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">TWST</span> <span class="n">Ni</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">MR2L0_Coating_enumSet</span><span class="p">:</span> <span class="n">ENUM_Coating_States</span><span class="p">;</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">COATING</span><span class="p">:</span><span class="n">STATE</span><span class="p">;</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR2L0_States</span><span class="p">:</span> <span class="n">FB_Coatings_States</span><span class="o">:=</span> <span class="p">(</span>
+            <span class="n">bEnable</span><span class="o">:=</span> <span class="n">TRUE</span> <span class="p">,</span>
+            <span class="n">stTransitionBeam</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">cst0RateBeam</span> <span class="p">,</span>
+            <span class="n">nTransitionAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC21 ,</span>
+            <span class="n">nUnknownAssertionID</span><span class="o">:=</span> <span class="mi">16</span><span class="c1">#FC20 ,</span>
+            <span class="n">sB4CType</span><span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span> <span class="p">,</span>
+            <span class="n">nB4CPosition</span><span class="o">:=</span> <span class="mi">7018200</span> <span class="p">,</span>
+            <span class="n">fB4CDelta</span><span class="o">:=</span> <span class="mi">1000</span> <span class="p">,</span>
+            <span class="n">fB4CVelocity</span><span class="o">:=</span><span class="mi">100</span><span class="p">,</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+            <span class="n">sNiType</span><span class="o">:=</span> <span class="s1">&#39;Ni&#39;</span><span class="p">,</span>
+            <span class="n">nNiPosition</span><span class="o">:=</span> <span class="mi">16018200</span><span class="p">,</span>
+            <span class="n">fNiDelta</span><span class="o">:=</span> <span class="mi">1000</span> <span class="p">,</span>
+            <span class="n">fNiVelocity</span><span class="o">:=</span> <span class="mi">100</span><span class="p">);</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^MR1L0_Pitch_ENC&#39;</span><span class="p">}</span>
+    <span class="n">nMR1L0_Pitch_ENC_PMPS</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">ULINT</span><span class="p">;</span>
+
+
+<span class="n">END_VAR</span>
+<span class="o">//</span> <span class="n">M1L0</span>
+<span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="p">(</span><span class="n">stYup</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span>
+               <span class="n">stYdwn</span><span class="o">:=</span><span class="n">M2</span><span class="p">,</span>
+               <span class="n">stXup</span><span class="o">:=</span><span class="n">M3</span><span class="p">,</span>
+               <span class="n">stXdwn</span><span class="o">:=</span><span class="n">M4</span><span class="p">,</span>
+               <span class="n">stPitch</span><span class="o">:=</span><span class="n">M5</span><span class="p">,</span>
+               <span class="n">nYupEncRef</span><span class="o">:=</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nYUP_ENC_REF</span><span class="p">,</span>
+               <span class="n">nYdwnEncRef</span><span class="o">:=</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nYDWN_ENC_REF</span><span class="p">,</span>
+               <span class="n">nXupEncRef</span><span class="o">:=</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nXUP_ENC_REF</span><span class="p">,</span>
+               <span class="n">nXdwnEncRef</span><span class="o">:=</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nXDWN_ENC_REF</span><span class="p">,</span>
+               <span class="n">bExecuteCoupleY</span><span class="o">:=</span><span class="n">M1L0</span><span class="o">.</span><span class="n">bExecuteCoupleY</span><span class="p">,</span>
+               <span class="n">bExecuteCoupleX</span><span class="o">:=</span><span class="n">M1L0</span><span class="o">.</span><span class="n">bExecuteCoupleX</span><span class="p">,</span>
+               <span class="n">bExecuteDecoupleY</span><span class="o">:=</span><span class="n">M1L0</span><span class="o">.</span><span class="n">bExecuteDecoupleY</span><span class="p">,</span>
+               <span class="n">bExecuteDecoupleX</span><span class="o">:=</span><span class="n">M1L0</span><span class="o">.</span><span class="n">bExecuteDecoupleX</span><span class="p">,</span>
+               <span class="n">bGantryAlreadyCoupledY</span><span class="o">=&gt;</span><span class="n">M1L0</span><span class="o">.</span><span class="n">bGantryAlreadyCoupledY</span><span class="p">,</span>
+               <span class="n">bGantryAlreadyCoupledX</span><span class="o">=&gt;</span><span class="n">M1L0</span><span class="o">.</span><span class="n">bGantryAlreadyCoupledX</span><span class="p">,</span>
+               <span class="n">nCurrGantryY</span><span class="o">=&gt;</span><span class="n">M1L0</span><span class="o">.</span><span class="n">nCurrGantryY</span><span class="p">,</span>
+               <span class="n">nCurrGantryX</span><span class="o">=&gt;</span><span class="n">M1L0</span><span class="o">.</span><span class="n">nCurrGantryX</span><span class="p">);</span>
+<span class="n">fbBenderM1L0</span><span class="p">(</span><span class="n">stBender</span><span class="o">:=</span><span class="n">M6</span><span class="p">,</span>
+             <span class="n">bSTOEnable1</span><span class="o">:=</span><span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">bSTOEnable1</span><span class="p">,</span>
+             <span class="n">bSTOEnable2</span><span class="o">:=</span><span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">bSTOEnable2</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">No</span> <span class="n">slave</span> <span class="n">motion</span> <span class="n">through</span> <span class="n">Epics</span>
+<span class="n">M2</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span> <span class="o">//</span> <span class="n">M1L0</span><span class="o">-</span><span class="n">Ydwn</span>
+<span class="n">M4</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span> <span class="o">//</span> <span class="n">M1L0</span><span class="o">-</span><span class="n">Xdwn</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="n">nCurrGantry</span> <span class="n">to</span> <span class="n">um</span> <span class="p">(</span><span class="n">smaller</span> <span class="n">number</span><span class="p">)</span> <span class="n">to</span> <span class="n">read</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">epics</span>
+<span class="n">M1L0</span><span class="o">.</span><span class="n">fCurrGantryY_um</span> <span class="o">:=</span> <span class="n">LINT_TO_REAL</span><span class="p">(</span><span class="n">M1L0</span><span class="o">.</span><span class="n">nCurrGantryY</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">;</span>
+<span class="n">M1L0</span><span class="o">.</span><span class="n">fCurrGantryX_um</span> <span class="o">:=</span> <span class="n">LINT_TO_REAL</span><span class="p">(</span><span class="n">M1L0</span><span class="o">.</span><span class="n">nCurrGantryX</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">FB_MotionStage</span><span class="s1">&#39;s for non-piezo axes</span>
+<span class="n">fbMotionStage_m1</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M1</span><span class="p">);</span>
+<span class="n">fbMotionStage_m2</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M2</span><span class="p">);</span>
+<span class="n">fbMotionStage_m3</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M3</span><span class="p">);</span>
+<span class="n">fbMotionStage_m4</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M4</span><span class="p">);</span>
+<span class="n">fbMotionStage_m5</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M5</span><span class="p">);</span>
+<span class="n">fbMotionStage_m6</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M6</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Calulate</span> <span class="n">Gantry</span> <span class="n">Stats</span><span class="p">:</span>
+<span class="n">fbMR1L0GantryStats</span><span class="p">(</span><span class="n">homs</span><span class="o">:=</span><span class="n">M1L0</span><span class="p">,</span> <span class="n">fbUpStreamY</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span> <span class="n">fbUpStreamX</span><span class="o">:=</span><span class="n">M3</span><span class="p">);</span>
+<span class="n">fbMR2L0GantryStats</span><span class="p">(</span><span class="n">homs</span><span class="o">:=</span><span class="n">M2L0</span><span class="p">,</span> <span class="n">fbUpStreamY</span><span class="o">:=</span><span class="n">M7</span><span class="p">,</span> <span class="n">fbUpStreamX</span><span class="o">:=</span><span class="n">M9</span><span class="p">);</span>
+
+
+<span class="o">//</span> <span class="n">Calculate</span> <span class="n">Pitch</span> <span class="n">RMS</span> <span class="n">Error</span><span class="p">:</span>
+<span class="n">fbYRMSErrorM1L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxYRMSErrorM1L0</span><span class="p">,</span>
+                <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinYRMSErrorM1L0</span><span class="p">);</span>
+
+<span class="n">fbXRMSErrorM1L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M3</span><span class="p">,</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxXRMSErrorM1L0</span><span class="p">,</span>
+                <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinXRMSErrorM1L0</span><span class="p">);</span>
+
+<span class="n">fbPitchRMSErrorM1L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M5</span><span class="p">,</span>
+                    <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxPitchRMSErrorM1L0</span><span class="p">,</span>
+                    <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinPitchRMSErrorM1L0</span><span class="p">);</span>
+
+<span class="n">fbBenderRMSErrorM1L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M6</span><span class="p">,</span>
+                     <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxBenderRMSErrorM1L0</span><span class="p">,</span>
+                     <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinBenderRMSErrorM1L0</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">Pitch</span> <span class="n">Control</span>
+<span class="o">//</span><span class="n">fbM1L0PitchControl</span><span class="p">(</span><span class="n">Pitch</span><span class="o">:=</span><span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">M1L0_Pitch</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">Stepper</span><span class="o">:=</span><span class="n">M5</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">lrCurrentSetpoint</span><span class="o">:=</span><span class="n">M5</span><span class="o">.</span><span class="n">fPosition</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">q_bDone</span><span class="o">=&gt;</span><span class="n">bM1L0PitchDone</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">q_bBusy</span><span class="o">=&gt;</span><span class="n">bM1L0PitchBusy</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">When</span> <span class="n">STO</span> <span class="n">hit</span><span class="p">,</span> <span class="n">need</span> <span class="n">to</span> <span class="n">reset</span> <span class="n">SP</span>
+<span class="o">//</span><span class="n">IF</span> <span class="n">NOT</span> <span class="n">M5</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="n">THEN</span>
+    <span class="o">//</span><span class="n">M5</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="n">M5</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span><span class="p">;</span>
+<span class="o">//</span><span class="n">END_IF</span>
+
+<span class="o">//</span> <span class="n">Raw</span> <span class="n">Encoder</span> <span class="n">Counts</span> <span class="n">For</span> <span class="n">Epics</span>
+<span class="n">nEncCntYupM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYupEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntYdwnM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntXupM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXupEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntXdwnM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M1L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntPitchM1L0</span> <span class="o">:=</span> <span class="n">LINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">M1L0_Pitch</span><span class="o">.</span><span class="n">diEncCnt</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Encoder</span> <span class="n">Reference</span> <span class="n">Values</span> <span class="n">For</span> <span class="n">Epics</span>
+<span class="n">nEncRefYupM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nYUP_ENC_REF</span><span class="p">);</span>
+<span class="n">nEncRefYdwnM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nYDWN_ENC_REF</span><span class="p">);</span>
+<span class="n">nEncRefXupM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nXUP_ENC_REF</span><span class="p">);</span>
+<span class="n">nEncRefXdwnM1L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M1L0_Constants</span><span class="o">.</span><span class="n">nXDWN_ENC_REF</span><span class="p">);</span>
+<span class="n">mcReadParameterPitchM1L0</span><span class="p">(</span><span class="n">Axis</span><span class="o">:=</span><span class="n">M5</span><span class="o">.</span><span class="n">Axis</span><span class="p">,</span>
+                         <span class="n">Enable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
+                         <span class="n">ParameterNumber</span><span class="o">:=</span><span class="n">MC_AxisParameter</span><span class="o">.</span><span class="n">AxisEncoderOffset</span><span class="p">,</span>
+                         <span class="n">ReadMode</span><span class="o">:=</span><span class="n">READMODE_CYCLIC</span><span class="p">,</span>
+                         <span class="n">Value</span><span class="o">=&gt;</span><span class="n">fEncRefPitchM1L0_urad</span><span class="p">);</span>
+
+<span class="n">nEncRefPitchM1L0</span> <span class="o">:=</span> <span class="n">LREAL_TO_UDINT</span><span class="p">(</span><span class="n">ABS</span><span class="p">(</span><span class="n">fEncRefPitchM1L0_urad</span><span class="p">)</span> <span class="o">*</span> <span class="n">fEncLeverArm_mm</span><span class="p">);</span>
+
+<span class="o">//</span><span class="n">Coatings</span> <span class="n">States</span> <span class="n">With</span> <span class="n">PMPS</span>
+<span class="n">M1</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbMR1L0_States</span><span class="p">(</span>
+    <span class="n">enumSet</span> <span class="o">:=</span><span class="n">MR1L0_Coating_enumSet</span><span class="p">,</span>
+    <span class="n">fbArbiter</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span>
+    <span class="n">nB4CCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nNiCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span>
+    <span class="n">bBPOkAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span><span class="o">//</span> <span class="n">Y</span> <span class="n">Gantry</span> <span class="n">Master</span> <span class="n">Axis</span> <span class="p">,</span> <span class="n">stYup</span>
+<span class="n">MR1L0_Coating_enumSet</span> <span class="o">:=</span> <span class="n">fbMR1L0_States</span><span class="o">.</span><span class="n">setState</span><span class="p">;</span>
+
+
+
+<span class="o">//</span> <span class="n">M2L0</span>
+<span class="n">M2L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="p">(</span><span class="n">stYup</span><span class="o">:=</span><span class="n">M7</span><span class="p">,</span>
+               <span class="n">stYdwn</span><span class="o">:=</span><span class="n">M8</span><span class="p">,</span>
+               <span class="n">stXup</span><span class="o">:=</span><span class="n">M9</span><span class="p">,</span>
+               <span class="n">stXdwn</span><span class="o">:=</span><span class="n">M10</span><span class="p">,</span>
+               <span class="n">stPitch</span><span class="o">:=</span><span class="n">M11</span><span class="p">,</span>
+               <span class="n">nYupEncRef</span><span class="o">:=</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nYUP_ENC_REF</span><span class="p">,</span>
+               <span class="n">nYdwnEncRef</span><span class="o">:=</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nYDWN_ENC_REF</span><span class="p">,</span>
+               <span class="n">nXupEncRef</span><span class="o">:=</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nXUP_ENC_REF</span><span class="p">,</span>
+               <span class="n">nXdwnEncRef</span><span class="o">:=</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nXDWN_ENC_REF</span><span class="p">,</span>
+               <span class="n">bExecuteCoupleY</span><span class="o">:=</span><span class="n">M2L0</span><span class="o">.</span><span class="n">bExecuteCoupleY</span><span class="p">,</span>
+               <span class="n">bExecuteCoupleX</span><span class="o">:=</span><span class="n">M2L0</span><span class="o">.</span><span class="n">bExecuteCoupleX</span><span class="p">,</span>
+               <span class="n">bExecuteDecoupleY</span><span class="o">:=</span><span class="n">M2L0</span><span class="o">.</span><span class="n">bExecuteDecoupleY</span><span class="p">,</span>
+               <span class="n">bExecuteDecoupleX</span><span class="o">:=</span><span class="n">M2L0</span><span class="o">.</span><span class="n">bExecuteDecoupleX</span><span class="p">,</span>
+               <span class="n">bGantryAlreadyCoupledY</span><span class="o">=&gt;</span><span class="n">M2L0</span><span class="o">.</span><span class="n">bGantryAlreadyCoupledY</span><span class="p">,</span>
+               <span class="n">bGantryAlreadyCoupledX</span><span class="o">=&gt;</span><span class="n">M2L0</span><span class="o">.</span><span class="n">bGantryAlreadyCoupledX</span><span class="p">,</span>
+               <span class="n">nCurrGantryY</span><span class="o">=&gt;</span><span class="n">M2L0</span><span class="o">.</span><span class="n">nCurrGantryY</span><span class="p">,</span>
+               <span class="n">nCurrGantryX</span><span class="o">=&gt;</span><span class="n">M2L0</span><span class="o">.</span><span class="n">nCurrGantryX</span><span class="p">);</span>
+<span class="n">fbBenderM2L0</span><span class="p">(</span><span class="n">stBender</span><span class="o">:=</span><span class="n">M12</span><span class="p">,</span>
+             <span class="n">bSTOEnable1</span><span class="o">:=</span><span class="n">M2L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">bSTOEnable1</span><span class="p">,</span>
+             <span class="n">bSTOEnable2</span><span class="o">:=</span><span class="n">M2L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">bSTOEnable2</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">No</span> <span class="n">slave</span> <span class="n">motion</span> <span class="n">through</span> <span class="n">Epics</span>
+<span class="n">M8</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span> <span class="o">//</span> <span class="n">M2L0</span><span class="o">-</span><span class="n">Ydwn</span>
+<span class="n">M10</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span> <span class="o">//</span> <span class="n">M2L0</span><span class="o">-</span><span class="n">Xdwn</span>
+
+<span class="o">//</span> <span class="n">Convert</span> <span class="n">nCurrGantry</span> <span class="n">to</span> <span class="n">um</span> <span class="p">(</span><span class="n">smaller</span> <span class="n">number</span><span class="p">)</span> <span class="n">to</span> <span class="n">read</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">epics</span>
+<span class="n">M2L0</span><span class="o">.</span><span class="n">fCurrGantryY_um</span> <span class="o">:=</span> <span class="n">LINT_TO_REAL</span><span class="p">(</span><span class="n">M2L0</span><span class="o">.</span><span class="n">nCurrGantryY</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">;</span>
+<span class="n">M2L0</span><span class="o">.</span><span class="n">fCurrGantryX_um</span> <span class="o">:=</span> <span class="n">LINT_TO_REAL</span><span class="p">(</span><span class="n">M2L0</span><span class="o">.</span><span class="n">nCurrGantryX</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">FB_MotionStage</span><span class="s1">&#39;s for non-piezo axes</span>
+<span class="n">fbMotionStage_m7</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M7</span><span class="p">);</span>
+<span class="n">fbMotionStage_m8</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M8</span><span class="p">);</span>
+<span class="n">fbMotionStage_m9</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M9</span><span class="p">);</span>
+<span class="n">fbMotionStage_m10</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M10</span><span class="p">);</span>
+<span class="n">fbMotionStage_m11</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M11</span><span class="p">);</span>
+<span class="n">fbMotionStage_m12</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M12</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Calculate</span> <span class="n">RMS</span> <span class="n">Error</span><span class="p">:</span>
+<span class="n">fbYRMSErrorM2L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M7</span><span class="p">,</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxYRMSErrorM2L0</span><span class="p">,</span>
+                <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinYRMSErrorM2L0</span><span class="p">);</span>
+
+<span class="n">fbXRMSErrorM2L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M9</span><span class="p">,</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxXRMSErrorM2L0</span><span class="p">,</span>
+                <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinXRMSErrorM2L0</span><span class="p">);</span>
+
+<span class="n">fbPitchRMSErrorM2L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M11</span><span class="p">,</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxPitchRMSErrorM2L0</span><span class="p">,</span>
+                <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinPitchRMSErrorM2L0</span><span class="p">);</span>
+
+<span class="n">fbBenderRMSErrorM2L0</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M12</span><span class="p">,</span>
+                <span class="n">fMaxRMSError</span><span class="o">=&gt;</span><span class="n">fMaxBenderRMSErrorM2L0</span><span class="p">,</span>
+                <span class="n">fMinRMSError</span><span class="o">=&gt;</span><span class="n">fMinBenderRMSErrorM2L0</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Pitch</span> <span class="n">Control</span>
+<span class="o">//</span><span class="n">fbM2L0PitchControl</span><span class="p">(</span><span class="n">Pitch</span><span class="o">:=</span><span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">M2L0_Pitch</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">Stepper</span><span class="o">:=</span><span class="n">M11</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">lrCurrentSetpoint</span><span class="o">:=</span><span class="n">M11</span><span class="o">.</span><span class="n">fPosition</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">q_bDone</span><span class="o">=&gt;</span><span class="n">bM2L0PitchDone</span><span class="p">,</span>
+                   <span class="o">//</span><span class="n">q_bBusy</span><span class="o">=&gt;</span><span class="n">bM2L0PitchBusy</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">When</span> <span class="n">STO</span> <span class="n">hit</span><span class="p">,</span> <span class="n">need</span> <span class="n">to</span> <span class="n">reset</span> <span class="n">SP</span>
+<span class="o">//</span><span class="n">IF</span> <span class="n">NOT</span> <span class="n">M11</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="n">THEN</span>
+    <span class="o">//</span><span class="n">M11</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="n">M11</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span><span class="p">;</span>
+<span class="o">//</span><span class="n">END_IF</span>
+
+<span class="o">//</span> <span class="n">Raw</span> <span class="n">Encoder</span> <span class="n">Counts</span> <span class="n">For</span> <span class="n">Epics</span>
+<span class="n">nEncCntYupM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M2L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYupEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntYdwnM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M2L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stYdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntXupM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M2L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXupEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntXdwnM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">M2L0</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="o">.</span><span class="n">stXdwnEnc</span><span class="o">.</span><span class="n">Count</span><span class="p">);</span>
+<span class="n">nEncCntPitchM2L0</span> <span class="o">:=</span> <span class="n">LINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">M2L0_Pitch</span><span class="o">.</span><span class="n">diEncCnt</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Encoder</span> <span class="n">Reference</span> <span class="n">Values</span> <span class="n">For</span> <span class="n">Epics</span>
+<span class="n">nEncRefYupM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nYUP_ENC_REF</span><span class="p">);</span>
+<span class="n">nEncRefYdwnM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nYDWN_ENC_REF</span><span class="p">);</span>
+<span class="n">nEncRefXupM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nXUP_ENC_REF</span><span class="p">);</span>
+<span class="n">nEncRefXdwnM2L0</span> <span class="o">:=</span> <span class="n">ULINT_TO_UDINT</span><span class="p">(</span><span class="n">GVL_M2L0_Constants</span><span class="o">.</span><span class="n">nXDWN_ENC_REF</span><span class="p">);</span>
+<span class="n">mcReadParameterPitchM2L0</span><span class="p">(</span><span class="n">Axis</span><span class="o">:=</span><span class="n">M11</span><span class="o">.</span><span class="n">Axis</span><span class="p">,</span>
+                         <span class="n">Enable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
+                         <span class="n">ParameterNumber</span><span class="o">:=</span><span class="n">MC_AxisParameter</span><span class="o">.</span><span class="n">AxisEncoderOffset</span><span class="p">,</span>
+                         <span class="n">ReadMode</span><span class="o">:=</span><span class="n">READMODE_CYCLIC</span><span class="p">,</span>
+                         <span class="n">Value</span><span class="o">=&gt;</span><span class="n">fEncRefPitchM2L0_urad</span><span class="p">);</span>
+
+<span class="n">nEncRefPitchM2L0</span> <span class="o">:=</span> <span class="n">LREAL_TO_UDINT</span><span class="p">(</span><span class="n">ABS</span><span class="p">(</span><span class="n">fEncRefPitchM2L0_urad</span><span class="p">)</span> <span class="o">*</span> <span class="n">fEncLeverArm_mm</span><span class="p">);</span>
+
+<span class="o">//</span><span class="n">Coatings</span> <span class="n">States</span> <span class="n">With</span> <span class="n">PMPS</span>
+<span class="n">M7</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+<span class="n">fbMR2L0_States</span><span class="p">(</span>
+    <span class="n">enumSet</span> <span class="o">:=</span><span class="n">MR2L0_Coating_enumSet</span><span class="p">,</span>
+    <span class="n">fbArbiter</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span>
+    <span class="n">nB4CCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nNiCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M7</span><span class="p">,</span>
+    <span class="n">bBPOkAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span><span class="o">//</span> <span class="n">Y</span> <span class="n">Gantry</span> <span class="n">Master</span> <span class="n">Axis</span> <span class="p">,</span> <span class="n">stYup</span>
+
+<span class="n">MR2L0_Coating_enumSet</span> <span class="o">:=</span> <span class="n">fbMR2L0_States</span><span class="o">.</span><span class="n">setState</span><span class="p">;</span>
+
+
+<span class="n">P_CoatingProtections</span><span class="p">();</span>
+<span class="n">PRG_Environment</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Logging</span>
+<span class="n">fbLogHandler</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">PMPS</span>
+<span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="o">.</span><span class="n">AddRequest</span><span class="p">(</span><span class="mi">16</span><span class="c1">#5, PMPS_GVL.cstFullBeam, &#39;LFE Optics&#39;);</span>
+<span class="n">fbArbiterIO</span><span class="p">(</span><span class="n">Arbiter</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
+<span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
+<span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput2</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span><span class="o">:=</span><span class="p">);</span>
+
+ <span class="n">nMR1L0_Pitch_ENC_PMPS</span> <span class="o">:=</span> <span class="n">M5</span><span class="o">.</span><span class="n">nRawEncoderULINT</span><span class="p">;</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#enum-coating-states">ENUM_Coating_States</a></p></li>
+<li><p><a class="reference internal" href="#fb-coatings-states">FB_Coatings_States</a></p></li>
+<li><p><a class="reference internal" href="#gvl-m1l0">GVL_M1L0</a></p></li>
+<li><p><a class="reference internal" href="#gvl-m1l0-constants">GVL_M1L0_Constants</a></p></li>
+<li><p><a class="reference internal" href="#gvl-m2l0">GVL_M2L0</a></p></li>
+<li><p><a class="reference internal" href="#gvl-m2l0-constants">GVL_M2L0_Constants</a></p></li>
+<li><p><a class="reference internal" href="#gvl-pmps">GVL_PMPS</a></p></li>
+<li><p><a class="reference internal" href="#prg-environment">PRG_Environment</a></p></li>
+<li><p><a class="reference internal" href="#p-coatingprotections">P_CoatingProtections</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="p-coatingprotections">
+<h2>P_CoatingProtections<a class="headerlink" href="#p-coatingprotections" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_CoatingProtections</span>
+<span class="n">VAR</span>
+        <span class="n">fbStripProtMR1L0</span> <span class="p">:</span> <span class="n">FB_MirrorTwoCoatingProtection</span> <span class="o">:=</span> <span class="p">(</span>
+            <span class="n">sDevName</span> <span class="o">:=</span> <span class="s1">&#39;MR1L0&#39;</span><span class="p">,</span>
+            <span class="n">nUpperCoatingBoundary</span> <span class="o">:=</span> <span class="mi">13300000</span><span class="p">,</span>
+            <span class="n">sUpperCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span><span class="p">,</span>
+            <span class="n">nLowerCoatingBoundary</span> <span class="o">:=</span> <span class="mi">11800000</span><span class="p">,</span>
+            <span class="n">sLowerCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C/Ni&#39;</span><span class="p">);</span>
+
+        <span class="n">fbStripProtMR2L0</span> <span class="p">:</span> <span class="n">FB_MirrorTwoCoatingProtection</span> <span class="o">:=</span> <span class="p">(</span>
+            <span class="n">sDevName</span> <span class="o">:=</span> <span class="s1">&#39;MR2L0&#39;</span><span class="p">,</span>
+            <span class="n">nUpperCoatingBoundary</span> <span class="o">:=</span> <span class="mi">14300000</span><span class="p">,</span>
+            <span class="n">sUpperCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;Ni&#39;</span><span class="p">,</span>
+            <span class="n">nLowerCoatingBoundary</span> <span class="o">:=</span> <span class="mi">12800000</span><span class="p">,</span>
+            <span class="n">sLowerCoatingType</span> <span class="o">:=</span> <span class="s1">&#39;B4C&#39;</span><span class="p">);</span>
+<span class="n">END_VAR</span>
+<span class="n">fbStripProtMR1L0</span><span class="p">(</span>
+    <span class="n">nCurrentEncoderCount</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">nEncCntYupM1L0</span><span class="p">,</span>
+    <span class="n">neVRange</span> <span class="o">:=</span> <span class="n">PMPS</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neVRange</span><span class="p">,</span>
+    <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
+
+<span class="n">fbStripProtMR2L0</span><span class="p">(</span>
+    <span class="n">nCurrentEncoderCount</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">nEncCntYupM2L0</span><span class="p">,</span>
+    <span class="n">neVRange</span> <span class="o">:=</span> <span class="n">PMPS</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">neVRange</span><span class="p">,</span>
+    <span class="n">nUpperCoatingBitmask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">27000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span><span class="n">exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">12</span> <span class="n">AND</span> <span class="mi">27</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">nLowerCoatingBitMask</span> <span class="o">:=</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="n">AND</span> <span class="n">F_eVExcludeRange</span><span class="p">(</span><span class="mi">14000</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span> <span class="o">//</span> <span class="n">Exclusion</span> <span class="nb">range</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="n">AND</span> <span class="mi">14</span><span class="p">,</span><span class="mi">90</span>
+    <span class="n">FFO</span> <span class="o">:=</span> <span class="n">GVL_PMPS</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl-pmps">GVL_PMPS</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="p-serial-com">
+<h2>P_Serial_Com<a class="headerlink" href="#p-serial-com" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_Serial_Com</span>
+<span class="n">VAR</span>
+    <span class="n">fbSerialLineControl_EL6001_M1L0</span><span class="p">:</span> <span class="n">SerialLineControl</span><span class="p">;</span> <span class="o">//</span> <span class="n">M1L0</span> <span class="n">Serial</span> <span class="n">Comm</span> <span class="n">Function</span> <span class="n">Block</span>
+    <span class="n">fbSerialLineControl_EL6001_M2L0</span><span class="p">:</span> <span class="n">SerialLineControl</span><span class="p">;</span> <span class="o">//</span> <span class="n">M2L0</span> <span class="n">Serial</span> <span class="n">Comm</span> <span class="n">Function</span> <span class="n">Block</span>
+<span class="n">END_VAR</span>
+<span class="o">//</span> <span class="n">These</span> <span class="n">are</span> <span class="n">the</span> <span class="k">global</span> <span class="n">IOs</span><span class="o">...</span><span class="n">don</span><span class="s1">&#39;t forget to copy your data into them</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">EL6001</span> <span class="n">Serial</span> <span class="n">port</span> <span class="mi">0</span> <span class="n">com</span> <span class="n">function</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">fbSerialLineControl_EL6001_M1L0</span><span class="p">(</span><span class="n">Mode</span><span class="o">:=</span> <span class="n">SERIALLINEMODE_EL6_22B</span><span class="p">,</span>
+                                <span class="n">pComIn</span><span class="o">:=</span> <span class="n">ADR</span><span class="p">(</span><span class="n">Serial_stComIn_M1L0</span><span class="p">),</span>
+                                   <span class="n">pComOut</span><span class="o">:=</span><span class="n">ADR</span><span class="p">(</span><span class="n">Serial_stComOut_M1L0</span><span class="p">),</span>
+                                <span class="n">SizeComIn</span><span class="o">:=</span> <span class="n">SIZEOF</span><span class="p">(</span><span class="n">Serial_stComIn_M1L0</span><span class="p">),</span>
+                                <span class="n">TxBuffer</span><span class="o">:=</span> <span class="n">Serial_TXBuffer_M1L0</span><span class="p">,</span>
+                                <span class="n">RxBuffer</span><span class="o">:=</span> <span class="n">Serial_RXBuffer_M1L0</span><span class="p">,</span>
+                                <span class="n">Error</span><span class="o">=&gt;</span><span class="p">,</span>
+                                <span class="n">ErrorID</span><span class="o">=&gt;</span><span class="p">);</span>
+
+<span class="n">fbSerialLineControl_EL6001_M2L0</span><span class="p">(</span><span class="n">Mode</span><span class="o">:=</span> <span class="n">SERIALLINEMODE_EL6_22B</span><span class="p">,</span>
+                                <span class="n">pComIn</span><span class="o">:=</span> <span class="n">ADR</span><span class="p">(</span><span class="n">Serial_stComIn_M2L0</span><span class="p">),</span>
+                                   <span class="n">pComOut</span><span class="o">:=</span><span class="n">ADR</span><span class="p">(</span><span class="n">Serial_stComOut_M2L0</span><span class="p">),</span>
+                                <span class="n">SizeComIn</span><span class="o">:=</span> <span class="n">SIZEOF</span><span class="p">(</span><span class="n">Serial_stComIn_M2L0</span><span class="p">),</span>
+                                <span class="n">TxBuffer</span><span class="o">:=</span> <span class="n">Serial_TXBuffer_M2L0</span><span class="p">,</span>
+                                <span class="n">RxBuffer</span><span class="o">:=</span> <span class="n">Serial_RXBuffer_M2L0</span><span class="p">,</span>
+                                <span class="n">Error</span><span class="o">=&gt;</span><span class="p">,</span>
+                                <span class="n">ErrorID</span><span class="o">=&gt;</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</section>
+<section id="piezoserial">
+<h2>PiezoSerial<a class="headerlink" href="#piezoserial" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PiezoSerial</span>
+<span class="n">VAR</span>
+    <span class="o">//</span><span class="n">PI</span> <span class="n">Serial</span>
+    <span class="n">fbE621SerialDriver_M1L0</span> <span class="p">:</span> <span class="n">FB_PI_E621_SerialDriver</span><span class="p">;</span>
+    <span class="n">rtInitParams_M1L0</span>       <span class="p">:</span>       <span class="n">R_TRIG</span><span class="p">;</span>
+    <span class="n">tonTimeoutRst_M1L0</span>      <span class="p">:</span> <span class="n">TON</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PT</span><span class="o">:=</span><span class="n">T</span><span class="c1">#2S); //For timeout reset</span>
+
+    <span class="n">fbE621SerialDriver_M2L0</span> <span class="p">:</span> <span class="n">FB_PI_E621_SerialDriver</span><span class="p">;</span>
+    <span class="n">rtInitParams_M2L0</span>       <span class="p">:</span>       <span class="n">R_TRIG</span><span class="p">;</span>
+    <span class="n">tonTimeoutRst_M2L0</span>      <span class="p">:</span> <span class="n">TON</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PT</span><span class="o">:=</span><span class="n">T</span><span class="c1">#2S); //For timeout reset</span>
+<span class="n">END_VAR</span>
+<span class="o">//</span><span class="n">Piezo</span> <span class="n">E</span><span class="o">-</span><span class="mi">621</span>
+<span class="o">///////////////////////</span>
+<span class="n">fbE621SerialDriver_M1L0</span><span class="o">.</span><span class="n">i_xExecute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbE621SerialDriver_M1L0</span><span class="o">.</span><span class="n">i_xExecute</span> <span class="n">R</span><span class="o">=</span> <span class="n">fbE621SerialDriver_M1L0</span><span class="o">.</span><span class="n">q_xDone</span><span class="p">;</span>
+<span class="n">fbE621SerialDriver_M1L0</span><span class="p">(</span><span class="n">iq_stPiezoAxis</span><span class="o">:=</span> <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">M1L0_Pitch</span><span class="o">.</span><span class="n">Piezo</span><span class="p">,</span>
+                        <span class="n">iq_stSerialRXBuffer</span><span class="o">:=</span> <span class="n">Serial_RXBuffer_M1L0</span><span class="p">,</span>
+                        <span class="n">iq_stSerialTXBuffer</span><span class="o">:=</span> <span class="n">Serial_TXBuffer_M1L0</span><span class="p">);</span>
+
+<span class="n">fbE621SerialDriver_M2L0</span><span class="o">.</span><span class="n">i_xExecute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbE621SerialDriver_M2L0</span><span class="o">.</span><span class="n">i_xExecute</span> <span class="n">R</span><span class="o">=</span> <span class="n">fbE621SerialDriver_M2L0</span><span class="o">.</span><span class="n">q_xDone</span><span class="p">;</span>
+<span class="n">fbE621SerialDriver_M2L0</span><span class="p">(</span><span class="n">iq_stPiezoAxis</span><span class="o">:=</span> <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">M2L0_Pitch</span><span class="o">.</span><span class="n">Piezo</span><span class="p">,</span>
+                        <span class="n">iq_stSerialRXBuffer</span><span class="o">:=</span> <span class="n">Serial_RXBuffer_M2L0</span><span class="p">,</span>
+                        <span class="n">iq_stSerialTXBuffer</span><span class="o">:=</span> <span class="n">Serial_TXBuffer_M2L0</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl-m1l0">GVL_M1L0</a></p></li>
+<li><p><a class="reference internal" href="#gvl-m2l0">GVL_M2L0</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="prg-environment">
+<h2>PRG_Environment<a class="headerlink" href="#prg-environment" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_Environment</span>
+<span class="n">VAR</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EP2008-0001_M1M2_VCV]^Channel 1^Output&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">VCV</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bActivateVarCoolMR1L0</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EP2008-0001_M1M2_VCV]^Channel 2^Output&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L0</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">VCV</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bActivateVarCoolMR2L0</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="o">//</span> <span class="n">MR1L0</span> <span class="n">Flow</span> <span class="n">Pressure</span> <span class="n">Sensors</span>
+    <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Flow_1</span><span class="p">(</span><span class="n">iTermBits</span><span class="o">:=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fTermMax</span><span class="o">:=</span><span class="mf">5.0427</span><span class="p">,</span> <span class="n">fTermMin</span><span class="o">:=</span><span class="mf">0.050472</span><span class="p">);</span>
+    <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Flow_1_val</span> <span class="o">:=</span> <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Flow_1</span><span class="o">.</span><span class="n">fReal</span><span class="p">;</span>
+
+    <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Flow_2</span><span class="p">(</span><span class="n">iTermBits</span><span class="o">:=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fTermMax</span><span class="o">:=</span><span class="mf">5.0427</span><span class="p">,</span> <span class="n">fTermMin</span><span class="o">:=</span><span class="mf">0.050472</span><span class="p">);</span>
+    <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Flow_2_val</span> <span class="o">:=</span> <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Flow_2</span><span class="o">.</span><span class="n">fReal</span><span class="p">;</span>
+
+    <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Press_1</span><span class="p">(</span><span class="n">iTermBits</span><span class="o">:=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fTermMax</span><span class="o">:=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">fTermMin</span><span class="o">:=</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Press_1_val</span> <span class="o">:=</span> <span class="n">GVL_M1L0</span><span class="o">.</span><span class="n">fM1L0_Press_1</span><span class="o">.</span><span class="n">fReal</span><span class="p">;</span>
+
+    <span class="o">//</span> <span class="n">MR2L0</span> <span class="n">Flow</span> <span class="n">Pressure</span> <span class="n">Sensors</span>
+    <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Flow_1</span><span class="p">(</span><span class="n">iTermBits</span><span class="o">:=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fTermMax</span><span class="o">:=</span><span class="mf">5.0427</span><span class="p">,</span> <span class="n">fTermMin</span><span class="o">:=</span><span class="mf">0.050472</span><span class="p">);</span>
+    <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Flow_1_val</span> <span class="o">:=</span> <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Flow_1</span><span class="o">.</span><span class="n">fReal</span><span class="p">;</span>
+
+    <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Flow_2</span><span class="p">(</span><span class="n">iTermBits</span><span class="o">:=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fTermMax</span><span class="o">:=</span><span class="mf">5.0427</span><span class="p">,</span> <span class="n">fTermMin</span><span class="o">:=</span><span class="mf">0.050472</span><span class="p">);</span>
+    <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Flow_2_val</span> <span class="o">:=</span> <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Flow_2</span><span class="o">.</span><span class="n">fReal</span><span class="p">;</span>
+
+    <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Press_1</span><span class="p">(</span><span class="n">iTermBits</span><span class="o">:=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fTermMax</span><span class="o">:=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">fTermMin</span><span class="o">:=</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Press_1_val</span> <span class="o">:=</span> <span class="n">GVL_M2L0</span><span class="o">.</span><span class="n">fM2L0_Press_1</span><span class="o">.</span><span class="n">fReal</span><span class="p">;</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl-m1l0">GVL_M1L0</a></p></li>
+<li><p><a class="reference internal" href="#gvl-m2l0">GVL_M2L0</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lcls-plc-lfe-optics_lfe_optics_epics.html" class="btn btn-neutral float-left" title="Data Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
