@@ -4339,7 +4339,7 @@ PDO AI Compact Channel 4 (Index #x1a07, Flags #x0010, SyncMan )
    </details>
 
 
-Box 69 (EP2008-0001)
+EP2008-0001_M1M2_VCV
 ^^^^^^^^^^^^^^^^^^^^
 
 
@@ -4352,7 +4352,7 @@ Box 69 (EP2008-0001)
     :header: Name, Data
     :align: center
 
-    Name, Box 69 (EP2008-0001)
+    Name, EP2008-0001_M1M2_VCV
     ID, 69
         SyncMan, 000f01004400010003000000010001000100000f44090000
         Fmmu, 0000000000000000000f00020100000001000000000000000000000000000000

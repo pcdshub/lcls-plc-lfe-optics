@@ -24,7 +24,7 @@ Settings
 Pragmas
 -------
 
-Total pragmas found: 90
+Total pragmas found: 94
 Total linter errors: 0
 
 
@@ -76,13 +76,13 @@ Constants
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        Constants.bFPUSupport, BOOL, 651737600 (8)
-        Constants.bLittleEndian, BOOL, 649196240 (8)
-        Constants.bSimulationMode, BOOL, 649196248 (8)
+        Constants.bFPUSupport, BOOL, 651737616 (8)
+        Constants.bLittleEndian, BOOL, 649196256 (8)
+        Constants.bSimulationMode, BOOL, 649196264 (8)
         Constants.CompilerVersion, VERSION, 651737536 (64)
         Constants.CompilerVersionNumeric, DWORD, 651737664 (32)
-        Constants.nPackMode, UINT, 649196272 (16)
-        Constants.nRegisterSize, WORD, 649196256 (16)
+        Constants.nPackMode, UINT, 651737600 (16)
+        Constants.nRegisterSize, WORD, 649196272 (16)
         Constants.RuntimeVersion, VERSION, 651737472 (64)
         Constants.RuntimeVersionNumeric, DWORD, 651737632 (32)
 
@@ -1154,6 +1154,17 @@ PMPS_TOOLS
         PMPS_TOOLS.fbJson, FB_JsonSaxWriter, 634610944 (256)
 
 
+PRG_Environment
+^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        PRG_Environment.bActivateVarCoolMR1L0, BOOL, 626228024 (8)
+        PRG_Environment.bActivateVarCoolMR2L0, BOOL, 649196240 (8)
+
+
 TC_EVENT_CLASSES
 ^^^^^^^^^^^^^^^^
 
@@ -1161,12 +1172,12 @@ TC_EVENT_CLASSES
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 651763296 (128)
-        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 651762784 (128)
-        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 651762912 (128)
-        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 651763040 (128)
-        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 651762656 (128)
-        TC_EVENT_CLASSES.Win32EventClass, GUID, 651763168 (128)
+        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 651792416 (128)
+        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 651791904 (128)
+        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 651792032 (128)
+        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 651792160 (128)
+        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 651791776 (128)
+        TC_EVENT_CLASSES.Win32EventClass, GUID, 651792288 (128)
 
 
 TC_EVENTS
@@ -1176,7 +1187,7 @@ TC_EVENTS
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 651793760 (960)
+        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 651778144 (960)
 
 
 TwinCAT_LicenseInfoVarList

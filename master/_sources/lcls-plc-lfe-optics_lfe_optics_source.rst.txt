@@ -1072,6 +1072,22 @@ PRG_Environment
 
     PROGRAM PRG_Environment
     VAR
+        {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 1^Output'}
+        {attribute 'pytmc' := '
+            pv: MR1L0:HOMS:VCV
+            io: io
+            field: ZNAM OFF
+            field: ONAM ON
+        '}
+        bActivateVarCoolMR1L0 AT %Q* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 2^Output'}
+        {attribute 'pytmc' := '
+            pv: MR2L0:HOMS:VCV
+            io: io
+            field: ZNAM OFF
+            field: ONAM ON
+        '}
+        bActivateVarCoolMR2L0 AT %Q* : BOOL;
     END_VAR
     // MR1L0 Flow Pressure Sensors
         GVL_M1L0.fM1L0_Flow_1(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);

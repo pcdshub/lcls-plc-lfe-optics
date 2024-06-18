@@ -18,7 +18,7 @@
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
@@ -91,6 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#pmps-gvl">PMPS_GVL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pmps-param">PMPS_PARAM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pmps-tools">PMPS_TOOLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-environment">PRG_Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tc-event-classes">TC_EVENT_CLASSES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tc-events">TC_EVENTS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#twincat-licenseinfovarlist">TwinCAT_LicenseInfoVarList</a></li>
@@ -155,7 +156,7 @@
 </section>
 <section id="pragmas">
 <span id="lfe-optics-pragmas"></span><h1>Pragmas<a class="headerlink" href="#pragmas" title="Link to this heading"></a></h1>
-<p>Total pragmas found: 90
+<p>Total pragmas found: 94
 Total linter errors: 0</p>
 </section>
 <section id="libraries">
@@ -290,15 +291,15 @@ Total linter errors: 0</p>
 <tbody>
 <tr class="row-even"><td><p>Constants.bFPUSupport</p></td>
 <td><p>BOOL</p></td>
-<td><p>651737600 (8)</p></td>
+<td><p>651737616 (8)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Constants.bLittleEndian</p></td>
 <td><p>BOOL</p></td>
-<td><p>649196240 (8)</p></td>
+<td><p>649196256 (8)</p></td>
 </tr>
 <tr class="row-even"><td><p>Constants.bSimulationMode</p></td>
 <td><p>BOOL</p></td>
-<td><p>649196248 (8)</p></td>
+<td><p>649196264 (8)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Constants.CompilerVersion</p></td>
 <td><p>VERSION</p></td>
@@ -310,11 +311,11 @@ Total linter errors: 0</p>
 </tr>
 <tr class="row-odd"><td><p>Constants.nPackMode</p></td>
 <td><p>UINT</p></td>
-<td><p>649196272 (16)</p></td>
+<td><p>651737600 (16)</p></td>
 </tr>
 <tr class="row-even"><td><p>Constants.nRegisterSize</p></td>
 <td><p>WORD</p></td>
-<td><p>649196256 (16)</p></td>
+<td><p>649196272 (16)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Constants.RuntimeVersion</p></td>
 <td><p>VERSION</p></td>
@@ -3662,6 +3663,27 @@ Total linter errors: 0</p>
 </tbody>
 </table>
 </section>
+<section id="prg-environment">
+<h2>PRG_Environment<a class="headerlink" href="#prg-environment" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Offset/Size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PRG_Environment.bActivateVarCoolMR1L0</p></td>
+<td><p>BOOL</p></td>
+<td><p>626228024 (8)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRG_Environment.bActivateVarCoolMR2L0</p></td>
+<td><p>BOOL</p></td>
+<td><p>649196240 (8)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="tc-event-classes">
 <h2>TC_EVENT_CLASSES<a class="headerlink" href="#tc-event-classes" title="Link to this heading"></a></h2>
 <table class="docutils align-center">
@@ -3674,27 +3696,27 @@ Total linter errors: 0</p>
 <tbody>
 <tr class="row-even"><td><p>TC_EVENT_CLASSES.LCLSGeneralEventClass</p></td>
 <td><p>GUID</p></td>
-<td><p>651763296 (128)</p></td>
+<td><p>651792416 (128)</p></td>
 </tr>
 <tr class="row-odd"><td><p>TC_EVENT_CLASSES.TcGeneralAdsEventClass</p></td>
 <td><p>GUID</p></td>
-<td><p>651762784 (128)</p></td>
+<td><p>651791904 (128)</p></td>
 </tr>
 <tr class="row-even"><td><p>TC_EVENT_CLASSES.TcRouterEventClass</p></td>
 <td><p>GUID</p></td>
-<td><p>651762912 (128)</p></td>
+<td><p>651792032 (128)</p></td>
 </tr>
 <tr class="row-odd"><td><p>TC_EVENT_CLASSES.TcRTimeEventClass</p></td>
 <td><p>GUID</p></td>
-<td><p>651763040 (128)</p></td>
+<td><p>651792160 (128)</p></td>
 </tr>
 <tr class="row-even"><td><p>TC_EVENT_CLASSES.TcSystemEventClass</p></td>
 <td><p>GUID</p></td>
-<td><p>651762656 (128)</p></td>
+<td><p>651791776 (128)</p></td>
 </tr>
 <tr class="row-odd"><td><p>TC_EVENT_CLASSES.Win32EventClass</p></td>
 <td><p>GUID</p></td>
-<td><p>651763168 (128)</p></td>
+<td><p>651792288 (128)</p></td>
 </tr>
 </tbody>
 </table>
@@ -3711,7 +3733,7 @@ Total linter errors: 0</p>
 <tbody>
 <tr class="row-even"><td><p>TC_EVENTS.LCLSGeneralEventClass</p></td>
 <td><p>LCLSGeneralEventClass</p></td>
-<td><p>651793760 (960)</p></td>
+<td><p>651778144 (960)</p></td>
 </tr>
 </tbody>
 </table>

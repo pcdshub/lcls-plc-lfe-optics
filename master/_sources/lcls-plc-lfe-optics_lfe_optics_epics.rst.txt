@@ -52732,4 +52732,36 @@ Database Records
         | io: input
 
 
+    * - MR1L0:HOMS:VCV_RBV
+      - bi
+      - PRG_Environment.bActivateVarCoolMR1L0
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - MR1L0:HOMS:VCV
+      - bo
+      - PRG_Environment.bActivateVarCoolMR1L0
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - MR2L0:HOMS:VCV_RBV
+      - bi
+      - PRG_Environment.bActivateVarCoolMR2L0
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - MR2L0:HOMS:VCV
+      - bo
+      - PRG_Environment.bActivateVarCoolMR2L0
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
 

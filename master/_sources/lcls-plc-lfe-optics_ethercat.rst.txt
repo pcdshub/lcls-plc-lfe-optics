@@ -765,7 +765,7 @@ EtherCAT Terminals
                             <td width="10%">
                               ID=69:
                             </td>
-                            <td width="75%">Box 69 (EP2008-0001)
+                            <td width="75%">EP2008-0001_M1M2_VCV
                             </td>
                             <td>        </td>
                           </tr>
