@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_States" Id="{735a8ab0-a2f0-4dc4-b81b-50bee151a84b}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+    stDefaultY : ST_PositionState := (
+        fDelta:=100,
+        fVelocity:=100,
+        fAccel:=200,
+        fDecel:=200,
+        bMoveOk:=TRUE,
+        bValid:=TRUE,
+        bUseRawCounts:=TRUE
+    );
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

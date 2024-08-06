@@ -21,7 +21,10 @@
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\ENUM_Coating_States.TcDUT">
+    <Compile Include="DUTs\E_MR1L0_CoatingStates.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\E_MR2L0_CoatingStates.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
@@ -53,19 +56,32 @@
     <Compile Include="GVLs\GVL_SerialIO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_States.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PiezoDriver.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Helpers\FB_Coatings_States.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_1_PlcTask.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_Environment.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_MR1L0_HOMS_States.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_MR2L0_HOMS_States.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_PMPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\P_CoatingProtections.TcPOU">
@@ -96,6 +112,10 @@
     <PlaceholderReference Include="LCLS General">
       <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
       <Namespace>LCLS_General</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="lcls2-cc-lib">
+      <DefaultResolution>lcls2-cc-lib, * (SLAC)</DefaultResolution>
+      <Namespace>lcls2_cc_lib</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="System_VisuElemMeter">
       <DefaultResolution>VisuElemMeter, 3.5.10.0 (System)</DefaultResolution>
@@ -173,25 +193,28 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="lcls-twincat-motion,1.8.0,SLAC">
+    <LibraryReference Include="lcls-twincat-motion,4.0.9,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>
     <LibraryReference Include="lcls-twincat-optics,0.4.1,SLAC">
       <Namespace>lcls_twincat_optics</Namespace>
     </LibraryReference>
-    <LibraryReference Include="PMPS,3.0.14,SLAC - LCLS">
+    <LibraryReference Include="PMPS,3.3.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 2.6.0 (SLAC)</Resolution>
+      <Resolution>LCLS General, 2.8.2 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 1.8.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 4.0.9 (SLAC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="lcls2-cc-lib">
+      <Resolution>lcls2-cc-lib, 2.0.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.3.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>

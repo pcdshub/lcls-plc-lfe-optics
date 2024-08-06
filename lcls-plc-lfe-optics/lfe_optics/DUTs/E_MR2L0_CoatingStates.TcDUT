@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="E_MR2L0_CoatingStates" Id="{933b8659-d8cc-46f9-8ad1-d7f710eddcbd}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_MR2L0_CoatingStates :
+(
+    Unknown := 0,
+    B4C := 1,
+    Ni := 2
+) UINT;
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
