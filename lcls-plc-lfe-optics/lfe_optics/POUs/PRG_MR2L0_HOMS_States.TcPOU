@@ -22,10 +22,10 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbYSetup(stPositionState:=GVL_States.stDefaultY, bSetDefault:=TRUE);
-
+(*
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.Unknown],
     sName:='TRANSISTION'
-);
+); *)
 
 // MR2L0 B4C
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.B4C],
@@ -38,7 +38,7 @@ fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.Ni],
     sName:='NICKEL',
     nEncoderCount:= 16018200
 );
-Main.M7.bPowerSelf := False;
+
 fbCoatingStates(
     stMotionStage:=Main.M7,
     astPositionState:=astCoatingStatesY,

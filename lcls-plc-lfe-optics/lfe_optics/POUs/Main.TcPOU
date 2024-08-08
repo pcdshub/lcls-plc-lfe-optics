@@ -453,6 +453,7 @@ nEncRefPitchM1L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM1L0_urad) * fEncLeverArm_mm)
 
 //Coatings States With PMPS
 M1.bPowerSelf :=FALSE;
+M5.bPowerSelf := FALSE;
 
 
 
