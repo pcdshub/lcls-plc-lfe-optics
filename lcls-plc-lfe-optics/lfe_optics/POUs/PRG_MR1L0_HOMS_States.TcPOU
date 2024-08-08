@@ -48,42 +48,43 @@ fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.Unknow
 
 // MR1L0 B4C
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0B4C],
-    sName:='L0-B4C',
+    sPmpsState:='MR1L0:HOMS-L0-B4C',
     nEncoderCount:=21171800
 );
 fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L0B4C],
-    sName:='L0-B4C',
+    sPmpsState:='MR1L0:HOMS-L0-B4C',
     nEncoderCount:=8602330
 );
 
 // MR1L0 Ni
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0Ni],
-    sName:='L0-NICKEL',
+    sPmpsState:='MR1L0:HOMS-L0-NICKEL',
     nEncoderCount:=9171800
 );
 fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L0Ni],
-    sName:='L0-NICKEL',
+    sPmpsState:='MR1L0:HOMS-L0-NICKEL',
     nEncoderCount:=8602330
 );
 
 // MR1L0_L1 B4C
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L1B4C],
-    sName:='L1-B4C',
+    sPmpsState:='MR1L0:HOMS-L1-B4C',
     nEncoderCount:=21171800
 );
 fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L1B4C],
-    sName:='L1-B4C',
+    sPmpsState:='MR1L0:HOMS-L1-B4C',
     nEncoderCount:=11116030,
     fDelta:=974.66
 );
 
 // MR1L0_L1 Ni
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L1Ni],
-    sName:='L1-NICKEL',
+    sName:='L1Ni',
+    sPmpsState:='MR1L0:HOMS-L1-NICKEL',
     nEncoderCount:=9171800
 );
 fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L1Ni],
-    sName:='L1-NICKEL',
+    sPmpsState:='MR1L0:HOMS-L1-NICKEL',
     nEncoderCount:=11116030,
     fDelta:=974.66
 );
@@ -100,7 +101,7 @@ fbCoatingStates(
     bEnableMotion:=TRUE,
     bEnableBeamParams:=TRUE,
     sDeviceName:='MR1L0:HOMS',
-    sTransitionKey:='TRANSISTION',
+    sTransitionKey:='MR1L0:HOMS-TRANSITION',
 );
 ]]></ST>
     </Implementation>

@@ -49,7 +49,7 @@ fbCoatingStates(
     bEnableMotion:=TRUE,
     bEnableBeamParams:=TRUE,
     sDeviceName:='MR2L0:HOMS',
-    sTransitionKey:='TRANSISTION',
+    sTransitionKey:='MR2L0:HOMS-TRANSITION',
 );]]></ST>
     </Implementation>
   </POU>
