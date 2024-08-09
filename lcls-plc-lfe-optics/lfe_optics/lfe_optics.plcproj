@@ -196,7 +196,7 @@
     <LibraryReference Include="lcls-twincat-motion,4.0.9,SLAC">
       <Namespace>lcls_twincat_motion</Namespace>
     </LibraryReference>
-    <LibraryReference Include="lcls-twincat-optics,0.4.1,SLAC">
+    <LibraryReference Include="lcls-twincat-optics,0.7.0,SLAC">
       <Namespace>lcls_twincat_optics</Namespace>
     </LibraryReference>
     <LibraryReference Include="PMPS,3.3.0,SLAC - LCLS">
