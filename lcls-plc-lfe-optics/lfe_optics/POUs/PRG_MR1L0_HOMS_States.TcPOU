@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <POU Name="PRG_MR1L0_HOMS_States" Id="{23c9cdcd-f80e-4710-96f7-1d52382db29c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_MR1L0_HOMS_States
 VAR
@@ -62,11 +62,13 @@ fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L0Ni],
 
 // MR1L0_L1 B4C
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L1B4C],
+    bValid:=FALSE,
     sName:='L1B4C',
     sPmpsState:='MR1L0:HOMS-L1-B4C',
     nEncoderCount:=21171800
 );
 fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L1B4C],
+    bValid:=FALSE,
     sName:='L1B4C',
     sPmpsState:='MR1L0:HOMS-L1-B4C',
     nEncoderCount:=11116030,
@@ -75,11 +77,13 @@ fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L1B4C]
 
 // MR1L0_L1 Ni
 fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L1Ni],
+    bValid:=FALSE,
     sName:='L1Ni',
     sPmpsState:='MR1L0:HOMS-L1-NICKEL',
     nEncoderCount:=9171800
 );
 fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L1Ni],
+    bValid:=FALSE,
     sName:='L1Ni',
     sPmpsState:='MR1L0:HOMS-L1-NICKEL',
     nEncoderCount:=11116030,

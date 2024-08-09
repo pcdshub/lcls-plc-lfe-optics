@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{3E7D3724-7550-7895-A804-E7957243411A}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{AE55028F-F18B-8E15-3095-18B2320C13D4}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
@@ -71024,7 +71024,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>SerialIO Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>GVL_SerialIO.Serial_stComIn_M1L0</Name>
             <Comment> M1L0 In Serial Comm Array</Comment>
@@ -71062,7 +71062,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>SerialIO Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>GVL_SerialIO.Serial_stComOut_M1L0</Name>
             <Comment> M1L0 Out Serual Comm Array</Comment>
@@ -71100,7 +71100,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>SerialIO Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>P_Serial_Com.fbSerialLineControl_EL6001_M1L0</Name>
             <Comment> M1L0 Serial Comm Function Block</Comment>
@@ -71229,7 +71229,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PiezoDriver Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>PiezoSerial.fbE621SerialDriver_M1L0</Name>
             <Comment>PI Serial</Comment>
@@ -71365,7 +71365,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="InputDst" CreateSymbols="true">32</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.diEncCnt</Name>
             <Comment>Raw encoder count</Comment>
@@ -74680,7 +74680,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">33</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>PRG_Environment.bActivateVarCoolMR1L0</Name>
             <BitSize>8</BitSize>
@@ -75502,7 +75502,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">35</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -85522,7 +85522,7 @@ bM2L0PitchBusy : BOOL;
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">36</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82706432</ByteSize>
+          <ByteSize>82837504</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -85608,7 +85608,7 @@ bM2L0PitchBusy : BOOL;
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-08-09T13:52:59</Value>
+          <Value>2024-08-09T15:02:12</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
