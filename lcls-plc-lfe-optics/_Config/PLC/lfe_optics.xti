@@ -1349,7 +1349,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}" Name="lfe_optics" PrjFilePath="..\..\lfe_optics\lfe_optics.plcproj" TmcFilePath="..\..\lfe_optics\lfe_optics.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{AE55028F-F18B-8E15-3095-18B2320C13D4}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{BAA7D220-E8E7-C128-8350-2B0490B04BD3}">
 			<Name>lfe_optics Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -2242,237 +2242,267 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bHome</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].bHome</Name>
 					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bHardwareEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].nRawEncoderINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].Axis.NcToPlc</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bLimitForwardEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].bLimitForwardEnable</Name>
 					<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
 					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bHome</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].bHome</Name>
 					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bHardwareEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].bHardwareEnable</Name>
 					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].nRawEncoderULINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].nRawEncoderULINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].nRawEncoderUINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].nRawEncoderUINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].nRawEncoderINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].nRawEncoderINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].Axis.NcToPlc</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bLimitForwardEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].bLimitForwardEnable</Name>
 					<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
 					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bHome</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].bHome</Name>
 					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bHardwareEnable</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].bHardwareEnable</Name>
 					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].nRawEncoderULINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].nRawEncoderULINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].nRawEncoderUINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].nRawEncoderUINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].nRawEncoderINT</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].nRawEncoderINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoolingPanel.fbFlow_1.iRaw</Name>
+					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR1L0_HOMS.fbCoolingPanel.fbPress_1.iRaw</Name>
+					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR1L0_HOMS.fbCoolingPanel.fbFlow_2.iRaw</Name>
+					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].bLimitForwardEnable</Name>
 					<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
 					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bHome</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].bHome</Name>
 					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bHardwareEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].bHardwareEnable</Name>
 					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].nRawEncoderULINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].nRawEncoderUINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].nRawEncoderINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].nRawEncoderINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].Axis.NcToPlc</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bLimitForwardEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].bLimitForwardEnable</Name>
 					<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
 					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bHome</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].bHome</Name>
 					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bHardwareEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].bHardwareEnable</Name>
 					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].nRawEncoderULINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].nRawEncoderULINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].nRawEncoderUINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].nRawEncoderUINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].nRawEncoderINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].nRawEncoderINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].Axis.NcToPlc</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bLimitForwardEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].bLimitForwardEnable</Name>
 					<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
 					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bHome</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].bHome</Name>
 					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bHardwareEnable</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].bHardwareEnable</Name>
 					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].nRawEncoderULINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].nRawEncoderULINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].nRawEncoderUINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].nRawEncoderUINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].nRawEncoderINT</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].nRawEncoderINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR2L0_HOMS.fbCoolingPanel.fbFlow_1.iRaw</Name>
+					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR2L0_HOMS.fbCoolingPanel.fbPress_1.iRaw</Name>
+					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR2L0_HOMS.fbCoolingPanel.fbFlow_2.iRaw</Name>
+					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
@@ -2493,47 +2523,13 @@ External Setpoint Generation:
 					<Type>LINT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_M1L0.fM1L0_Flow_1.iRaw</Name>
-					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M1L0.fM1L0_Flow_2.iRaw</Name>
-					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M1L0.fM1L0_Press_1.iRaw</Name>
-					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_M2L0.M2L0_Pitch.diEncCnt</Name>
 					<Comment><![CDATA[Raw encoder count]]></Comment>
 					<Type>LINT</Type>
 				</Var>
-				<Var>
-					<Name>GVL_M2L0.fM2L0_Flow_1.iRaw</Name>
-					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fM2L0_Flow_2.iRaw</Name>
-					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M2L0.fM2L0_Press_1.iRaw</Name>
-					<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-					<Type>INT</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="2" AreaNo="33">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>PRG_Environment.bActivateVarCoolMR1L0</Name>
-					<Type>BOOL</Type>
-				</Var>
 				<Var>
 					<Name>Main.M1.Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
@@ -2727,60 +2723,56 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_Environment.bActivateVarCoolMR2L0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bBrakeRelease</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].Axis.PlcToNc</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bBrakeRelease</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[2].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].Axis.PlcToNc</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bBrakeRelease</Name>
+					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[1].bBrakeRelease</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].Axis.PlcToNc</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[2].bBrakeRelease</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[2].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].Axis.PlcToNc</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR2L0_HOMS_States.fbCoatingStates.astMotionStageMax[3].bBrakeRelease</Name>
+					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -2798,6 +2790,14 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR1L0_HOMS.bActivateVarCoolMR1L0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR2L0_HOMS.bActivateVarCoolMR2L0</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -2875,9 +2875,9 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M1L0.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL3054_M1L0_FWM_PRSM">
-				<Link VarA="PlcTask Inputs^GVL_M1L0.fM1L0_Flow_1.iRaw" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_M1L0.fM1L0_Flow_2.iRaw" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_M1L0.fM1L0_Press_1.iRaw" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_MR1L0_HOMS.fbCoolingPanel.fbFlow_1.iRaw" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_MR1L0_HOMS.fbCoolingPanel.fbFlow_2.iRaw" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_MR1L0_HOMS.fbCoolingPanel.fbPress_1.iRaw" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M1L0^EL5042_M1L0_PitchBender">
 				<Link VarA="PlcTask Inputs^GVL_M1L0.M1L0_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
@@ -2972,9 +2972,9 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M2L0.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL3054_M2L0_FWM_PRSM">
-				<Link VarA="PlcTask Inputs^GVL_M2L0.fM2L0_Flow_1.iRaw" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_M2L0.fM2L0_Flow_2.iRaw" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_M2L0.fM2L0_Press_1.iRaw" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_MR2L0_HOMS.fbCoolingPanel.fbFlow_1.iRaw" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_MR2L0_HOMS.fbCoolingPanel.fbFlow_2.iRaw" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_MR2L0_HOMS.fbCoolingPanel.fbPress_1.iRaw" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EK1100_M2L0^EL5042_M2L0_PitchBender">
 				<Link VarA="PlcTask Inputs^GVL_M2L0.M2L0_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
@@ -3063,8 +3063,8 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M7.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^EP2008-0001_M1M2_VCV">
-				<Link VarA="PlcTask Outputs^PRG_Environment.bActivateVarCoolMR1L0" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
-				<Link VarA="PlcTask Outputs^PRG_Environment.bActivateVarCoolMR2L0" VarB="Channel 2^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^PRG_MR1L0_HOMS.bActivateVarCoolMR1L0" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^PRG_MR2L0_HOMS.bActivateVarCoolMR2L0" VarB="Channel 2^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1L0-Bender">
 				<Link VarA="PlcTask Inputs^Main.M6.Axis.NcToPlc" VarB="Outputs^ToPlc"/>

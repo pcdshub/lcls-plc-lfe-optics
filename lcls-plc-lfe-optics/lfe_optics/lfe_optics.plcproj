@@ -72,13 +72,10 @@
     <Compile Include="POUs\PRG_1_PlcTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_Environment.TcPOU">
+    <Compile Include="POUs\PRG_MR1L0_HOMS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\PRG_MR1L0_HOMS_States.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_MR2L0_HOMS_States.TcPOU">
+    <Compile Include="POUs\PRG_MR2L0_HOMS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_PMPS.TcPOU">

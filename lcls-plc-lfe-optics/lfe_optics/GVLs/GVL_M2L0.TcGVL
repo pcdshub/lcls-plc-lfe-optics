@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
   <GVL Name="GVL_M2L0" Id="{b4287d9d-45c2-46f6-b4bf-11d58d75255d}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
@@ -9,31 +9,6 @@ VAR_GLOBAL
                                          ReqPosLimLo := -45.1,
                                          diEncPosLimHi := 9550777,
                                          diEncPosLimLo := 9448178);
-    // M2L0 Flow Press Sensors
-    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 1^Value'}
-    fM2L0_Flow_1 : FB_AnalogInput;
-    {attribute 'pytmc' := '
-        pv: MR2L0:HOMS:FWM:1
-        field: EGU lpm
-        io: i
-    '}
-    fM2L0_Flow_1_val : LREAL;
-    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 2^Value'}
-    fM2L0_Flow_2 : FB_AnalogInput;
-    {attribute 'pytmc' := '
-        pv: MR2L0:HOMS:FWM:2
-        field: EGU lpm
-        io: i
-    '}
-    fM2L0_Flow_2_val : LREAL;
-    {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 3^Value'}
-    fM2L0_Press_1 : FB_AnalogInput;
-    {attribute 'pytmc' := '
-        pv: MR2L0:HOMS:PRSM:1
-        field: EGU bar
-        io: i
-    '}
-    fM2L0_Press_1_val : LREAL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
