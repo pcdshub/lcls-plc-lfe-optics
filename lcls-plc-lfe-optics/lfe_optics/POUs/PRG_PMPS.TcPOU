@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_PMPS" Id="{231cbe1d-2b62-4b71-9da6-2f77e2e5ac00}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_PMPS
+VAR
+    // PMPS arbiter interface
+    fbArbiterIO : FB_SubSysToArbiter_IO;
+    {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^MR1L0_Pitch_ENC'}
+    nMR1L0_Pitch_ENC_PMPS AT %Q* : ULINT;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// PMPS
+MOTION_GVL.fbStandardPMPSDB(
+    io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+    bEnable:=TRUE,
+    sPLCName:='plc-lfe-optics'
+);
+
+GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam, 'LFE Optics');
+fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
+GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
+
+ nMR1L0_Pitch_ENC_PMPS := Main.M5.nRawEncoderULINT;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG_MR2L0_HOMS" Id="{2c2f3fe5-daf6-439d-9a57-5c4ac804436d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_MR2L0_HOMS
+VAR
+    {attribute 'pytmc' := 'pv: MR2L0:HOMS:COATING'}
+    fbCoatingStates: FB_PositionStatePMPS1D;
+    {attribute 'pytmc' := '
+      pv: MR2L0:HOMS:COATING:STATE:SET
+      io: io
+    '}
+    eStateSet: E_MR2L0_CoatingStates;
+    {attribute 'pytmc' := '
+      pv: MR2L0:HOMS:COATING:STATE:GET
+      io: i
+    '}
+    eStateGet: E_MR2L0_CoatingStates;
+    fbYSetup: FB_StateSetupHelper;
+    astCoatingStatesY: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+
+    // MR2L0 Flow Press Sensors
+    {attribute 'TcLinkTo' := '.fbFlow_1.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 1^Value;
+                                 .fbFlow_2.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 2^Value;
+                              .fbPress_1.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 3^Value
+    '}
+    {attribute 'pytmc' := '
+        pv: MR2L0:HOMS
+    '}
+    fbCoolingPanel : FB_Axilon_Cooling_2f1p;
+        {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 2^Output'}
+    {attribute 'pytmc' := '
+        pv: MR2L0:HOMS:VCV
+        io: io
+        field: ZNAM OFF
+        field: ONAM ON
+    '}
+    bActivateVarCoolMR2L0 AT %Q* : BOOL;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbYSetup(stPositionState:=GVL_States.stDefaultY, bSetDefault:=TRUE);
+
+// MR2L0 B4C
+fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.B4C],
+    sName:='B4C',
+    sPmpsState:='MR2L0:HOMS-B4C',
+    nEncoderCount:=7018200
+);
+
+// MR2L0 Ni
+fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.Ni],
+    sName:='Ni',
+    sPmpsState:='MR2L0:HOMS-NICKEL',
+    nEncoderCount:= 16018200
+);
+
+fbCoatingStates(
+    stMotionStage:=Main.M7,
+    astPositionState:=astCoatingStatesY,
+    eEnumSet:=eStateSet,
+    eEnumGet:=eStateGet,
+    fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+    fbArbiter:=GVL_PMPS.g_fbArbiter1,
+    bEnableMotion:=TRUE,
+    bEnableBeamParams:=TRUE,
+    sDeviceName:='MR2L0:HOMS',
+    sTransitionKey:='MR2L0:HOMS-TRANSITION',
+);
+
+fbCoolingPanel();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
