@@ -4,23 +4,44 @@ DUTs
 ----
 
 
-ENUM_Coating_States
-^^^^^^^^^^^^^^^^^^^
+E_MR1L0_CoatingStates
+^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
     {attribute 'qualified_only'}
-    TYPE ENUM_Coating_States :
+    {attribute 'strict'}
+    TYPE E_MR1L0_CoatingStates :
     (
         Unknown := 0,
-        B4C := 1,
-        Ni := 2
-    );
+        L0B4C := 1,
+        L0Ni := 2,
+        L1B4C := 3,
+        L1Ni := 4
+    ) UINT;
     END_TYPE
 
 
 Related:
-    * `ENUM_Coating_States`_
+    * `E_MR1L0_CoatingStates`_
+
+
+E_MR2L0_CoatingStates
+^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    {attribute 'strict'}
+    TYPE E_MR2L0_CoatingStates :
+    (
+        Unknown := 0,
+        B4C := 1,
+        Ni := 2
+    ) UINT;
+    END_TYPE
+
+
 
 
 GVLs
@@ -58,31 +79,6 @@ GVL_M1L0
                                              ReqPosLimLo := -182.0,
                                              diEncPosLimHi := 8662020,
                                              diEncPosLimLo := 8507095);
-        // M1L0 Flow Press Sensors
-        {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 1^Value'}
-        fM1L0_Flow_1 : FB_AnalogInput;
-        {attribute 'pytmc' := '
-            pv: MR1L0:HOMS:FWM:1
-            field: EGU lpm
-            io: i
-        '}
-        fM1L0_Flow_1_val : LREAL;
-        {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 2^Value'}
-        fM1L0_Flow_2 : FB_AnalogInput;
-        {attribute 'pytmc' := '
-            pv: MR1L0:HOMS:FWM:2
-            field: EGU lpm
-            io: i
-        '}
-        fM1L0_Flow_2_val : LREAL;
-        {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 3^Value'}
-        fM1L0_Press_1 : FB_AnalogInput;
-        {attribute 'pytmc' := '
-            pv: MR1L0:HOMS:PRSM:1
-            field: EGU bar
-            io: i
-        '}
-        fM1L0_Press_1_val : LREAL;
     END_VAR
 
 
@@ -119,31 +115,6 @@ GVL_M2L0
                                              ReqPosLimLo := -45.1,
                                              diEncPosLimHi := 9550777,
                                              diEncPosLimLo := 9448178);
-        // M2L0 Flow Press Sensors
-        {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 1^Value'}
-        fM2L0_Flow_1 : FB_AnalogInput;
-        {attribute 'pytmc' := '
-            pv: MR2L0:HOMS:FWM:1
-            field: EGU lpm
-            io: i
-        '}
-        fM2L0_Flow_1_val : LREAL;
-        {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 2^Value'}
-        fM2L0_Flow_2 : FB_AnalogInput;
-        {attribute 'pytmc' := '
-            pv: MR2L0:HOMS:FWM:2
-            field: EGU lpm
-            io: i
-        '}
-        fM2L0_Flow_2_val : LREAL;
-        {attribute 'TcLinkTo' := '.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 3^Value'}
-        fM2L0_Press_1 : FB_AnalogInput;
-        {attribute 'pytmc' := '
-            pv: MR2L0:HOMS:PRSM:1
-            field: EGU bar
-            io: i
-        '}
-        fM2L0_Press_1_val : LREAL;
     END_VAR
 
 
@@ -220,82 +191,29 @@ GVL_SerialIO
 
 
 
-POUs
-----
-
-
-FB_Coatings_States
-^^^^^^^^^^^^^^^^^^
+GVL_States
+^^^^^^^^^^
 
 ::
 
-    FUNCTION_BLOCK FB_Coatings_States EXTENDS FB_PositionStateBase_WithPMPS
-    VAR_INPUT
-        enumSet: INT;
-        stB4C: DUT_PositionState;
-        stNi: DUT_PositionState;
-        sB4CType : STRING := ''; //Type of Material on Coating 1
-        nB4CPosition: UDINT; // Encoder Count Position of Coating 1
-        fB4CDelta: LREAL;//Position Boundary delta in scaled position units
-        fB4CVelocity: LREAL;//Velocity
-        nB4CCoatingBitmask: DWORD; //Safe Beam Bitmask for the first coating
-        sNiType : STRING := '';// Type of Material on Coating 2
-        nNiPosition: UDINT; // Encoder Count Position of Coating 2
-        fNiDelta: LREAL;//Position Boundary delta in scaled position units
-        nNiCoatingBitmask: DWORD; //Safe Beam Bitmask for the second coating
-        fNiVelocity: LREAL;//Velocity
-        bStatesLock: BOOL;
+    {attribute 'qualified_only'}
+    VAR_GLOBAL
+        stDefaultY : ST_PositionState := (
+            fDelta:=100,
+            fVelocity:=100,
+            fAccel:=200,
+            fDecel:=200,
+            bMoveOk:=TRUE,
+            bValid:=TRUE,
+            bUseRawCounts:=TRUE
+        );
     END_VAR
-    VAR_OUTPUT
-         {attribute 'pytmc' := '
-            pv: GET
-            io: i
-        '}
-        enumGet: ENUM_Coating_States;
-    END_VAR
-    VAR
-         bInitState: BOOL :=TRUE;
-    END_VAR
-    IF bInitState THEN
-        bInitState := FALSE;
-        stB4C.bUseRawCounts := TRUE;
-        stB4C.bMoveOk := TRUE;
-        stB4C.bValid := TRUE;
-        stB4C.nRequestAssertionID := nTransitionAssertionID+1;
-        stB4C.sName := sB4CType;
-        stB4C.nEncoderCount := nB4CPosition;
-        stB4C.stBeamParams := PMPS_GVL.cstFullBeam;
-        stB4C.stBeamParams.neVRange := nB4CCoatingBitmask;
-        stB4C.fDelta := fB4CDelta;
-        stB4C.fVelocity :=fB4CVelocity;
-
-        stNi.bUseRawCounts := TRUE;
-        stNi.bValid := TRUE;
-        stNi.bMoveOk := TRUE;
-        stNi.bValid := TRUE;
-        stNi.nRequestAssertionID := nTransitionAssertionID+2;
-        stNi.sName := sNiType;
-        stNi.nEncoderCount := nNiPosition;
-        stNi.stBeamParams := PMPS_GVL.cstFullBeam;
-        stNi.stBeamParams.neVRange := nNiCoatingBitmask;
-        stNi.fDelta := fNiDelta;
-        stNi.fVelocity := fNiVelocity;
 
 
-        arrStates[1] := stB4C;
-        arrStates[2] := stNi;
-    END_IF
-
-    setState := enumSet;
-    Exec();
-    enumGet := getState;
-    enumSet := setState;
-
-    END_FUNCTION_BLOCK
 
 
-Related:
-    * `ENUM_Coating_States`_
+POUs
+----
 
 
 Main
@@ -313,7 +231,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR1L0:HOMS:MMS:YUP
         '}
-        M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YUP'); // M1L0 Yup
+        M1 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YUP'); // M1L0 Yup
         fbMotionStage_m1 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Ydwn]^STM Status^Status^Digital input 1;
@@ -321,7 +239,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR1L0:HOMS:MMS:YDWN
         '}
-        M2 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YDWN'); // M1L0 Ydwn
+        M2 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_YDWN'); // M1L0 Ydwn
         fbMotionStage_m2 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xup]^STM Status^Status^Digital input 1;
@@ -330,7 +248,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR1L0:HOMS:MMS:XUP
         '}
-        M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XUP'); // M1L0 Xup
+        M3 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XUP'); // M1L0 Xup
         fbMotionStage_m3 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Xdwn]^STM Status^Status^Digital input 1;
@@ -338,7 +256,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR1L0:HOMS:MMS:XDWN
         '}
-        M4 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XDWN'); // M1L0 Xdwn
+        M4 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_XDWN'); // M1L0 Xdwn
         fbMotionStage_m4 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_PitchCoarse]^STM Status^Status^Digital input 1;
@@ -347,7 +265,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR1L0:HOMS:MMS:PITCH
         '}
-        M5 : DUT_MotionStage := (fVelocity:=150.0,nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
+        M5 : ST_MotionStage := (fVelocity:=150.0,nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_PITCH'); // M1L0 Pitch Stepper
         fbMotionStage_m5 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L0_Bender]^STM Status^Status^Digital input 1;
@@ -356,7 +274,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR1L0:HOMS:MMS:BENDER
         '}
-        M6 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_BENDER'); // M1L0 Bender
+        M6 : ST_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR1L0_BENDER'); // M1L0 Bender
         fbMotionStage_m6 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L0_STO]^Channel 1^Input;
@@ -486,7 +404,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR2L0:HOMS:MMS:YUP
         '}
-        M7 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YUP'); // M2L0 Yup
+        M7 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YUP'); // M2L0 Yup
         fbMotionStage_m7 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Ydwn]^STM Status^Status^Digital input 1;
@@ -494,7 +412,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR2L0:HOMS:MMS:YDWN
         '}
-        M8 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YDWN'); // M2L0 Ydwn
+        M8 : ST_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_YDWN'); // M2L0 Ydwn
         fbMotionStage_m8 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xup]^STM Status^Status^Digital input 1;
@@ -503,7 +421,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR2L0:HOMS:MMS:XUP
         '}
-        M9 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XUP'); // M2L0 Xup
+        M9 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XUP'); // M2L0 Xup
         fbMotionStage_m9 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Xdwn]^STM Status^Status^Digital input 1;
@@ -511,7 +429,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR2L0:HOMS:MMS:XDWN
         '}
-        M10 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XDWN'); // M2L0 Xdwn
+        M10 : ST_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_XDWN'); // M2L0 Xdwn
         fbMotionStage_m10 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_PitchCoarse]^STM Status^Status^Digital input 1;
@@ -520,7 +438,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR2L0:HOMS:MMS:PITCH
         '}
-        M11 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
+        M11 : ST_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_PITCH'); // M2L0 Pitch Stepper
         fbMotionStage_m11 : FB_MotionStage;
         {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 1;
                                   .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L0_Bender]^STM Status^Status^Digital input 2;
@@ -528,7 +446,7 @@ Main
         {attribute 'pytmc' := '
             pv: MR2L0:HOMS:MMS:BENDER
         '}
-        M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_BENDER'); // M2L0 Bender
+        M12 : ST_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE, sName:='MR2L0_BENDER'); // M2L0 Bender
         fbMotionStage_m12 : FB_MotionStage;
 
         {attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M2L0_STO]^Channel 1^Input;
@@ -653,68 +571,13 @@ Main
 
 
 
-        // PMPS arbiter interface
-        fbArbiterIO : FB_SubSysToArbiter_IO;
 
         // Common
         fEncLeverArm_mm : LREAL := 513.0;
         // Logging
         fbLogHandler : FB_LogHandler;
 
-        // PMPS States
-        {attribute 'pytmc' := '
-            pv: MR1L0:HOMS:COATING:STATE:SET
-            io: io
-        '}
-        MR1L0_Coating_enumSet: ENUM_Coating_States;
-         {attribute 'pytmc' := '
-            pv: MR1L0:HOMS:COATING:STATE;
-            io: io;
-            field: ZRST Unknown ;
-            field: ONST B4C;
-            field: TWST B4C_Ni ;
-        '}
-        fbMR1L0_States: FB_Coatings_States:= (
-                bEnable:= TRUE ,
-                stTransitionBeam:= PMPS_GVL.cst0RateBeam ,
-                nTransitionAssertionID:= 16#FC11 ,
-                nUnknownAssertionID:= 16#FC10 ,
-                sB4CType:= 'B4C' ,
-                nB4CPosition:= 21171800 ,
-                fB4CDelta:= 1000,
-                fB4CVelocity:=100,
-                sNiType:= 'B4C/Ni',
-                nNiPosition:= 9171800,
-                fNiDelta:= 1000,
-                fNiVelocity:= 100); //exclusion range 0,12 AND 27,90
-        // PMPS States
-        {attribute 'pytmc' := '
-            pv: MR2L0:HOMS:COATING:STATE:SET;
-            io: io;
-            field: ZRST Unknown ;
-            field: ONST B4C;
-            field: TWST Ni ;
-        '}
-        MR2L0_Coating_enumSet: ENUM_Coating_States;
-         {attribute 'pytmc' := '
-            pv: MR2L0:HOMS:COATING:STATE;
-            io: io;
-        '}
-        fbMR2L0_States: FB_Coatings_States:= (
-                bEnable:= TRUE ,
-                stTransitionBeam:= PMPS_GVL.cst0RateBeam ,
-                nTransitionAssertionID:= 16#FC21 ,
-                nUnknownAssertionID:= 16#FC20 ,
-                sB4CType:= 'B4C' ,
-                nB4CPosition:= 7018200 ,
-                fB4CDelta:= 1000 ,
-                fB4CVelocity:=100, // Exclusion range 0,1 AND 14,90
-                sNiType:= 'Ni',
-                nNiPosition:= 16018200,
-                fNiDelta:= 1000 ,
-                fNiVelocity:= 100); //exclusion range 0,12 AND 27,90
-        {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^MR1L0_Pitch_ENC'}
-        nMR1L0_Pitch_ENC_PMPS AT %Q* : ULINT;
+
 
 
     END_VAR
@@ -809,15 +672,8 @@ Main
 
     //Coatings States With PMPS
     M1.bPowerSelf :=FALSE;
-    fbMR1L0_States(
-        enumSet :=MR1L0_Coating_enumSet,
-        fbArbiter:=GVL_PMPS.g_fbArbiter1,
-        fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
-        nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
-        nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90
-        stMotionStage:=M1,
-        bBPOkAutoReset := TRUE);// Y Gantry Master Axis , stYup
-    MR1L0_Coating_enumSet := fbMR1L0_States.setState;
+    M5.bPowerSelf := FALSE;
+
 
 
 
@@ -908,44 +764,20 @@ Main
 
     //Coatings States With PMPS
     M7.bPowerSelf :=FALSE;
-    fbMR2L0_States(
-        enumSet :=MR2L0_Coating_enumSet,
-        fbArbiter:=GVL_PMPS.g_fbArbiter1,
-        fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
-        nB4CCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
-        nNiCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90
-        stMotionStage:=M7,
-        bBPOkAutoReset := TRUE);// Y Gantry Master Axis , stYup
-
-    MR2L0_Coating_enumSet := fbMR2L0_States.setState;
-
 
     P_CoatingProtections();
-    PRG_Environment();
 
     // Logging
     fbLogHandler();
-
-    // PMPS
-    GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam, 'LFE Optics');
-    fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
-    GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
-    GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
-
-     nMR1L0_Pitch_ENC_PMPS := M5.nRawEncoderULINT;
 
     END_PROGRAM
 
 
 Related:
-    * `ENUM_Coating_States`_
-    * `FB_Coatings_States`_
     * `GVL_M1L0`_
     * `GVL_M1L0_Constants`_
     * `GVL_M2L0`_
     * `GVL_M2L0_Constants`_
-    * `GVL_PMPS`_
-    * `PRG_Environment`_
     * `P_CoatingProtections`_
 
 
@@ -957,32 +789,34 @@ P_CoatingProtections
     PROGRAM P_CoatingProtections
     VAR
             fbStripProtMR1L0 : FB_MirrorTwoCoatingProtection := (
-                sDevName := 'MR1L0',
+                sDevName := 'MR1L0:HOMS',
                 nUpperCoatingBoundary := 13300000,
-                sUpperCoatingType := 'B4C',
+                sUpperCoatingType := 'L0-B4C',
                 nLowerCoatingBoundary := 11800000,
-                sLowerCoatingType := 'B4C/Ni');
+                sLowerCoatingType := 'L0-NICKEL');
 
             fbStripProtMR2L0 : FB_MirrorTwoCoatingProtection := (
-                sDevName := 'MR2L0',
+                sDevName := 'MR2L0:HOMS',
                 nUpperCoatingBoundary := 14300000,
-                sUpperCoatingType := 'Ni',
+                sUpperCoatingType := 'NICKEL',
                 nLowerCoatingBoundary := 12800000,
                 sLowerCoatingType := 'B4C');
     END_VAR
     fbStripProtMR1L0(
+        FFO := GVL_PMPS.g_FastFaultOutput1,
         nCurrentEncoderCount := MAIN.nEncCntYupM1L0,
         neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
-        nUpperCoatingBitmask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
-        nLowerCoatingBitMask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90
-        FFO := GVL_PMPS.g_FastFaultOutput1);
+        bReadPmpsDb:= MOTION_GVL.fbStandardPMPSDB.bReadPmpsDb,
+        bUsePmpsDb := TRUE,
+       );
 
     fbStripProtMR2L0(
+        FFO := GVL_PMPS.g_FastFaultOutput1,
         nCurrentEncoderCount := MAIN.nEncCntYupM2L0,
         neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
-        nUpperCoatingBitmask := F_eVExcludeRange(0, 12000) AND F_eVExcludeRange(27000, 90000), //exclusion range 0,12 AND 27,90
-        nLowerCoatingBitMask := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(14000, 90000), // Exclusion range 0,1 AND 14,90
-        FFO := GVL_PMPS.g_FastFaultOutput1);
+        bReadPmpsDb:= MOTION_GVL.fbStandardPMPSDB.bReadPmpsDb,
+        bUsePmpsDb := TRUE,
+    );
 
     END_PROGRAM
 
@@ -1065,13 +899,72 @@ Related:
     * `GVL_M2L0`_
 
 
-PRG_Environment
-^^^^^^^^^^^^^^^
+PRG_1_PlcTask
+^^^^^^^^^^^^^
 
 ::
 
-    PROGRAM PRG_Environment
+    PROGRAM PRG_1_PlcTask
     VAR
+
+    END_VAR
+    PRG_MR1L0_HOMS();
+    PRG_MR2L0_HOMS();
+    PRG_PMPS();
+
+    END_PROGRAM
+
+
+Related:
+    * `PRG_MR1L0_HOMS`_
+    * `PRG_MR2L0_HOMS`_
+    * `PRG_PMPS`_
+
+
+PRG_MR1L0_HOMS
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_MR1L0_HOMS
+    VAR
+        {attribute 'pytmc' := 'pv: MR1L0:HOMS:COATING'}
+        fbCoatingStates: FB_PositionStatePMPS2D;
+        {attribute 'pytmc' := '
+          pv: MR1L0:HOMS:COATING:STATE:SET
+          io: io
+        '}
+        eStateSet: E_MR1L0_CoatingStates;
+        {attribute 'pytmc' := '
+          pv: MR1L0:HOMS:COATING:STATE:GET
+          io: i
+        '}
+        eStateGet: E_MR1L0_CoatingStates;
+
+        fbYSetup: FB_StateSetupHelper;
+
+        fbPitchSetup: FB_StateSetupHelper;
+        stDefaultPitch : ST_PositionState := (
+            fDelta:=194.94,
+            fVelocity:=100,
+            fAccel:=390,
+            fDecel:=390,
+            bMoveOk:=TRUE,
+            bValid:=TRUE,
+            bUseRawCounts:=TRUE
+        );
+        astCoatingStatesY: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+        astCoatingStatesPitch: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+
+            // MR1L0 Flow Press Sensors
+        {attribute 'TcLinkTo' := '.fbFlow_1.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 1^Value;
+                                     .fbFlow_2.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 2^Value;
+                                  .fbPress_1.iRaw := TIIB[EL3054_M1L0_FWM_PRSM]^AI Standard Channel 3^Value
+        '}
+        {attribute 'pytmc' := '
+            pv: MR1L0:HOMS
+        '}
+        fbCoolingPanel : FB_Axilon_Cooling_2f1p;
         {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 1^Output'}
         {attribute 'pytmc' := '
             pv: MR1L0:HOMS:VCV
@@ -1080,7 +973,123 @@ PRG_Environment
             field: ONAM ON
         '}
         bActivateVarCoolMR1L0 AT %Q* : BOOL;
-        {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 2^Output'}
+    END_VAR
+    fbYSetup(stPositionState:=GVL_States.stDefaultY, bSetDefault:=TRUE);
+    fbPitchSetup(stPositionState:=stDefaultPitch, bSetDefault:=TRUE);
+
+    // MR1L0 B4C
+    fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0B4C],
+        sName:='L0B4C',
+        sPmpsState:='MR1L0:HOMS-L0-B4C',
+        nEncoderCount:=21171800
+    );
+    fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L0B4C],
+        sName:='L0B4C',
+        sPmpsState:='MR1L0:HOMS-L0-B4C',
+        nEncoderCount:=8602330
+    );
+
+    // MR1L0 Ni
+    fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L0Ni],
+        sName:='L0Ni',
+        sPmpsState:='MR1L0:HOMS-L0-NICKEL',
+        nEncoderCount:=9171800
+    );
+    fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L0Ni],
+        sName:='L0Ni',
+        sPmpsState:='MR1L0:HOMS-L0-NICKEL',
+        nEncoderCount:=8602330
+    );
+
+    // MR1L0_L1 B4C
+    fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L1B4C],
+        bValid:=FALSE,
+        sName:='L1B4C',
+        sPmpsState:='MR1L0:HOMS-L1-B4C',
+        nEncoderCount:=21171800
+    );
+    fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L1B4C],
+        bValid:=FALSE,
+        sName:='L1B4C',
+        sPmpsState:='MR1L0:HOMS-L1-B4C',
+        nEncoderCount:=11116030,
+        fDelta:=974.66
+    );
+
+    // MR1L0_L1 Ni
+    fbYSetup(stPositionState:=astCoatingStatesY[E_MR1L0_CoatingStates.L1Ni],
+        bValid:=FALSE,
+        sName:='L1Ni',
+        sPmpsState:='MR1L0:HOMS-L1-NICKEL',
+        nEncoderCount:=9171800
+    );
+    fbPitchSetup(stPositionState:=astCoatingStatesPitch[E_MR1L0_CoatingStates.L1Ni],
+        bValid:=FALSE,
+        sName:='L1Ni',
+        sPmpsState:='MR1L0:HOMS-L1-NICKEL',
+        nEncoderCount:=11116030,
+        fDelta:=974.66
+    );
+
+    fbCoatingStates(
+        stMotionStage1:=Main.M1,
+        stMotionStage2:=Main.M5,
+        astPositionState1:=astCoatingStatesY,
+        astPositionState2:=astCoatingStatesPitch,
+        eEnumSet:=eStateSet,
+        eEnumGet:=eStateGet,
+        fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+        fbArbiter:=GVL_PMPS.g_fbArbiter1,
+        bEnableMotion:=TRUE,
+        bEnableBeamParams:=TRUE,
+        sDeviceName:='MR1L0:HOMS',
+        sTransitionKey:='MR1L0:HOMS-TRANSITION',
+    );
+
+    fbCoolingPanel();
+
+    END_PROGRAM
+
+
+Related:
+    * `E_MR1L0_CoatingStates`_
+    * `GVL_PMPS`_
+    * `GVL_States`_
+    * `Main`_
+
+
+PRG_MR2L0_HOMS
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_MR2L0_HOMS
+    VAR
+        {attribute 'pytmc' := 'pv: MR2L0:HOMS:COATING'}
+        fbCoatingStates: FB_PositionStatePMPS1D;
+        {attribute 'pytmc' := '
+          pv: MR2L0:HOMS:COATING:STATE:SET
+          io: io
+        '}
+        eStateSet: E_MR2L0_CoatingStates;
+        {attribute 'pytmc' := '
+          pv: MR2L0:HOMS:COATING:STATE:GET
+          io: i
+        '}
+        eStateGet: E_MR2L0_CoatingStates;
+        fbYSetup: FB_StateSetupHelper;
+        astCoatingStatesY: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
+
+        // MR2L0 Flow Press Sensors
+        {attribute 'TcLinkTo' := '.fbFlow_1.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 1^Value;
+                                     .fbFlow_2.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 2^Value;
+                                  .fbPress_1.iRaw := TIIB[EL3054_M2L0_FWM_PRSM]^AI Standard Channel 3^Value
+        '}
+        {attribute 'pytmc' := '
+            pv: MR2L0:HOMS
+        '}
+        fbCoolingPanel : FB_Axilon_Cooling_2f1p;
+            {attribute 'TcLinkTo' := 'TIIB[EP2008-0001_M1M2_VCV]^Channel 2^Output'}
         {attribute 'pytmc' := '
             pv: MR2L0:HOMS:VCV
             io: io
@@ -1088,31 +1097,80 @@ PRG_Environment
             field: ONAM ON
         '}
         bActivateVarCoolMR2L0 AT %Q* : BOOL;
+
     END_VAR
-    // MR1L0 Flow Pressure Sensors
-        GVL_M1L0.fM1L0_Flow_1(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
-        GVL_M1L0.fM1L0_Flow_1_val := GVL_M1L0.fM1L0_Flow_1.fReal;
+    fbYSetup(stPositionState:=GVL_States.stDefaultY, bSetDefault:=TRUE);
 
-        GVL_M1L0.fM1L0_Flow_2(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
-        GVL_M1L0.fM1L0_Flow_2_val := GVL_M1L0.fM1L0_Flow_2.fReal;
+    // MR2L0 B4C
+    fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.B4C],
+        sName:='B4C',
+        sPmpsState:='MR2L0:HOMS-B4C',
+        nEncoderCount:=7018200
+    );
 
-        GVL_M1L0.fM1L0_Press_1(iTermBits:=12, fTermMax:=4.0, fTermMin:=0);
-        GVL_M1L0.fM1L0_Press_1_val := GVL_M1L0.fM1L0_Press_1.fReal;
+    // MR2L0 Ni
+    fbYSetup(stPositionState:=astCoatingStatesY[E_MR2L0_CoatingStates.Ni],
+        sName:='Ni',
+        sPmpsState:='MR2L0:HOMS-NICKEL',
+        nEncoderCount:= 16018200
+    );
 
-        // MR2L0 Flow Pressure Sensors
-        GVL_M2L0.fM2L0_Flow_1(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
-        GVL_M2L0.fM2L0_Flow_1_val := GVL_M2L0.fM2L0_Flow_1.fReal;
+    fbCoatingStates(
+        stMotionStage:=Main.M7,
+        astPositionState:=astCoatingStatesY,
+        eEnumSet:=eStateSet,
+        eEnumGet:=eStateGet,
+        fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+        fbArbiter:=GVL_PMPS.g_fbArbiter1,
+        bEnableMotion:=TRUE,
+        bEnableBeamParams:=TRUE,
+        sDeviceName:='MR2L0:HOMS',
+        sTransitionKey:='MR2L0:HOMS-TRANSITION',
+    );
 
-        GVL_M2L0.fM2L0_Flow_2(iTermBits:=12, fTermMax:=5.0427, fTermMin:=0.050472);
-        GVL_M2L0.fM2L0_Flow_2_val := GVL_M2L0.fM2L0_Flow_2.fReal;
-
-        GVL_M2L0.fM2L0_Press_1(iTermBits:=12, fTermMax:=4.0, fTermMin:=0);
-        GVL_M2L0.fM2L0_Press_1_val := GVL_M2L0.fM2L0_Press_1.fReal;
+    fbCoolingPanel();
 
     END_PROGRAM
 
 
 Related:
-    * `GVL_M1L0`_
-    * `GVL_M2L0`_
+    * `E_MR2L0_CoatingStates`_
+    * `GVL_PMPS`_
+    * `GVL_States`_
+    * `Main`_
+
+
+PRG_PMPS
+^^^^^^^^
+
+::
+
+    PROGRAM PRG_PMPS
+    VAR
+        // PMPS arbiter interface
+        fbArbiterIO : FB_SubSysToArbiter_IO;
+        {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^MR1L0_Pitch_ENC'}
+        nMR1L0_Pitch_ENC_PMPS AT %Q* : ULINT;
+
+    END_VAR
+    // PMPS
+    MOTION_GVL.fbStandardPMPSDB(
+        io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+        bEnable:=TRUE,
+        sPLCName:='plc-lfe-optics'
+    );
+
+    GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam, 'LFE Optics');
+    fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+    GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
+    GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);
+
+     nMR1L0_Pitch_ENC_PMPS := Main.M5.nRawEncoderULINT;
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL_PMPS`_
+    * `Main`_
 
