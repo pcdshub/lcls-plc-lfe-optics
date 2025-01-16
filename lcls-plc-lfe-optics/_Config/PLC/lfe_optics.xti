@@ -1349,7 +1349,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}" Name="lfe_optics" PrjFilePath="..\..\lfe_optics\lfe_optics.plcproj" TmcFilePath="..\..\lfe_optics\lfe_optics.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{ED012693-11CF-1BC3-ABCB-D5B5F7642DA6}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{3E31E00D-53CA-AB99-DD7F-469306D02AE8}">
 			<Name>lfe_optics Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
