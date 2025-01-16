@@ -56,6 +56,14 @@
     <Compile Include="GVLs\GVL_SerialIO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_SP1L0.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_SP1L0_Constants.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_States.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -79,6 +87,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_PMPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_SP1L0_DCCM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\P_CoatingProtections.TcPOU">

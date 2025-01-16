@@ -347,18 +347,257 @@ VAR
     mcReadParameterPitchM2L0 : MC_ReadParameter;
     fEncRefPitchM2L0_urad : LREAL; // Current Pitch encoder offset in urad
 
+    (*DCCM Mono*)
+    // Motors
+
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th1]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_th1]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT := TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 1^Position;'}
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:MMS:TH1
+    '}
+    M13 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th1
+    fbMotionStage_m13 : FB_MotionStage;
+
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th2]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_th2]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT := TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 2^Position;'}
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:MMS:TH2
+    '}
+    M14 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th2
+    fbMotionStage_m14 : FB_MotionStage;
+
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tx]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_tx]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT := TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 1^Position;'}
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:MMS:TX
+    '}
+    M15 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tx
+    fbMotionStage_m15 : FB_MotionStage;
+
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_txd]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_txd]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT := TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 2^Position;'}
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:MMS:TXD
+    '}
+    M16 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM txd
+    fbMotionStage_m16 : FB_MotionStage;
+
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tyd]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_tyd]^STM Status^Status^Digital input 2;
+                              .nRawEncoderULINT := TIIB[EL5042_SP1L0_tyd]^FB Inputs Channel 1^Position;'}
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:MMS:TYD
+    '}
+    M17 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION, bPowerSelf:=TRUE); // DCCM tyd
+    fbMotionStage_m17 : FB_MotionStage;
+
+//digital outputs
+
+      {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DO0
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 1^Output'}
+    bDO0 AT %Q*:BOOL;
+
+       {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DO1
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 2^Output'}
+    bDO1 AT %Q*:BOOL;
+
+       {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DO2
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 3^Output'}
+    bDO2 AT %Q*:BOOL;
+
+         {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DO3
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 4^Output'}
+    bDO3 AT %Q*:BOOL;
+
+         {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DO4
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 5^Output'}
+    bDO4 AT %Q*:BOOL;
+
+         {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DO5
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 6^Output'}
+    bDO5 AT %Q*:BOOL;
+
+         {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DO6
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 7^Output'}
+    bDO6 AT %Q*:BOOL;
+
+        {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:FAN:PWR
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+     {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 8^Output'}
+    bFanOn AT %Q*:BOOL;
+
+(* digital inputs, 6x overtravel limits, 1x STO, 1x spare *)
+
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TH1:POTL
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 1^Input'}
+    bTH1_POTL AT %I*:BOOL;
+
+        {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TH1:NOTL
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 2^Input'}
+    bTH1_NOTL AT %I*:BOOL;
+
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TH2:POTL
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 3^Input'}
+    bTH2_POTL AT %I*:BOOL;
+
+        {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TH2:NOTL
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 4^Input'}
+    bTH2_NOTL AT %I*:BOOL;
+
+        {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TX:POTL
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 5^Input'}
+    bTX_POTL AT %I*:BOOL;
+
+        {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TX:NOTL
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 6^Input'}
+    bTX_NOTL AT %I*:BOOL;
 
 
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:STO
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 7^Input'}
+    bSTO AT %I*:BOOL;
+
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:DI7
+        field: ZNAM OFF ;
+        field: ONAM ON ;
+    '}
+    {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 8^Input'}
+    bDI7 AT %I*:BOOL;
+
+     //Analog inputs
+
+ //   {attribute 'pytmc' := '
+//        pv: DCCM:MONO:A1
+ //   '}
+ //   {attribute 'TcLinkTo' :='TIID^Device 2 (EtherCAT)^EK1200_DCCM^EL3062_DCCM_A1_C1^AI Standard Channel 1^Value'}
+ //   wA1 AT %I*:INT;
+
+ //   {attribute 'pytmc' := '
+  //      pv: DCCM:MONO:C1
+ //   '}
+ //   {attribute 'TcLinkTo' :='TIID^Device 2 (EtherCAT)^EK1200_DCCM^EL3062_DCCM_A1_C1^AI Standard Channel 2^Value'}
+  //  wC1 AT %I*:INT;
 
 
+    // Absolute Encoders for when axes are running in open loop
+
+    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 1^Position'}	// DCCM th1_encoder
+    TH1_E AT %I*:ST_RenishawAbsEnc:=(ref:=19198622);
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TH1_E
+    '}
+    th1_e_deg: LREAL;
+
+    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 2^Position'}	// DCCM th2_encoder
+    TH2_E AT %I*:ST_RenishawAbsEnc:=(ref:=18675023);
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM::TH2_E
+    '}
+    th2_e_deg: LREAL;
+
+    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 1^Position'}	// DCCM tx_encoder
+    TX_E AT %I*:ST_RenishawAbsEnc:=(ref:=0);
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TX_E
+    '}
+    tx_e_mm: LREAL;
+
+    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 2^Position'}	// DCCM txd_encoder
+    TXD_E AT %I*:ST_RenishawAbsEnc:=(ref:=0);
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TXD_E
+    '}
+    txd_e_mm: LREAL;
+
+    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_tyd]^FB Inputs Channel 1^Position'}	// DCCM tyd_encoder
+    TYD_E AT %I*:ST_RenishawAbsEnc:=(ref:=0);
+
+    {attribute 'pytmc' := '
+        pv: SP1L0:DCCM:TYD_E
+    '}
+    tyd_e_mm: LREAL;
+
+    bInit : BOOL:=TRUE;
+
+    // Motion Parameters
+    fSmallDelta: LREAL := 0.01;
+    fBigDelta: LREAL := 10;
+    fMaxVelocity: LREAL := 0.5;
+    fHighAccel: LREAL := 0.8;
+    fLowAccel: LREAL := 0.1;
+
+
+    test: LREAL := 0.1;
+    th1_e_mm: LREAL;
 
     // Common
     fEncLeverArm_mm : LREAL := 513.0;
     // Logging
     fbLogHandler : FB_LogHandler;
-
-
-
 
 END_VAR]]></Declaration>
     <Implementation>
@@ -546,7 +785,65 @@ nEncRefPitchM2L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM2L0_urad) * fEncLeverArm_mm)
 //Coatings States With PMPS
 M7.bPowerSelf :=FALSE;
 
+
+//SP1L0
+IF ( bInit) THEN
+   // bInit := FALSE;
+//    FFO.i_DevName := 'DCCM-MONO';
+    //Bragg 1
+
+    M13.bEnable:=TRUE;
+    M13.bPowerSelf :=TRUE;
+    M13.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    M13.nEnableMode := ENUM_StageEnableMode.ALWAYS;
+   //Bragg 2
+
+    M14.bEnable:=TRUE;
+    M14.bPowerSelf :=TRUE;
+    M14.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    M14.nEnableMode := ENUM_StageEnableMode.ALWAYS;
+    //TX
+
+    M15.bEnable:=TRUE;
+    M15.bPowerSelf :=TRUE;
+    M15.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    M15.nEnableMode := ENUM_StageEnableMode.ALWAYS;
+    //TXD
+
+    M16.bEnable:=TRUE;
+    M16.bPowerSelf :=TRUE;
+    M16.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    M16.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+    //TYD
+
+    M17.bEnable:=TRUE;
+    M17.bPowerSelf :=TRUE;
+    M17.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+    M17.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+
+    //Turn on Fan by default
+    bFanOn := TRUE;
+
+    bInit := FALSE;
+
+END_IF
+
+       M13.bHardwareEnable := bSTO AND bTH1_POTL AND bTH1_NOTL;
+    M14.bHardwareEnable := bSTO AND bTH2_POTL AND bTH2_NOTL;
+    M15.bHardwareEnable := bSTO AND bTX_POTL AND bTX_NOTL;
+    M16.bHardwareEnable := bSTO;
+    M17.bHardwareEnable := bSTO;
+
+    th1_e_deg := ULINT_TO_LREAL(TH1_E.Count)/1750000;
+    th2_e_deg := ULINT_TO_LREAL(TH2_E.Count)/1750000;
+    tx_e_mm := ULINT_TO_LREAL(TX_E.Count)/20000;
+    txd_e_mm := ULINT_TO_LREAL(TXD_E.Count)/20000;
+    tyd_e_mm := ULINT_TO_LREAL(TYD_E.Count)/20000;
+
+
+
 P_CoatingProtections();
+
 
 // Logging
 fbLogHandler();
