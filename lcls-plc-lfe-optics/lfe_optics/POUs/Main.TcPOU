@@ -392,7 +392,7 @@ VAR
     {attribute 'pytmc' := '
         pv: SP1L0:DCCM:MMS:TYD
     '}
-    M17 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.DURING_MOTION, bPowerSelf:=TRUE); // DCCM tyd
+    M17 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tyd
     fbMotionStage_m17 : FB_MotionStage;
 
 //digital outputs
@@ -787,7 +787,22 @@ M7.bPowerSelf :=FALSE;
 
 
 //SP1L0
-IF ( bInit) THEN
+
+// FB_MotionStage's for non-piezo axes
+fbMotionStage_m13(stMotionStage:=M13);
+fbMotionStage_m14(stMotionStage:=M14);
+fbMotionStage_m15(stMotionStage:=M15);
+fbMotionStage_m16(stMotionStage:=M16);
+fbMotionStage_m17(stMotionStage:=M17);
+
+
+M13.bHardwareEnable := bSTO AND bTH1_POTL AND bTH1_NOTL;
+M14.bHardwareEnable := bSTO AND bTH2_POTL AND bTH2_NOTL;
+M15.bHardwareEnable := bSTO AND bTX_POTL AND bTX_NOTL;
+M16.bHardwareEnable := bSTO;
+M17.bHardwareEnable := bSTO;
+	
+//IF ( bInit) THEN
    // bInit := FALSE;
 //    FFO.i_DevName := 'DCCM-MONO';
     //Bragg 1
@@ -813,26 +828,22 @@ IF ( bInit) THEN
     M16.bEnable:=TRUE;
     M16.bPowerSelf :=TRUE;
     M16.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-    M16.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+    M16.nEnableMode := ENUM_StageEnableMode.ALWAYS;
     //TYD
 
     M17.bEnable:=TRUE;
     M17.bPowerSelf :=TRUE;
     M17.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-    M17.nEnableMode := ENUM_StageEnableMode.DURING_MOTION;
+    M17.nEnableMode := ENUM_StageEnableMode.ALWAYS;
 
     //Turn on Fan by default
     bFanOn := TRUE;
 
-    bInit := FALSE;
+  //  bInit := FALSE;
 
-END_IF
+//END_IF
 
-       M13.bHardwareEnable := bSTO AND bTH1_POTL AND bTH1_NOTL;
-    M14.bHardwareEnable := bSTO AND bTH2_POTL AND bTH2_NOTL;
-    M15.bHardwareEnable := bSTO AND bTX_POTL AND bTX_NOTL;
-    M16.bHardwareEnable := bSTO;
-    M17.bHardwareEnable := bSTO;
+
 
     th1_e_deg := ULINT_TO_LREAL(TH1_E.Count)/1750000;
     th2_e_deg := ULINT_TO_LREAL(TH2_E.Count)/1750000;
