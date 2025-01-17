@@ -347,7 +347,7 @@ VAR
     mcReadParameterPitchM2L0 : MC_ReadParameter;
     fEncRefPitchM2L0_urad : LREAL; // Current Pitch encoder offset in urad
 
-    (*DCCM Mono*)
+    //SP1L0:DCCM
     // Motors
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th1]^STM Status^Status^Digital input 1;
@@ -395,15 +395,23 @@ VAR
     M17 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tyd
     fbMotionStage_m17 : FB_MotionStage;
 
-//digital outputs
+ //Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.
 
+    {attribute 'pytmc' := '
+        pv: DCCM:MONO:SOL
+    '}
+    {attribute 'TcLinkTo' :='TIIB[EL3054_SP1L0_AI]^AI Standard Channel 1^Value'}
+    wAI AT %I*:INT;
+
+//digital outputs
+//DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released when pressure is applied.
       {attribute 'pytmc' := '
-        pv: SP1L0:DCCM:DO0
+        pv: SP1L0:DCCM:TX:BRAKE
         field: ZNAM OFF ;
         field: ONAM ON ;
     '}
      {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 1^Output'}
-    bDO0 AT %Q*:BOOL;
+    bTx_Brake_Solenoid AT %Q*:BOOL;
 
        {attribute 'pytmc' := '
         pv: SP1L0:DCCM:DO1
@@ -528,19 +536,6 @@ VAR
     {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 8^Input'}
     bDI7 AT %I*:BOOL;
 
-     //Analog inputs
-
- //   {attribute 'pytmc' := '
-//        pv: DCCM:MONO:A1
- //   '}
- //   {attribute 'TcLinkTo' :='TIID^Device 2 (EtherCAT)^EK1200_DCCM^EL3062_DCCM_A1_C1^AI Standard Channel 1^Value'}
- //   wA1 AT %I*:INT;
-
- //   {attribute 'pytmc' := '
-  //      pv: DCCM:MONO:C1
- //   '}
- //   {attribute 'TcLinkTo' :='TIID^Device 2 (EtherCAT)^EK1200_DCCM^EL3062_DCCM_A1_C1^AI Standard Channel 2^Value'}
-  //  wC1 AT %I*:INT;
 
 
     // Absolute Encoders for when axes are running in open loop
@@ -592,7 +587,7 @@ VAR
 
 
     test: LREAL := 0.1;
-    th1_e_mm: LREAL;
+    //th1_e_mm: LREAL;
 
     // Common
     fEncLeverArm_mm : LREAL := 513.0;
@@ -838,10 +833,6 @@ M17.bHardwareEnable := bSTO;
 
     //Turn on Fan by default
     bFanOn := TRUE;
-
-  //  bInit := FALSE;
-
-//END_IF
 
 
 

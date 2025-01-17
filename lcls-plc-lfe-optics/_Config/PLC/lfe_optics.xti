@@ -1349,7 +1349,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}" Name="lfe_optics" PrjFilePath="..\..\lfe_optics\lfe_optics.plcproj" TmcFilePath="..\..\lfe_optics\lfe_optics.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{7EB61B92-0C6F-05B0-CF98-87F70BDEBB17}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{B22458A0-10CB-3446-9272-F693A2D0B835}">
 			<Name>lfe_optics Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -2457,6 +2457,11 @@ External Setpoint Generation:
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
+					<Name>Main.wAI</Name>
+					<Comment><![CDATA[Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.]]></Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
 					<Name>Main.bTH1_POTL</Name>
 					<Comment><![CDATA[ digital inputs, 6x overtravel limits, 1x STO, 1x spare ]]></Comment>
 					<Type>BOOL</Type>
@@ -2491,18 +2496,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.TH1_E</Name>
-					<Comment><![CDATA[Analog inputs
-   {attribute 'pytmc' := '
-        pv: DCCM:MONO:A1
-   '}
-   {attribute 'TcLinkTo' :='TIID^Device 2 (EtherCAT)^EK1200_DCCM^EL3062_DCCM_A1_C1^AI Standard Channel 1^Value'}
-   wA1 AT %I*:INT;
-   {attribute 'pytmc' := '
-      pv: DCCM:MONO:C1
-   '}
-   {attribute 'TcLinkTo' :='TIID^Device 2 (EtherCAT)^EK1200_DCCM^EL3062_DCCM_A1_C1^AI Standard Channel 2^Value'}
-  wC1 AT %I*:INT;
- Absolute Encoders for when axes are running in open loop
+					<Comment><![CDATA[ Absolute Encoders for when axes are running in open loop
  DCCM th1_encoder]]></Comment>
 					<Type GUID="{DE508B70-ABB9-83DF-6AA5-FF9BDD51D9D9}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 				</Var>
@@ -2816,8 +2810,9 @@ External Setpoint Generation:
 			<Vars VarGrpType="2" ContextId="2" AreaNo="33">
 				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>Main.bDO0</Name>
-					<Comment><![CDATA[digital outputs]]></Comment>
+					<Name>Main.bTx_Brake_Solenoid</Name>
+					<Comment><![CDATA[digital outputs
+DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released when pressure is applied. ]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -3106,6 +3101,14 @@ External Setpoint Generation:
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>PRG_MR1L0_HOMS.bActivateVarCoolMR1L0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR2L0_HOMS.bActivateVarCoolMR2L0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -3130,14 +3133,6 @@ External Setpoint Generation:
 				<Var>
 					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[3].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_MR1L0_HOMS.bActivateVarCoolMR1L0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_MR2L0_HOMS.bActivateVarCoolMR2L0</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -3311,7 +3306,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.bTX_POTL" VarB="Channel 5^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Box 6 (CU1124)^EK1100_SP1L0^EL2008_SP1L0_DO">
-				<Link VarA="PlcTask Outputs^Main.bDO0" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Outputs^Main.bDO1" VarB="Channel 2^Output" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Outputs^Main.bDO2" VarB="Channel 3^Output" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Outputs^Main.bDO3" VarB="Channel 4^Output" AutoLink="true" Size="1"/>
@@ -3319,6 +3313,10 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^Main.bDO5" VarB="Channel 6^Output" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Outputs^Main.bDO6" VarB="Channel 7^Output" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Outputs^Main.bFanOn" VarB="Channel 8^Output" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Outputs^Main.bTx_Brake_Solenoid" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Box 6 (CU1124)^EK1100_SP1L0^EL3054_SP1L0_AI">
+				<Link VarA="PlcTask Inputs^Main.wAI" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Box 6 (CU1124)^EK1100_SP1L0^EL5042_SP1L0_th1_th2">
 				<Link VarA="PlcTask Inputs^Main.M13.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
