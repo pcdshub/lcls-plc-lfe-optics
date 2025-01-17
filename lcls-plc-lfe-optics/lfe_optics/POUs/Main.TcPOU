@@ -801,7 +801,7 @@ M14.bHardwareEnable := bSTO AND bTH2_POTL AND bTH2_NOTL;
 M15.bHardwareEnable := bSTO AND bTX_POTL AND bTX_NOTL;
 M16.bHardwareEnable := bSTO;
 M17.bHardwareEnable := bSTO;
-	
+
 //IF ( bInit) THEN
    // bInit := FALSE;
 //    FFO.i_DevName := 'DCCM-MONO';
