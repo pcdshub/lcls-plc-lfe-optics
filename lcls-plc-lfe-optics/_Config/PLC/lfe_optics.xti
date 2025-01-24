@@ -1349,7 +1349,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}" Name="lfe_optics" PrjFilePath="..\..\lfe_optics\lfe_optics.plcproj" TmcFilePath="..\..\lfe_optics\lfe_optics.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{B22458A0-10CB-3446-9272-F693A2D0B835}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{3624C0B9-7423-C1B9-FFBC-06BF80C5928D}">
 			<Name>lfe_optics Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -2457,11 +2457,6 @@ External Setpoint Generation:
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>Main.wAI</Name>
-					<Comment><![CDATA[Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
 					<Name>Main.bTH1_POTL</Name>
 					<Comment><![CDATA[ digital inputs, 6x overtravel limits, 1x STO, 1x spare ]]></Comment>
 					<Type>BOOL</Type>
@@ -2806,15 +2801,14 @@ External Setpoint Generation:
 					<Comment><![CDATA[Raw encoder count]]></Comment>
 					<Type>LINT</Type>
 				</Var>
+				<Var>
+					<Name>Main.wAI</Name>
+					<Comment><![CDATA[Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.]]></Comment>
+					<Type>INT</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="2" AreaNo="33">
 				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>Main.bTx_Brake_Solenoid</Name>
-					<Comment><![CDATA[digital outputs
-DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released when pressure is applied. ]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
 				<Var>
 					<Name>Main.M1.Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
@@ -3101,14 +3095,6 @@ DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_MR1L0_HOMS.bActivateVarCoolMR1L0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PRG_MR2L0_HOMS.bActivateVarCoolMR2L0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -3136,6 +3122,14 @@ DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>PRG_MR1L0_HOMS.bActivateVarCoolMR1L0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PRG_MR2L0_HOMS.bActivateVarCoolMR2L0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.PlcToNc</Name>
 					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -3160,6 +3154,12 @@ DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released
 				<Var>
 					<Name>PRG_MR2L0_HOMS.fbCoatingStates.astMotionStageMax[3].bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.bTx_Brake_Solenoid</Name>
+					<Comment><![CDATA[digital outputs
+DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released when pressure is applied.]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
