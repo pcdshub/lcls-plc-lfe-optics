@@ -1349,7 +1349,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D9D193C5-2676-4DE2-94D2-3F5B7910BF73}" Name="lfe_optics" PrjFilePath="..\..\lfe_optics\lfe_optics.plcproj" TmcFilePath="..\..\lfe_optics\lfe_optics.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{3624C0B9-7423-C1B9-FFBC-06BF80C5928D}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="lfe_optics\lfe_optics.tmc" TmcHash="{5C754CBC-63BD-F43C-922A-FB6A7DB1ABFB}">
 			<Name>lfe_optics Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -2516,6 +2516,11 @@ External Setpoint Generation:
 					<Type GUID="{DE508B70-ABB9-83DF-6AA5-FF9BDD51D9D9}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 				</Var>
 				<Var>
+					<Name>Main.nAI</Name>
+					<Comment><![CDATA[Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.]]></Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
 					<Name>PRG_MR1L0_HOMS.fbCoatingStates.astMotionStageMax[1].Axis.NcToPlc</Name>
 					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				</Var>
@@ -2800,11 +2805,6 @@ External Setpoint Generation:
 					<Name>GVL_M2L0.M2L0_Pitch.diEncCnt</Name>
 					<Comment><![CDATA[Raw encoder count]]></Comment>
 					<Type>LINT</Type>
-				</Var>
-				<Var>
-					<Name>Main.wAI</Name>
-					<Comment><![CDATA[Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.]]></Comment>
-					<Type>INT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2" ContextId="2" AreaNo="33">
@@ -3316,7 +3316,7 @@ DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released
 				<Link VarA="PlcTask Outputs^Main.bTx_Brake_Solenoid" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Box 6 (CU1124)^EK1100_SP1L0^EL3054_SP1L0_AI">
-				<Link VarA="PlcTask Inputs^Main.wAI" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.nAI" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Box 6 (CU1124)^EK1100_SP1L0^EL5042_SP1L0_th1_th2">
 				<Link VarA="PlcTask Inputs^Main.M13.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>

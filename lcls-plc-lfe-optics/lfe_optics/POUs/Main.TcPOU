@@ -401,7 +401,7 @@ VAR
         pv: DCCM:MONO:SOL
     '}
     {attribute 'TcLinkTo' :='TIIB[EL3054_SP1L0_AI]^AI Standard Channel 1^Value'}
-    wAI AT %I*:INT;
+    nAI AT %I*:UINT;
 
 //digital outputs
 //DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released when pressure is applied.
