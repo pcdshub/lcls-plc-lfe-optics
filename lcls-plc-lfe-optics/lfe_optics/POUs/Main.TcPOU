@@ -356,7 +356,7 @@ VAR
     {attribute 'pytmc' := '
         pv: SP1L0:DCCM:MMS:TH1
     '}
-    M13 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th1
+    M13 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th1
     fbMotionStage_m13 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th2]^STM Status^Status^Digital input 1;
@@ -365,7 +365,7 @@ VAR
     {attribute 'pytmc' := '
         pv: SP1L0:DCCM:MMS:TH2
     '}
-    M14 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th2
+    M14 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th2
     fbMotionStage_m14 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tx]^STM Status^Status^Digital input 1;
@@ -374,7 +374,7 @@ VAR
     {attribute 'pytmc' := '
         pv: SP1L0:DCCM:MMS:TX
     '}
-    M15 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tx
+    M15 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tx
     fbMotionStage_m15 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_txd]^STM Status^Status^Digital input 1;
@@ -383,7 +383,7 @@ VAR
     {attribute 'pytmc' := '
         pv: SP1L0:DCCM:MMS:TXD
     '}
-    M16 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM txd
+    M16 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM txd
     fbMotionStage_m16 : FB_MotionStage;
 
     {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tyd]^STM Status^Status^Digital input 1;
@@ -392,7 +392,7 @@ VAR
     {attribute 'pytmc' := '
         pv: SP1L0:DCCM:MMS:TYD
     '}
-    M17 : ST_MotionStage := (fVelocity:=0.5, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tyd
+    M17 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tyd
     fbMotionStage_m17 : FB_MotionStage;
 
  //Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.
@@ -535,59 +535,9 @@ VAR
     '}
     {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 8^Input'}
     bDI7 AT %I*:BOOL;
-
-
-
-    // Absolute Encoders for when axes are running in open loop
-
-    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 1^Position'}	// DCCM th1_encoder
-    TH1_E AT %I*:ST_RenishawAbsEnc:=(ref:=19198622);
-    {attribute 'pytmc' := '
-        pv: SP1L0:DCCM:TH1_E
-    '}
-    th1_e_deg: LREAL;
-
-    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 2^Position'}	// DCCM th2_encoder
-    TH2_E AT %I*:ST_RenishawAbsEnc:=(ref:=18675023);
-    {attribute 'pytmc' := '
-        pv: SP1L0:DCCM::TH2_E
-    '}
-    th2_e_deg: LREAL;
-
-    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 1^Position'}	// DCCM tx_encoder
-    TX_E AT %I*:ST_RenishawAbsEnc:=(ref:=0);
-    {attribute 'pytmc' := '
-        pv: SP1L0:DCCM:TX_E
-    '}
-    tx_e_mm: LREAL;
-
-    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 2^Position'}	// DCCM txd_encoder
-    TXD_E AT %I*:ST_RenishawAbsEnc:=(ref:=0);
-    {attribute 'pytmc' := '
-        pv: SP1L0:DCCM:TXD_E
-    '}
-    txd_e_mm: LREAL;
-
-    {attribute 'TcLinkTo' := '.Count:=TIIB[EL5042_SP1L0_tyd]^FB Inputs Channel 1^Position'}	// DCCM tyd_encoder
-    TYD_E AT %I*:ST_RenishawAbsEnc:=(ref:=0);
-
-    {attribute 'pytmc' := '
-        pv: SP1L0:DCCM:TYD_E
-    '}
-    tyd_e_mm: LREAL;
-
-    bInit : BOOL:=TRUE;
-
-    // Motion Parameters
-    fSmallDelta: LREAL := 0.01;
-    fBigDelta: LREAL := 10;
-    fMaxVelocity: LREAL := 0.5;
-    fHighAccel: LREAL := 0.8;
-    fLowAccel: LREAL := 0.1;
-
+   
 
     test: LREAL := 0.1;
-    //th1_e_mm: LREAL;
 
     // Common
     fEncLeverArm_mm : LREAL := 513.0;
@@ -797,50 +747,12 @@ M15.bHardwareEnable := bSTO AND bTX_POTL AND bTX_NOTL;
 M16.bHardwareEnable := bSTO;
 M17.bHardwareEnable := bSTO;
 
-//IF ( bInit) THEN
-   // bInit := FALSE;
-//    FFO.i_DevName := 'DCCM-MONO';
-    //Bragg 1
-
-    M13.bEnable:=TRUE;
-    M13.bPowerSelf :=TRUE;
-    M13.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-    M13.nEnableMode := ENUM_StageEnableMode.ALWAYS;
-   //Bragg 2
-
-    M14.bEnable:=TRUE;
-    M14.bPowerSelf :=TRUE;
-    M14.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-    M14.nEnableMode := ENUM_StageEnableMode.ALWAYS;
-    //TX
-
-    M15.bEnable:=TRUE;
-    M15.bPowerSelf :=TRUE;
-    M15.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-    M15.nEnableMode := ENUM_StageEnableMode.ALWAYS;
-    //TXD
-
-    M16.bEnable:=TRUE;
-    M16.bPowerSelf :=TRUE;
-    M16.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-    M16.nEnableMode := ENUM_StageEnableMode.ALWAYS;
-    //TYD
-
-    M17.bEnable:=TRUE;
-    M17.bPowerSelf :=TRUE;
-    M17.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
-    M17.nEnableMode := ENUM_StageEnableMode.ALWAYS;
 
     //Turn on Fan by default
     bFanOn := TRUE;
 
 
 
-    th1_e_deg := ULINT_TO_LREAL(TH1_E.Count)/1750000;
-    th2_e_deg := ULINT_TO_LREAL(TH2_E.Count)/1750000;
-    tx_e_mm := ULINT_TO_LREAL(TX_E.Count)/20000;
-    txd_e_mm := ULINT_TO_LREAL(TXD_E.Count)/20000;
-    tyd_e_mm := ULINT_TO_LREAL(TYD_E.Count)/20000;
 
 
 
