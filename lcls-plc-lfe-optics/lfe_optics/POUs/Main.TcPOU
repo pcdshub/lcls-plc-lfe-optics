@@ -535,9 +535,6 @@ VAR
     '}
     {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 8^Input'}
     bDI7 AT %I*:BOOL;
-   
-
-    test: LREAL := 0.1;
 
     // Common
     fEncLeverArm_mm : LREAL := 513.0;
