@@ -18,6 +18,11 @@ NC Settings
         10, M2L0-Xdwn
         11, M2L0-Pitch
         12, M2L0-Bender
+        13, SP1L0-TH1
+        14, SP1L0-TH2
+        15, SP1L0-Tx
+        16, SP1L0-Txd
+        17, SP1L0-Tyd
 
 
 
@@ -111,6 +116,7 @@ Axis 3: M1L0-Xup
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -600
     General:UnitName, um
+    GroupId, 18
     Id, 3
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 1000
@@ -232,8 +238,8 @@ Axis 7: M2L0-Yup
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
     Enc:Offset, -12018.2
-    Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, 7519.8
@@ -264,8 +270,8 @@ Axis 8: M2L0-Ydwn
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
     Enc:Offset, -15143.7
-    Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, 7561.3
@@ -296,8 +302,8 @@ Axis 9: M2L0-Xup
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
     Enc:Offset, -25363.4
-    Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, 1000
@@ -328,8 +334,8 @@ Axis 10: M2L0-Xdwn
     Enc:EncType, 29
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
     Enc:Offset, -24398.1
-    Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, 1100.1
@@ -360,8 +366,8 @@ Axis 11: M2L0-Pitch
     Enc:FilterTime:TPos, 0.2
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
     Enc:Offset, -18462.6
-    Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001949317739
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, 154.9
@@ -393,7 +399,6 @@ Axis 12: M2L0-Bender
     Enc:Inc:RefSoftSyncMask, #x0000ffff
     Enc:MaxCount, #xffffffff
     Enc:Offset, -4268979
-    Enc:ReferenceSystem, 1
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMaxControl:Range, 10762
@@ -403,5 +408,204 @@ Axis 12: M2L0-Bender
     Id, 12
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 150
+
+
+
+Axis 13: SP1L0-TH1
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 13
+    Name, SP1L0-TH1
+    AxisFolder, SP1L0
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 8.99313
+    Dynamic:AccelerationMaximum, 10
+    Dynamic:Deceleration, 8.99313
+    Dynamic:DecelerationMaximum, 10
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 27.7544
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
+    Enc:Offset, -11
+    Enc:ScaleFactorDenominator, 10000000
+    Enc:ScaleFactorNumerator, 5.72957795
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 71
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -1
+    General:UnitName, Degree
+    Id, 13
+    OtherSettings:AllowMotionCmdToSlave, true
+    OtherSettings:PulseDistanceNeg, 0.5
+    OtherSettings:PulseDistancePos, 0.5
+    TargetPosControl:Range, 0.001
+    Velo:FastManual, 2
+    Velo:Maximum, 0.12
+    Velo:SlowManual, 1
+
+
+
+Axis 14: SP1L0-TH2
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 14
+    Name, SP1L0-TH2
+    AxisFolder, SP1L0
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 9
+    Dynamic:AccelerationMaximum, 10
+    Dynamic:Deceleration, 9
+    Dynamic:DecelerationMaximum, 10
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 27.7
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
+    Enc:Offset, -10.66
+    Enc:ScaleFactorDenominator, 10000000
+    Enc:ScaleFactorNumerator, 5.72957795
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 71
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -1
+    General:UnitName, Degree
+    Id, 14
+    OtherSettings:AllowMotionCmdToSlave, true
+    PositionAreaControl:Range, 0.05
+    TargetPosControl:Range, 0.0001
+    Velo:FastManual, 0.3
+    Velo:Maximum, 0.12
+    Velo:SlowManual, 0.1
+
+
+
+Axis 15: SP1L0-Tx
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 15
+    Name, SP1L0-Tx
+    AxisFolder, SP1L0
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 20
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 20
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 100
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
+    Enc:Offset, -29.5
+    Enc:ScaleFactorDenominator, 1000000
+    Enc:ScaleFactorNumerator, 50
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 3
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -13
+    Id, 15
+    OtherSettings:AllowMotionCmdToSlave, true
+    OtherSettings:PulseDistanceNeg, 1
+    OtherSettings:PulseDistancePos, 1
+    PositionAreaControl:Range, 0.2
+    TargetPosControl:Range, 0.0005
+    Velo:FastManual, 1
+    Velo:Maximum, 1
+    Velo:SlowManual, 0.3
+
+
+
+Axis 16: SP1L0-Txd
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 16
+    Name, SP1L0-Txd
+    AxisFolder, SP1L0
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 20
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 20
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 100
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
+    Enc:Offset, -6871908.2
+    Enc:ScaleFactorDenominator, 1000000
+    Enc:ScaleFactorNumerator, 50
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 12
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -12
+    Id, 16
+    OtherSettings:AllowMotionCmdToSlave, true
+    OtherSettings:PulseDistanceNeg, 0.05
+    OtherSettings:PulseDistancePos, 0.05
+    PositionAreaControl:Range, 0.01
+    TargetPosControl:Range, 0.0001
+    Velo:FastManual, 0.2
+    Velo:Maximum, 2
+    Velo:SlowManual, 0.075
+
+
+
+Axis 17: SP1L0-Tyd
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 17
+    Name, SP1L0-Tyd
+    AxisFolder, SP1L0
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 10
+    Dynamic:AccelerationMaximum, 20
+    Dynamic:Deceleration, 10
+    Dynamic:DecelerationMaximum, 20
+    Dynamic:DelayTime, 0.008
+    Dynamic:Jerk, 100
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:MaxCountHighDWord, #x0000001f
+    Enc:Offset, -6871872.92
+    Enc:ScaleFactorDenominator, 1000000
+    Enc:ScaleFactorNumerator, 50
+    Enc:SoftEndMaxControl:Range, 48
+    Id, 17
+    OtherSettings:AllowMotionCmdToSlave, true
+    PositionAreaControl:Range, 0.05
+    TargetPosControl:Range, 0.05
+    Velo:FastManual, 1
+    Velo:Maximum, 2
+    Velo:SlowManual, 0.5
 
 

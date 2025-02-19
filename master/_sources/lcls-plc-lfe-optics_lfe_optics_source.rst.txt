@@ -567,18 +567,199 @@ Main
         mcReadParameterPitchM2L0 : MC_ReadParameter;
         fEncRefPitchM2L0_urad : LREAL; // Current Pitch encoder offset in urad
 
+        //SP1L0:DCCM
+        // Motors
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th1]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_th1]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT := TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 1^Position;'}
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:MMS:TH1
+        '}
+        M13 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th1
+        fbMotionStage_m13 : FB_MotionStage;
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th2]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_th2]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT := TIIB[EL5042_SP1L0_th1_th2]^FB Inputs Channel 2^Position;'}
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:MMS:TH2
+        '}
+        M14 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM th2
+        fbMotionStage_m14 : FB_MotionStage;
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tx]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_tx]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT := TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 1^Position;'}
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:MMS:TX
+        '}
+        M15 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tx
+        fbMotionStage_m15 : FB_MotionStage;
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_txd]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_txd]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT := TIIB[EL5042_SP1L0_tx_txd]^FB Inputs Channel 2^Position;'}
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:MMS:TXD
+        '}
+        M16 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM txd
+        fbMotionStage_m16 : FB_MotionStage;
+
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tyd]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable:= TIIB[EL7047_SP1L0_tyd]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderULINT := TIIB[EL5042_SP1L0_tyd]^FB Inputs Channel 1^Position;'}
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:MMS:TYD
+        '}
+        M17 : ST_MotionStage := (nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // DCCM tyd
+        fbMotionStage_m17 : FB_MotionStage;
+
+     //Analog input for Tx Brake Pressure Sensor. Sensor to monitor pressure to verify brakes are released. 90PSI to release brakes.
+
+        {attribute 'pytmc' := '
+            pv: DCCM:MONO:SOL
+        '}
+        {attribute 'TcLinkTo' :='TIIB[EL3054_SP1L0_AI]^AI Standard Channel 1^Value'}
+        nAI AT %I*:UINT;
+
+    //digital outputs
+    //DO for Compressed Air Solenoid Actuation on Tx to release brake. Brakes released when pressure is applied.
+          {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:TX:BRAKE
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 1^Output'}
+        bTx_Brake_Solenoid AT %Q*:BOOL;
+
+           {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:DO1
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 2^Output'}
+        bDO1 AT %Q*:BOOL;
+
+           {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:DO2
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 3^Output'}
+        bDO2 AT %Q*:BOOL;
+
+             {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:DO3
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 4^Output'}
+        bDO3 AT %Q*:BOOL;
+
+             {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:DO4
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 5^Output'}
+        bDO4 AT %Q*:BOOL;
+
+             {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:DO5
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 6^Output'}
+        bDO5 AT %Q*:BOOL;
+
+             {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:DO6
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 7^Output'}
+        bDO6 AT %Q*:BOOL;
+
+            {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:FAN:PWR
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+         {attribute 'TcLinkTo' := 'TIIB[EL2008_SP1L0_DO]^Channel 8^Output'}
+        bFanOn AT %Q*:BOOL;
+
+    (* digital inputs, 6x overtravel limits, 1x STO, 1x spare *)
+
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:TH1:POTL
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 1^Input'}
+        bTH1_POTL AT %I*:BOOL;
+
+            {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:TH1:NOTL
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 2^Input'}
+        bTH1_NOTL AT %I*:BOOL;
+
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:TH2:POTL
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 3^Input'}
+        bTH2_POTL AT %I*:BOOL;
+
+            {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:TH2:NOTL
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 4^Input'}
+        bTH2_NOTL AT %I*:BOOL;
+
+            {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:TX:POTL
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 5^Input'}
+        bTX_POTL AT %I*:BOOL;
+
+            {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:TX:NOTL
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 6^Input'}
+        bTX_NOTL AT %I*:BOOL;
 
 
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:STO
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 7^Input'}
+        bSTO AT %I*:BOOL;
 
-
+        {attribute 'pytmc' := '
+            pv: SP1L0:DCCM:DI7
+            field: ZNAM OFF ;
+            field: ONAM ON ;
+        '}
+        {attribute 'TcLinkTo' := 'TIIB[EL1008_SP1L0_STO_DI]^Channel 8^Input'}
+        bDI7 AT %I*:BOOL;
 
         // Common
         fEncLeverArm_mm : LREAL := 513.0;
         // Logging
         fbLogHandler : FB_LogHandler;
-
-
-
 
     END_VAR
     // M1L0
@@ -765,7 +946,34 @@ Main
     //Coatings States With PMPS
     M7.bPowerSelf :=FALSE;
 
+
+    //SP1L0
+
+    // FB_MotionStage's for non-piezo axes
+    fbMotionStage_m13(stMotionStage:=M13);
+    fbMotionStage_m14(stMotionStage:=M14);
+    fbMotionStage_m15(stMotionStage:=M15);
+    fbMotionStage_m16(stMotionStage:=M16);
+    fbMotionStage_m17(stMotionStage:=M17);
+
+
+    M13.bHardwareEnable := bSTO AND bTH1_POTL AND bTH1_NOTL;
+    M14.bHardwareEnable := bSTO AND bTH2_POTL AND bTH2_NOTL;
+    M15.bHardwareEnable := bSTO AND bTX_POTL AND bTX_NOTL;
+    M16.bHardwareEnable := bSTO;
+    M17.bHardwareEnable := bSTO;
+
+
+        //Turn on Fan by default
+        bFanOn := TRUE;
+
+
+
+
+
+
     P_CoatingProtections();
+
 
     // Logging
     fbLogHandler();
@@ -910,6 +1118,7 @@ PRG_1_PlcTask
     END_VAR
     PRG_MR1L0_HOMS();
     PRG_MR2L0_HOMS();
+    PRG_SP1L0_DCCM();
     PRG_PMPS();
 
     END_PROGRAM
@@ -919,6 +1128,7 @@ Related:
     * `PRG_MR1L0_HOMS`_
     * `PRG_MR2L0_HOMS`_
     * `PRG_PMPS`_
+    * `PRG_SP1L0_DCCM`_
 
 
 PRG_MR1L0_HOMS
@@ -1173,4 +1383,20 @@ PRG_PMPS
 Related:
     * `GVL_PMPS`_
     * `Main`_
+
+
+PRG_SP1L0_DCCM
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_SP1L0_DCCM
+    VAR
+
+    END_VAR
+
+
+    END_PROGRAM
+
+
 

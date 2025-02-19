@@ -41494,6 +41494,1131 @@ Database Records
       - | io: input
 
 
+    * - SP1L0:DCCM:MMS:TH1:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH1:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TH2:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TX:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TXD:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bError_RBV
+      - bi
+      - TRUE if we are in an error state
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bHardwareEnable_RBV
+      - bi
+      - TRUE if STO not hit
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bHomeCmd_RBV
+      - bi
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bHomeCmd
+      - bo
+      - Start the homing routine
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bReset_RBV
+      - bi
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bReset
+      - bo
+      - Used internally to reset errors
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bUserEnable_RBV
+      - bi
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:bUserEnable
+      - bo
+      - Used to disable power entirely for an axis
+      - | field: ONAM ENABLE
+        | field: ZNAM DISABLE
+        | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:fHomePosition_RBV
+      - ai
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:fHomePosition
+      - ao
+      - Used internally and by the IOC to pick home position
+      - | io: output
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:fPosDiff_RBV
+      - ai
+      - Position lag difference
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:nEncoderCount_RBV
+      - longin
+      - Count from encoder hardware
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:nErrorId_RBV
+      - longin
+      - Error code if nonzero
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:sErrorMessage_RBV
+      - waveform
+      - Message to identify the error state
+      - | io: input
+        | update: 100hz notify
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:PosLagEn_RBV
+      - longin
+      - TRUE if position lag monitor (also known as stall monitor) is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:SLimMaxEn_RBV
+      - longin
+      - TRUE if controller static maximum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:SLimMinEn_RBV
+      - longin
+      - TRUE if controller static minimum limit is enabled.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:MaxAccel_RBV
+      - ai
+      - Maximum rate of increase in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:PosLagVal_RBV
+      - ai
+      - Maximum magnitude of position lag in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:PosLagTime_RBV
+      - ai
+      - Maximum allowable duration outside of maximum position lag value in seconds.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:MaxDecel_RBV
+      - ai
+      - Maximum rate of decrease in speed of the axis in EU/s^2.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:EncOffset_RBV
+      - ai
+      - Encoder offset in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:EncScaling_RBV
+      - ai
+      - Encoder scaling numerator / denominator in EU/COUNT.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:SLimMax_RBV
+      - ai
+      - Maximum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:SLimMin_RBV
+      - ai
+      - Minimum commandable position of the axis in EU.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:AxisPar:MaxVel_RBV
+      - ai
+      - Maximum commandable speed of the axis in EU/s.
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSB:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSB:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSB:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSF:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSF:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSF:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSP:nFlags_RBV
+      - longin
+      - Contains EPS flags
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSP:sFlagDesc_RBV
+      - waveform
+      - semicolon-delimited nFlag variable
+      - | io: input
+
+
+    * - SP1L0:DCCM:MMS:TYD:PLC:stEPSP:sMessage_RBV
+      - waveform
+      - Message from EPS to usr
+      - | io: input
+
+
     * - MR1L0:HOMS:COUPLE_X_RBV
       - bi
       - Main.M1L0.bExecuteCoupleX
@@ -43446,6 +44571,262 @@ Database Records
       - | io: input
 
 
+    * - SP1L0:DCCM:DI7_RBV
+      - bi
+      - Main.bDI7
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DI7
+      - bo
+      - Main.bDI7
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO1_RBV
+      - bi
+      - Main.bDO1
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO1
+      - bo
+      - Main.bDO1
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO2_RBV
+      - bi
+      - Main.bDO2
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO2
+      - bo
+      - Main.bDO2
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO3_RBV
+      - bi
+      - Main.bDO3
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO3
+      - bo
+      - Main.bDO3
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO4_RBV
+      - bi
+      - Main.bDO4
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO4
+      - bo
+      - Main.bDO4
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO5_RBV
+      - bi
+      - Main.bDO5
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO5
+      - bo
+      - Main.bDO5
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO6_RBV
+      - bi
+      - Main.bDO6
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:DO6
+      - bo
+      - Main.bDO6
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:FAN:PWR_RBV
+      - bi
+      - Main.bFanOn
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:FAN:PWR
+      - bo
+      - Main.bFanOn
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:STO_RBV
+      - bi
+      - Main.bSTO
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:STO
+      - bo
+      - Main.bSTO
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH1:NOTL_RBV
+      - bi
+      - Main.bTH1_NOTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH1:NOTL
+      - bo
+      - Main.bTH1_NOTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH1:POTL_RBV
+      - bi
+      - Main.bTH1_POTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH1:POTL
+      - bo
+      - Main.bTH1_POTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH2:NOTL_RBV
+      - bi
+      - Main.bTH2_NOTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH2:NOTL
+      - bo
+      - Main.bTH2_NOTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH2:POTL_RBV
+      - bi
+      - Main.bTH2_POTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TH2:POTL
+      - bo
+      - Main.bTH2_POTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TX:NOTL_RBV
+      - bi
+      - Main.bTX_NOTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TX:NOTL
+      - bo
+      - Main.bTX_NOTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TX:POTL_RBV
+      - bi
+      - Main.bTX_POTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TX:POTL
+      - bo
+      - Main.bTX_POTL
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TX:BRAKE_RBV
+      - bi
+      - Main.bTx_Brake_Solenoid
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - SP1L0:DCCM:TX:BRAKE
+      - bo
+      - Main.bTx_Brake_Solenoid
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
     * - MR1L0:HOMS:ENC:BENDER:ACTPOSARRAY_RBV
       - waveform
       - Main.fbBenderRMSErrorM1L0.aEncActPos
@@ -43756,6 +45137,18 @@ Database Records
       - ai
       - Main.fbYRMSErrorM2L0.fEncStDev
       - | io: input
+
+
+    * - DCCM:MONO:SOL_RBV
+      - longin
+      - Main.nAI
+      - | io: output
+
+
+    * - DCCM:MONO:SOL
+      - longout
+      - Main.nAI
+      - | io: output
 
 
     * - MR1L0:HOMS:ENC:PITCH:CNT_RBV

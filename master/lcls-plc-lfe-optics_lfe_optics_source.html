@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -5,22 +7,18 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-lfe-optics  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
       <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -87,6 +85,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-mr1l0-homs">PRG_MR1L0_HOMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-mr2l0-homs">PRG_MR2L0_HOMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-pmps">PRG_PMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-sp1l0-dccm">PRG_SP1L0_DCCM</a></li>
 </ul>
 </li>
 </ul>
@@ -189,7 +188,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
-    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span> <span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">27</span>
+    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span><span class="w"> </span><span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">27</span>
     <span class="n">nYUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">16171800</span><span class="p">;</span>
     <span class="n">nYDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">14866900</span><span class="p">;</span>
     <span class="n">nXUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">24901730</span><span class="p">;</span>
@@ -639,18 +638,199 @@ END_VAR
     <span class="n">mcReadParameterPitchM2L0</span> <span class="p">:</span> <span class="n">MC_ReadParameter</span><span class="p">;</span>
     <span class="n">fEncRefPitchM2L0_urad</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">Pitch</span> <span class="n">encoder</span> <span class="n">offset</span> <span class="ow">in</span> <span class="n">urad</span>
 
+    <span class="o">//</span><span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span>
+    <span class="o">//</span> <span class="n">Motors</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th1]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL7047_SP1L0_th1</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_SP1L0_th1_th2</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">TH1</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M13</span> <span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span> <span class="o">//</span> <span class="n">DCCM</span> <span class="n">th1</span>
+    <span class="n">fbMotionStage_m13</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:= TIIB[EL7047_SP1L0_th2]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL7047_SP1L0_th2</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_SP1L0_th1_th2</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">TH2</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M14</span> <span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span> <span class="o">//</span> <span class="n">DCCM</span> <span class="n">th2</span>
+    <span class="n">fbMotionStage_m14</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tx]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL7047_SP1L0_tx</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_SP1L0_tx_txd</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">TX</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M15</span> <span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span> <span class="o">//</span> <span class="n">DCCM</span> <span class="n">tx</span>
+    <span class="n">fbMotionStage_m15</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:= TIIB[EL7047_SP1L0_txd]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL7047_SP1L0_txd</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_SP1L0_tx_txd</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">TXD</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M16</span> <span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span> <span class="o">//</span> <span class="n">DCCM</span> <span class="n">txd</span>
+    <span class="n">fbMotionStage_m16</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.bLimitForwardEnable:= TIIB[EL7047_SP1L0_tyd]^STM Status^Status^Digital input 1;</span>
+                              <span class="o">.</span><span class="n">bLimitBackwardEnable</span><span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL7047_SP1L0_tyd</span><span class="p">]</span><span class="o">^</span><span class="n">STM</span> <span class="n">Status</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Digital</span> <span class="nb">input</span> <span class="mi">2</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">nRawEncoderULINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">EL5042_SP1L0_tyd</span><span class="p">]</span><span class="o">^</span><span class="n">FB</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Position</span><span class="p">;</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">MMS</span><span class="p">:</span><span class="n">TYD</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">M17</span> <span class="p">:</span> <span class="n">ST_MotionStage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">nEnableMode</span><span class="o">:=</span><span class="n">ENUM_StageEnableMode</span><span class="o">.</span><span class="n">ALWAYS</span><span class="p">,</span> <span class="n">bPowerSelf</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span> <span class="o">//</span> <span class="n">DCCM</span> <span class="n">tyd</span>
+    <span class="n">fbMotionStage_m17</span> <span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+
+ <span class="o">//</span><span class="n">Analog</span> <span class="nb">input</span> <span class="k">for</span> <span class="n">Tx</span> <span class="n">Brake</span> <span class="n">Pressure</span> <span class="n">Sensor</span><span class="o">.</span> <span class="n">Sensor</span> <span class="n">to</span> <span class="n">monitor</span> <span class="n">pressure</span> <span class="n">to</span> <span class="n">verify</span> <span class="n">brakes</span> <span class="n">are</span> <span class="n">released</span><span class="o">.</span> <span class="mi">90</span><span class="n">PSI</span> <span class="n">to</span> <span class="n">release</span> <span class="n">brakes</span><span class="o">.</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">DCCM</span><span class="p">:</span><span class="n">MONO</span><span class="p">:</span><span class="n">SOL</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span><span class="s1">&#39;TIIB[EL3054_SP1L0_AI]^AI Standard Channel 1^Value&#39;</span><span class="p">}</span>
+    <span class="n">nAI</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">UINT</span><span class="p">;</span>
+
+<span class="o">//</span><span class="n">digital</span> <span class="n">outputs</span>
+<span class="o">//</span><span class="n">DO</span> <span class="k">for</span> <span class="n">Compressed</span> <span class="n">Air</span> <span class="n">Solenoid</span> <span class="n">Actuation</span> <span class="n">on</span> <span class="n">Tx</span> <span class="n">to</span> <span class="n">release</span> <span class="n">brake</span><span class="o">.</span> <span class="n">Brakes</span> <span class="n">released</span> <span class="n">when</span> <span class="n">pressure</span> <span class="ow">is</span> <span class="n">applied</span><span class="o">.</span>
+      <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">TX</span><span class="p">:</span><span class="n">BRAKE</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 1^Output&#39;</span><span class="p">}</span>
+    <span class="n">bTx_Brake_Solenoid</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+       <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">DO1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 2^Output&#39;</span><span class="p">}</span>
+    <span class="n">bDO1</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+       <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">DO2</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 3^Output&#39;</span><span class="p">}</span>
+    <span class="n">bDO2</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+         <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">DO3</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 4^Output&#39;</span><span class="p">}</span>
+    <span class="n">bDO3</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+         <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">DO4</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 5^Output&#39;</span><span class="p">}</span>
+    <span class="n">bDO4</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+         <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">DO5</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 6^Output&#39;</span><span class="p">}</span>
+    <span class="n">bDO5</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+         <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">DO6</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 7^Output&#39;</span><span class="p">}</span>
+    <span class="n">bDO6</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+        <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">FAN</span><span class="p">:</span><span class="n">PWR</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL2008_SP1L0_DO]^Channel 8^Output&#39;</span><span class="p">}</span>
+    <span class="n">bFanOn</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">digital</span> <span class="n">inputs</span><span class="p">,</span> <span class="mi">6</span><span class="n">x</span> <span class="n">overtravel</span> <span class="n">limits</span><span class="p">,</span> <span class="mi">1</span><span class="n">x</span> <span class="n">STO</span><span class="p">,</span> <span class="mi">1</span><span class="n">x</span> <span class="n">spare</span> <span class="o">*</span><span class="p">)</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">TH1</span><span class="p">:</span><span class="n">POTL</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 1^Input&#39;</span><span class="p">}</span>
+    <span class="n">bTH1_POTL</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+        <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">TH1</span><span class="p">:</span><span class="n">NOTL</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 2^Input&#39;</span><span class="p">}</span>
+    <span class="n">bTH1_NOTL</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">TH2</span><span class="p">:</span><span class="n">POTL</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 3^Input&#39;</span><span class="p">}</span>
+    <span class="n">bTH2_POTL</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+        <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">TH2</span><span class="p">:</span><span class="n">NOTL</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 4^Input&#39;</span><span class="p">}</span>
+    <span class="n">bTH2_NOTL</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+        <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">TX</span><span class="p">:</span><span class="n">POTL</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 5^Input&#39;</span><span class="p">}</span>
+    <span class="n">bTX_POTL</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+        <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">TX</span><span class="p">:</span><span class="n">NOTL</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 6^Input&#39;</span><span class="p">}</span>
+    <span class="n">bTX_NOTL</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
 
 
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">STO</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 7^Input&#39;</span><span class="p">}</span>
+    <span class="n">bSTO</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
 
-
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SP1L0</span><span class="p">:</span><span class="n">DCCM</span><span class="p">:</span><span class="n">DI7</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">OFF</span> <span class="p">;</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">ON</span> <span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL1008_SP1L0_STO_DI]^Channel 8^Input&#39;</span><span class="p">}</span>
+    <span class="n">bDI7</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
 
     <span class="o">//</span> <span class="n">Common</span>
     <span class="n">fEncLeverArm_mm</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">513.0</span><span class="p">;</span>
     <span class="o">//</span> <span class="n">Logging</span>
     <span class="n">fbLogHandler</span> <span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
-
-
-
 
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">M1L0</span>
@@ -837,7 +1017,34 @@ END_VAR
 <span class="o">//</span><span class="n">Coatings</span> <span class="n">States</span> <span class="n">With</span> <span class="n">PMPS</span>
 <span class="n">M7</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
 
+
+<span class="o">//</span><span class="n">SP1L0</span>
+
+<span class="o">//</span> <span class="n">FB_MotionStage</span><span class="s1">&#39;s for non-piezo axes</span>
+<span class="n">fbMotionStage_m13</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M13</span><span class="p">);</span>
+<span class="n">fbMotionStage_m14</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M14</span><span class="p">);</span>
+<span class="n">fbMotionStage_m15</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M15</span><span class="p">);</span>
+<span class="n">fbMotionStage_m16</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M16</span><span class="p">);</span>
+<span class="n">fbMotionStage_m17</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">M17</span><span class="p">);</span>
+
+
+<span class="n">M13</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bSTO</span> <span class="n">AND</span> <span class="n">bTH1_POTL</span> <span class="n">AND</span> <span class="n">bTH1_NOTL</span><span class="p">;</span>
+<span class="n">M14</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bSTO</span> <span class="n">AND</span> <span class="n">bTH2_POTL</span> <span class="n">AND</span> <span class="n">bTH2_NOTL</span><span class="p">;</span>
+<span class="n">M15</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bSTO</span> <span class="n">AND</span> <span class="n">bTX_POTL</span> <span class="n">AND</span> <span class="n">bTX_NOTL</span><span class="p">;</span>
+<span class="n">M16</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bSTO</span><span class="p">;</span>
+<span class="n">M17</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">bSTO</span><span class="p">;</span>
+
+
+    <span class="o">//</span><span class="n">Turn</span> <span class="n">on</span> <span class="n">Fan</span> <span class="n">by</span> <span class="n">default</span>
+    <span class="n">bFanOn</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+
+
+
+
+
+
 <span class="n">P_CoatingProtections</span><span class="p">();</span>
+
 
 <span class="o">//</span> <span class="n">Logging</span>
 <span class="n">fbLogHandler</span><span class="p">();</span>
@@ -978,6 +1185,7 @@ END_VAR
 <span class="n">END_VAR</span>
 <span class="n">PRG_MR1L0_HOMS</span><span class="p">();</span>
 <span class="n">PRG_MR2L0_HOMS</span><span class="p">();</span>
+<span class="n">PRG_SP1L0_DCCM</span><span class="p">();</span>
 <span class="n">PRG_PMPS</span><span class="p">();</span>
 
 <span class="n">END_PROGRAM</span>
@@ -988,6 +1196,7 @@ END_VAR
 <li><p><a class="reference internal" href="#prg-mr1l0-homs">PRG_MR1L0_HOMS</a></p></li>
 <li><p><a class="reference internal" href="#prg-mr2l0-homs">PRG_MR2L0_HOMS</a></p></li>
 <li><p><a class="reference internal" href="#prg-pmps">PRG_PMPS</a></p></li>
+<li><p><a class="reference internal" href="#prg-sp1l0-dccm">PRG_SP1L0_DCCM</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -1246,6 +1455,18 @@ END_VAR
 </dd>
 </dl>
 </section>
+<section id="prg-sp1l0-dccm">
+<h2>PRG_SP1L0_DCCM<a class="headerlink" href="#prg-sp1l0-dccm" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_SP1L0_DCCM</span>
+<span class="n">VAR</span>
+
+<span class="n">END_VAR</span>
+
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -1258,7 +1479,7 @@ END_VAR
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
