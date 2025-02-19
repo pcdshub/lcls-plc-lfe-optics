@@ -34,6 +34,9 @@
 		<Io>
 			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
 		</Io>
+		<SymbolWatch>
+			<Variable>TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EK1122)^Box 6 (CU1124)^EK1100_SP1L0^EL5042_SP1L0_tx_txd^FB Inputs Channel 1^Position</Variable>
+		</SymbolWatch>
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500820000403}" Id="#x02030010"/>

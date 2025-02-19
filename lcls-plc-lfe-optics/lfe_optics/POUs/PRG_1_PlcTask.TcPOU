@@ -9,6 +9,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[PRG_MR1L0_HOMS();
 PRG_MR2L0_HOMS();
+PRG_SP1L0_DCCM();
 PRG_PMPS();]]></ST>
     </Implementation>
   </POU>

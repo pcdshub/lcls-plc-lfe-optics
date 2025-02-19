@@ -81,6 +81,9 @@
     <Compile Include="POUs\PRG_PMPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_SP1L0_DCCM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\P_CoatingProtections.TcPOU">
       <SubType>Code</SubType>
     </Compile>
